@@ -1,0 +1,18 @@
+<resources>
+    <!-- IShiQing application theme. -->
+    <!-- 你可以通过在项目中的 theme 中用 <item name="(name)">(value)</item> 的形式来覆盖 QMUI 组件的默认表现。
+         具体可指定的属性名请参考 @style/QMUI.Compat 中的属性。 -->
+    <style name="SQAppTheme" parent="QMUI.Compat">
+        <item name="windowNoTitle">true</item>
+        <item name="windowActionBar">false</item>
+        <!-- 配置app自己的theme -->
+        <item name="app_primary_color">?attr/qmui_config_color_blue</item>
+        <item name="app_content_bg_color">@color/qmui_config_color_white</item>
+    </style>
+
+    <style name="SwipeBackLayout">
+        <item name="shadow_left">@drawable/shadow_left</item>
+        <item name="shadow_right">@drawable/shadow_right</item>
+        <item name="shadow_bottom">@drawable/shadow_bottom</item>
+    </style>
+</resources>
