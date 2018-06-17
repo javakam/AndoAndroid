@@ -23,6 +23,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <service android:name="com.ishiqing.modules.MyService1" />
+        <service android:name="com.ishiqing.modules.MyService2" />
+        <service android:name="com.ishiqing.modules.MyService3" />
     </application>
 
 </manifest>

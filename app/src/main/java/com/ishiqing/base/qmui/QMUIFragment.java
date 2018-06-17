@@ -86,6 +86,49 @@ public abstract class QMUIFragment extends Fragment {
     private boolean mCalled = true;
     private ArrayList<Runnable> mDelayRenderRunnableList = new ArrayList<>();
 
+    @Override
+    public void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        FragmentManager fragmentManager = getFragmentManager();
+        if (fragmentManager != null) {
+            int backStackEntryCount = fragmentManager.getBackStackEntryCount();
+            for (int i = backStackEntryCount - 1; i >= 0; i--) {
+                FragmentManager.BackStackEntry entry = fragmentManager.getBackStackEntryAt(i);
+                if (getClass().getSimpleName().equals(entry.getName())) {
+                    mBackStackIndex = i;
+                    break;
+                }
+            }
+        }
+    }
+
+    /**
+     * onCreateView
+     */
+    protected abstract View onCreateView();
+
+    @Override
+    public void onStart() {
+        super.onStart();
+        int requestCode = mSourceRequestCode;
+        int resultCode = mResultCode;
+        Intent data = mResultData;
+
+        mSourceRequestCode = NO_REQUEST_CODE;
+        mResultCode = RESULT_CANCELED;
+        mResultData = null;
+
+        if (requestCode != NO_REQUEST_CODE) {
+            onFragmentResult(requestCode, resultCode, data);
+        }
+    }
+
+    @Override
+    public void onDetach() {
+        super.onDetach();
+        mBaseView = null;
+    }
+
     public QMUIFragment() {
         super();
     }
@@ -96,12 +139,6 @@ public abstract class QMUIFragment extends Fragment {
 
     public boolean isAttachedToActivity() {
         return !isRemoving() && mBaseView != null;
-    }
-
-    @Override
-    public void onDetach() {
-        super.onDetach();
-        mBaseView = null;
     }
 
     protected void startFragmentAndDestroyCurrent(QMUIFragment fragment) {
@@ -174,38 +211,6 @@ public abstract class QMUIFragment extends Fragment {
         if (targetFragment.mSourceRequestCode == targetRequestCode) {
             targetFragment.mResultCode = resultCode;
             targetFragment.mResultData = data;
-        }
-    }
-
-    @Override
-    public void onCreate(@Nullable Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        FragmentManager fragmentManager = getFragmentManager();
-        if (fragmentManager != null) {
-            int backStackEntryCount = fragmentManager.getBackStackEntryCount();
-            for (int i = backStackEntryCount - 1; i >= 0; i--) {
-                FragmentManager.BackStackEntry entry = fragmentManager.getBackStackEntryAt(i);
-                if (getClass().getSimpleName().equals(entry.getName())) {
-                    mBackStackIndex = i;
-                    break;
-                }
-            }
-        }
-    }
-
-    @Override
-    public void onStart() {
-        super.onStart();
-        int requestCode = mSourceRequestCode;
-        int resultCode = mResultCode;
-        Intent data = mResultData;
-
-        mSourceRequestCode = NO_REQUEST_CODE;
-        mResultCode = RESULT_CANCELED;
-        mResultData = null;
-
-        if (requestCode != NO_REQUEST_CODE) {
-            onFragmentResult(requestCode, resultCode, data);
         }
     }
 
@@ -550,11 +555,6 @@ public abstract class QMUIFragment extends Fragment {
         }
     }
 
-
-    /**
-     * onCreateView
-     */
-    protected abstract View onCreateView();
 
     /**
      * Will be performed in onStart

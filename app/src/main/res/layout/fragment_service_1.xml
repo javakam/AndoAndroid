@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="?attr/app_primary_color"
+    android:orientation="vertical">
+
+    <com.qmuiteam.qmui.widget.QMUITopBar
+        android:id="@+id/topbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/qmui_topbar_height"
+        app:qmui_topbar_bg_color="?attr/app_primary_color"
+        app:qmui_topbar_title_color="@color/qmui_config_color_white" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="60dp"
+        android:background="@color/qmui_config_color_white"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <com.qmuiteam.qmui.widget.roundwidget.QMUIRoundButton
+            android:id="@+id/btnStart"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="?attr/qmui_content_spacing_horizontal"
+            android:layout_marginRight="?attr/qmui_content_spacing_horizontal"
+            android:background="@color/qmui_config_color_white"
+            android:gravity="center"
+            android:paddingBottom="10dp"
+            android:paddingLeft="16dp"
+            android:paddingRight="16dp"
+            android:paddingTop="10dp"
+            android:text="@string/start_service"
+            app:qmui_isRadiusAdjustBounds="true" />
+
+        <com.qmuiteam.qmui.widget.roundwidget.QMUIRoundButton
+            android:id="@+id/btnStop"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="?attr/qmui_content_spacing_horizontal"
+            android:layout_marginRight="?attr/qmui_content_spacing_horizontal"
+            android:layout_marginTop="30dp"
+            android:background="@color/qmui_config_color_white"
+            android:gravity="center"
+            android:paddingBottom="10dp"
+            android:paddingLeft="16dp"
+            android:paddingRight="16dp"
+            android:paddingTop="10dp"
+            android:text="@string/stop_service"
+            app:qmui_isRadiusAdjustBounds="true" />
+    </LinearLayout>
+</FrameLayout>

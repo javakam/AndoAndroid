@@ -3,6 +3,7 @@ package com.ishiqing;
 import android.app.Application;
 import android.content.Context;
 
+import com.ishiqing.utils.AppUtils;
 import com.squareup.leakcanary.LeakCanary;
 
 /**

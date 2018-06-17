@@ -3,10 +3,8 @@ package com.ishiqing.fragment;
 import android.support.v4.content.ContextCompat;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
-import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.FrameLayout;
 
 import com.ishiqing.R;
 import com.ishiqing.base.BaseFragment;
@@ -16,7 +14,6 @@ import com.qmuiteam.qmui.widget.QMUITabSegment;
 import java.util.HashMap;
 
 import butterknife.BindView;
-import butterknife.ButterKnife;
 
 /**
  * @author javakam
@@ -71,14 +68,15 @@ public class MainFragment extends BaseFragment {
         }
     };
 
+    @Override
+    protected int getLayoutResId() {
+        return R.layout.fragment_main;
+    }
 
     @Override
-    protected View onCreateView() {
-        FrameLayout layout = (FrameLayout) LayoutInflater.from(getActivity()).inflate(R.layout.fragment_main, null);
-        ButterKnife.bind(this, layout);
+    protected void initViews() {
         initTabs();
         initPagers();
-        return layout;
     }
 
     private void initTabs() {
@@ -143,6 +141,7 @@ public class MainFragment extends BaseFragment {
         mViewPager.setAdapter(mPagerAdapter);
         mTabSegment.setupWithViewPager(mViewPager, false);
     }
+
 
     enum Pager {
         HOME, COMPONENT;

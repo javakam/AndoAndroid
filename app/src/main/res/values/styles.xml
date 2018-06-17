@@ -3,8 +3,8 @@
     <!-- 你可以通过在项目中的 theme 中用 <item name="(name)">(value)</item> 的形式来覆盖 QMUI 组件的默认表现。
          具体可指定的属性名请参考 @style/QMUI.Compat 中的属性。 -->
     <style name="SQAppTheme" parent="QMUI.Compat">
-        <item name="windowNoTitle">true</item>
         <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
         <!-- 配置app自己的theme -->
         <item name="app_primary_color">?attr/qmui_config_color_blue</item>
         <item name="app_content_bg_color">@color/qmui_config_color_white</item>

@@ -1,4 +1,4 @@
-package com.ishiqing.model;
+package com.ishiqing.bean;
 
 
 import com.ishiqing.base.BaseFragment;
