@@ -5,5 +5,7 @@
     <string name="nav_component">消息</string>
     <string name="start_service">开启服务</string>
     <string name="stop_service">停止服务</string>
+    <string name="bind_service">绑定服务</string>
+    <string name="unbind_service">解绑服务</string>
     <string name="change_date_format">更改时间输出格式</string>
 </resources>

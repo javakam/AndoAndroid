@@ -14,7 +14,7 @@ import com.ishiqing.base.BaseFragment;
 import com.ishiqing.base.BaseRecyclerAdapter;
 import com.ishiqing.base.RecyclerViewHolder;
 import com.ishiqing.bean.QDItemDescription;
-import com.ishiqing.widget.GridDividerItemDecoration;
+import com.ishiqing.widget.recyclerview.GridDividerItemDecoration;
 import com.qmuiteam.qmui.util.QMUIViewHelper;
 import com.qmuiteam.qmui.widget.QMUITopBar;
 

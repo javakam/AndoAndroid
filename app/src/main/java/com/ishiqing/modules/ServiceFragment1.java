@@ -36,6 +36,4 @@ public class ServiceFragment1 extends BaseFragment {
             mActivity.stopService(intent);
         }
     }
-
-
 }

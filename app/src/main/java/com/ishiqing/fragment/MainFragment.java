@@ -81,8 +81,8 @@ public class MainFragment extends BaseFragment {
 
     private void initTabs() {
 
-        int normalColor = QMUIResHelper.getAttrColor(getActivity(), com.qmuiteam.qmui.R.attr.qmui_config_color_gray_6);
-        int selectColor = QMUIResHelper.getAttrColor(getActivity(), com.qmuiteam.qmui.R.attr.qmui_config_color_blue);
+        int normalColor = QMUIResHelper.getAttrColor(getActivity(), R.attr.qmui_config_color_gray_6);
+        int selectColor = QMUIResHelper.getAttrColor(getActivity(), R.attr.qmui_config_color_blue);
         mTabSegment.setDefaultNormalColor(normalColor);
         mTabSegment.setDefaultSelectedColor(selectColor);
 //        mTabSegment.setDefaultTabIconPosition(QMUITabSegment.ICON_POSITION_BOTTOM);
@@ -107,7 +107,7 @@ public class MainFragment extends BaseFragment {
         QMUITabSegment.Tab component = new QMUITabSegment.Tab(
                 ContextCompat.getDrawable(getContext(), R.mipmap.ic_tabbar_home),
                 ContextCompat.getDrawable(getContext(), R.mipmap.ic_tabbar_home_selected),
-                getString(R.string.nav_main), false
+                getString(R.string.nav_main), true
         );
 
         QMUITabSegment.Tab util = new QMUITabSegment.Tab(
@@ -161,5 +161,10 @@ public class MainFragment extends BaseFragment {
     @Override
     protected boolean canDragBack() {
         return false;
+    }
+
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
     }
 }

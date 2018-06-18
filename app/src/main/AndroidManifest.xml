@@ -27,6 +27,7 @@
         <service android:name="com.ishiqing.modules.MyService1" />
         <service android:name="com.ishiqing.modules.MyService2" />
         <service android:name="com.ishiqing.modules.MyService3" />
+        <service android:name="com.ishiqing.modules.MyService4" />
     </application>
 
 </manifest>

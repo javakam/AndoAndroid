@@ -8,4 +8,6 @@ import com.ishiqing.base.qmui.QMUIFragmentActivity;
  */
 
 public abstract class BaseFragmentActivity extends QMUIFragmentActivity {
+
+
 }

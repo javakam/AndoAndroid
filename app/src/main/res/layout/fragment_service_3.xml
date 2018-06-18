@@ -27,13 +27,34 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="?attr/qmui_content_spacing_horizontal"
             android:layout_marginRight="?attr/qmui_content_spacing_horizontal"
-            android:background="@color/qmui_config_color_white"
             android:gravity="center"
-            android:paddingBottom="10dp"
-            android:paddingLeft="16dp"
-            android:paddingRight="16dp"
-            android:paddingTop="10dp"
+            android:padding="10dp"
             android:text="@string/start_service"
+            app:qmui_isRadiusAdjustBounds="true" />
+
+        <com.qmuiteam.qmui.widget.roundwidget.QMUIRoundButton
+            android:id="@+id/btnBind"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="?attr/qmui_content_spacing_horizontal"
+            android:layout_marginRight="?attr/qmui_content_spacing_horizontal"
+            android:layout_marginTop="30dp"
+            android:gravity="center"
+            android:padding="10dp"
+
+            android:text="@string/bind_service"
+            app:qmui_isRadiusAdjustBounds="true" />
+
+        <com.qmuiteam.qmui.widget.roundwidget.QMUIRoundButton
+            android:id="@+id/btnUnbind"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="?attr/qmui_content_spacing_horizontal"
+            android:layout_marginRight="?attr/qmui_content_spacing_horizontal"
+            android:layout_marginTop="30dp"
+            android:gravity="center"
+            android:padding="10dp"
+            android:text="@string/unbind_service"
             app:qmui_isRadiusAdjustBounds="true" />
 
         <com.qmuiteam.qmui.widget.roundwidget.QMUIRoundButton
@@ -43,12 +64,8 @@
             android:layout_marginLeft="?attr/qmui_content_spacing_horizontal"
             android:layout_marginRight="?attr/qmui_content_spacing_horizontal"
             android:layout_marginTop="30dp"
-            android:background="@color/qmui_config_color_white"
             android:gravity="center"
-            android:paddingBottom="10dp"
-            android:paddingLeft="16dp"
-            android:paddingRight="16dp"
-            android:paddingTop="10dp"
+            android:padding="10dp"
             android:text="@string/stop_service"
             app:qmui_isRadiusAdjustBounds="true" />
     </LinearLayout>

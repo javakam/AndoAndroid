@@ -1,4 +1,4 @@
-package com.ishiqing.widget;
+package com.ishiqing.widget.recyclerview;
 
 import android.content.Context;
 import android.content.res.TypedArray;

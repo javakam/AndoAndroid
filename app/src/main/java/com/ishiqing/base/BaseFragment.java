@@ -9,6 +9,7 @@ import android.view.View;
 
 import com.ishiqing.R;
 import com.ishiqing.base.qmui.QMUIFragment;
+import com.ishiqing.widget.SQTipDialogUtil;
 import com.qmuiteam.qmui.util.QMUIDisplayHelper;
 import com.qmuiteam.qmui.widget.QMUITopBar;
 
@@ -27,11 +28,13 @@ public abstract class BaseFragment extends QMUIFragment {
 
     private Unbinder mUnBinder;
     public BaseFragmentActivity mActivity;
+    protected SQTipDialogUtil tipDialogUtil;
 
     @Override
     public void onAttach(Context context) {
         super.onAttach(context);
         mActivity = (BaseFragmentActivity) context;
+        tipDialogUtil = SQTipDialogUtil.getInstance();
     }
 
     @Override
@@ -88,5 +91,4 @@ public abstract class BaseFragment extends QMUIFragment {
             }
         }
     }
-
 }
