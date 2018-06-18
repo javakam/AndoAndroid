@@ -1,4 +1,4 @@
-package com.ishiqing.modules;
+package com.ishiqing.modules.service;
 
 import android.content.ComponentName;
 import android.content.Context;
@@ -52,7 +52,7 @@ public class ServiceFragment2 extends BaseFragment {
                     mActivity.unbindService(conn);
                 } catch (Exception e) {
                     //多次解绑 unbindService 会出现异常
-                    // Service not registered: com.ishiqing.modules.ServiceFragment2$1@235144d8
+                    // Service not registered: com.ishiqing.modules.service.ServiceFragment2$1@235144d8
                     System.err.println(e.getMessage());
                 }
             }

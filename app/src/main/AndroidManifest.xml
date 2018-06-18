@@ -3,6 +3,9 @@
     package="com.ishiqing">
 
     <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+    <!-- 获取系统联系人的读/写权限 -->
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
+    <uses-permission android:name="android.permission.WRITE_CONTACTS" />
 
     <application
         android:name=".SQApplication"
@@ -24,10 +27,10 @@
             </intent-filter>
         </activity>
 
-        <service android:name="com.ishiqing.modules.MyService1" />
-        <service android:name="com.ishiqing.modules.MyService2" />
-        <service android:name="com.ishiqing.modules.MyService3" />
-        <service android:name="com.ishiqing.modules.MyService4" />
+        <service android:name="com.ishiqing.modules.service.MyService1" />
+        <service android:name="com.ishiqing.modules.service.MyService2" />
+        <service android:name="com.ishiqing.modules.service.MyService3" />
+        <service android:name="com.ishiqing.modules.service.MyService4" />
     </application>
 
 </manifest>

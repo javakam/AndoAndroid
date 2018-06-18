@@ -1,12 +1,10 @@
-package com.ishiqing.modules;
+package com.ishiqing.modules.service;
 
 import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
 import android.content.ServiceConnection;
 import android.os.IBinder;
-import android.os.Parcel;
-import android.os.RemoteException;
 import android.view.View;
 
 import com.ishiqing.R;
@@ -20,54 +18,38 @@ import butterknife.BindView;
 import butterknife.OnClick;
 
 /**
- * 在{@link ServiceFragment4}上加入了线程演示
+ * Service混合调用 -- stopService
  * <p>
  * Created by javakam on 2018/6/17.
  */
-public class ServiceFragment4 extends BaseFragment {
+public class ServiceFragment3 extends BaseFragment {
     @BindView(R.id.btnStart)
     QMUIRoundButton button;
 
     private Intent intent;
-    int first = 1;
-    private MyService4.MyService4Binder myService4Binder;
+    private MyService3.MyService3Binder myService3Binder;
     private ServiceConnection conn = new ServiceConnection() {
         @Override
         public void onServiceConnected(ComponentName name, IBinder service) {
-            System.out.println("ServiceFragment4.onServiceConnected");
-            myService4Binder = (MyService4.MyService4Binder) service;
-            if (first == 1) {
-                first++;
-                return;
-            }
-            Parcel parcel1 = Parcel.obtain();
-            //更改线程的日期输出格式
-            parcel1.writeString("HH:mm:ss");
-            Parcel parcel2 = Parcel.obtain();
-            try {
-                boolean transact = myService4Binder.transact(123, parcel1, parcel2, IBinder.FLAG_ONEWAY);
-                //通信成功
-                System.out.println("通信成功 ：" + transact + "  " + parcel2.readString());
-            } catch (RemoteException e) {
-                e.printStackTrace();
-            }
+            System.out.println("ServiceFragment3.onServiceConnected");
+            myService3Binder = (MyService3.MyService3Binder) service;
         }
 
         @Override
         public void onServiceDisconnected(ComponentName name) {
-            System.out.println("ServiceFragment4.onServiceDisconnected");
+            System.out.println("ServiceFragment3.onServiceDisconnected");
         }
 
         @Override
         public void onBindingDied(ComponentName name) {
-            System.out.println("ServiceFragment4.onBindingDied");
+            System.out.println("ServiceFragment3.onBindingDied");
         }
     };
 
     @Override
     public void onAttach(Context context) {
         super.onAttach(context);
-        intent = new Intent(mActivity, MyService4.class);
+        intent = new Intent(mActivity, MyService3.class);
     }
 
     @Override
@@ -77,7 +59,7 @@ public class ServiceFragment4 extends BaseFragment {
 
     @Override
     protected void initViews() {
-        initTopBar(UIRoute.FRAG_SERVICE4, true);
+        initTopBar(UIRoute.FRAG_SERVICE3, true);
         SQTipDialogUtil.getInstance().createIconWithTipDialog(mActivity, QMUITipDialog.Builder.ICON_TYPE_LOADING
                 , "正在加载...");
         button.postDelayed(new Runnable() {

@@ -81,8 +81,8 @@ public class MainFragment extends BaseFragment {
 
     private void initTabs() {
 
-        int normalColor = QMUIResHelper.getAttrColor(getActivity(), R.attr.qmui_config_color_gray_6);
-        int selectColor = QMUIResHelper.getAttrColor(getActivity(), R.attr.qmui_config_color_blue);
+        int normalColor = QMUIResHelper.getAttrColor(mActivity, R.attr.qmui_config_color_gray_6);
+        int selectColor = QMUIResHelper.getAttrColor(mActivity, R.attr.qmui_config_color_blue);
         mTabSegment.setDefaultNormalColor(normalColor);
         mTabSegment.setDefaultSelectedColor(selectColor);
 //        mTabSegment.setDefaultTabIconPosition(QMUITabSegment.ICON_POSITION_BOTTOM);
@@ -130,13 +130,13 @@ public class MainFragment extends BaseFragment {
 
         mPages = new HashMap<>();
 
-        MainController homeComponentsController = new MainComponentsController(getActivity());
-        homeComponentsController.setMainControlListener(listener);
-        mPages.put(Pager.HOME, homeComponentsController);
+        MainController homeGridController = new MainHomeController(mActivity);
+        homeGridController.setMainControlListener(listener);
+        mPages.put(Pager.HOME, homeGridController);
 
-        MainController homeUtilController = new MainComponentsController(getActivity());
-        homeUtilController.setMainControlListener(listener);
-        mPages.put(Pager.COMPONENT, homeUtilController);
+        MainController homeComponentsController = new MainComponentsController(mActivity);
+        homeComponentsController.setMainControlListener(listener);
+        mPages.put(Pager.COMPONENT, homeComponentsController);
 
         mViewPager.setAdapter(mPagerAdapter);
         mTabSegment.setupWithViewPager(mViewPager, false);
@@ -161,10 +161,5 @@ public class MainFragment extends BaseFragment {
     @Override
     protected boolean canDragBack() {
         return false;
-    }
-
-    @Override
-    public void onDestroy() {
-        super.onDestroy();
     }
 }
