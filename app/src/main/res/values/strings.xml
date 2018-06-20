@@ -8,4 +8,10 @@
     <string name="bind_service">绑定服务</string>
     <string name="unbind_service">解绑服务</string>
     <string name="change_date_format">更改时间输出格式</string>
+
+    <!--EmptyView 显示内容-->
+    <string name="emptyView_mode_desc_fail_title">加载失败</string>
+    <string name="emptyView_mode_desc_fail_desc">请检测网络是否能正常连接</string>
+    <string name="emptyView_mode_desc_retry">点击重试</string>
+
 </resources>

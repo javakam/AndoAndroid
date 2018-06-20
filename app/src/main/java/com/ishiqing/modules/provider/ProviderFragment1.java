@@ -56,6 +56,5 @@ public class ProviderFragment1 extends BaseFragment {
             });
         }
 
-
     }
 }

@@ -1,0 +1,173 @@
+{
+  "messageCount": 2,
+  "taskList": [
+    {
+      "status": "待审核",
+      "temporaryProjectName": "临时项目名称",
+      "projectName": "正式项目名称",
+      "company": "用户单位",
+      "supportMode": "视频会议",
+      "date": "2018-04-27 15:38",
+      "applyNum": "12121212",
+      "contactUserList": [
+        {
+          "realName": "张三",
+          "mobilePhone": "1949433232"
+        },
+        {
+          "realName": "李四",
+          "mobilePhone": "1949433232"
+        },
+        {
+          "realName": "王五",
+          "mobilePhone": "1949433232"
+        },
+        {
+          "realName": "赵六",
+          "mobilePhone": "1949433232"
+        }
+      ],
+      "description": "此次任务需要提供技术支持，请尽快安排技术人员。",
+      "docList": [
+        {
+          "docName": "现场支持1.txt",
+          "doc": "Z1hUtdWpm5Yk1FVkWLQyRmGjkR4"
+        },
+        {
+          "docName": "现场支持2.txt",
+          "doc": "iVBORw0KGgoAAAANSUhEUgAABDgAyRmGjkR4"
+        },
+        {
+          "docName": "现场支持3.txt",
+          "doc": "iVBORw0KGgomGjkR4"
+        }
+      ]
+    },
+    {
+      "status": "待签收",
+      "temporaryProjectName": "临时项目名称",
+      "projectName": "正式项目名称",
+      "company": "用户单位",
+      "supportMode": "视频会议",
+      "date": "2018-04-27 15:38",
+      "applyNum": "12121212",
+      "contactUserList": [
+        {
+          "realName": "张三",
+          "mobilePhone": "1949433232"
+        },
+        {
+          "realName": "李四",
+          "mobilePhone": "1949433232"
+        },
+        {
+          "realName": "王五",
+          "mobilePhone": "1949433232"
+        },
+        {
+          "realName": "赵六",
+          "mobilePhone": "1949433232"
+        }
+      ],
+      "description": "此次任务需要提供技术支持，请尽快安排技术人员。",
+      "docList": [
+        {
+          "docName": "现场支持1.txt",
+          "doc": "iVBORw0KGgoAAAGjkR4"
+        },
+        {
+          "docName": "现场支持2.txt",
+          "doc": "iVBORw05Yk1FVkWLQyRmGjkR4"
+        },
+        {
+          "docName": "现场支持3.txt",
+          "doc": "i4"
+        }
+      ]
+    },
+    {
+      "status": "待答复",
+      "temporaryProjectName": "临时项目名称",
+      "projectName": "正式项目名称",
+      "company": "用户单位",
+      "supportMode": "视频会议",
+      "date": "2018-04-27 15:38",
+      "applyNum": "12121212",
+      "contactUserList": [
+        {
+          "realName": "张三",
+          "mobilePhone": "1949433232"
+        },
+        {
+          "realName": "李四",
+          "mobilePhone": "1949433232"
+        },
+        {
+          "realName": "王五",
+          "mobilePhone": "1949433232"
+        },
+        {
+          "realName": "赵六",
+          "mobilePhone": "1949433232"
+        }
+      ],
+      "description": "此次任务需要提供技术支持，请尽快安排技术人员。",
+      "docList": [
+        {
+          "docName": "现场支持1.txt",
+          "doc": "iVBkR4"
+        },
+        {
+          "docName": "现场支持2.txt",
+          "doc": "iVBTZxWiU6lELQyRmGjkR4"
+        },
+        {
+          "docName": "现场支持3.txt",
+          "doc": "iVWpm5Yk1FVkWLQyRmGjkR4"
+        }
+      ]
+    },
+    {
+      "status": "待评价",
+      "temporaryProjectName": "临时项目名称",
+      "projectName": "正式项目名称",
+      "company": "用户单位",
+      "supportMode": "视频会议",
+      "date": "2018-04-27 15:38",
+      "applyNum": "12121212",
+      "contactUserList": [
+        {
+          "realName": "张三",
+          "mobilePhone": "1949433232"
+        },
+        {
+          "realName": "李四",
+          "mobilePhone": "1949433232"
+        },
+        {
+          "realName": "王五",
+          "mobilePhone": "1949433232"
+        },
+        {
+          "realName": "赵六",
+          "mobilePhone": "1949433232"
+        }
+      ],
+      "description": "此次任务需要提供技术支持，请尽快安排技术人员。",
+      "docList": [
+        {
+          "docName": "现场支持1.txt",
+          "doc": "iVBjkR4"
+        },
+        {
+          "docName": "现场支持2.txt",
+          "doc": "iVBkWLQyRmGjkR4"
+        },
+        {
+          "docName": "现场支持3.txt",
+          "doc": "iVB4"
+        }
+      ]
+    }
+  ]
+}

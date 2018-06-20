@@ -1,7 +1,9 @@
 package com.ishiqing.base.qmui;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.annotation.LayoutRes;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
@@ -23,8 +25,10 @@ public abstract class QMUIFragmentActivity extends AppCompatActivity {
     private QMUIWindowInsetLayout mFragmentContainer;
 
     @SuppressWarnings("SameReturnValue")
+    @LayoutRes
     protected abstract int getContextViewId();
 
+    @SuppressLint("ResourceType")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -69,6 +73,7 @@ public abstract class QMUIFragmentActivity extends AppCompatActivity {
         final QMUIFragment.TransitionConfig transitionConfig = fragment.onFetchTransitionConfig();
         String tagName = fragment.getClass().getSimpleName();
         FragmentManager fragmentManager = getSupportFragmentManager();
+        @SuppressLint("ResourceType")
         FragmentTransaction transaction = getSupportFragmentManager().beginTransaction()
                 .setCustomAnimations(transitionConfig.enter, transitionConfig.exit,
                         transitionConfig.popenter, transitionConfig.popout)
@@ -115,6 +120,7 @@ public abstract class QMUIFragmentActivity extends AppCompatActivity {
         return index;
     }
 
+    @SuppressLint("ResourceType")
     public int startFragment(QMUIFragment fragment) {
         Log.i(TAG, "startFragment");
         QMUIFragment.TransitionConfig transitionConfig = fragment.onFetchTransitionConfig();

@@ -3,10 +3,10 @@ package com.ishiqing;
 import android.os.Bundle;
 
 import com.ishiqing.base.BaseFragment;
-import com.ishiqing.base.BaseFragmentActivity;
+import com.ishiqing.base.BaseQMUIFragmentActivity;
 import com.ishiqing.fragment.MainFragment;
 
-public class MainActivity extends BaseFragmentActivity {
+public class MainActivityQMUI extends BaseQMUIFragmentActivity {
 
     @Override
     protected int getContextViewId() {

@@ -1,4 +1,4 @@
-package com.ishiqing.base;
+package com.ishiqing.base.adapter;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;

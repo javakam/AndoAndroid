@@ -18,22 +18,21 @@ import butterknife.ButterKnife;
 import butterknife.Unbinder;
 
 /**
- * Created by cgspine on 2018/1/7.
+ * Created by javakam on 2018/6/20.
  */
-
 public abstract class BaseFragment extends QMUIFragment {
     @Nullable
     @BindView(R.id.topbar)
     public QMUITopBar mTopBar;
 
     private Unbinder mUnBinder;
-    public BaseFragmentActivity mActivity;
+    public BaseQMUIFragmentActivity mActivity;
     protected SQTipDialogUtil tipDialogUtil;
 
     @Override
     public void onAttach(Context context) {
         super.onAttach(context);
-        mActivity = (BaseFragmentActivity) context;
+        mActivity = (BaseQMUIFragmentActivity) context;
         tipDialogUtil = SQTipDialogUtil.getInstance();
     }
 
