@@ -1,0 +1,16 @@
+
+
+
+
+2018年6月4日21:07:58  周一
+Android必须弄懂的基础概念：Context
+http://www.nowamagic.net/academy/detail/50110203
+
+避免Android Context引起的内存泄露
+http://www.nowamagic.net/academy/detail/50110220
+
+DataBinding Library
+https://developer.android.google.cn/topic/libraries/data-binding/
+
+android-databinding
+https://github.com/googlesamples/android-databinding

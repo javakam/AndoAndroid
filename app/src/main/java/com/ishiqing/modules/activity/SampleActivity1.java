@@ -41,8 +41,15 @@ public class SampleActivity1 extends BaseActivity {
                 bitmap = Base64Util.base64ToBitmap(Base64Util.readAssetString(this, "Img.txt")));
 
         Base64Util.base64BitmapToFile(bitmap, "", "xiaopang-big.jpg");
+        //2 TXT 文本文件
+        // 纯 byte方式
+        String fileNameTxt = "文本文件.txt";
+        byte[] bytesTxt = Base64Util.readAssetBytes(this, fileNameTxt);
+        byte[] encodeTxt = Base64.encode(bytesTxt, Base64.DEFAULT);
+        byte[] decodeTxt = Base64.decode(encodeTxt, Base64.DEFAULT);
+        Base64Util.base64BytesToFile(decodeTxt, "", fileNameTxt);
 
-        //2 写word文件到本地File
+        //3 写word文件到本地File
         //先把word编码成 base64 String
 
         //docx 格式不行。。
@@ -68,13 +75,28 @@ public class SampleActivity1 extends BaseActivity {
         // 将 encodeToString 返回的 String重新编码
         String fileName4 = "也是纯文本文档.doc";
         byte[] bytes4 = Base64Util.readAssetBytes(this, fileName4);
-        String encode64Str4 = Base64.encodeToString(bytes4, Base64.DEFAULT);
         try {
-            byte[] gb2312s = encode64Str4.getBytes("GB2312");
+            String org = new String(bytes4, "UTF-8");
+            byte[] encodeTest = Base64Util.encodeTest(org);
+
+            byte[] decode1 = Base64.decode(encodeTest, Base64.DEFAULT);
+            String decodeTest = new String(decode1, "UTF-8");
+            Base64Util.base64BytesToFile(decodeTest.getBytes(), "", fileName4);
+
         } catch (UnsupportedEncodingException e) {
             e.printStackTrace();
         }
-        byte[] decode4 = Base64.decode(encode64Str4, Base64.DEFAULT);
-        Base64Util.base64BytesToFile(decode4, "", fileName4);
+
+       /* byte[] encode = Base64.encode(bytes4, Base64.DEFAULT);
+        try {
+            String encode64Str4 = new String(encode, "GBK");
+//        String encode64Str4 = Base64.encodeToString(bytes4, Base64.DEFAULT);
+//        byte[] decode4 = Base64.decode(encode64Str4, Base64.DEFAULT);
+            byte[] decode4 = new byte[0];
+            decode4 = Base64.decode(new String(encode64Str4.getBytes("GBK")), Base64.DEFAULT);
+            Base64Util.base64BytesToFile(decode4, "", fileName4);
+        } catch (UnsupportedEncodingException e) {
+            e.printStackTrace();
+        }*/
     }
 }
