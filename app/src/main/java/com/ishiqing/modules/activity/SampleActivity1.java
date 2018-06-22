@@ -27,6 +27,7 @@ public class SampleActivity1 extends BaseActivity {
 
     @Override
     protected void initViews() {
+        initTopBar("Base64Util", true);
         showLoadingEmptyView();
         mEmptyView.postDelayed(new Runnable() {
             @Override
