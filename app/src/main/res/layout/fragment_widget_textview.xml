@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="?attr/app_primary_color"
@@ -30,42 +31,45 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="15dp"
                 android:autoLink="all"
-                android:text="使用URL、Email、电话等显示超链接" />
+                tools:text="TextView1" />
 
             <TextView
                 android:id="@+id/tvWidget2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="15dp"
-                android:text="TextView2" />
+                tools:text="TextView2" />
 
             <TextView
                 android:id="@+id/tvWidget3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="15dp"
-                android:text="TextView3" />
+                tools:text="TextView3" />
 
             <TextView
                 android:id="@+id/tvWidget4"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="15dp"
-                android:text="TextView4" />
+                tools:text="TextView4" />
 
             <TextView
                 android:id="@+id/tvWidget5"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="15dp"
-                android:text="TextView5" />
+                android:ellipsize="end"
+                android:marqueeRepeatLimit="marquee_forever"
+                android:singleLine="true"
+                tools:text="TextView5" />
 
             <TextView
                 android:id="@+id/tvWidget6"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="15dp"
-                android:text="TextView6" />
+                tools:text="TextView6" />
         </LinearLayout>
     </ScrollView>
 </FrameLayout>

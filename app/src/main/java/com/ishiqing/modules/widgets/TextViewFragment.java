@@ -7,6 +7,7 @@ import android.text.Editable;
 import android.text.Html;
 import android.text.SpannableString;
 import android.text.Spanned;
+import android.text.TextPaint;
 import android.text.method.LinkMovementMethod;
 import android.text.style.BackgroundColorSpan;
 import android.text.style.ClickableSpan;
@@ -49,7 +50,7 @@ public class TextViewFragment extends BaseFragment {
     @BindView(R.id.tvWidget6)
     TextView tvWidget6;
 
-    private static final String LINE = "\n ----------------------------------------------------------------> \n";
+    private static final String LINE = "\n ------------------------------------------> \n";
 
     @Override
     protected int getLayoutResId() {
@@ -68,13 +69,13 @@ public class TextViewFragment extends BaseFragment {
         //1 使用URL、Email、电话等显示超链接
         //1.1   TextView设置属性 android:autoLink="all"
         StringBuilder sb1 = new StringBuilder();
-        sb1.append("个人主页：https://www.jooy.top \n")
+        sb1.append("个人主页：https://www.jooy.top \n")  // 发现在4.0下，该项无效
                 .append("我的邮箱：jooybao@foxmail.com \n")
                 .append("我的电话： 10086").append(LINE);
         // 也可以通过动态代码实现
 //        tvWidget1.setAutoLinkMask(Linkify.ALL);
         tvWidget1.setText(sb1.toString());
-        //1.2 利用html标签实现超链接
+        //1.2 利用html标签实现超链接 --- 兼容 4.0 版本
         StringBuilder sb2 = new StringBuilder();
         sb2.append("<font color='red'>我的浏览器主页是：</font><br>  ")
                 .append("<a href='https://www.jooy.top'>我的主页</a> <br>").append(LINE);
@@ -84,9 +85,9 @@ public class TextViewFragment extends BaseFragment {
         tvWidget2.setMovementMethod(LinkMovementMethod.getInstance());
         //1.3 利用html标签插入图片   --  注意：图片不要加后缀类型 ic_launcher.png→ic_launcher
         StringBuilder sb3 = new StringBuilder();
-        sb3.append("图片一： <img src='ic_launcher'/>")
-                .append(" 图片二： <img src='ic_tabbar_home'/>")
-                .append(" 图片三： <img src='ic_launcher_round'/>")
+        sb3.append("图片一： <img src='ic_launcher'/> <br>")
+                .append(" 图片二： <img src='ic_tabbar_home'/><br>")
+                .append(" 图片三： <img src='ic_launcher_round'/><br>")
                 .append(LINE);
         Spanned spanned2 = Html.fromHtml(sb3.toString(), new Html.ImageGetter() {
             @Override
@@ -123,19 +124,42 @@ public class TextViewFragment extends BaseFragment {
         });
         tvWidget3.setText(spanned2);
         //1.4 实现部分文字点击事件
-        String text = new String("点击【百度】开始搜索");
-        SpannableString spannableString = new SpannableString(text);
-        spannableString.setSpan(new ClickableSpan() {
+        tvWidget4.append("测试文本");
+        String clickStr1 = "点击事件";
+        String clickStr2 = "改变颜色";
+        // 第一个 SpannableString
+        SpannableString sp1 = new SpannableString(clickStr1);
+        sp1.setSpan(new ClickableSpan() {
             @Override
             public void onClick(View widget) {
-                Toast.makeText(mActivity, "点击了", Toast.LENGTH_SHORT).show();
+                TextView textView = (TextView) widget;
+                Toast.makeText(mActivity, "点击了 : " + textView.getText(), Toast.LENGTH_SHORT).show();
             }
-        }, 3, 5, SpannableString.SPAN_EXCLUSIVE_EXCLUSIVE);
-        spannableString.setSpan(new ForegroundColorSpan(Color.parseColor("#00ff00")), 6, 8, SpannableString.SPAN_EXCLUSIVE_EXCLUSIVE);
-        spannableString.setSpan(new BackgroundColorSpan(Color.parseColor("#D4D6D8")), 6, 8, SpannableString.SPAN_EXCLUSIVE_EXCLUSIVE);
-        tvWidget4.setText(spannableString);
+
+            @Override
+            public void updateDrawState(TextPaint ds) {
+                super.updateDrawState(ds);
+                ds.setColor(Color.parseColor("#ff0000"));//设置文本颜色
+            }
+        }, 0, clickStr1.length(), SpannableString.SPAN_EXCLUSIVE_EXCLUSIVE);
+        // 会覆盖掉 updateDrawState 设置的颜色 ↑
+//        sp1.setSpan(new ForegroundColorSpan(Color.parseColor("#00ff00")),
+//                0, clickStr1.length(), SpannableString.SPAN_EXCLUSIVE_EXCLUSIVE);
+        sp1.setSpan(new BackgroundColorSpan(Color.parseColor("#D4D6D8")),
+                0, clickStr1.length(), SpannableString.SPAN_EXCLUSIVE_EXCLUSIVE);
+        tvWidget4.append(sp1);
+        tvWidget4.append("也是测试文本");
+        // 第二个 SpannableString
+        SpannableString sp2 = new SpannableString(clickStr2);
+        sp2.setSpan(new ForegroundColorSpan(Color.parseColor("#00ff00")),
+                0, clickStr2.length(), SpannableString.SPAN_EXCLUSIVE_EXCLUSIVE);
+        tvWidget4.append(sp2);
+        tvWidget4.append("还是测试文本 \n");
         tvWidget4.setMovementMethod(LinkMovementMethod.getInstance());
-        //1.5 实现跑马灯效果
+        //1.5 实现走马灯效果
+        String textLong = "Hone your skills on the latest cloud technologies with Google experts at hundreds of breakout sessions and interactive on-demand hands-on labs and bootcamps. You'll have the opportunity to engage with the best minds in cloud technology on how your industry is adapting, innovating, and growing with cloud.";
+        tvWidget5.setText(textLong + LINE);
+//        tvWidget5.setSelected(true);
 
         //6 android 文件路径/默认缓存路径
         StringBuilder sb6 = new StringBuilder();

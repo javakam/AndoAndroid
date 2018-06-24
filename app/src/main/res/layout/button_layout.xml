@@ -4,23 +4,30 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/qmui_config_color_white"
-    android:gravity="center"
     android:orientation="vertical">
 
     <com.qmuiteam.qmui.layout.QMUIButton
         android:id="@+id/btProvider"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="20dp"
         android:text="获得联系人" />
+
+    <com.qmuiteam.qmui.layout.QMUIButton
+        android:id="@+id/btProvider2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="自定义提供者" />
 
     <TextView
         android:id="@+id/tvProvider"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
+        android:hint="点击Button，从ContentProvider中获取内容"
+        android:maxLines="5"
         android:padding="10dp"
-        android:textSize="14sp"
-        tools:text="TextView" />
+        android:textSize="14sp" />
 
 </LinearLayout>
