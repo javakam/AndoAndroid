@@ -10,7 +10,6 @@ import android.view.View;
 import com.ishiqing.R;
 import com.ishiqing.UIRoute;
 import com.ishiqing.base.BaseFragment;
-import com.ishiqing.widget.SQTipDialogUtil;
 import com.qmuiteam.qmui.widget.dialog.QMUITipDialog;
 import com.qmuiteam.qmui.widget.roundwidget.QMUIRoundButton;
 
@@ -60,14 +59,6 @@ public class ServiceFragment3 extends BaseFragment {
     @Override
     protected void initViews() {
         initTopBar(UIRoute.FRAG_SERVICE3, true);
-        SQTipDialogUtil.getInstance().createIconWithTipDialog(mActivity, QMUITipDialog.Builder.ICON_TYPE_LOADING
-                , "正在加载...");
-        button.postDelayed(new Runnable() {
-            @Override
-            public void run() {
-                tipDialogUtil.dismiss();
-            }
-        }, 1500);
     }
 
     @OnClick({R.id.btnStart, R.id.btnBind, R.id.btnUnbind, R.id.btnStop})
@@ -77,10 +68,13 @@ public class ServiceFragment3 extends BaseFragment {
                 mActivity.startService(intent);
                 break;
             case R.id.btnBind:
+                tipDialogUtil.createIconWithTipDialog(mActivity, QMUITipDialog.Builder.ICON_TYPE_LOADING
+                        , "正在加载...");
                 mActivity.bindService(intent, conn, Context.BIND_AUTO_CREATE);
                 break;
             case R.id.btnUnbind:
                 try {
+                    tipDialogUtil.dismiss();
                     mActivity.unbindService(conn);
                 } catch (Exception e) {
                     System.err.println(e.getMessage());
