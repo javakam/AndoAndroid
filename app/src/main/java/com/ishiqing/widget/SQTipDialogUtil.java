@@ -49,6 +49,7 @@ public class SQTipDialogUtil {
                     .setIconType(iconType)
                     .setTipWord(tipWord)
                     .create();
+            tipDialog.show();
         } else {
             dismiss();
         }
@@ -64,6 +65,7 @@ public class SQTipDialogUtil {
             tipDialog = new QMUITipDialog.CustomBuilder(context)
                     .setContent(layout)
                     .create();
+            tipDialog.show();
         } else {
             dismiss();
         }
