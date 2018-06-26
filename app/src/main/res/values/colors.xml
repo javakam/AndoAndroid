@@ -4,10 +4,18 @@
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
 
+
+    <color name="app_base_bg">@color/qmui_config_color_blue</color>
+    <color name="app_content_bg">@color/qmui_config_color_white</color>
     <color name="app_color_description">@color/qmui_config_color_gray_5</color>
+    <color name="topbar_bg">@color/app_base_bg</color>
+    <color name="topbar_text_color">@color/qmui_config_color_white</color>
 
     <color name="bar_divider">#D4D6D8</color>
-    <color name="tab_panel_bg">#ffffff</color>
+    <color name="tab_panel_bg">@color/white</color>
     <color name="tab_panel_divider">@color/bar_divider</color>
+
+
+    <color name="white">#ffffff</color>
 
 </resources>

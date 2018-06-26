@@ -25,6 +25,7 @@ public class SQTipDialogUtil {
     }
 
     private QMUITipDialog tipDialog;
+    private QMUITipDialog.Builder builder;
 
     /**
      * {@link QMUITipDialog.Builder }
@@ -45,10 +46,10 @@ public class SQTipDialogUtil {
     public void createIconWithTipDialog(@NonNull Context context, @Nullable int iconType,
                                         @Nullable String tipWord) {
         if (tipDialog == null) {
-            tipDialog = new QMUITipDialog.Builder(context)
+            builder = new QMUITipDialog.Builder(context)
                     .setIconType(iconType)
-                    .setTipWord(tipWord)
-                    .create();
+                    .setTipWord(tipWord);
+            tipDialog = builder.create();
             tipDialog.show();
         } else {
             dismiss();

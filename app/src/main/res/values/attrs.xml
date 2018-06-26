@@ -3,7 +3,6 @@
     <attr name="app_primary_color" format="color" /> <!-- topbar -->
     <attr name="app_content_bg_color" format="color" /> <!-- content-->
 
-
     <declare-styleable name="SwipeBackLayout">
         <attr name="edge_flag">
             <enum name="left" value="0" />

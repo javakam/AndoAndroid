@@ -1,5 +1,7 @@
 package com.ishiqing.modules.service.aidl;
 
+import com.ishiqing.R;
+import com.ishiqing.UIRoute;
 import com.ishiqing.base.BaseFragment;
 
 /**
@@ -23,11 +25,11 @@ public class AIDIServiceFragment extends BaseFragment {
 
     @Override
     protected int getLayoutResId() {
-        return 0;
+        return R.layout.fragment_aidl;
     }
 
     @Override
     protected void initViews() {
-
+        initTopBar(UIRoute.FRAG_AIDL, true);
     }
 }
