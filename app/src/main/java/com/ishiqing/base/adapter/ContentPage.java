@@ -34,10 +34,6 @@ public enum ContentPage {
         this.position = page;
     }
 
-    public int getSi() {
-        return ordinal();
-    }
-
     public static ContentPage getPage(int index) {
         switch (index) {
             case 0:

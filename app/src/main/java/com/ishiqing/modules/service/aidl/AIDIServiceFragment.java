@@ -1,6 +1,5 @@
 package com.ishiqing.modules.service.aidl;
 
-import com.ishiqing.R;
 import com.ishiqing.UIRoute;
 import com.ishiqing.base.BaseFragment;
 
@@ -25,7 +24,8 @@ public class AIDIServiceFragment extends BaseFragment {
 
     @Override
     protected int getLayoutResId() {
-        return R.layout.fragment_aidl;
+//        return R.layout.fragment_aidl;
+        return 0;
     }
 
     @Override

@@ -13,6 +13,7 @@ import android.widget.TextView;
 
 import com.ishiqing.R;
 import com.ishiqing.modules.activity.SampleActivity1;
+import com.ishiqing.modules.drawing_process.UIDrawingProcessActivity;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -54,6 +55,9 @@ public class BasePagerAdapter extends PagerAdapter {
             if (page.getPosition() == 0) {
                 textView.setOnClickListener(v ->
                         context.startActivity(new Intent(context, SampleActivity1.class)));
+            } else if (page.getPosition() == 1) {
+                textView.setOnClickListener(v ->
+                        context.startActivity(new Intent(context, UIDrawingProcessActivity.class)));
             }
             view = textView;
             mPageMap.put(page, view);
