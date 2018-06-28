@@ -9,6 +9,7 @@ import android.view.View;
 
 import com.ishiqing.R;
 import com.ishiqing.base.qmui.QMUIFragment;
+import com.ishiqing.utils.UIUtils;
 import com.ishiqing.widget.SQTipDialogUtil;
 import com.qmuiteam.qmui.util.QMUIDisplayHelper;
 import com.qmuiteam.qmui.widget.QMUITopBar;
@@ -84,6 +85,7 @@ public abstract class BaseFragment extends QMUIFragment {
                 mTopBar.addLeftBackImageButton().setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
+                        UIUtils.hideIputKeyboard(mActivity);
                         popBackStack();
                     }
                 });

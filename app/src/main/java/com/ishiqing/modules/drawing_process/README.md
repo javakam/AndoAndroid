@@ -78,6 +78,60 @@ return contentParent;
 ```
 总结(淡蓝色部分是我们添加布局的区域)：
 
-![https://images2018.cnblogs.com/blog/803593/201806/803593-20180627112023576-1538255318.png](https://images2018.cnblogs.com/blog/803593/201806/803593-20180627112023576-1538255318.png)
+<!--![https://images2018.cnblogs.com/blog/803593/201806/803593-20180627112023576-1538255318.png](https://images2018.cnblogs.com/blog/803593/201806/803593-20180627112023576-1538255318.png)
+-->
 
 #### 2 绘制的流程
+> 通过上面的分析，我们知道在Activity中 setContentView(R.layout.xxx) 最终调用的是 PhoneWindow
+的 setContentView(int layoutResID) 里
+```
+mLayoutInflater.inflate(layoutResID, mContentParent)
+```
+方法将我们自己的布局渲染上的。
+Ok！<br>
+其实在 PhoneWindow 中共有三个 setContentView 构造方法：
+```
+1 setContentView(int layoutResID)
+2 @Override
+  public void setContentView(View view) {
+      // 调用的是第三个构造器
+      setContentView(view, new ViewGroup.LayoutParams(MATCH_PARENT, MATCH_PARENT));
+  }
+3 setContentView(View view, ViewGroup.LayoutParams params){
+      ...
+      mContentParent.addView(view, params);//通过ViewGroup的addView方法添加我们的布局
+      ...
+  }
+```
+由此可见，inflate 和 addView 是等效的！因为LayoutInflater.inflate 内部最终调用的就是ViewGroup.addView方法进行渲染的。<br>
+> ViewGroup.addView :
+```
+/**
+ * Adds a child view with the specified layout parameters.
+ *
+ * <p><strong>Note:</strong> do not invoke this method from
+ * {@link #draw(android.graphics.Canvas)}, {@link #onDraw(android.graphics.Canvas)},
+ * {@link #dispatchDraw(android.graphics.Canvas)} or any related method.</p>
+ *
+ * @param child the child view to add
+ * @param index the position at which to add the child or -1 to add last
+ * @param params the layout parameters to set on the child
+ */
+public void addView(View child, int index, LayoutParams params) {
+    if (DBG) {
+        System.out.println(this + " addView");
+    }
+    if (child == null) {
+        throw new IllegalArgumentException("Cannot add a null child view to a ViewGroup");
+    }
+    // addViewInner() will call child.requestLayout() when setting the new LayoutParams
+    // therefore, we call requestLayout() on ourselves before, so that the child's request
+    // will be blocked at our level
+    requestLayout();
+    invalidate(true);
+    addViewInner(child, index, params, false);
+}
+```
+
+
+
