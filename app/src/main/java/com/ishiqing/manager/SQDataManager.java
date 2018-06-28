@@ -38,7 +38,7 @@ public class SQDataManager {
     public static List<QDItemDescription> getComponentsDescriptions() {
         List<QDItemDescription> list = new ArrayList<>();
         list.add(new QDItemDescription(TextViewFragment.class, UIRoute.FRAG_WIDGET_TEXTVIEW, R.mipmap.icon_grid_layout));
-        list.add(new QDItemDescription(AutoCompleteTextViewFragment.class, UIRoute.FRAG_WIDGET_AUTOCOMPLETE_TEXTVIEW, R.mipmap.icon_grid_layout));
+        list.add(new QDItemDescription(AutoCompleteTextViewFragment.class, UIRoute.FRAG_WIDGET_EDITTEXT, R.mipmap.icon_grid_layout));
         list.add(new QDItemDescription(ButtonFragment.class, UIRoute.FRAG_WIDGET_BUTTON, R.mipmap.icon_grid_layout));
         return list;
     }

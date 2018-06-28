@@ -22,4 +22,20 @@
         <item name="shadow_right">@drawable/shadow_right</item>
         <item name="shadow_bottom">@drawable/shadow_bottom</item>
     </style>
+
+    <!-- activity或fragment切换的动画时间 -->
+    <integer name="qmui_anim_duration">300</integer>
+
+    <style name="SQTextInput"></style>
+
+    <style name="SQEditText">
+        <item name="android:textColorHint">@color/text_hint</item>
+        <item name="android:textCursorDrawable">@color/text_cursor</item>
+        <item name="android:gravity">left|center_vertical</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:maxLines">1</item>
+        <item name="android:background">@null</item>
+        <item name="android:padding">5dp</item>
+        <item name="android:ellipsize">end</item>
+    </style>
 </resources>

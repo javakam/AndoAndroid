@@ -37,7 +37,6 @@ dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
     //注意：ButterKnife 不能从 library 继承！
     implementation deps.butterknife.runtime
-    implementation 'com.android.support.constraint:constraint-layout:1.0.2'
     annotationProcessor deps.butterknife.compiler
     implementation project(':library')
 }

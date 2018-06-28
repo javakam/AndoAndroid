@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/app_base_bg"
+    android:orientation="vertical">
+
+    <com.qmuiteam.qmui.widget.QMUITopBar
+        android:id="@+id/topbar"
+        style="@style/TopBarStyle" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="@dimen/topbar_height"
+        android:background="@color/qmui_config_color_white"
+        android:orientation="vertical">
+
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="15dp">
+
+            <AutoCompleteTextView
+                android:id="@+id/actv1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="点击按钮添加相应图片" />
+        </android.support.design.widget.TextInputLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingLeft="15dp"
+            android:paddingRight="15dp">
+
+            <Button
+                android:id="@+id/btAddImage1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Add Image 1" />
+
+            <Button
+                android:id="@+id/btAddImage2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Add Image 2" />
+
+            <Button
+                android:id="@+id/btAddImage3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Add Image 3" />
+        </LinearLayout>
+
+        <com.qmuiteam.qmui.widget.roundwidget.QMUIRoundButton
+            android:id="@+id/btq_show_actv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="20dp"
+            android:gravity="center"
+            android:padding="10dp"
+            android:text="AutoCompleteTextView 基本操作"
+            app:qmui_isRadiusAdjustBounds="true" />
+    </LinearLayout>
+</FrameLayout>

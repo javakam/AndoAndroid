@@ -5,7 +5,8 @@ package com.ishiqing;
  */
 public class UIRoute {
     public static final String FRAG_WIDGET_TEXTVIEW = "TextView";
-    public static final String FRAG_WIDGET_AUTOCOMPLETE_TEXTVIEW = "AutoCompleteTextView";
+    public static final String FRAG_WIDGET_EDITTEXT = "EditText";
+    public static final String FRAG_WIDGET_ACTV = "AutoCompleteTextView";
     public static final String FRAG_WIDGET_BUTTON = "Button";
     public static final String FRAG_ACTIVITY1 = "Activity组件";
     public static final String FRAG_SERVICE1 = "Service(一)";

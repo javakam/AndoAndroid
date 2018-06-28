@@ -7,6 +7,7 @@ import android.widget.Toast;
 
 /**
  * ConnectivityManager API
+ * NetworkInfo
  * <p>
  * Created by javakam on 2018/6/26 0026.
  */

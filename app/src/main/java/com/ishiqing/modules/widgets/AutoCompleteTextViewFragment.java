@@ -1,65 +1,82 @@
 package com.ishiqing.modules.widgets;
 
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
-import android.text.SpannableString;
-import android.text.style.ImageSpan;
+import android.support.design.widget.TextInputLayout;
+import android.view.MotionEvent;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
 
 import com.ishiqing.R;
 import com.ishiqing.UIRoute;
 import com.ishiqing.base.BaseFragment;
 
+import java.util.ArrayList;
+
 import butterknife.BindView;
-import butterknife.OnClick;
 
 /**
- * 使用 SpannableString + ImageSpan 为 EditText 添加图片
- * <p>
- * Created by javakam on 2018/6/19.
+ * AutoCompleteTextView & TextInputLayout 基本操作
+ * Created by javakam on 2018/6/28.
  */
 public class AutoCompleteTextViewFragment extends BaseFragment {
-    @BindView(R.id.actv1)
-    AutoCompleteTextView actvImage;
+    @BindView(R.id.actv_username)
+    AutoCompleteTextView actvUsername;
+    @BindView(R.id.til_username)
+    TextInputLayout tilUsername;
+    @BindView(R.id.actv_password)
+    AutoCompleteTextView actvPassword;
+    @BindView(R.id.til_password)
+    TextInputLayout tilPassword;
+    /**
+     * Data List
+     */
+    ArrayList<String> mUserNames = new ArrayList<>();
 
     @Override
     protected int getLayoutResId() {
-        return R.layout.fragment_widget_auto_complete_textview;
+        return R.layout.fragment_widget_actv;
     }
 
     @Override
     protected void initViews() {
-        initTopBar(UIRoute.FRAG_WIDGET_AUTOCOMPLETE_TEXTVIEW, true);
-    }
-
-    @OnClick({R.id.btAddImage1, R.id.btAddImage2, R.id.btAddImage3})
-    void addImageToAcTextView(View v) {
-        // 必须先有个  SpannableString !!!
-        SpannableString spStr = new SpannableString("用于显示图片的SpannableString，这里写什么都行");
-        // 做个 ImageSpan 放到 SpannableString 上
-        ImageSpan imageSpan = null;
-        switch (v.getId()) {
-            case R.id.btAddImage1:
-                Bitmap bitmap1 = BitmapFactory.decodeResource(getResources(), R.mipmap.ic_launcher);
-                imageSpan = new ImageSpan(bitmap1);
-                spStr.setSpan(imageSpan, 0, spStr.length(), SpannableString.SPAN_EXCLUSIVE_EXCLUSIVE);
-                break;
-            case R.id.btAddImage2:
-                Bitmap bitmap2 = BitmapFactory.decodeResource(getResources(), R.mipmap.ic_tabbar_home);
-                imageSpan = new ImageSpan(bitmap2);
-                spStr.setSpan(imageSpan, 0, spStr.length(), SpannableString.SPAN_EXCLUSIVE_EXCLUSIVE);
-                break;
-            case R.id.btAddImage3:
-                Bitmap bitmap3 = BitmapFactory.decodeResource(getResources(), R.mipmap.ic_tabbar_component);
-                imageSpan = new ImageSpan(bitmap3);
-                spStr.setSpan(imageSpan, 0, spStr.length(), SpannableString.SPAN_EXCLUSIVE_EXCLUSIVE);
-                break;
-            default:
-                break;
+        initTopBar(UIRoute.FRAG_WIDGET_ACTV, true);
+        //在 AutoCompleteTextView 弹出的列表底部提示 用户名
+//        actvUsername.setCompletionHint("请选择账号"); //不好看
+        //取出上次登录过的用户名，方便登录
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(mActivity, android.R.layout.simple_dropdown_item_1line);
+        //模拟数据
+        for (int i = 0; i < 20; i++) {
+            mUserNames.add("没有铁的钢铁侠 " + i);
         }
-        // 注意： 这里要用控件本身去拼接上
-        actvImage.append(spStr);
-    }
+        adapter.addAll(mUserNames);
+        actvUsername.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                String user = mUserNames.get(position);
+                actvUsername.setText(user);
+            }
 
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+            }
+        });
+        actvUsername.setAdapter(adapter);
+        /*mUserName.setDropDownBackgroundDrawable(new ColorDrawable(getResources().getColor(R.color.bg_login)));*/
+        //定制下拉List的高度
+        actvUsername.setDropDownHeight(600);
+        /*
+        需求：除了输入一个字母提示外，还要在点击输入框时显示整个列表集合。just do it !
+         */
+        actvUsername.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                actvUsername.showDropDown();
+                return false;
+            }
+        });
+
+        // 在密码框的最后面多个 显示/隐藏 密码的小眼睛
+        tilPassword.setPasswordVisibilityToggleEnabled(true);
+    }
 }
