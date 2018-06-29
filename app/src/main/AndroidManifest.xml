@@ -2,7 +2,6 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.ishiqing">
 
-
     <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
     <!-- 获取系统联系人的读/写权限 -->
     <uses-permission android:name="android.permission.READ_CONTACTS" />
@@ -15,8 +14,10 @@
     <!-- 获取网络连接状态的权限 -->
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
-    <!--    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
-        <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />-->
+    <!--
+        <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+        <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    -->
     <application
         android:name=".SQApplication"
         android:allowBackup="true"
@@ -41,14 +42,19 @@
         <service android:name=".modules.service.MyService3" />
         <service android:name=".modules.service.MyService4" />
 
-        <activity android:name=".modules.activity.SampleActivity1"></activity>
+        <activity android:name=".modules.activity.SampleActivity1" />
 
-        <!-- 注：我们自己的监测网络状态的广播，要覆盖系统的广播 -->
+        <!-- 注：我们自己的监测网络状态的广播，要覆盖系统的广播 而且这玩意儿不会自己提示。。。 -->
         <receiver android:name=".modules.network.MyNetStateReceiver">
             <intent-filter>
                 <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
             </intent-filter>
         </receiver>
+        <!-- AIDL Server -->
+        <service
+            android:name=".modules.service.aidl.MyService"
+            android:enabled="true"
+            android:exported="true"></service>
     </application>
 
 </manifest>

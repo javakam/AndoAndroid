@@ -17,6 +17,6 @@ public class 增量更新 extends BaseFragment {
 
     @Override
     protected void initViews() {
-
+        initTopBar("增量更新", true);
     }
 }
