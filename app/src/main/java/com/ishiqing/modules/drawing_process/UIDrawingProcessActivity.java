@@ -1,5 +1,7 @@
 package com.ishiqing.modules.drawing_process;
 
+import android.view.View;
+
 import com.ishiqing.R;
 import com.ishiqing.base.BaseActivity;
 
@@ -26,5 +28,9 @@ public class UIDrawingProcessActivity extends BaseActivity {
                 hideEmptyView();
             }
         }, 2000);
+
+
+        View.MeasureSpec measureSpec = new View.MeasureSpec();
+
     }
 }
