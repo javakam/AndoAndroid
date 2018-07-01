@@ -87,12 +87,13 @@ return contentParent;
 ```
 public class View implements Drawable.Callback, KeyEvent.Callback,AccessibilityEventSource {}
 // 谁实现了它就可以当爸爸
+// 它有两个实现类：ViewGroup 、 ViewRootImpl
 /*Defines the responsibilities for a class that will be a parent of a View.
 This is the API that a view sees when it wants to interact with its parent.*/
 public interface ViewParent {}
 
 // 提供了管理者应具有的一些方法
-// WindowManager、ViewGroup 是 ViewManager 的两个直接从属，一个通过继承的方式，另一个则是通过接口实现。详情往下看。
+// WindowManager、ViewGroup 是 ViewManager 的两个直接从属，一个通过继承的方式，另一个则是通过接口实现。
 public interface ViewManager
 {
     public void addView(View view, ViewGroup.LayoutParams params);
@@ -122,10 +123,10 @@ final class WindowLeaked extends AndroidRuntimeException {
 }
 
 // ViewGroup 实现了 ViewParent 说明它是个爹，可以管理儿子；
-// 实现了 ViewManger 说明它既是爹又是你的上司，可以聘用你，也可以开除你。
+// ViewGroup 实现了 ViewManger 说明它既是爹又是你的上司，可以聘用你，可以调动你，当然也可以开除你。
 public abstract class ViewGroup extends View implements ViewParent, ViewManager {}
 
-// 猴哥辛苦了
+// 爸爸的笤帚疙瘩
 // 核心方法 performTraversals()
 public final class ViewRootImpl implements ViewParent,View.AttachInfo.Callbacks, ThreadedRenderer.DrawCallbacks {}
 
@@ -300,28 +301,32 @@ performMeasure    mView.measure  <br>
 performLayout     mView.layout  <br>
 performDraw       mView.draw(canvas)   <br>
 
-总结：
-    <p>我们在Activity调用的 setContentView(id) 最终是 PhoneWindow 中的
-    ```
-    mLayoutInflater.inflate(layoutResID, mContentParent);
-    ```
-    方法，而 LayoutInflater 本质上是调用的 ViewGroup.addView 方法。
-    ViewGroup.addView 中核心步骤是 ViewGroup.invalidate(true) ，该方法又去父类
-    里面调它的 View -> invalidate(boolean) 方法 ，View 内部做了这样一个判断：(MS:可简单带一句)
-    ```
-    // Propagate the damage rectangle to the parent view.
-    final AttachInfo ai = mAttachInfo;
-    final ViewParent p = mParent;
-    if (p != null && ai != null && l < r && t < b) {
-        final Rect damage = ai.mTmpInvalRect;
-        damage.set(l, t, r, b);
-        p.invalidateChild(this, damage);// 该方法调用的是ViewParent的实现类 ViewGroup 去处理的
-    }
-    ```
-    说明：如果当前View所在的parent（ViewGroup）不是空，那么把事件传给parent去处理。
-    又将引用回传到 ViewGroup -> invalidateChild 方法去做处理，相当于绕了一圈儿又回来了。。。
-    ViewGroup 的 invalidateChild(View child, final Rect dirty)  方法中做了一个do-while (parent != null)循环，
-    去从你当前 Activity 所属的 ViewGroup 向上找，一直到 DecorView 为止。找到之后，
+总结：<br>
+我们在Activity调用的 setContentView(id) 最终是在 PhoneWindow 中的
+```
+mLayoutInflater.inflate(layoutResID, mContentParent);
+或
+mContentParent.addView(view, params);
+```
+方法进行渲染的。其中 LayoutInflater 本质上也是调用的 ViewGroup.addView 方法。
+ViewGroup.addView 中核心步骤是 ViewGroup.invalidate(true) ，该方法又去父类
+里面调它的 View -> invalidate(boolean) 方法 ，View 内部做了这样一个判断：(MS:可简单带一句)
+```
+// Propagate the damage rectangle to the parent view.
+final AttachInfo ai = mAttachInfo;
+final ViewParent p = mParent;
+if (p != null && ai != null && l < r && t < b) {
+    final Rect damage = ai.mTmpInvalRect;
+    damage.set(l, t, r, b);
+    p.invalidateChild(this, damage);// 该方法调用的是ViewParent的实现类 ViewGroup 去处理的
+}
+```
+从上面这段代码可以看出，如果当前View所在的parent（ViewGroup）不是空，那么把事件传给parent去处理。
+View 又将引用回传到 ViewGroup -> invalidateChild 方法去做处理，相当于绕了一圈儿又回来了。。。
+ViewGroup 在 invalidateChild(View child, final Rect dirty) 方法中做了一个do-while (parent != null)循环，
+从你当前 Activity 所属的 ViewGroup 向上找，一直到 DecorView 为止，每找一层都会执行 parent = parent.invalidateChildInParent(location, dirty)
+这个 parent 是在 ViewRootImpl（ViewParent的鸡毛掸子） 中具体实现的，并通过ViewRootImpl中的层层调用，最终指向的是一个叫
+做 performTraversals() 的方法【MS：必问的】对该 ViewGroup 执行了三个操作：测量、布局和绘制！说白了，android中的视图绘制是从外到内一层一层
+进行处理的，最终到 DecorView 的绘制完成。
 
-
-    </p>
+// TODO 2018年7月1日 周日 MeasureSpec、requestLayout

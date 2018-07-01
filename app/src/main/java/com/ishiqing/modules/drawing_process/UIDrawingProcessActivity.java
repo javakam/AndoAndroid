@@ -29,7 +29,6 @@ public class UIDrawingProcessActivity extends BaseActivity {
             }
         }, 2000);
 
-
         View.MeasureSpec measureSpec = new View.MeasureSpec();
 
     }
