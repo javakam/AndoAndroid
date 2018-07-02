@@ -1,4 +1,4 @@
-package com.ishiqing.modules.drawing_process;
+package com.ishiqing.modules.ui_process;
 
 import android.view.View;
 

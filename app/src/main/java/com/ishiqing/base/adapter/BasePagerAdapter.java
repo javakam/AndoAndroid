@@ -13,7 +13,7 @@ import android.widget.TextView;
 
 import com.ishiqing.R;
 import com.ishiqing.modules.activity.SampleActivity1;
-import com.ishiqing.modules.drawing_process.UIDrawingProcessActivity;
+import com.ishiqing.modules.ui_process.UIDrawingProcessActivity;
 
 import java.util.HashMap;
 import java.util.Map;
