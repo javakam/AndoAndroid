@@ -333,6 +333,7 @@ ViewGroup 在 invalidateChild(View child, final Rect dirty) 方法中做了一�
 >通过上面的分析，我们知道所有的视图最终都是通过先后调用 View 中的 measure测量、layout布局、draw绘制 三个步骤完成的（ViewRootImpl->performTraversals->performMeasure...）
 
 View.MeasureSpec  简介
+View 中的一个内部类  public static class MeasureSpec {}
 一个32位的 int 值
 高2位 mode
 低30位 size
@@ -400,7 +401,7 @@ measure的这两个参数是从哪里来的呢? ViewRootImpl.performMeasure 中 
 
 ##### View.layout
 ViewRootImpl.performLayout 中 host.layout(0, 0, host.getMeasuredWidth(), host.getMeasuredHeight()); // final View host = mView;
-
+public void layout(int l, int t, int r, int b) {}
 
 ##### View.draw
 ViewRootImpl.performDraw
@@ -413,7 +414,7 @@ mView.draw(canvas);// 在 drawSoftware 初始化了 Canvas 后调用 View.draw(c
 
 ##### ViewGroup 的测量 measureChild\measureChildren
 measureChildren 内部通过 for 循环执行 measureChild 方法 <br>
-measureChild:
+measureChild: 注：child 可能是 View 也可能是 ViewGroup 。 突发奇想：我们页面中有多个View，而VIew中有2.5w行代码，为什么不卡呢？
 ```
 protected void measureChild(View child, int parentWidthMeasureSpec,int parentHeightMeasureSpec) {
     final LayoutParams lp = child.getLayoutParams();
@@ -422,14 +423,15 @@ protected void measureChild(View child, int parentWidthMeasureSpec,int parentHei
     child.measure(childWidthMeasureSpec, childHeightMeasureSpec);
 }
 ```
--> getChildMeasureSpec : 相当于给子View定义了一套用于测量的规则
+-> public static int getChildMeasureSpec(int spec, int padding, int childDimension) {} :
+将子视图 Child 的MeasureSpec和LayoutParams结合获得一个最佳的测量结果，也可以理解为给子View定义了一套合适的测量规则。
 ```
-return MeasureSpec.makeMeasureSpec(resultSize, resultMode);
+return MeasureSpec.makeMeasureSpec(resultSize, resultMode);//
 ```
 疑问，measureChild 和 measureChildren 是如何被调用的？ // TODO 2018年7月2日10:21:30
 
 // TODO 2018年7月2日 周一  ViewGroup 的布局和绘制 、 requestLayout
 ##### ViewGroup 的布局
-33.33
+36.00
 
 ##### ViewGroup 的绘制
