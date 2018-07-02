@@ -329,4 +329,107 @@ ViewGroup 在 invalidateChild(View child, final Rect dirty) 方法中做了一�
 做 performTraversals() 的方法【MS：必问的】对该 ViewGroup 执行了三个操作：测量、布局和绘制！说白了，android中的视图绘制是从外到内一层一层
 进行处理的，最终到 DecorView 的绘制完成。
 
-// TODO 2018年7月1日 周日 MeasureSpec、requestLayout
+#### 3 .View measure\layout\draw
+>通过上面的分析，我们知道所有的视图最终都是通过先后调用 View 中的 measure测量、layout布局、draw绘制 三个步骤完成的（ViewRootImpl->performTraversals->performMeasure...）
+
+View.MeasureSpec  简介
+一个32位的 int 值
+高2位 mode
+低30位 size
+可见，onMeasure(int widthMeasureSpec, int heightMeasureSpec) 中的这两个参数并不表示大小，而是一种测量规则！
+
+mode 分三种类型：
+AT_MOST 最多          设置了100dp那么最多就是100dp
+EXACTLY 精确的        设置多少就是多少
+UNSPECIFIED 不确定的
+
+反手就是一个同用模板：（说白了就是给你的 View 在设置成 wrap_content 时候有一个默认的大小）
+```
+// 源自 《Android群英传》
+private int measureSpec(int measureSpec) {
+    int result;
+    int specMode = MeasureSpec.getMode(measureSpec);
+    int specSize = MeasureSpec.getSize(measureSpec);
+    if (specMode == MeasureSpec.EXACTLY) {
+        result = specSize;
+    } else {
+        // 为wrap_content 设置默认值
+        result = 1000;
+        if (specMode == MeasureSpec.UNSPECIFIED) {
+            result = Math.min(result, measureSpec);
+        }
+    }
+    return result;
+}
+```
+其实，这个方法是参考 View.getDefaultSize 修改而来 ：
+```
+/**
+ * Utility to return a default size. Uses the supplied size if the
+ * MeasureSpec imposed no constraints. Will get larger if allowed
+ * by the MeasureSpec.
+ * 大概意思：
+ * 返回一个默认大小的实例。如果有的话，可以使用所提供的尺寸
+ * MeasureSpec施加任何限制。如果允许的话会变大MeasureSpec。
+ *
+ * @param size Default size for this view
+ * @param measureSpec Constraints imposed by the parent
+ * @return The size this view should be.
+ */
+public static int getDefaultSize(int size, int measureSpec) {
+    int result = size;
+    int specMode = MeasureSpec.getMode(measureSpec);
+    int specSize = MeasureSpec.getSize(measureSpec);
+    switch (specMode) {
+    case MeasureSpec.UNSPECIFIED:
+        result = size;
+        break;
+    case MeasureSpec.AT_MOST:
+    case MeasureSpec.EXACTLY:
+        result = specSize;
+        break;
+    }
+    return result;
+}
+```
+
+##### View.measure ->  public final void measure(int widthMeasureSpec, int heightMeasureSpec) {}
+View.measure 这个方法是final修饰的，是不能被覆写的，但是其内部通过调用 onMeasure 方法抽取我们自定义View时覆写的 onMeasure中的操作。
+measure的这两个参数是从哪里来的呢? ViewRootImpl.performMeasure 中 mView.measure(childWidthMeasureSpec, childHeightMeasureSpec);
+
+
+##### View.layout
+ViewRootImpl.performLayout 中 host.layout(0, 0, host.getMeasuredWidth(), host.getMeasuredHeight()); // final View host = mView;
+
+
+##### View.draw
+ViewRootImpl.performDraw
+->
+draw(fullRedrawNeeded)
+->
+drawSoftware(Surface surface, AttachInfo attachInfo, int xoff, int yoff, boolean scalingRequired, Rect dirty)
+->
+mView.draw(canvas);// 在 drawSoftware 初始化了 Canvas 后调用 View.draw(canvas) 进行绘制
+
+##### ViewGroup 的测量 measureChild\measureChildren
+measureChildren 内部通过 for 循环执行 measureChild 方法 <br>
+measureChild:
+```
+protected void measureChild(View child, int parentWidthMeasureSpec,int parentHeightMeasureSpec) {
+    final LayoutParams lp = child.getLayoutParams();
+    final int childWidthMeasureSpec = getChildMeasureSpec(parentWidthMeasureSpec, mPaddingLeft + mPaddingRight, lp.width);
+    final int childHeightMeasureSpec = getChildMeasureSpec(parentHeightMeasureSpec, mPaddingTop + mPaddingBottom, lp.height);
+    child.measure(childWidthMeasureSpec, childHeightMeasureSpec);
+}
+```
+-> getChildMeasureSpec : 相当于给子View定义了一套用于测量的规则
+```
+return MeasureSpec.makeMeasureSpec(resultSize, resultMode);
+```
+疑问，measureChild 和 measureChildren 是如何被调用的？ // TODO 2018年7月2日10:21:30
+
+// TODO 2018年7月2日 周一  ViewGroup 的布局和绘制 、 requestLayout
+##### ViewGroup 的布局
+33.33
+
+##### ViewGroup 的绘制

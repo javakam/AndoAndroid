@@ -30,6 +30,8 @@ public class UIDrawingProcessActivity extends BaseActivity {
         }, 2000);
 
         View.MeasureSpec measureSpec = new View.MeasureSpec();
+        View.MeasureSpec.getMode(1);
+        View.MeasureSpec.getSize(1);
 
     }
 }
