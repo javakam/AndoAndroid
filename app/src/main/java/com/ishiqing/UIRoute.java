@@ -18,6 +18,7 @@ public class UIRoute {
     public static final String FRAG_NETWORK = "网络编程";
     public static final String FRAG_ZLGX = "增量更新";
     public static final String FRAG_RXJAVA2 = "RxJava2";
+    public static final String FRAG_WAN_ANDROID = "玩安卓客户端";
     public static final String FRAG_NETWORK_UPLOAD = "上传文件";
     public static final String FRAG_OTHER = "其他组件";
 }

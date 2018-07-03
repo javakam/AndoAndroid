@@ -3,16 +3,18 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-     android:background="@color/app_base_bg"
+    android:background="@color/app_base_bg"
     android:orientation="vertical">
 
     <com.qmuiteam.qmui.widget.QMUITopBar
         android:id="@+id/topbar"
         style="@style/TopBarStyle" />
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="@dimen/topbar_height"        android:background="@color/qmui_config_color_white"
+        android:layout_marginTop="@dimen/topbar_height"
+        android:background="@color/qmui_config_color_white"
         android:gravity="center"
         android:orientation="vertical">
 
