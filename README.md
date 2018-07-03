@@ -1,12 +1,9 @@
 # IShiQing
-AIShiQing 第二版 侧重复习基础
-
-> 2018年6月17日 周日
- - Service复习完毕
+**Android进阶学习+几个小伙伴的每周技术分享**
 
 ## 每周技术分享
 ### 第一周 （18/6/23）
-DataBinding  [http://note.youdao.com/noteshare?id=c92be9179f72553765b6fa75c7b32976&sub=07615F0E8774450F8C121C780CB4BCC0](http://note.youdao.com/noteshare?id=c92be9179f72553765b6fa75c7b32976&sub=07615F0E8774450F8C121C780CB4BCC0) 
+DataBinding  [http://note.youdao.com/noteshare?id=c92be9179f72553765b6fa75c7b32976&sub=07615F0E8774450F8C121C780CB4BCC0](http://note.youdao.com/noteshare?id=c92be9179f72553765b6fa75c7b32976&sub=07615F0E8774450F8C121C780CB4BCC0) <br>
 Service混合开发 [https://github.com/javakam/IShiQing/tree/master/app](https://github.com/javakam/IShiQing/tree/master/app)
 
 ### 第二周 （18/7/1）
