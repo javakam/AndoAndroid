@@ -7,6 +7,7 @@ import com.ishiqing.modules.activity.ActiviyEntranceFragment;
 import com.ishiqing.modules.incremental_updating.增量更新;
 import com.ishiqing.modules.network.HttpUrlConnectionFragment;
 import com.ishiqing.modules.provider.ProviderFragment1;
+import com.ishiqing.modules.rxjava.RxJavaFragment1;
 import com.ishiqing.modules.service.ServiceFragment1;
 import com.ishiqing.modules.service.ServiceFragment2;
 import com.ishiqing.modules.service.ServiceFragment3;
@@ -34,6 +35,7 @@ public class SQDataManager {
         list.add(new QDItemDescription(AIDIServiceFragment.class, UIRoute.FRAG_AIDL, R.mipmap.icon_grid_layout));
         list.add(new QDItemDescription(HttpUrlConnectionFragment.class, UIRoute.FRAG_NETWORK, R.mipmap.icon_grid_layout));
         list.add(new QDItemDescription(增量更新.class, UIRoute.FRAG_ZLGX, R.mipmap.icon_grid_layout));
+        list.add(new QDItemDescription(RxJavaFragment1.class, UIRoute.FRAG_RXJAVA2, R.mipmap.icon_grid_layout));
         return list;
     }
 

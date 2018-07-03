@@ -1,5 +1,6 @@
 package com.ishiqing.modules.incremental_updating;
 
+import com.ishiqing.R;
 import com.ishiqing.base.BaseFragment;
 
 /**
@@ -12,7 +13,7 @@ import com.ishiqing.base.BaseFragment;
 public class 增量更新 extends BaseFragment {
     @Override
     protected int getLayoutResId() {
-        return 0;
+        return R.layout.button_layout;
     }
 
     @Override
