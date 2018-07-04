@@ -65,7 +65,48 @@ int a16 = 0x11fa901; // 十六进制  0x或 0X
 
 #### 三、Java运算符和表达式
 ![](.README_images\Java运算符和表达式.png)<br>
-- 赋值运算
+- 赋值运算<br>
+![](.README_images\赋值运算.png)<br>
+![](.README_images\赋值运算-数组[重点].png)<br>
+其中，int[] array2=array1; 赋给的是地址（指针）的传递<br>
+![](.README_images\赋值运算-对象[重点].png)<br>
+- 算术运算<br>
+注意的点：<br>
+1./ 是求商的，int a=1/2; 结果为0 ； %是取余运算，int a=1%2; 结果为1。
+2.char 进行算术运算时，会转换成 int 类型进行计算, eg:
+```
+char a = 'a';
+char b = 'b';
+int c = a + b;
+System.out.println("c = "+c); // 输出为 c = 195
+```
+3.被除数不能是0 -- 抛出异常： java.lang.ArithmeticException: / by zero
+4.+ 号在字符串拼接中的应用。
+- 自增自减<br>
+除了 int 类型以外，其他基本类型也可以使用自增自减 (除了boolean) ：
+```
+float f= 0.1F;
+f++;
+double d=3.14D;
+d++;
+char c = 'c';
+c++;
+System.out.println("f = "+f);
+System.out.println("d = "+d);
+System.out.println("c = "+c);
+```
+运行结果: -- 注意char类型，自增后的值对应的是ASCII码表中的数值！
+```
+f = 1.1
+d = 4.140000000000001
+c = d
+```
+- 关系运算<br>
+也叫比较运算<br>
+![](.README_images\关系运算.png)<br>
+对象的比较：1.比较指针；2.比较内容 equals<br>
+- 三目运算符<br>
+https://ke.qq.com/webcourse/index.html#taid=743235500791473&vid=j1412m6a3ox&course_id=153265&term_id=100175081
 <br>
 
 

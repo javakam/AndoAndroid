@@ -63,6 +63,10 @@ public abstract class BaseFragment extends QMUIFragment {
     protected abstract int getLayoutResId();
 
     public BaseFragment() {
+        char a = 'a';
+        char b = 'b';
+        int c = a + b;
+        System.out.println("c = "+c);
     }
 
     @Override
