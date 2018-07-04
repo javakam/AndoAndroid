@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:overScrollMode="never"
+    tools:context="com.shiqing.retrofit.zlc.season.rxjava2demo.SeasonActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/btCommon"
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:text="通用测试"
+            android:textSize="12sp" />
+
+        <Button
+            android:id="@+id/btCiba"
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:text="金山词霸"
+            android:textSize="12sp" />
+
+        <Button
+            android:id="@+id/btYouDao"
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:text="有道翻译"
+            android:textSize="12sp" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="10dp"
+            android:background="#0f0" />
+
+        <Button
+            android:id="@+id/btWebService"
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:text="XML WebService"
+            android:textAllCaps="false"
+            android:textSize="12sp" />
+    </LinearLayout>
+
+</ScrollView>
