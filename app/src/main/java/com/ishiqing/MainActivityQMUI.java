@@ -1,5 +1,6 @@
 package com.ishiqing;
 
+import android.annotation.SuppressLint;
 import android.os.Bundle;
 
 import com.ishiqing.base.BaseFragment;
@@ -8,6 +9,7 @@ import com.ishiqing.fragment.MainFragment;
 
 public class MainActivityQMUI extends BaseQMUIFragmentActivity {
 
+    @SuppressLint("ResourceType")
     @Override
     protected int getContextViewId() {
         return R.id.sqcomponent;

@@ -3,10 +3,10 @@ package com.shiqing.retrofit.webservice.api;
 import com.shiqing.retrofit.webservice.request.RequestEnvelope;
 import com.shiqing.retrofit.webservice.response.ResponseEnvelope;
 
+import io.reactivex.Observable;
 import retrofit2.http.Body;
 import retrofit2.http.Headers;
 import retrofit2.http.POST;
-import rx.Observable;
 
 /**
  * 接口请求

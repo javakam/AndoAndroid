@@ -329,6 +329,8 @@ ViewGroup 在 invalidateChild(View child, final Rect dirty) 方法中做了一�
 做 performTraversals() 的方法【MS：必问的】对该 ViewGroup 执行了三个操作：测量、布局和绘制！说白了，android中的视图绘制是从外到内一层一层
 进行处理的，最终到 DecorView 的绘制完成。
 
+// TODO 2018-7-4 周三 requestLayout:
+
 #### 3 .View measure\layout\draw
 >通过上面的分析，我们知道所有的视图最终都是通过先后调用 View 中的 measure测量、layout布局、draw绘制 三个步骤完成的（ViewRootImpl->performTraversals->performMeasure...）
 
@@ -428,10 +430,144 @@ protected void measureChild(View child, int parentWidthMeasureSpec,int parentHei
 ```
 return MeasureSpec.makeMeasureSpec(resultSize, resultMode);//
 ```
+【从这里也可以看出，一个View onMeasure 的测量规则由父容器的MeasureSpec和View本身尺寸决定的。】
+
 疑问，measureChild 和 measureChildren 是如何被调用的？ // TODO 2018年7月2日10:21:30
 
-// TODO 2018年7月2日 周一  ViewGroup 的布局和绘制 、 requestLayout
 ##### ViewGroup 的布局
-36.00
+```
+@Override
+public final void layout(int l, int t, int r, int b) {
+    if (!mSuppressLayout && (mTransition == null || !mTransition.isChangingLayout())) {
+        if (mTransition != null) {
+            mTransition.layoutChange(this);
+        }
+        super.layout(l, t, r, b);
+    } else {
+        // record the fact that we noop'd it; request layout when transition finishes
+        mLayoutCalledWhileSuppressed = true;
+    }
+}
+@Override
+protected abstract void onLayout(boolean changed, int l, int t, int r, int b);
+```
 
 ##### ViewGroup 的绘制
+drawChild:
+```
+/**
+ * Draw one child of this View Group. This method is responsible for getting
+ * the canvas in the right state. This includes clipping, translating so
+ * that the child's scrolled origin is at 0, 0, and applying any animation
+ * transformations.
+ *
+ * @param canvas The canvas on which to draw the child
+ * @param child Who to draw
+ * @param drawingTime The time at which draw is occurring
+ * @return True if an invalidate() was issued
+ */
+protected boolean drawChild(Canvas canvas, View child, long drawingTime) {
+    return child.draw(canvas, this, drawingTime);
+}
+```
+本质调用的是 View.draw 进行绘制
+-> View.draw 核心步骤:
+```
+public void draw(Canvas canvas) {
+    ...
+    /*
+     * Draw traversal performs several drawing steps which must be executed
+     * in the appropriate order:
+     *
+     *      1. Draw the background
+     *      2. If necessary, save the canvas' layers to prepare for fading
+     *      3. Draw view's content
+     *      4. Draw children
+     *      5. If necessary, draw the fading edges and restore layers
+     *      6. Draw decorations (scrollbars for instance)
+     */
+     // Step 1, draw the background, if needed
+             int saveCount;
+
+             if (!dirtyOpaque) {
+                 drawBackground(canvas);
+             }
+
+             // skip step 2 & 5 if possible (common case)
+             final int viewFlags = mViewFlags;
+             boolean horizontalEdges = (viewFlags & FADING_EDGE_HORIZONTAL) != 0;
+             boolean verticalEdges = (viewFlags & FADING_EDGE_VERTICAL) != 0;
+             if (!verticalEdges && !horizontalEdges) {
+                 // Step 3, draw the content
+                 if (!dirtyOpaque) onDraw(canvas);
+
+                 // Step 4, draw the children
+                 dispatchDraw(canvas);
+
+                 drawAutofilledHighlight(canvas);
+
+                 // Overlay is part of the content and draws beneath Foreground
+                 if (mOverlay != null && !mOverlay.isEmpty()) {
+                     mOverlay.getOverlayView().dispatchDraw(canvas);
+                 }
+
+                 // Step 6, draw decorations (foreground, scrollbars)
+                 onDrawForeground(canvas);
+
+                 // Step 7, draw the default focus highlight
+                 drawDefaultFocusHighlight(canvas);
+                 if (debugDraw()) {
+                     debugDrawFocus(canvas);
+                 }
+                 // we're done...
+                 return;
+             }
+        ...
+}
+```
+其中两个的方法是：
+```
+// Step 3, draw the content
+if (!dirtyOpaque) onDraw(canvas);
+和
+// Step 4, draw the children
+dispatchDraw(canvas);
+```
+View.onDraw 是在我们在自定义View中绘制我们自己的图形时 必须要覆写的方法 ！
+View.dispatchDraw 分派视图。顾名思义，这个方法是给 ViewGroup留的，我们看下View.dispatchDraw的源码：
+```
+/**
+ * Called by draw to draw the child views. This may be overridden
+ * by derived classes to gain control just before its children are drawn
+ * (but after its own view has been drawn).
+ * @param canvas the canvas on which to draw the view
+ */
+protected void dispatchDraw(Canvas canvas) {
+}
+```
+这个方法在ViewGroup中被覆写，并通过遍历执行 drawChild 进行绘制：
+```
+for (int i = 0; i < childrenCount; i++) {
+    while (transientIndex >= 0 && mTransientIndices.get(transientIndex) == i) {
+        final View transientChild = mTransientViews.get(transientIndex);
+        if ((transientChild.mViewFlags & VISIBILITY_MASK) == VISIBLE ||
+                transientChild.getAnimation() != null) {
+            more |= drawChild(canvas, transientChild, drawingTime);
+        }
+        transientIndex++;
+        if (transientIndex >= transientCount) {
+            transientIndex = -1;
+        }
+    }
+    ...
+}
+```
+总结：
+    ViewGroup 是一个容器，既要对子View进行测量，又要对子View进行布局。
+    ViewGroup 中因为有子View，所以要覆写 dispatchDraw 方法。
+
+    Flow ：dispatchDraw -> drawChild -> child.draw
+
+Android 所有的视图都是继承自 View或ViewGroup 。
+
+

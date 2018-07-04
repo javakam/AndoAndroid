@@ -1,51 +1,61 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:overScrollMode="never"
-    tools:context="com.shiqing.retrofit.zlc.season.rxjava2demo.SeasonActivity">
+    android:background="@color/app_base_bg"
+    android:orientation="vertical">
 
-    <LinearLayout
+    <com.qmuiteam.qmui.widget.QMUITopBar
+        android:id="@+id/topbar"
+        style="@style/TopBarStyle" />
+
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:layout_height="match_parent"
+        android:layout_marginTop="@dimen/topbar_height"
+        android:background="@color/white"
+        android:overScrollMode="never">
 
-        <Button
-            android:id="@+id/btCommon"
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="35dp"
-            android:text="通用测试"
-            android:textSize="12sp" />
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
 
-        <Button
-            android:id="@+id/btCiba"
-            android:layout_width="match_parent"
-            android:layout_height="35dp"
-            android:text="金山词霸"
-            android:textSize="12sp" />
+            <Button
+                android:id="@+id/btCommon"
+                android:layout_width="match_parent"
+                android:layout_height="35dp"
+                android:text="通用测试"
+                android:textSize="12sp" />
 
-        <Button
-            android:id="@+id/btYouDao"
-            android:layout_width="match_parent"
-            android:layout_height="35dp"
-            android:text="有道翻译"
-            android:textSize="12sp" />
+            <Button
+                android:id="@+id/btCiba"
+                android:layout_width="match_parent"
+                android:layout_height="35dp"
+                android:text="金山词霸"
+                android:textSize="12sp" />
 
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:layout_marginBottom="10dp"
-            android:layout_marginTop="10dp"
-            android:background="#0f0" />
+            <Button
+                android:id="@+id/btYouDao"
+                android:layout_width="match_parent"
+                android:layout_height="35dp"
+                android:text="有道翻译"
+                android:textSize="12sp" />
 
-        <Button
-            android:id="@+id/btWebService"
-            android:layout_width="match_parent"
-            android:layout_height="35dp"
-            android:text="XML WebService"
-            android:textAllCaps="false"
-            android:textSize="12sp" />
-    </LinearLayout>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginBottom="10dp"
+                android:layout_marginTop="10dp"
+                android:background="#0f0" />
 
-</ScrollView>
+            <Button
+                android:id="@+id/btWebService"
+                android:layout_width="match_parent"
+                android:layout_height="35dp"
+                android:text="XML WebService"
+                android:textAllCaps="false"
+                android:textSize="12sp" />
+        </LinearLayout>
+    </ScrollView>
+</FrameLayout>

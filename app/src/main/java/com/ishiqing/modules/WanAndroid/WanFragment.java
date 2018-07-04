@@ -31,7 +31,7 @@ public class WanFragment extends BaseFragment {
     @OnClick(R.id.btWanAndroid)
     void wan(View v) {
         if (v.getId() == R.id.btWanAndroid) {
-            ARouter.getInstance().build("/sqretrofit/mainactivity")
+            ARouter.getInstance().build("/sq/mainactivity")
                     .withLong("key1", 666L)
                     .withString("key3", "888")
 //                    .withObject("key4", new Object())

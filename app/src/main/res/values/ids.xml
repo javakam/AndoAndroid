@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <item name="sqcomponent" type="id"/>
-
-    <item name="qmui_arch_swipe_layout_in_back" type="id"/>
+    <item name="sqcomponent" type="id" />
+    <item name="qmui_arch_swipe_layout_in_back" type="id" />
 </resources>

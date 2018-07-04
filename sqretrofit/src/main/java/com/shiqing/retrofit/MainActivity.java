@@ -32,7 +32,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
  */
 // 在支持路由的页面上添加注解(必选)
 // 这里的路径需要注意的是至少需要有两级，/xx/xx
-@Route(path = "/sqretrofit/mainactivity")
+@Route(path = "/sq/mainactivity")
 public class MainActivity extends AppCompatActivity {
 
     @Override
@@ -44,7 +44,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 commonRequest(
-                        initRetrofit("http://10.88.53.6:8080/cnodc/assetcheck/mobileProcess/"));
+                        initRetrofit("http://10.88.53.6:8080/cnodc/mobileProcess/"));
             }
         });
         //金山词霸

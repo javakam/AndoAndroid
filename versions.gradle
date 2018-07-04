@@ -63,6 +63,7 @@ versions.qmuiteam_qmui = "1.1.5"
 versions.recycler_helper = "2.9.40"
 versions.eventbus = "3.1.1"
 versions.gson = "2.8.4"
+versions.test_runner = "1.0.2 "
 
 def deps = [:]
 def support = [:]
@@ -102,6 +103,7 @@ dagger.android_support_compiler = "com.google.dagger:dagger-android-processor:$v
 
 deps.dagger = dagger
 
+deps.test_runner = "com.android.support.test:runner:$versions.test_runner"
 def espresso = [:]
 espresso.core = "com.android.support.test.espresso:espresso-core:$versions.espresso"
 espresso.contrib = "com.android.support.test.espresso:espresso-contrib:$versions.espresso"

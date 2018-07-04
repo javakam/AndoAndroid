@@ -14,7 +14,7 @@ android {
         // ARouter::Compiler >>> No module name, for more information, look at gradle log.
         javaCompileOptions {
             annotationProcessorOptions {
-                arguments = [ moduleName : project.getName() ]
+                arguments = [moduleName: project.getName()]
             }
         }
     }
@@ -42,9 +42,13 @@ android {
 
 dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
-    //注意：ButterKnife 不能从 library 继承！
-    implementation deps.butterknife.runtime
+    androidTestImplementation deps.espresso.core
+    // 注意：ButterKnife 不能从 library 继承！
+//    implementation deps.butterknife.runtime
     annotationProcessor deps.butterknife.compiler
     annotationProcessor deps.arouter.compiler
-    implementation project(':library')
+//    implementation project(':library')
+
+    // 引入子模块后，ARouter才会找到该模块！》》》There's no router matched!
+    compile project(':sqretrofit')
 }

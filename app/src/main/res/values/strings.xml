@@ -9,12 +9,6 @@
     <string name="unbind_service">解绑服务</string>
     <string name="change_date_format">更改时间输出格式</string>
 
-    <!--EmptyView 显示内容-->
-    <string name="emptyView_mode_desc_fail_title">加载失败</string>
-    <string name="emptyView_mode_desc_fail_desc">请检测网络是否能正常连接</string>
-    <string name="emptyView_mode_desc_retry">点击重试</string>
-
-
     <string name="test_string_1">蓝蓝的天上马儿跑，白云下面鲜花飘。</string>
     <string name="login_username">账号/邮箱/手机</string>
     <string name="login_pwd">密码</string>

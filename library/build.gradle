@@ -40,6 +40,8 @@ android {
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
+    androidTestApi deps.test_runner
+    androidTestApi deps.espresso.core
 //
 //    implementation 'com.android.support:appcompat-v7:26.1.0'
 //    testImplementation 'junit:junit:4.12'
@@ -56,6 +58,7 @@ dependencies {
     api deps.arouter.runtime
     // 重：交给子模块实现！！！交给子模块实现！！！交给子模块实现！！！
 //    annotationProcessor deps.arouter.compiler
+    api deps.junit
 
     // Architecture components
     api deps.lifecycle.runtime
@@ -76,8 +79,8 @@ dependencies {
     annotationProcessor deps.glide.compiler
 
     // Popular Library
-    implementation deps.butterknife.runtime
-    annotationProcessor deps.butterknife.compiler
+    api deps.butterknife.runtime
+//    annotationProcessor deps.butterknife.compiler
     api deps.eventbus
     annotationProcessor deps.eventbus_annotation_processor
     api deps.gson
