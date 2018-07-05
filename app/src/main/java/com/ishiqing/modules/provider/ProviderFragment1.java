@@ -108,7 +108,7 @@ int match(Uri uri)：
             case R.id.btProvider2:
                 ContentResolver contentResolver =mActivity.getContentResolver();
                 Uri uri = Uri
-                        .parse("content://com.sq.contentprovider.StudentProvider/student");
+                        .parse("content://com.sq.support.StudentProvider/student");
                 ContentValues values = new ContentValues();
                 values.put("name", "请输入名称");
                 values.put("address", "请输入地址");

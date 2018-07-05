@@ -40,25 +40,14 @@ android {
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
-    androidTestApi deps.test_runner
-    androidTestApi deps.espresso.core
+    api project(':domain')
 //
 //    implementation 'com.android.support:appcompat-v7:26.1.0'
 //    testImplementation 'junit:junit:4.12'
 //    androidTestImplementation 'com.android.support.test:runner:1.0.2'
 //    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
 
-    // Support libraries
-    api deps.support.app_compat
-    api deps.support.v4
-    api deps.support.design
-    api deps.support.cardview
-    api deps.constraint_layout
-    api deps.qmuiteam_qmui
-    api deps.arouter.runtime
-    // 重：交给子模块实现！！！交给子模块实现！！！交给子模块实现！！！
-//    annotationProcessor deps.arouter.compiler
-    api deps.junit
+
 
     // Architecture components
     api deps.lifecycle.runtime

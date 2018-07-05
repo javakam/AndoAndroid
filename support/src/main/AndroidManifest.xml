@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.sq.contentprovider">
+    package="com.sq.support">
 
     <application
         android:allowBackup="true"
@@ -9,7 +9,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity">
+        <activity android:name="com.sq.support.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
@@ -35,7 +35,7 @@
        android:exported:标记允许其他应用程序使用这个Provider。
        android:multiProcess:标记允许系统启动Provider相同的进程中调用客户端。-->
         <provider
-            android:name=".StudentProvider"
-            android:authorities="com.sq.contentprovider.StudentProvider"></provider>
+            android:name="com.sq.support.StudentProvider"
+            android:authorities="com.sq.support.StudentProvider"></provider>
     </application>
 </manifest>

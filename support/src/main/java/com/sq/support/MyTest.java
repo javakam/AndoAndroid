@@ -1,4 +1,4 @@
-package com.sq.contentprovider;
+package com.sq.support;
 
 import android.content.ContentResolver;
 import android.content.ContentValues;
@@ -15,7 +15,7 @@ public class MyTest extends AndroidTestCase {
     public void calltest() {
         ContentResolver contentResolver = getContext().getContentResolver();
         Uri uri = Uri
-                .parse("content://com.sq.contentprovider.StudentProvider/student");
+                .parse("content://com.sq.support.StudentProvider/student");
         Bundle bundle = contentResolver.call(uri, "method", null, null);
         String returnCall = bundle.getString("returnCall");
         Log.i("main", "-------------->" + returnCall);
@@ -24,7 +24,7 @@ public class MyTest extends AndroidTestCase {
     public void insert() {
         ContentResolver contentResolver = getContext().getContentResolver();
         Uri uri = Uri
-                .parse("content://com.sq.contentprovider.StudentProvider/student");
+                .parse("content://com.sq.support.StudentProvider/student");
         ContentValues values = new ContentValues();
         values.put("name", "Demo");
         values.put("address", "HK");
@@ -34,16 +34,16 @@ public class MyTest extends AndroidTestCase {
 
     public void delete() {
         ContentResolver contentResolver = getContext().getContentResolver();
-        // 删除多行：content://com.sq.contentprovider.StudentProvider/student
+        // 删除多行：content://com.sq.support.StudentProvider/student
         Uri uri = Uri
-                .parse("content://com.sq.contentprovider.StudentProvider/student/1");
+                .parse("content://com.sq.support.StudentProvider/student/1");
         contentResolver.delete(uri, null, null);
     }
 
     public void deletes() {
         ContentResolver contentResolver = getContext().getContentResolver();
         Uri uri = Uri
-                .parse("content://com.sq.contentprovider.StudentProvider/student");
+                .parse("content://com.sq.support.StudentProvider/student");
         String where = "address=?";
         String[] where_args = {"HK"};
         contentResolver.delete(uri, where, where_args);
@@ -52,7 +52,7 @@ public class MyTest extends AndroidTestCase {
     public void update() {
         ContentResolver contentResolver = getContext().getContentResolver();
         Uri uri = Uri
-                .parse("content://com.sq.contentprovider.StudentProvider/student/2");
+                .parse("content://com.sq.support.StudentProvider/student/2");
         ContentValues values = new ContentValues();
         values.put("name", "李四");
         values.put("address", "上海");
@@ -62,7 +62,7 @@ public class MyTest extends AndroidTestCase {
     public void updates() {
         ContentResolver contentResolver = getContext().getContentResolver();
         Uri uri = Uri
-                .parse("content://com.sq.contentprovider.StudentProvider/student");
+                .parse("content://com.sq.support.StudentProvider/student");
         ContentValues values = new ContentValues();
         values.put("name", "王五");
         values.put("address", "深圳");
@@ -74,7 +74,7 @@ public class MyTest extends AndroidTestCase {
     public void query() {
         ContentResolver contentResolver = getContext().getContentResolver();
         Uri uri = Uri
-                .parse("content://com.sq.contentprovider.StudentProvider/student/2");
+                .parse("content://com.sq.support.StudentProvider/student/2");
         Cursor cursor = contentResolver.query(uri, null, null, null, null);
         while (cursor.moveToNext()) {
             Log.i("main",
@@ -86,7 +86,7 @@ public class MyTest extends AndroidTestCase {
     public void querys() {
         ContentResolver contentResolver = getContext().getContentResolver();
         Uri uri = Uri
-                .parse("content://com.sq.contentprovider.StudentProvider/student");
+                .parse("content://com.sq.support.StudentProvider/student");
         String where = "address=?";
         String[] where_args = {"深圳"};
         Cursor cursor = contentResolver.query(uri, null, where, where_args,

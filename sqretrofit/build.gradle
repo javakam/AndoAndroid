@@ -1,5 +1,9 @@
-//apply plugin: 'com.android.application'
-apply plugin: 'com.android.library'
+//控制组件模式和集成模式
+if(isModule.toBoolean()){
+    apply plugin: 'com.android.library'
+}else {
+    apply plugin: 'com.android.application'
+}
 
 android {
     compileSdkVersion build_versions.target_sdk

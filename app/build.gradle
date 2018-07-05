@@ -50,5 +50,7 @@ dependencies {
 //    implementation project(':library')
 
     // 引入子模块后，ARouter才会找到该模块！》》》There's no router matched!
-    compile project(':sqretrofit')
+    if(isModule.toBoolean()){
+        api project(':sqretrofit')
+    }
 }

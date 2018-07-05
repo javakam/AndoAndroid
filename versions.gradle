@@ -63,7 +63,9 @@ versions.qmuiteam_qmui = "1.1.5"
 versions.recycler_helper = "2.9.40"
 versions.eventbus = "3.1.1"
 versions.gson = "2.8.4"
-versions.test_runner = "1.0.2 "
+versions.greendao = "3.2.2"
+versions.android_database_sqlcipher = "3.5.6"
+versions.test_runner = "1.0.2"
 
 def deps = [:]
 def support = [:]
@@ -169,6 +171,10 @@ deps.recycler_helper = "com.github.CymChad:BaseRecyclerViewAdapterHelper:$versio
 deps.eventbus = "org.greenrobot:eventbus:$versions.eventbus"
 deps.eventbus_annotation_processor = "org.greenrobot:eventbus-annotation-processor:$versions.eventbus"
 deps.gson = "com.google.code.gson:gson:$versions.gson"
+deps.greendao = "org.greenrobot:greendao:$versions.greendao"
+// 加密库依赖（可选项）
+// This is only needed if you want to use encrypted databases
+deps.android_database_sqlcipher = "net.zetetic:android-database-sqlcipher:$versions.android_database_sqlcipher"
 ext.deps = deps
 
 def work = [:]

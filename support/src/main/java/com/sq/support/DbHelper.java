@@ -1,4 +1,4 @@
-package com.sq.contentprovider;
+package com.sq.support;
 
 import android.content.ContentValues;
 import android.content.Context;

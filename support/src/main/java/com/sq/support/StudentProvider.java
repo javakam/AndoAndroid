@@ -1,4 +1,4 @@
-package com.sq.contentprovider;
+package com.sq.support;
 
 import android.content.ContentProvider;
 import android.content.ContentUris;
@@ -9,7 +9,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 
-import com.sq.contentprovider.dao.StudentDAO;
+import com.sq.support.dao.StudentDAO;
 
 /**
  * 自定义 ContentProvider
@@ -27,10 +27,10 @@ public class StudentProvider extends ContentProvider {
 
     static {
         //添加两个URI筛选
-        URI_MATCHER.addURI("com.sq.contentprovider.StudentProvider",
+        URI_MATCHER.addURI("com.sq.support.StudentProvider",
                 "student", STUDENTS);
         //使用通配符#，匹配任意数字
-        URI_MATCHER.addURI("com.sq.contentprovider.StudentProvider",
+        URI_MATCHER.addURI("com.sq.support.StudentProvider",
                 "student/#", STUDENT);
     }
 

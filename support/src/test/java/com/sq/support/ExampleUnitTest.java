@@ -1,4 +1,4 @@
-package com.sq.contentprovider;
+package com.sq.support;
 
 import org.junit.Test;
 

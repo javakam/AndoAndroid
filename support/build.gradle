@@ -1,12 +1,11 @@
 apply plugin: 'com.android.application'
+apply plugin: 'org.greenrobot.greendao'
 
 android {
     compileSdkVersion 27
 
-
-
     defaultConfig {
-        applicationId "com.sq.contentprovider"
+        applicationId "com.sq.support"
         minSdkVersion 14
         targetSdkVersion 27
         versionCode 1
@@ -25,6 +24,12 @@ android {
 
 }
 
+greendao {
+    schemaVersion 1 // 数据库版本号
+    daoPackage 'com.sq.support.greendao.dao' // 设置DaoMaster、DaoSession、Dao 包名, 一般为app包名+生成文件的文件夹名
+    targetGenDir 'src/main/java'//设置DaoMaster、DaoSession、Dao目录，生成文件路径
+}
+
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
 
@@ -33,4 +38,6 @@ dependencies {
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+
+    api 'org.greenrobot:greendao:3.2.2' // add library
 }
