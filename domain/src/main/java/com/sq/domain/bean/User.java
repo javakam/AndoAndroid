@@ -14,6 +14,15 @@ import org.greenrobot.greendao.annotation.Transient;
  */
 @Entity
 public class User {
+    @Override
+    public String toString() {
+        return "User{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", tempUsageCount=" + tempUsageCount +
+                '}';
+    }
+
     @Id
     private Long id;
     private String name;

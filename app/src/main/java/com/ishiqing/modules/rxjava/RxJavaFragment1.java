@@ -3,6 +3,14 @@ package com.ishiqing.modules.rxjava;
 import com.ishiqing.R;
 import com.ishiqing.base.BaseFragment;
 
+import io.reactivex.Observable;
+import io.reactivex.ObservableEmitter;
+import io.reactivex.ObservableOnSubscribe;
+import io.reactivex.Observer;
+import io.reactivex.android.schedulers.AndroidSchedulers;
+import io.reactivex.disposables.Disposable;
+import io.reactivex.schedulers.Schedulers;
+
 /**
  * Created by javakam on 2018/7/2.
  */
@@ -16,5 +24,37 @@ public class RxJavaFragment1 extends BaseFragment {
     protected void initViews() {
         initTopBar("RxJava2 复习", true);
 
+        demo1();
+    }
+
+    private void demo1() {
+        Observable.create(new ObservableOnSubscribe<String>() {
+            @Override
+            public void subscribe(ObservableEmitter<String> e) throws Exception {
+
+            }
+        }).observeOn(Schedulers.io())
+                .subscribeOn(AndroidSchedulers.mainThread())
+                .subscribe(new Observer<String>() {
+                    @Override
+                    public void onSubscribe(Disposable d) {
+
+                    }
+
+                    @Override
+                    public void onNext(String s) {
+
+                    }
+
+                    @Override
+                    public void onError(Throwable e) {
+
+                    }
+
+                    @Override
+                    public void onComplete() {
+
+                    }
+                });
     }
 }

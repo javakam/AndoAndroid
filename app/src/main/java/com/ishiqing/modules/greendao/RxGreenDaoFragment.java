@@ -20,11 +20,13 @@ import butterknife.BindView;
 import butterknife.OnClick;
 
 /**
- * GreenDao 在组件化项目中的基本使用
+ * GreenDao + RxJava
+ * <p>
+ * 可喜可贺 GreenDao 是支持 RxJava 的
  * <p>
  * Created by javakam on 2018-7-5 19:56:05
  */
-public class GreenDaoFragment extends BaseFragment {
+public class RxGreenDaoFragment extends BaseFragment {
     @BindView(R.id.content)
     TextView content;
 
