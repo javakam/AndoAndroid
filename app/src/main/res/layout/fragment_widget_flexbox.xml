@@ -4,6 +4,7 @@
     android:id="@+id/coordinator_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:clipToPadding="false"
     android:fitsSystemWindows="true">
 
     <android.support.design.widget.AppBarLayout
@@ -11,12 +12,14 @@
         android:layout_width="match_parent"
         android:layout_height="@dimen/topbar_height"
         android:background="@color/app_base_bg"
+        android:clipToPadding="false"
         android:fitsSystemWindows="true">
 
         <android.support.design.widget.CollapsingToolbarLayout
             android:id="@+id/toolbar_layout"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:clipToPadding="false"
             android:fitsSystemWindows="true"
             app:contentScrim="@color/app_base_bg"
             app:layout_scrollFlags="scroll|enterAlwaysCollapsed">

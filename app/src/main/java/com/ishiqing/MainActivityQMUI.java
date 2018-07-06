@@ -15,6 +15,7 @@ public class MainActivityQMUI extends BaseQMUIFragmentActivity {
         return R.id.sqcomponent;
     }
 
+    @SuppressLint("ResourceType")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
