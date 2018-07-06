@@ -42,7 +42,7 @@ public class RoleDao extends AbstractDao<Role, String> {
      * Creates the underlying database table.
      */
     public static void createTable(Database db, boolean ifNotExists) {
-        String constraint = ifNotExists ? "IF NOT EXISTS " : "";
+        String constraint = ifNotExists ? "IF NOT EXISTS ": "";
         db.execSQL("CREATE TABLE " + constraint + "\"ROLE\" (" + //
                 "\"RID\" TEXT PRIMARY KEY NOT NULL ," + // 0: rid
                 "\"RNAME\" TEXT);"); // 1: rname
@@ -51,9 +51,7 @@ public class RoleDao extends AbstractDao<Role, String> {
                 " (\"RNAME\" ASC);");
     }
 
-    /**
-     * Drops the underlying database table.
-     */
+    /** Drops the underlying database table. */
     public static void dropTable(Database db, boolean ifExists) {
         String sql = "DROP TABLE " + (ifExists ? "IF EXISTS " : "") + "\"ROLE\"";
         db.execSQL(sql);
@@ -62,12 +60,12 @@ public class RoleDao extends AbstractDao<Role, String> {
     @Override
     protected final void bindValues(DatabaseStatement stmt, Role entity) {
         stmt.clearBindings();
-
+ 
         String rid = entity.getRid();
         if (rid != null) {
             stmt.bindString(1, rid);
         }
-
+ 
         String rname = entity.getRname();
         if (rname != null) {
             stmt.bindString(2, rname);
@@ -77,12 +75,12 @@ public class RoleDao extends AbstractDao<Role, String> {
     @Override
     protected final void bindValues(SQLiteStatement stmt, Role entity) {
         stmt.clearBindings();
-
+ 
         String rid = entity.getRid();
         if (rid != null) {
             stmt.bindString(1, rid);
         }
-
+ 
         String rname = entity.getRname();
         if (rname != null) {
             stmt.bindString(2, rname);
@@ -92,7 +90,7 @@ public class RoleDao extends AbstractDao<Role, String> {
     @Override
     public String readKey(Cursor cursor, int offset) {
         return cursor.isNull(offset + 0) ? null : cursor.getString(offset + 0);
-    }
+    }    
 
     @Override
     public Role readEntity(Cursor cursor, int offset) {
@@ -102,18 +100,18 @@ public class RoleDao extends AbstractDao<Role, String> {
         );
         return entity;
     }
-
+     
     @Override
     public void readEntity(Cursor cursor, Role entity, int offset) {
         entity.setRid(cursor.isNull(offset + 0) ? null : cursor.getString(offset + 0));
         entity.setRname(cursor.isNull(offset + 1) ? null : cursor.getString(offset + 1));
-    }
-
+     }
+    
     @Override
     protected final String updateKeyAfterInsert(Role entity, long rowId) {
         return entity.getRid();
     }
-
+    
     @Override
     public String getKey(Role entity) {
         if (entity != null) {
@@ -132,5 +130,5 @@ public class RoleDao extends AbstractDao<Role, String> {
     protected final boolean isEntityUpdateable() {
         return true;
     }
-
+    
 }

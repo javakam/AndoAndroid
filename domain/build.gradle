@@ -44,6 +44,7 @@ dependencies {
     api deps.support.cardview
     api deps.constraint_layout
     api deps.qmuiteam_qmui
+    api deps.flexbox
     api deps.greendao
     api deps.arouter.runtime
     // 重：交给子模块实现！！！交给子模块实现！！！交给子模块实现！！！

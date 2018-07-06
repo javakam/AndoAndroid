@@ -66,6 +66,7 @@ versions.gson = "2.8.4"
 versions.greendao = "3.2.2"
 versions.android_database_sqlcipher = "3.5.6"
 versions.test_runner = "1.0.2"
+versions.flexbox = "1.0.0"
 
 def deps = [:]
 def support = [:]
@@ -175,6 +176,7 @@ deps.greendao = "org.greenrobot:greendao:$versions.greendao"
 // 加密库依赖（可选项）
 // This is only needed if you want to use encrypted databases
 deps.android_database_sqlcipher = "net.zetetic:android-database-sqlcipher:$versions.android_database_sqlcipher"
+deps.flexbox = "com.google.android:flexbox:$versions.flexbox"
 ext.deps = deps
 
 def work = [:]
