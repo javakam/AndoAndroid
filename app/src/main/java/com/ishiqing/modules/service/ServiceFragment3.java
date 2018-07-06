@@ -70,11 +70,16 @@ public class ServiceFragment3 extends BaseFragment {
             case R.id.btnBind:
                 tipDialogUtil.createIconWithTipDialog(mActivity, QMUITipDialog.Builder.ICON_TYPE_LOADING
                         , "正在加载...");
+                button.postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        tipDialogUtil.dismiss();
+                    }
+                }, 1000);
                 mActivity.bindService(intent, conn, Context.BIND_AUTO_CREATE);
                 break;
             case R.id.btnUnbind:
                 try {
-                    tipDialogUtil.dismiss();
                     mActivity.unbindService(conn);
                 } catch (Exception e) {
                     System.err.println(e.getMessage());
