@@ -19,6 +19,7 @@ import com.ishiqing.modules.wanandroid.WanFragment;
 import com.ishiqing.modules.widgets.AutoCompleteTextViewFragment;
 import com.ishiqing.modules.widgets.ButtonFragment;
 import com.ishiqing.modules.widgets.CatFlexboxLayoutFragment;
+import com.ishiqing.modules.widgets.FlexboxLayoutFragment;
 import com.ishiqing.modules.widgets.TextViewFragment;
 
 import java.util.ArrayList;
@@ -51,6 +52,7 @@ public class SQDataManager {
         list.add(new QDItemDescription(TextViewFragment.class, UIRoute.FRAG_WIDGET_TEXTVIEW, R.mipmap.icon_grid_layout));
         list.add(new QDItemDescription(AutoCompleteTextViewFragment.class, UIRoute.FRAG_WIDGET_EDITTEXT, R.mipmap.icon_grid_layout));
         list.add(new QDItemDescription(ButtonFragment.class, UIRoute.FRAG_WIDGET_BUTTON, R.mipmap.icon_grid_layout));
+        list.add(new QDItemDescription(FlexboxLayoutFragment.class, UIRoute.FRAG_WIDGET_FLEXBOX, R.mipmap.icon_grid_layout));
         list.add(new QDItemDescription(CatFlexboxLayoutFragment.class, UIRoute.FRAG_WIDGET_FLEXBOX_CAT, R.mipmap.icon_grid_layout));
         return list;
     }

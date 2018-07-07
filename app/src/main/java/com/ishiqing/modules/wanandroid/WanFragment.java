@@ -26,6 +26,8 @@ public class WanFragment extends BaseFragment {
     @Override
     protected void initViews() {
         initTopBar("玩Android", true);
+
+
     }
 
     @OnClick(R.id.btWanAndroid)

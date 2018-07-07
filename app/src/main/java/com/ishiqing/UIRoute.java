@@ -7,6 +7,7 @@ public class UIRoute {
     public static final String FRAG_WIDGET_TEXTVIEW = "TextView";
     public static final String FRAG_WIDGET_ACTV = "AutoCompleteTextView";
     public static final String FRAG_WIDGET_EDITTEXT = "EditText";
+    public static final String FRAG_WIDGET_FLEXBOX = "FlexboxLayout";
     public static final String FRAG_WIDGET_FLEXBOX_CAT = "FlexboxLayout Cat";
     public static final String FRAG_WIDGET_BUTTON = "Button";
     public static final String FRAG_ACTIVITY1 = "Activity";

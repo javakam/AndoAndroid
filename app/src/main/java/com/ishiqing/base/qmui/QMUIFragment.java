@@ -103,10 +103,76 @@ public abstract class QMUIFragment extends Fragment {
         }
     }
 
-    /**
-     * onCreateView
-     */
-    protected abstract View onCreateView();
+    @Override
+    public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        SwipeBackLayout swipeBackLayout;
+        if (mCacheView == null) {
+            swipeBackLayout = newSwipeBackLayout();
+            mCacheView = swipeBackLayout;
+        } else if (isCreateForSwipeBack) {
+            // in swipe back, exactly not in animation
+            swipeBackLayout = mCacheView;
+        } else {
+            boolean isInRemoving = false;
+            try {
+                Method method = Fragment.class.getDeclaredMethod("getAnimatingAway");
+                method.setAccessible(true);
+                Object object = method.invoke(this);
+                if (object != null) {
+                    isInRemoving = true;
+                }
+            } catch (NoSuchMethodException e) {
+                isInRemoving = true;
+                e.printStackTrace();
+            } catch (IllegalAccessException e) {
+                isInRemoving = true;
+                e.printStackTrace();
+            } catch (InvocationTargetException e) {
+                isInRemoving = true;
+                e.printStackTrace();
+            }
+            if (isInRemoving) {
+                swipeBackLayout = newSwipeBackLayout();
+                mCacheView = swipeBackLayout;
+            } else {
+                swipeBackLayout = mCacheView;
+            }
+        }
+
+
+        if (!isCreateForSwipeBack) {
+            mBaseView = swipeBackLayout.getContentView();
+            swipeBackLayout.setTag(R.id.qmui_arch_swipe_layout_in_back, null);
+        }
+
+        ViewCompat.setTranslationZ(swipeBackLayout, mBackStackIndex);
+
+        swipeBackLayout.setFitsSystemWindows(false);
+
+        if (getActivity() != null) {
+            QMUIViewHelper.requestApplyInsets(getActivity().getWindow());
+        }
+
+        if (swipeBackLayout.getParent() != null) {
+            ViewGroup viewGroup = (ViewGroup) swipeBackLayout.getParent();
+            if (viewGroup.indexOfChild(swipeBackLayout) > -1) {
+                viewGroup.removeView(swipeBackLayout);
+            } else {
+                // see https://issuetracker.google.com/issues/71879409
+                try {
+                    Field parentField = View.class.getDeclaredField("mParent");
+                    parentField.setAccessible(true);
+                    parentField.set(swipeBackLayout, null);
+                } catch (NoSuchFieldException e) {
+                    e.printStackTrace();
+                } catch (IllegalAccessException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+
+        return swipeBackLayout;
+    }
 
     @Override
     public void onStart() {
@@ -129,6 +195,11 @@ public abstract class QMUIFragment extends Fragment {
         super.onDetach();
         mBaseView = null;
     }
+
+    /**
+     * onCreateView
+     */
+    protected abstract View onCreateView();
 
     public QMUIFragment() {
         super();
@@ -425,77 +496,6 @@ public abstract class QMUIFragment extends Fragment {
         return swipeBackLayout;
     }
 
-
-    @Override
-    public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        SwipeBackLayout swipeBackLayout;
-        if (mCacheView == null) {
-            swipeBackLayout = newSwipeBackLayout();
-            mCacheView = swipeBackLayout;
-        } else if (isCreateForSwipeBack) {
-            // in swipe back, exactly not in animation
-            swipeBackLayout = mCacheView;
-        } else {
-            boolean isInRemoving = false;
-            try {
-                Method method = Fragment.class.getDeclaredMethod("getAnimatingAway");
-                method.setAccessible(true);
-                Object object = method.invoke(this);
-                if (object != null) {
-                    isInRemoving = true;
-                }
-            } catch (NoSuchMethodException e) {
-                isInRemoving = true;
-                e.printStackTrace();
-            } catch (IllegalAccessException e) {
-                isInRemoving = true;
-                e.printStackTrace();
-            } catch (InvocationTargetException e) {
-                isInRemoving = true;
-                e.printStackTrace();
-            }
-            if (isInRemoving) {
-                swipeBackLayout = newSwipeBackLayout();
-                mCacheView = swipeBackLayout;
-            } else {
-                swipeBackLayout = mCacheView;
-            }
-        }
-
-
-        if (!isCreateForSwipeBack) {
-            mBaseView = swipeBackLayout.getContentView();
-            swipeBackLayout.setTag(R.id.qmui_arch_swipe_layout_in_back, null);
-        }
-
-        ViewCompat.setTranslationZ(swipeBackLayout, mBackStackIndex);
-
-        swipeBackLayout.setFitsSystemWindows(false);
-
-        if (getActivity() != null) {
-            QMUIViewHelper.requestApplyInsets(getActivity().getWindow());
-        }
-
-        if (swipeBackLayout.getParent() != null) {
-            ViewGroup viewGroup = (ViewGroup) swipeBackLayout.getParent();
-            if (viewGroup.indexOfChild(swipeBackLayout) > -1) {
-                viewGroup.removeView(swipeBackLayout);
-            } else {
-                // see https://issuetracker.google.com/issues/71879409
-                try {
-                    Field parentField = View.class.getDeclaredField("mParent");
-                    parentField.setAccessible(true);
-                    parentField.set(swipeBackLayout, null);
-                } catch (NoSuchFieldException e) {
-                    e.printStackTrace();
-                } catch (IllegalAccessException e) {
-                    e.printStackTrace();
-                }
-            }
-        }
-
-        return swipeBackLayout;
-    }
 
     protected void popBackStack() {
         if (mEnterAnimationStatus != ANIMATION_ENTER_STATUS_END) {
