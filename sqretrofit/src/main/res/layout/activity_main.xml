@@ -48,6 +48,15 @@
                     app:qmui_isRadiusAdjustBounds="true" />
 
                 <com.qmuiteam.qmui.widget.roundwidget.QMUIRoundButton
+                    android:id="@+id/btCommonRx2"
+                    style="@style/FlexQMReoundButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/dp_45"
+                    android:text="通用测试2(Rx)"
+                    app:qmui_isRadiusAdjustBounds="true" />
+
+
+                <com.qmuiteam.qmui.widget.roundwidget.QMUIRoundButton
                     android:id="@+id/btCiba"
                     style="@style/FlexQMReoundButton"
                     android:layout_width="wrap_content"

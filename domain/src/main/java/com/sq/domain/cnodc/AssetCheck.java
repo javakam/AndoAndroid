@@ -8,15 +8,15 @@ import java.util.List;
  * Created by javakam on 2018/7/8.
  */
 public class AssetCheck {
-    private List<CocTaskLines> cocTaskLines;
+    private List<CocTaskLines> lineList;
     private List<CocTaskHeaders> headerList;
 
-    public List<CocTaskLines> getCocTaskLines() {
-        return cocTaskLines;
+    public List<CocTaskLines> getLineList() {
+        return lineList;
     }
 
-    public void setCocTaskLines(List<CocTaskLines> cocTaskLines) {
-        this.cocTaskLines = cocTaskLines;
+    public void setLineList(List<CocTaskLines> lineList) {
+        this.lineList = lineList;
     }
 
     public List<CocTaskHeaders> getHeaderList() {

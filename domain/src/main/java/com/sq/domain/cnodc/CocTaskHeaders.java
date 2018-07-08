@@ -65,6 +65,26 @@ public class CocTaskHeaders {
     public CocTaskHeaders() {
     }
 
+    @Override
+    public String toString() {
+        return "CocTaskHeaders{" +
+                "id='" + id + '\'' +
+                ", taskNum='" + taskNum + '\'' +
+                ", kostl='" + kostl + '\'' +
+                ", txt50='" + txt50 + '\'' +
+                ", zcharItem12='" + zcharItem12 + '\'' +
+                ", lease='" + lease + '\'' +
+                ", zsczt='" + zsczt + '\'' +
+                ", status='" + status + '\'' +
+                ", startDate=" + startDate +
+                ", endDate=" + endDate +
+                ", createdBy='" + createdBy + '\'' +
+                ", creationDate=" + creationDate +
+                ", lastUpdatedBy='" + lastUpdatedBy + '\'' +
+                ", lastUpdateDate=" + lastUpdateDate +
+                '}';
+    }
+
     public String getId() {
         return id;
     }

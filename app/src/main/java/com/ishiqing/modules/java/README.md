@@ -65,7 +65,7 @@ int a16 = 0x11fa901; // 十六进制  0x或 0X
 
 #### 三、Java运算符和表达式
 ![](.README_images\Java运算符和表达式.png)<br>
-- 赋值运算<br>
+- 赋值运算【重】<br>
 ![](.README_images\赋值运算.png)<br>
 ![](.README_images\赋值运算-数组[重点].png)<br>
 其中，int[] array2=array1; 赋给的是地址（指针）的传递<br>
@@ -163,7 +163,7 @@ Demo -> com.ishiqing.modules.java.位运算 <br>
 ![](.README_images\流程控制.png)<br>
 > 分三种：顺序执行、选择、循环<br>
 
-- 顺序执行 -> 比如：方法的调用
+- 顺序执行 -> 比如：方法的调用 <br>
 - 选择语句if<br>
 1.block 结构 -> {{{...}}}<br>
 2.局部变量 -> 方法里面和代码块里面的变量都叫局部变量。<br>
@@ -177,10 +177,24 @@ Demo -> com.ishiqing.modules.java.位运算 <br>
 int[] a = new int[]{1, 2, 3};
 int[] b = {1, 2, 3};
 ```
-- 数组的赋值和内存分析
-1.值传递和引用传递
-java中基本数据类型都是值传递；、引用数据类型是
+- 数组的赋值和内存分析【重】 <br>
+1.值传递和引用传递<br>
+java中，基本数据类型 都是 值传递；、引用数据类型 是 指针传递。java中的引用数据类型包括 数组（注：数组是对象）和Object
+```
+int a=1;
+int b=a;
+a=100;
+输出a、b结果为 ： 100 、1 。b值没有变化, b=a 相当于copy了一份。
+```
+2.内存分析<br>
+![](.README_images\内存分析.png)<br>
+[JAVA中的栈和堆](https://www.cnblogs.com/ibelieve618/p/6380328.html)
+- 数组排序--冒泡排序 <br>
+示例：com.ishiqing.modules.java.冒泡排序
 
+- 数组排序--冒泡排序
+- 数组排序--冒泡排序
+- 数组排序--冒泡排序
 <br>
 <br>
 
@@ -188,3 +202,12 @@ java中基本数据类型都是值传递；、引用数据类型是
 #### 网络通信
 > HTTP两种请求方式：get\post
 
+- HTTP请求的格式 <br>
+![](.README_images\HTTP请求格式.png) <br>
+请求行、请求头、请求体
+- HTTP响应的格式 <br>
+![](.README_images\HTTP响应格式.png) <br>
+响应行、响应头、响应体
+- [Volley](http://www.gulixueyuan.com/course/112/task/1697/show)
+
+####

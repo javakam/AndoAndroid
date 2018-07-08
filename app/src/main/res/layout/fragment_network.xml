@@ -11,98 +11,78 @@
         android:id="@+id/topbar"
         style="@style/TopBarStyle" />
 
-    <ScrollView
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="@dimen/topbar_height"
-        android:background="@color/white">
+        android:orientation="vertical">
 
-        <LinearLayout
+        <com.google.android.flexbox.FlexboxLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:layout_height="match_parent"
+            android:layout_marginTop="@dimen/topbar_height"
+            android:background="@color/white"
+            app:alignContent="flex_start"
+            app:alignItems="flex_start"
+            app:flexDirection="row"
+            app:flexWrap="wrap">
 
             <com.qmuiteam.qmui.widget.roundwidget.QMUIRoundButton
                 android:id="@+id/btnGetActiveNet"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="15dp"
-                android:layout_marginRight="15dp"
-                android:layout_marginTop="10dp"
-                android:background="@color/white"
-                android:gravity="center"
-                android:paddingBottom="10dp"
-                android:paddingLeft="16dp"
-                android:paddingRight="16dp"
-                android:paddingTop="10dp"
+                style="@style/FlexQMReoundButton"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/dp_45"
                 android:text="获取活动的网络连接"
                 app:qmui_isRadiusAdjustBounds="true" />
 
             <com.qmuiteam.qmui.widget.roundwidget.QMUIRoundButton
                 android:id="@+id/btnGetAllNet"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="15dp"
-                android:layout_marginRight="15dp"
-                android:layout_marginTop="10dp"
-                android:background="@color/white"
-                android:gravity="center"
-                android:paddingBottom="10dp"
-                android:paddingLeft="16dp"
-                android:paddingRight="16dp"
-                android:paddingTop="10dp"
+                style="@style/FlexQMReoundButton"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/dp_45"
                 android:text="获取全部网络连接"
                 app:qmui_isRadiusAdjustBounds="true" />
 
             <com.qmuiteam.qmui.widget.roundwidget.QMUIRoundButton
                 android:id="@+id/btnDownLoad"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="15dp"
-                android:layout_marginRight="15dp"
-                android:layout_marginTop="10dp"
-                android:background="@color/white"
-                android:gravity="center"
-                android:paddingBottom="10dp"
-                android:paddingLeft="16dp"
-                android:paddingRight="16dp"
-                android:paddingTop="10dp"
+                style="@style/FlexQMReoundButton"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/dp_45"
                 android:text="下载"
                 app:qmui_isRadiusAdjustBounds="true" />
 
             <com.qmuiteam.qmui.widget.roundwidget.QMUIRoundButton
                 android:id="@+id/btnGoToUpload"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="15dp"
-                android:layout_marginRight="15dp"
-                android:layout_marginTop="10dp"
-                android:background="@color/white"
-                android:gravity="center"
-                android:paddingBottom="10dp"
-                android:paddingLeft="16dp"
-                android:paddingRight="16dp"
-                android:paddingTop="10dp"
+                style="@style/FlexQMReoundButton"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/dp_45"
                 android:text="上传"
                 app:qmui_isRadiusAdjustBounds="true" />
 
-            <ImageView
-                android:id="@+id/imgDownLoad"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="5dp"
-                tools:src="@mipmap/ic_launcher" />
+            <com.qmuiteam.qmui.widget.roundwidget.QMUIRoundButton
+                android:id="@+id/btnDownAndInstallApk"
+                style="@style/FlexQMReoundButton"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/dp_45"
+                android:text="下载APK并安装"
+                app:qmui_isRadiusAdjustBounds="true" />
+        </com.google.android.flexbox.FlexboxLayout>
 
-            <TextView
-                android:id="@+id/tvNetWork"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="15dp"
-                android:layout_marginRight="15dp"
-                android:layout_marginTop="10dp"
-                android:padding="5dp"
-                android:textColor="@android:color/holo_red_light"
-                tools:text="123456789" />
-        </LinearLayout>
-    </ScrollView>
+        <ImageView
+            android:id="@+id/imgDownLoad"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            tools:src="@mipmap/ic_launcher" />
+
+        <TextView
+            android:id="@+id/tvNetWork"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:layout_marginTop="10dp"
+            android:padding="5dp"
+            android:textColor="@android:color/holo_red_light"
+            tools:text="123456789" />
+    </LinearLayout>
 </FrameLayout>

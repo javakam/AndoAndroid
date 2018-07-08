@@ -70,6 +70,28 @@ public class CocTaskLines {
     public CocTaskLines() {
     }
 
+    @Override
+    public String toString() {
+        return "CocTaskLines{" +
+                "id='" + id + '\'' +
+                ", taskId='" + taskId + '\'' +
+                ", taskNum='" + taskNum + '\'' +
+                ", zcfdd='" + zcfdd + '\'' +
+                ", position='" + position + '\'' +
+                ", zcharItem12='" + zcharItem12 + '\'' +
+                ", txa50='" + txa50 + '\'' +
+                ", zccbh='" + zccbh + '\'' +
+                ", zbgr='" + zbgr + '\'' +
+                ", departmentKostl='" + departmentKostl + '\'' +
+                ", departmentName='" + departmentName + '\'' +
+                ", lease='" + lease + '\'' +
+                ", xstil='" + xstil + '\'' +
+                ", anln1='" + anln1 + '\'' +
+                ", txt50='" + txt50 + '\'' +
+                ", rrf='" + rrf + '\'' +
+                '}';
+    }
+
     public String getId() {
         return id;
     }

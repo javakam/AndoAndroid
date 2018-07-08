@@ -2,7 +2,6 @@ package com.shiqing.retrofit;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.os.SystemClock;
 import android.support.v7.app.AppCompatActivity;
 import android.text.method.ScrollingMovementMethod;
 import android.util.Log;
@@ -19,12 +18,15 @@ import com.shiqing.retrofit.webservice.WebServiceActivity;
 import com.shiqing.retrofit.youdao.PostRequest_Interface_YouDao;
 import com.shiqing.retrofit.youdao.TranslateYouDao;
 import com.sq.domain.cnodc.AssetBook;
+import com.sq.domain.cnodc.AssetCheck;
 import com.sq.domain.cnodc.CocBookBean;
+import com.sq.domain.cnodc.CocTaskHeaders;
+import com.sq.domain.cnodc.CocTaskLines;
 import com.sq.domain.dao.CocBookBeanDao;
+import com.sq.domain.dao.CocTaskHeadersDao;
+import com.sq.domain.dao.CocTaskLinesDao;
 import com.sq.domain.dao.DaoUtils;
 import com.sq.library.widget.SQTipDialogUtil;
-
-import org.greenrobot.greendao.rx.RxDao;
 
 import java.util.List;
 import java.util.concurrent.TimeUnit;
@@ -91,12 +93,18 @@ public class MainActivity extends AppCompatActivity {
                         initRetrofit("http://www.wanandroid.com/tools/mockapi/2018/"));
             }
         });
-        //通用测试 Retrofit + RxJava
+        //通用测试 Retrofit + RxJava  -- 获取台账
         findViewById(R.id.btCommonRx).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                commonRequestRx(
-                        initRetrofit("http://www.wanandroid.com/tools/mockapi/2018/"));
+                commonRequestRx(initRetrofit("http://www.wanandroid.com/tools/mockapi/2018/"));
+            }
+        });
+        //通用测试 Retrofit + RxJava  -- 获取任务单
+        findViewById(R.id.btCommonRx2).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                commonRequestRx2(initRetrofit("http://www.wanandroid.com/tools/mockapi/2018/"));
             }
         });
         //金山词霸
@@ -149,6 +157,8 @@ public class MainActivity extends AppCompatActivity {
 
     /**
      * 通过 Retrofit + RxJava 请求成功后，用 GreenDao 保存到数据库
+     * <p>
+     * https://blog.csdn.net/u012943767/article/details/52036600
      *
      * @param retrofit
      */
@@ -156,17 +166,11 @@ public class MainActivity extends AppCompatActivity {
         SQTipDialogUtil.getInstance().createSimpleLoadingTipDialog(this);
         // 获取 CocBookBeanDao 的 Dao
         final CocBookBeanDao dao = DaoUtils.getDao().getCocBookBeanDao();
-        final RxDao<CocBookBean, String> rxDao = dao.rx();
+//        final RxDao<CocBookBean, String> rxDao = dao.rx();
+
         // 步骤5:创建 网络请求接口 的实例
         CommonRxApi request = retrofit.create(CommonRxApi.class);
         Observer<AssetBook> bookObserver = request.getAssetBook()
-//                .compose(new ObservableTransformer<AssetBook, AssetBook>() {
-//                    @Override
-//                    public ObservableSource<AssetBook> apply(Observable<AssetBook> upstream) {
-//                        rxDao.insertOrReplaceInTx(upstream.)
-//                        return Observable.create(rxDao.insertOrReplaceInTx(upstream.blockingIterable()));
-//                    }
-//                })
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .doOnNext(new Consumer<AssetBook>() {
@@ -175,7 +179,7 @@ public class MainActivity extends AppCompatActivity {
                         System.out.println("doOnNext assetBook size :" + assetBook.getData().size());
                         dao.insertOrReplaceInTx(assetBook.getData());
                         System.out.println("插入成功!");
-                        SystemClock.sleep(10000);
+//                        SystemClock.sleep(10000);
                     }
                 })
                 .subscribeWith(new Observer<AssetBook>() {
@@ -189,9 +193,82 @@ public class MainActivity extends AppCompatActivity {
                         System.out.println("MainActivity.onNext");
                         System.out.println("onNext assetBook size :" + assetBook.getData().size());
                         List<CocBookBean> list = assetBook.getData();
-                        StringBuilder sb = new StringBuilder("Net Content : \n");
+                        StringBuilder sb = new StringBuilder("台账 : \n");
                         for (CocBookBean book : list) {
                             sb.append(book.toString()).append("\n\n");
+                        }
+                        tvResult.setText(sb.toString());
+                        System.out.println("请求成功");
+                    }
+
+                    @Override
+                    public void onError(Throwable t) {
+                        tvResult.setText("请求失败" + t.getMessage());
+                        System.out.println("请求失败" + t.getMessage());
+                    }
+
+                    @Override
+                    public void onComplete() {
+                        System.out.println("MainActivity.onComplete");
+                        SQTipDialogUtil.getInstance().dismiss();
+                    }
+                });
+    }
+
+    /**
+     * 得到数据后，在 doOnNext 存入，onNext 获取
+     *
+     * @param retrofit
+     */
+    private void commonRequestRx2(Retrofit retrofit) {
+        SQTipDialogUtil.getInstance().createSimpleLoadingTipDialog(this);
+        // 获取 CocBookBeanDao 的 Dao
+        final CocTaskHeadersDao headersDao = DaoUtils.getDao().getCocTaskHeadersDao();
+        final CocTaskLinesDao linesDao = DaoUtils.getDao().getCocTaskLinesDao();
+//        final RxDao<CocTaskHeaders, String> headersStringRxDao = headersDao.rx();
+//        final RxDao<CocTaskLines, String> linesStringRxDao = linesDao.rx();
+
+        // 网络请求  doOnNext 存入，onNext中获取
+        CommonRxApi request = retrofit.create(CommonRxApi.class);
+        Observer<AssetCheck> checkObserver = request.getAssetCheck()
+                .subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                .doOnNext(new Consumer<AssetCheck>() {
+                    @Override
+                    public void accept(AssetCheck assetCheck) throws Exception {
+                        System.out.println("onNext headerList size :" + assetCheck.getHeaderList().size()
+                                + " , lineList : " + assetCheck.getLineList().size());
+                        headersDao.insertOrReplaceInTx(assetCheck.getHeaderList());
+                        linesDao.insertOrReplaceInTx(assetCheck.getLineList());
+                        System.out.println("插入成功! AssetCheck");
+                        // TODO 18/7/8 如果插入的数据过多，应该 通过 compose 将 RxDao 压合到网络请求的流里面
+//                        SystemClock.sleep(10000);
+                    }
+                })
+                .subscribeWith(new Observer<AssetCheck>() {
+                    @Override
+                    public void onSubscribe(Disposable d) {
+                        System.out.println("MainActivity.onSubscribe");
+                    }
+
+                    @Override
+                    public void onNext(AssetCheck assetCheck) {
+                        System.out.println("MainActivity.onNext");
+                        System.out.println("onNext headerList size :" + assetCheck.getHeaderList().size()
+                                + " , lineList : " + assetCheck.getLineList().size());
+                        // 换种方式，我们从 本地读取(From Dao)
+//                        List<CocTaskHeaders> headerList = assetCheck.getHeaderList();
+//                        List<CocTaskLines> linesList = assetCheck.getLineList();
+                        List<CocTaskHeaders> headerList = headersDao.loadAll();
+                        List<CocTaskLines> linesList = linesDao.loadAll();
+
+                        StringBuilder sb = new StringBuilder("任务单 : \n");
+                        for (CocTaskHeaders header : headerList) {
+                            sb.append(header.toString()).append("\n\n");
+                        }
+                        sb.append("CocTaskHeaders ↑ =============== ↓ CocTaskLines").append("\n\n");
+                        for (CocTaskLines line : linesList) {
+                            sb.append(line.toString()).append("\n\n");
                         }
                         tvResult.setText(sb.toString());
                         System.out.println("请求成功");

@@ -1,6 +1,7 @@
 package com.shiqing.retrofit.common;
 
 import com.sq.domain.cnodc.AssetBook;
+import com.sq.domain.cnodc.AssetCheck;
 
 import io.reactivex.Observable;
 import retrofit2.http.GET;
@@ -13,5 +14,5 @@ public interface CommonRxApi {
     Observable<AssetBook> getAssetBook();
 
     @GET("pd")
-    Observable<AssetBook> getAssetCheck();
+    Observable<AssetCheck> getAssetCheck();
 }

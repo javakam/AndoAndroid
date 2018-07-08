@@ -16,6 +16,7 @@ import android.support.v4.app.NotificationCompat;
 import android.support.v4.app.NotificationManagerCompat;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import com.ishiqing.R;
@@ -114,6 +115,11 @@ public class HttpUrlConnectionFragment extends BaseFragment {
                 客户端实现文件上传
                  */
                 mActivity.startFragment(new HttpUploadFragment());
+                break;
+            case R.id.btnDownAndInstallApk:
+                //下载并安装 APK
+                ProgressBar progressBar = new ProgressBar(mActivity);
+
                 break;
             default:
                 break;
