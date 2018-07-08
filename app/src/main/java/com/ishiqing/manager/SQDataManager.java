@@ -2,7 +2,7 @@ package com.ishiqing.manager;
 
 import com.ishiqing.R;
 import com.ishiqing.UIRoute;
-import com.ishiqing.bean.QDItemDescription;
+import com.ishiqing.base.QDItemDescription;
 import com.ishiqing.modules.activity.ActiviyEntranceFragment;
 import com.ishiqing.modules.greendao.GreenDaoFragment;
 import com.ishiqing.modules.greendao.RxGreenDaoFragment;

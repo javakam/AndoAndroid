@@ -6,9 +6,9 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.ishiqing.R;
-import com.ishiqing.SQApplication;
 import com.ishiqing.base.BaseFragment;
 import com.sq.domain.bean.User;
+import com.sq.domain.dao.DaoUtils;
 import com.sq.domain.dao.RoleDao;
 import com.sq.domain.dao.UserDao;
 
@@ -42,8 +42,8 @@ public class GreenDaoFragment extends BaseFragment {
         // 当 TextView内容过多时，可以上下滚动查看
         content.setMovementMethod(ScrollingMovementMethod.getInstance());
         //1 获取 XXXDao
-        userDao = SQApplication.getDaoSession().getUserDao();
-        roleDao = SQApplication.getDaoSession().getRoleDao();
+        userDao = DaoUtils.getDao().getUserDao();
+        roleDao = DaoUtils.getDao().getRoleDao();
     }
 
     int i = 0;
@@ -65,7 +65,7 @@ public class GreenDaoFragment extends BaseFragment {
                 User user2 = new User();
                 user2.setId(1000L);
                 user2.setName("小明明");
-                userDao.insertOrReplace(user2);
+                userDao.insertOrReplace(user2); // 事务 insertOrReplaceInTx
                 Toast.makeText(mActivity, "修改 id=1000 的用户为小明明 ", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.btGetAll:

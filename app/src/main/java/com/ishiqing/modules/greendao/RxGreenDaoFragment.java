@@ -6,9 +6,9 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.ishiqing.R;
-import com.ishiqing.SQApplication;
 import com.ishiqing.base.BaseFragment;
 import com.sq.domain.bean.User;
+import com.sq.domain.dao.DaoUtils;
 import com.sq.domain.dao.RoleDao;
 import com.sq.domain.dao.UserDao;
 
@@ -44,8 +44,8 @@ public class RxGreenDaoFragment extends BaseFragment {
         // 当 TextView内容过多时，可以上下滚动查看
         content.setMovementMethod(ScrollingMovementMethod.getInstance());
         //1 获取 XXXDao
-        userDao = SQApplication.getDaoSession().getUserDao();
-        roleDao = SQApplication.getDaoSession().getRoleDao();
+        userDao = DaoUtils.getDao().getUserDao();
+        roleDao = DaoUtils.getDao().getRoleDao();
     }
 
     int i = 0;

@@ -11,12 +11,12 @@ import android.widget.FrameLayout;
 
 import com.ishiqing.R;
 import com.ishiqing.base.BaseFragment;
+import com.ishiqing.base.QDItemDescription;
 import com.ishiqing.base.adapter.BaseRecyclerAdapter;
 import com.ishiqing.base.adapter.RecyclerViewHolder;
-import com.ishiqing.bean.QDItemDescription;
-import com.ishiqing.widget.recyclerview.GridDividerItemDecoration;
 import com.qmuiteam.qmui.util.QMUIViewHelper;
 import com.qmuiteam.qmui.widget.QMUITopBar;
+import com.sq.library.widget.recyclerview.GridDividerItemDecoration;
 
 import java.util.List;
 

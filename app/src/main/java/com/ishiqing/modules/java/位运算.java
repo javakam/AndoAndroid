@@ -24,15 +24,20 @@ public class 位运算 {
         result = a | b;
         System.out.println("result = " + Integer.toBinaryString(result));
         // 三、^异或
-        //
+        // 相同为1，不同为0
         result = a ^ b;
         System.out.println("result = " + Integer.toBinaryString(result));
 
-        // 四、
-        // 五、
-        // 六、
-        // 七、
+        // ----------------------------------------------------------------------------------------------------->
 
-
+        // 四、左移两位
+        result = a << b;
+        System.out.println("result = " + Integer.toBinaryString(result));
+        // 五、右移两位
+        result = a >> b;
+        System.out.println("result = " + Integer.toBinaryString(result));
+        // 四、右移两位
+        result = a >>> b;
+        System.out.println("result = " + Integer.toBinaryString(result));
     }
 }

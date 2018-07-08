@@ -9,10 +9,10 @@ import android.view.View;
 
 import com.ishiqing.R;
 import com.ishiqing.base.qmui.QMUIFragment;
-import com.ishiqing.utils.UIUtils;
-import com.ishiqing.widget.SQTipDialogUtil;
 import com.qmuiteam.qmui.util.QMUIDisplayHelper;
 import com.qmuiteam.qmui.widget.QMUITopBar;
+import com.sq.library.utils.UIUtils;
+import com.sq.library.widget.SQTipDialogUtil;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -63,10 +63,6 @@ public abstract class BaseFragment extends QMUIFragment {
     protected abstract int getLayoutResId();
 
     public BaseFragment() {
-        char a = 'a';
-        char b = 'b';
-        int c = a + b;
-        System.out.println("c = "+c);
     }
 
     @Override

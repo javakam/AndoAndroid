@@ -1,4 +1,4 @@
-package com.ishiqing.widget;
+package com.sq.library.widget;
 
 import android.content.Context;
 import android.support.annotation.LayoutRes;
@@ -6,6 +6,8 @@ import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 
 import com.qmuiteam.qmui.widget.dialog.QMUITipDialog;
+import com.sq.library.Global;
+import com.sq.library.utils.StringUtils;
 
 /**
  * {@link QMUITipDialog }的工具类
@@ -26,6 +28,28 @@ public class SQTipDialogUtil {
 
     private QMUITipDialog tipDialog;
     private QMUITipDialog.Builder builder;
+
+    /**
+     * 创建简单的 Loading 对话框
+     *
+     * @param context
+     */
+    public void createSimpleLoadingTipDialog(@NonNull Context context) {
+        this.createLoadingTipDialog(context, null);
+    }
+
+    /**
+     * 创建 Loading 对话框
+     *
+     * @param context
+     * @param tipWord 提示的文字
+     */
+    public void createLoadingTipDialog(@NonNull Context context, @Nullable String tipWord) {
+        if (StringUtils.isBlank(tipWord)) {
+            tipWord = Global.DIALOG_LOADING;
+        }
+        this.createIconWithTipDialog(context, QMUITipDialog.Builder.ICON_TYPE_LOADING, tipWord);
+    }
 
     /**
      * {@link QMUITipDialog.Builder }

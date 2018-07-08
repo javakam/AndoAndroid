@@ -1,11 +1,11 @@
-package com.ishiqing.utils;
+package com.sq.library.utils;
 
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.support.annotation.NonNull;
 
-import com.ishiqing.Constant;
+import com.sq.library.Global;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -92,7 +92,7 @@ public class Base64Util {
      */
     public static void base64BitmapToFile(byte[] bytes, String filePath, String fileName) {
         // todo test
-        filePath = Constant.PATH_IMAGE;
+        filePath = Global.PATH_IMAGE;
 
         File listnames = new File(filePath);
         if (!listnames.exists()) {
@@ -135,7 +135,7 @@ public class Base64Util {
      */
     public static void base64BitmapToFile(@NonNull Bitmap bitmap, String filePath, String fileName) {
         // todo test
-        filePath = Constant.PATH_IMAGE;
+        filePath = Global.PATH_IMAGE;
 
         File listnames = new File(filePath);
         if (!listnames.exists()) {
@@ -177,7 +177,7 @@ public class Base64Util {
      */
     public static void base64StrToFile(String base64Str, String filePath, String fileName) {
         // todo test
-        filePath = Constant.PATH_FILE;
+        filePath = Global.PATH_FILE;
 
         File listnames = new File(filePath);
         if (!listnames.exists()) {
@@ -224,7 +224,7 @@ public class Base64Util {
      */
     public static void base64BytesToFile(@NonNull byte[] bytes, String filePath, String fileName) {
         // todo test
-        filePath = Constant.PATH_FILE;
+        filePath = Global.PATH_FILE;
 
         File listnames = new File(filePath);
         if (!listnames.exists()) {

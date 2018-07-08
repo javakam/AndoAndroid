@@ -1,7 +1,5 @@
-package com.ishiqing.bean;
+package com.ishiqing.base;
 
-
-import com.ishiqing.base.BaseFragment;
 
 public class QDItemDescription {
     private Class<? extends BaseFragment> mKitDemoClass;

@@ -1,19 +1,15 @@
 package com.ishiqing;
 
-import android.database.sqlite.SQLiteDatabase;
-
 import com.alibaba.android.arouter.launcher.ARouter;
-import com.ishiqing.utils.AppUtils;
-import com.sq.domain.dao.DaoMaster;
-import com.sq.domain.dao.DaoSession;
+import com.sq.domain.dao.DaoUtils;
 import com.sq.library.BaseApplication;
+import com.sq.library.utils.AppUtils;
 import com.squareup.leakcanary.LeakCanary;
 
 /**
  * Created by javakam on 2018/6/16.
  */
 public class SQApplication extends BaseApplication {
-    private static DaoSession daoSession;
 
     @Override
     public void onCreate() {
@@ -43,19 +39,7 @@ public class SQApplication extends BaseApplication {
      * 初始化 GreenDao
      */
     private void initGreenDao() {
-        DaoMaster.DevOpenHelper helper = new DaoMaster.DevOpenHelper(this, "isq.db");
-        SQLiteDatabase database = helper.getWritableDatabase();
-        DaoMaster daoMaster = new DaoMaster(database);
-        daoSession = daoMaster.newSession();
-    }
-
-    /**
-     * 获取 DaoSession
-     *
-     * @return
-     */
-    public static DaoSession getDaoSession() {
-        return daoSession;
+        DaoUtils.initDao(getApplicationContext());
     }
 
     private void initArouter() {

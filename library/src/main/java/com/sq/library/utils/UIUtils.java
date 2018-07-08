@@ -1,4 +1,4 @@
-package com.ishiqing.utils;
+package com.sq.library.utils;
 
 import android.app.Activity;
 import android.content.Context;

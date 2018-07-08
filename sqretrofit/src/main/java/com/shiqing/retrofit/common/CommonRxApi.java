@@ -2,16 +2,16 @@ package com.shiqing.retrofit.common;
 
 import com.sq.domain.cnodc.AssetBook;
 
-import retrofit2.Call;
+import io.reactivex.Observable;
 import retrofit2.http.GET;
 
 /**
  * Created by javakam on 2018/7/2.
  */
-public interface CommonApi {
+public interface CommonRxApi {
     @GET("tz")
-    Call<AssetBook> getAssetBook();
+    Observable<AssetBook> getAssetBook();
 
     @GET("pd")
-    Call<AssetBook> getAssetCheck();
+    Observable<AssetBook> getAssetCheck();
 }

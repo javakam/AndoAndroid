@@ -6,7 +6,7 @@ import android.widget.ImageView;
 
 import com.ishiqing.R;
 import com.ishiqing.base.BaseActivity;
-import com.ishiqing.utils.Base64Util;
+import com.sq.library.utils.Base64Util;
 
 import java.io.UnsupportedEncodingException;
 

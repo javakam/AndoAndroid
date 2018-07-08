@@ -1,4 +1,4 @@
-package com.ishiqing.utils;
+package com.sq.library.utils;
 
 import android.widget.Toast;
 
@@ -8,7 +8,7 @@ import android.widget.Toast;
  * @author javakam
  * @dae 2018-6-20
  */
-public class SQToastUtil {
+public class ToastUtils {
     private static Toast toast;
 
     /**

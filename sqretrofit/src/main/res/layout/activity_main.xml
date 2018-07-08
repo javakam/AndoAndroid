@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/app_base_bg"
@@ -21,41 +23,69 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <Button
-                android:id="@+id/btCommon"
+            <com.google.android.flexbox.FlexboxLayout
                 android:layout_width="match_parent"
-                android:layout_height="35dp"
-                android:text="通用测试"
-                android:textSize="12sp" />
+                android:layout_height="wrap_content"
+                app:alignContent="flex_start"
+                app:alignItems="flex_start"
+                app:flexDirection="row"
+                app:flexWrap="wrap">
 
-            <Button
-                android:id="@+id/btCiba"
-                android:layout_width="match_parent"
-                android:layout_height="35dp"
-                android:text="金山词霸"
-                android:textSize="12sp" />
+                <com.qmuiteam.qmui.widget.roundwidget.QMUIRoundButton
+                    android:id="@+id/btCommon"
+                    style="@style/FlexQMReoundButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/dp_45"
+                    android:text="通用测试"
+                    app:qmui_isRadiusAdjustBounds="true" />
 
-            <Button
-                android:id="@+id/btYouDao"
-                android:layout_width="match_parent"
-                android:layout_height="35dp"
-                android:text="有道翻译"
-                android:textSize="12sp" />
+                <com.qmuiteam.qmui.widget.roundwidget.QMUIRoundButton
+                    android:id="@+id/btCommonRx"
+                    style="@style/FlexQMReoundButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/dp_45"
+                    android:text="通用测试(Rx)"
+                    app:qmui_isRadiusAdjustBounds="true" />
+
+                <com.qmuiteam.qmui.widget.roundwidget.QMUIRoundButton
+                    android:id="@+id/btCiba"
+                    style="@style/FlexQMReoundButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/dp_45"
+                    android:text="金山词霸"
+                    app:qmui_isRadiusAdjustBounds="true" />
+
+                <com.qmuiteam.qmui.widget.roundwidget.QMUIRoundButton
+                    android:id="@+id/btYouDao"
+                    style="@style/FlexQMReoundButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/dp_45"
+                    android:text="有道翻译"
+                    app:qmui_isRadiusAdjustBounds="true" />
+
+                <com.qmuiteam.qmui.widget.roundwidget.QMUIRoundButton
+                    android:id="@+id/btWebService"
+                    style="@style/FlexQMReoundButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/dp_45"
+                    android:text="WebService(XML)"
+                    app:qmui_isRadiusAdjustBounds="true" />
+            </com.google.android.flexbox.FlexboxLayout>
 
             <View
                 android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:layout_marginBottom="10dp"
-                android:layout_marginTop="10dp"
-                android:background="#0f0" />
+                android:layout_height="15dp"
+                android:background="#ffa" />
 
-            <Button
-                android:id="@+id/btWebService"
+            <TextView
+                android:id="@+id/tvResult"
                 android:layout_width="match_parent"
-                android:layout_height="35dp"
-                android:text="XML WebService"
-                android:textAllCaps="false"
-                android:textSize="12sp" />
+                android:layout_height="wrap_content"
+                android:padding="@dimen/dp_05"
+                android:scrollbars="vertical"
+                android:textColor="@android:color/holo_blue_dark"
+                android:textSize="@dimen/text_size_12sp"
+                tools:text="AAAAaaaaAAA" />
         </LinearLayout>
     </ScrollView>
 </FrameLayout>

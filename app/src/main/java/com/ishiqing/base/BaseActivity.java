@@ -35,7 +35,7 @@ public abstract class BaseActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         QMUIStatusBarHelper.translucent(this);
         setContentView(getLayoutId());
-        ButterKnife.bind(this);
+        mUnbinder = ButterKnife.bind(this);
         initViews();
     }
 
@@ -44,7 +44,6 @@ public abstract class BaseActivity extends AppCompatActivity {
         super.onDestroy();
         if (mUnbinder != null) {
             mUnbinder.unbind();
-
         }
     }
 

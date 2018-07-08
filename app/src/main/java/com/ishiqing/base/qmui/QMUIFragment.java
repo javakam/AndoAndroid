@@ -19,9 +19,9 @@ import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 
 import com.ishiqing.R;
-import com.ishiqing.utils.UIUtils;
 import com.qmuiteam.qmui.QMUILog;
 import com.qmuiteam.qmui.util.QMUIViewHelper;
+import com.sq.library.utils.UIUtils;
 
 import java.lang.reflect.Field;
 import java.lang.reflect.InvocationTargetException;
