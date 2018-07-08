@@ -118,6 +118,7 @@ public class HttpUrlConnectionFragment extends BaseFragment {
                 break;
             case R.id.btnDownAndInstallApk:
                 //下载并安装 APK
+                // http://www.gulixueyuan.com/course/112/task/1701/show
                 ProgressBar progressBar = new ProgressBar(mActivity);
 
                 break;
