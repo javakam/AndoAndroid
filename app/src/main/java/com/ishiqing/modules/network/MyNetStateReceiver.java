@@ -13,7 +13,7 @@ public class MyNetStateReceiver extends BroadcastReceiver {
     @Override
     public void onReceive(Context context, Intent intent) {
         if (NetTools.isNetAvaliable(context)) {
-            abortBroadcast();
+//            abortBroadcast();
         }
     }
 }

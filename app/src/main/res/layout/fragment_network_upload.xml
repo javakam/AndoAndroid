@@ -72,7 +72,7 @@
             android:paddingLeft="16dp"
             android:paddingRight="16dp"
             android:paddingTop="10dp"
-            android:text="登录"
+            android:text="玩安卓登录（POST）"
             app:qmui_isRadiusAdjustBounds="true" />
 
         <com.qmuiteam.qmui.widget.roundwidget.QMUIRoundButton
@@ -88,7 +88,22 @@
             android:paddingLeft="16dp"
             android:paddingRight="16dp"
             android:paddingTop="10dp"
-            android:text="获取项目分类"
+            android:text="获取北京天气（GET）"
             app:qmui_isRadiusAdjustBounds="true" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="15dp"
+            android:background="#ffa" />
+
+        <TextView
+            android:id="@+id/tvResult"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/dp_05"
+            android:scrollbars="vertical"
+            android:textColor="@android:color/holo_blue_dark"
+            android:textSize="@dimen/text_size_12sp"
+            tools:text="AAAAaaaaAAA" />
     </LinearLayout>
 </FrameLayout>

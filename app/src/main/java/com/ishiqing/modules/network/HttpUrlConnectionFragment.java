@@ -61,19 +61,22 @@ public class HttpUrlConnectionFragment extends BaseFragment {
         initTopBar(UIRoute.FRAG_NETWORK, true);
     }
 
-    @OnClick({R.id.btnGetActiveNet, R.id.btnGetAllNet, R.id.btnDownLoad, R.id.btnGoToUpload})
+    @OnClick({R.id.btnGetActiveNet, R.id.btnGetAllNet, R.id.btnDownLoad, R.id.btnGoToUpload
+            , R.id.btnDownAndInstallApk})
     void getNetConn(View v) {
-        ConnectivityManager connectivityManager
+        ConnectivityManager connManager
                 = (ConnectivityManager) mActivity.getSystemService(Context.CONNECTIVITY_SERVICE);
         switch (v.getId()) {
             case R.id.btnGetActiveNet:
-                NetworkInfo info = connectivityManager.getActiveNetworkInfo();
+                // 网络连接
+                NetworkInfo info = connManager.getActiveNetworkInfo();
                 if (info != null) {
                     tvNetWork.setText(info.getTypeName() + "  " + info.getState());
                 }
                 break;
             case R.id.btnGetAllNet:
-                NetworkInfo[] infos = connectivityManager.getAllNetworkInfo();
+                // 获取全部网络连接
+                NetworkInfo[] infos = connManager.getAllNetworkInfo();
                 StringBuilder stringBuilder = new StringBuilder();
                 for (NetworkInfo io : infos) {
                     stringBuilder.append(io.toString() + "\n\n");
@@ -81,6 +84,8 @@ public class HttpUrlConnectionFragment extends BaseFragment {
                 tvNetWork.setText(stringBuilder.toString());
                 break;
             case R.id.btnDownLoad:
+                // 无网络时，通过  Notification 通知进入系统网络设置界面；
+                // 有网络时，进行下载
                 if (!NetTools.isNetAvaliable(mActivity)) {
                     // 在通知栏中显示通知
                     String text = "内容：点击设置";

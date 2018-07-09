@@ -78,10 +78,10 @@ public abstract class BaseFragment extends QMUIFragment {
     /**
      * 可以通过重写该方法，重新定义TopBar事件
      */
-    public void initTopBar(String title, boolean showImageButtonBack) {
+    public void initTopBar(String title, boolean showImageBack) {
         if (mTopBar != null) {
             mTopBar.setTitle(title);
-            if (showImageButtonBack) {
+            if (showImageBack) {
                 mTopBar.addLeftBackImageButton().setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {

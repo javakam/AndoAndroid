@@ -15,6 +15,7 @@ import com.ishiqing.modules.service.ServiceFragment2;
 import com.ishiqing.modules.service.ServiceFragment3;
 import com.ishiqing.modules.service.ServiceFragment4;
 import com.ishiqing.modules.service.aidl.AIDIServiceFragment;
+import com.ishiqing.modules.thread.ThreadNavFragment;
 import com.ishiqing.modules.wanandroid.WanFragment;
 import com.ishiqing.modules.widgets.AutoCompleteTextViewFragment;
 import com.ishiqing.modules.widgets.ButtonFragment;
@@ -38,6 +39,7 @@ public class SQDataManager {
         list.add(new QDItemDescription(ServiceFragment4.class, UIRoute.FRAG_SERVICE4, R.mipmap.icon_grid_layout));
         list.add(new QDItemDescription(ProviderFragment1.class, UIRoute.FRAG_PROVIDER1, R.mipmap.icon_grid_layout));
         list.add(new QDItemDescription(AIDIServiceFragment.class, UIRoute.FRAG_AIDL, R.mipmap.icon_grid_layout));
+        list.add(new QDItemDescription(ThreadNavFragment.class, UIRoute.FRAG_THREAD_NAV, R.mipmap.icon_grid_layout));
         list.add(new QDItemDescription(HttpUrlConnectionFragment.class, UIRoute.FRAG_NETWORK, R.mipmap.icon_grid_layout));
         list.add(new QDItemDescription(WanFragment.class, UIRoute.FRAG_WAN_ANDROID, R.mipmap.icon_grid_layout));
         list.add(new QDItemDescription(增量更新.class, UIRoute.FRAG_ZLGX, R.mipmap.icon_grid_layout));

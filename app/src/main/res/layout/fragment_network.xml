@@ -28,7 +28,7 @@
 
             <com.qmuiteam.qmui.widget.roundwidget.QMUIRoundButton
                 android:id="@+id/btnGetActiveNet"
-                style="@style/FlexQMReoundButton"
+                style="@style/FlexTwoQMButton"
                 android:layout_width="wrap_content"
                 android:layout_height="@dimen/dp_45"
                 android:text="获取活动的网络连接"
@@ -36,7 +36,7 @@
 
             <com.qmuiteam.qmui.widget.roundwidget.QMUIRoundButton
                 android:id="@+id/btnGetAllNet"
-                style="@style/FlexQMReoundButton"
+                style="@style/FlexTwoQMButton"
                 android:layout_width="wrap_content"
                 android:layout_height="@dimen/dp_45"
                 android:text="获取全部网络连接"
@@ -44,7 +44,7 @@
 
             <com.qmuiteam.qmui.widget.roundwidget.QMUIRoundButton
                 android:id="@+id/btnDownLoad"
-                style="@style/FlexQMReoundButton"
+                style="@style/FlexTwoQMButton"
                 android:layout_width="wrap_content"
                 android:layout_height="@dimen/dp_45"
                 android:text="下载"
@@ -52,7 +52,7 @@
 
             <com.qmuiteam.qmui.widget.roundwidget.QMUIRoundButton
                 android:id="@+id/btnGoToUpload"
-                style="@style/FlexQMReoundButton"
+                style="@style/FlexTwoQMButton"
                 android:layout_width="wrap_content"
                 android:layout_height="@dimen/dp_45"
                 android:text="上传"
@@ -60,7 +60,7 @@
 
             <com.qmuiteam.qmui.widget.roundwidget.QMUIRoundButton
                 android:id="@+id/btnDownAndInstallApk"
-                style="@style/FlexQMReoundButton"
+                style="@style/FlexTwoQMButton"
                 android:layout_width="wrap_content"
                 android:layout_height="@dimen/dp_45"
                 android:text="下载APK并安装"

@@ -31,53 +31,28 @@
                 app:flexDirection="row"
                 app:flexWrap="wrap">
 
-                <com.qmuiteam.qmui.widget.roundwidget.QMUIRoundButton
-                    android:id="@+id/btCommon"
-                    style="@style/FlexTwoQMButton"
+                <com.qmuiteam.qmui.layout.QMUIButton
+                    android:id="@+id/btAsyncTask"
+                    style="@style/FlexThreeQMButton"
                     android:layout_width="wrap_content"
-                    android:layout_height="@dimen/dp_45"
-                    android:text="通用测试"
+                    android:layout_height="@dimen/dp_80"
+                    android:text="AsyncTask"
                     app:qmui_isRadiusAdjustBounds="true" />
 
-                <com.qmuiteam.qmui.widget.roundwidget.QMUIRoundButton
-                    android:id="@+id/btCommonRx"
-                    style="@style/FlexTwoQMButton"
+                <com.qmuiteam.qmui.layout.QMUIButton
+                    android:id="@+id/btHandler"
+                    style="@style/FlexThreeQMButton"
                     android:layout_width="wrap_content"
-                    android:layout_height="@dimen/dp_45"
-                    android:text="通用测试(Rx)"
+                    android:layout_height="@dimen/dp_80"
+                    android:text="Handler"
                     app:qmui_isRadiusAdjustBounds="true" />
 
-                <com.qmuiteam.qmui.widget.roundwidget.QMUIRoundButton
-                    android:id="@+id/btCommonRx2"
-                    style="@style/FlexTwoQMButton"
+                <com.qmuiteam.qmui.layout.QMUIButton
+                    android:id="@+id/btThread"
+                    style="@style/FlexThreeQMButton"
                     android:layout_width="wrap_content"
-                    android:layout_height="@dimen/dp_45"
-                    android:text="通用测试2(Rx)"
-                    app:qmui_isRadiusAdjustBounds="true" />
-
-
-                <com.qmuiteam.qmui.widget.roundwidget.QMUIRoundButton
-                    android:id="@+id/btCiba"
-                    style="@style/FlexTwoQMButton"
-                    android:layout_width="wrap_content"
-                    android:layout_height="@dimen/dp_45"
-                    android:text="金山词霸"
-                    app:qmui_isRadiusAdjustBounds="true" />
-
-                <com.qmuiteam.qmui.widget.roundwidget.QMUIRoundButton
-                    android:id="@+id/btYouDao"
-                    style="@style/FlexTwoQMButton"
-                    android:layout_width="wrap_content"
-                    android:layout_height="@dimen/dp_45"
-                    android:text="有道翻译"
-                    app:qmui_isRadiusAdjustBounds="true" />
-
-                <com.qmuiteam.qmui.widget.roundwidget.QMUIRoundButton
-                    android:id="@+id/btWebService"
-                    style="@style/FlexTwoQMButton"
-                    android:layout_width="wrap_content"
-                    android:layout_height="@dimen/dp_45"
-                    android:text="WebService(XML)"
+                    android:layout_height="@dimen/dp_80"
+                    android:text="Thread"
                     app:qmui_isRadiusAdjustBounds="true" />
             </com.google.android.flexbox.FlexboxLayout>
 
