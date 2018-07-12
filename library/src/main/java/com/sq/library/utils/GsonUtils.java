@@ -6,6 +6,7 @@ import com.google.gson.reflect.TypeToken;
 
 import java.io.Reader;
 import java.lang.reflect.Type;
+import java.util.Map;
 
 
 /**
@@ -19,6 +20,20 @@ public final class GsonUtils {
 
     private GsonUtils() {
         throw new UnsupportedOperationException("u can't instantiate me...");
+    }
+
+    public static Map<String, Object> json2Map(final String json) {
+        return GSON.fromJson(json, new TypeToken<Map<String, Object>>() {
+        }.getType());
+    }
+
+    public static String map2Json(Map<String, ?> map) {
+        return GSON.toJson(map);
+
+    }
+
+    public static String object2Json(Object object) {
+        return GSON.toJson(object);
     }
 
     /**

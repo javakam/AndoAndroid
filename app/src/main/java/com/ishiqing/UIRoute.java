@@ -22,8 +22,9 @@ public class UIRoute {
     public static final String FRAG_ZLGX = "增量更新";
     public static final String FRAG_WAN_ANDROID = "玩安卓";
     public static final String FRAG_RXJAVA2 = "RxJava2";
-    public static final String FRAG_GREENDAO = "GreenDao";
-    public static final String FRAG_RX_GREENDAO = "RxGreenDao";
+    public static final String FRAG_GREENDAO = "GreenDao基本";
+    public static final String FRAG_GREENDAO_M2M = "GreenDao多对多";
+    public static final String FRAG_RX_GREENDAO = "GreenDao&Rx";
     public static final String FRAG_NETWORK_UPLOAD = "上传文件";
     public static final String FRAG_OTHER = "其他组件";
 }

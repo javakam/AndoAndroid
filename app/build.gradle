@@ -30,9 +30,9 @@ android {
     productFlavors {
     }
 
-//    lintOptions {
-//        abortOnError false
-//    }
+    lintOptions {
+        abortOnError false
+    }
 
     compileOptions {
         targetCompatibility 1.8

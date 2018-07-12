@@ -1,5 +1,7 @@
 package com.ishiqing.modules.thread;
 
+import android.os.AsyncTask;
+
 import com.ishiqing.R;
 import com.ishiqing.base.BaseFragment;
 
@@ -17,5 +19,13 @@ public class AsyncTaskFragment extends BaseFragment {
     @Override
     protected void initViews() {
         initTopBar("AsyncTask", true);
+    }
+
+    class MyAsyncTask extends AsyncTask<Integer,String,String>{
+
+        @Override
+        protected String doInBackground(Integer... integers) {
+            return null;
+        }
     }
 }
