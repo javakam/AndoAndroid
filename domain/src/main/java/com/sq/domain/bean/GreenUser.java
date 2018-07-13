@@ -9,7 +9,6 @@ import org.greenrobot.greendao.annotation.Entity;
 import org.greenrobot.greendao.annotation.Generated;
 import org.greenrobot.greendao.annotation.Id;
 import org.greenrobot.greendao.annotation.ToMany;
-import org.greenrobot.greendao.annotation.Unique;
 
 import java.util.List;
 
@@ -20,73 +19,58 @@ import java.util.List;
 public class GreenUser {
 
     @Id
-    private Long g_uid;
-    @Unique
     private String uid;
     private String username;
-    @ToMany(referencedJoinProperty = "g_fid")
+    @ToMany(referencedJoinProperty = "fid")
     private List<GreenFriend> friends;
-    /** Used to resolve relations */
-    @Generated(hash = 2040040024)
-    private transient DaoSession daoSession;
-    /** Used for active entity operations. */
-    @Generated(hash = 204181598)
-    private transient GreenUserDao myDao;
-
-
-    @Generated(hash = 599938781)
-    public GreenUser(Long g_uid, String uid, String username) {
-        this.g_uid = g_uid;
-        this.uid = uid;
-        this.username = username;
-    }
-
-
-    @Generated(hash = 1678257977)
-    public GreenUser() {
-    }
-
 
     public void setFriends(List<GreenFriend> friends) {
         this.friends = friends;
     }
 
+    /**
+     * Used to resolve relations
+     */
+    @Generated(hash = 2040040024)
+    private transient DaoSession daoSession;
+    /**
+     * Used for active entity operations.
+     */
+    @Generated(hash = 204181598)
 
-    public Long getG_uid() {
-        return this.g_uid;
+    private transient GreenUserDao myDao;
+
+    @Generated(hash = 1397977567)
+    public GreenUser(String uid, String username) {
+        this.uid = uid;
+        this.username = username;
     }
 
-
-    public void setG_uid(Long g_uid) {
-        this.g_uid = g_uid;
+    @Generated(hash = 1678257977)
+    public GreenUser() {
     }
-
 
     public String getUid() {
         return this.uid;
     }
 
-
     public void setUid(String uid) {
         this.uid = uid;
     }
-
 
     public String getUsername() {
         return this.username;
     }
 
-
     public void setUsername(String username) {
         this.username = username;
     }
-
 
     /**
      * To-many relationship, resolved on first access (and after reset).
      * Changes to to-many relations are not persisted, make changes to the target entity.
      */
-    @Generated(hash = 1438365045)
+    @Generated(hash = 814546834)
     public List<GreenFriend> getFriends() {
         if (friends == null) {
             final DaoSession daoSession = this.daoSession;
@@ -94,7 +78,7 @@ public class GreenUser {
                 throw new DaoException("Entity is detached from DAO context");
             }
             GreenFriendDao targetDao = daoSession.getGreenFriendDao();
-            List<GreenFriend> friendsNew = targetDao._queryGreenUser_Friends(g_uid);
+            List<GreenFriend> friendsNew = targetDao._queryGreenUser_Friends(uid);
             synchronized (this) {
                 if (friends == null) {
                     friends = friendsNew;
@@ -104,13 +88,13 @@ public class GreenUser {
         return friends;
     }
 
-
-    /** Resets a to-many relationship, making the next get call to query for a fresh result. */
+    /**
+     * Resets a to-many relationship, making the next get call to query for a fresh result.
+     */
     @Generated(hash = 1638260638)
     public synchronized void resetFriends() {
         friends = null;
     }
-
 
     /**
      * Convenient call for {@link org.greenrobot.greendao.AbstractDao#delete(Object)}.
@@ -124,7 +108,6 @@ public class GreenUser {
         myDao.delete(this);
     }
 
-
     /**
      * Convenient call for {@link org.greenrobot.greendao.AbstractDao#refresh(Object)}.
      * Entity must attached to an entity context.
@@ -136,7 +119,6 @@ public class GreenUser {
         }
         myDao.refresh(this);
     }
-
 
     /**
      * Convenient call for {@link org.greenrobot.greendao.AbstractDao#update(Object)}.
@@ -150,13 +132,13 @@ public class GreenUser {
         myDao.update(this);
     }
 
-
-    /** called by internal mechanisms, do not call yourself. */
+    /**
+     * called by internal mechanisms, do not call yourself.
+     */
     @Generated(hash = 1388707780)
     public void __setDaoSession(DaoSession daoSession) {
         this.daoSession = daoSession;
         myDao = daoSession != null ? daoSession.getGreenUserDao() : null;
     }
-
 
 }
