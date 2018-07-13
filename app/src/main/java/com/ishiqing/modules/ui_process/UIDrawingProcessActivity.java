@@ -33,5 +33,17 @@ public class UIDrawingProcessActivity extends BaseActivity {
         View.MeasureSpec.getMode(1);
         View.MeasureSpec.getSize(1);
 
+        // 2018年7月13日
+        /*
+        View.inflate() 中：
+
+         LayoutInflater factory = LayoutInflater.from(context);
+         return factory.inflate(resource, root);
+
+         最终调用的是 LayoutInflater中的：
+         public View inflate(XmlPullParser parser, @Nullable ViewGroup root, boolean attachToRoot) {...}
+         详见：LayouInflater源码.md
+         */
+
     }
 }

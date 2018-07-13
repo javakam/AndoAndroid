@@ -1,0 +1,14 @@
+### Java内存模型
+[https://blog.csdn.net/suifeng3051/article/details/52611310](https://blog.csdn.net/suifeng3051/article/details/52611310)
+
+### RAM和ROM的区别
+[https://zhidao.baidu.com/question/81373514.html](https://zhidao.baidu.com/question/81373514.html)
+- RAM-RamdomAccessMemory
+易挥发性随机存取存储器，高速存取，读写时间相等，且与地址无关，如计算机内存等。
+- ROM-Read Only Memory
+只读存储器。断电后信息不丢失，如计算机启动用的BIOS芯片。存取速度很低，（较RAM而言）且不能改写。由于不能改写信息，不能升级，现已很少使用。
+- 区别
+ROM和RAM是计算机内存储器的两种型号，ROM表示的是只读存储器，即：它只能读出信息，不能写入信息，计算机关闭电源后其内的信息仍旧保存，一般用它存储固定的系统软件和字库等。
+RAM表示的是读写存储器，可其中的任一存储单元进行读或写操作，计算机关闭电源后其内的信息将不在保存，再次开机需要重新装入，
+通常用来存放操作系统、各种正在运行的软件、输入和输出数据、中间结果及与外存交换信息等，我们常说的内存主要是指RAM。
+
