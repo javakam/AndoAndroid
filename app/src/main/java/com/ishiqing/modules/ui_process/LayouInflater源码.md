@@ -1,5 +1,5 @@
 ### LayoutInflater
-先看下 inflate 源码：
+先看下 LayoutInflater.inflate 源码：
 ```
 /**
  * Inflate a new view hierarchy from the specified XML node. Throws
