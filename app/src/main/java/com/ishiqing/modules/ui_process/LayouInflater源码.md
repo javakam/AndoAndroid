@@ -145,5 +145,5 @@ temp.setLayoutParams(params); root.generateLayoutParams(attrs)
 其内部是在方法 createView 中通过反射创建出来的视图。(也就是说，我们在layout.xml里写的TextView是通过反射创建出来的！) <br>
 然后递归把剩下的标签也渲染绘制 rInflateChildren ，最后判断root、attachToRoot进行判断， <br>
 一种是通过 View.addView，把temp（子View/ViewGroup）添加到根视图root上；<br>
-另一种情况是 将引用指向 temp -> result = temp;<br>
+另一种情况是 将引用指向 temp -> result = temp; <br>
 并将结果result返回。
