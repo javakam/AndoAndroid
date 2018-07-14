@@ -1,4 +1,4 @@
-package com.ishiqing.modules.incremental_updating;
+package com.ishiqing.modules.network;
 
 import com.ishiqing.R;
 import com.ishiqing.base.BaseFragment;

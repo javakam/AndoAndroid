@@ -11,6 +11,7 @@ public class UIRoute {
     public static final String FRAG_WIDGET_FLEXBOX_CAT = "FlexboxLayout Cat";
     public static final String FRAG_WIDGET_BUTTON = "Button";
     public static final String FRAG_ACTIVITY1 = "Activity";
+    public static final String FRAG_INTENT_SERVICE = "IntentService";
     public static final String FRAG_SERVICE1 = "Service(一)";
     public static final String FRAG_SERVICE2 = "Service(二)";
     public static final String FRAG_SERVICE3 = "Service(三)";

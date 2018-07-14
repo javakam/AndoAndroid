@@ -3,6 +3,7 @@
 
     <string name="nav_main">首页</string>
     <string name="nav_component">消息</string>
+    <string name="start_intent_service">开启IntentService</string>
     <string name="start_service">开启服务</string>
     <string name="stop_service">停止服务</string>
     <string name="bind_service">绑定服务</string>

@@ -22,6 +22,7 @@ import butterknife.OnClick;
  * Created by javakam on 2018/6/17.
  */
 public class ServiceFragment3 extends BaseFragment {
+
     @BindView(R.id.btnStart)
     QMUIRoundButton button;
 
@@ -90,4 +91,5 @@ public class ServiceFragment3 extends BaseFragment {
                 break;
         }
     }
+
 }

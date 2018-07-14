@@ -7,10 +7,11 @@ import com.ishiqing.modules.activity.ActiviyEntranceFragment;
 import com.ishiqing.modules.greendao.GreenDaoFragment;
 import com.ishiqing.modules.greendao.GreenDaoM2MFragment;
 import com.ishiqing.modules.greendao.RxGreenDaoFragment;
-import com.ishiqing.modules.incremental_updating.增量更新;
 import com.ishiqing.modules.network.HttpUrlConnectionFragment;
+import com.ishiqing.modules.network.增量更新;
 import com.ishiqing.modules.provider.ProviderFragment1;
 import com.ishiqing.modules.rxjava.RxJavaFragment1;
+import com.ishiqing.modules.service.IntentServiceFragment;
 import com.ishiqing.modules.service.ServiceFragment1;
 import com.ishiqing.modules.service.ServiceFragment2;
 import com.ishiqing.modules.service.ServiceFragment3;
@@ -34,6 +35,7 @@ public class SQDataManager {
     public static List<QDItemDescription> getHomeGridDescriptions() {
         List<QDItemDescription> list = new ArrayList<>();
         list.add(new QDItemDescription(ActiviyEntranceFragment.class, UIRoute.FRAG_ACTIVITY1, R.mipmap.icon_grid_layout));
+        list.add(new QDItemDescription(IntentServiceFragment.class, UIRoute.FRAG_INTENT_SERVICE, R.mipmap.icon_grid_layout));
         list.add(new QDItemDescription(ServiceFragment1.class, UIRoute.FRAG_SERVICE1, R.mipmap.icon_grid_layout));
         list.add(new QDItemDescription(ServiceFragment2.class, UIRoute.FRAG_SERVICE2, R.mipmap.icon_grid_layout));
         list.add(new QDItemDescription(ServiceFragment3.class, UIRoute.FRAG_SERVICE3, R.mipmap.icon_grid_layout));

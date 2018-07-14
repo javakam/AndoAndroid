@@ -38,6 +38,12 @@ public abstract class BaseActivity extends AppCompatActivity {
             recoverInstanceState(savedInstanceState);
         }
         super.onCreate(savedInstanceState);
+        //Activity的管理方式（一） -- 容器式
+        //缺陷：当一个嵌套比较深的已存入Stack中的Activity被系统杀死时，并没有被移出栈，造成内存泄漏！
+        //建立一个全局容器，把所有的Activity存储起来，退出时循环遍历finish所有Activity
+        ActivityManager.getActivityManager().addActivity(this);
+        //Activity的管理方式（二） -- SingleTask
+
         QMUIStatusBarHelper.translucent(this);
         setContentView(getLayoutId());
         mUnbinder = ButterKnife.bind(this);
@@ -55,6 +61,8 @@ public abstract class BaseActivity extends AppCompatActivity {
         if (mUnbinder != null) {
             mUnbinder.unbind();
         }
+        // 从栈中移除该Activity & 结束Activity
+        ActivityManager.getActivityManager().finishActivity();
     }
 
     @LayoutRes
