@@ -44,6 +44,5 @@ public class UIDrawingProcessActivity extends BaseActivity {
          public View inflate(XmlPullParser parser, @Nullable ViewGroup root, boolean attachToRoot) {...}
          详见：LayouInflater源码.md
          */
-
     }
 }

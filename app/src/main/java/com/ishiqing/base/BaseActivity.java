@@ -11,6 +11,7 @@ import com.ishiqing.R;
 import com.qmuiteam.qmui.util.QMUIStatusBarHelper;
 import com.qmuiteam.qmui.widget.QMUIEmptyView;
 import com.qmuiteam.qmui.widget.QMUITopBar;
+import com.sq.library.utils.L;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -32,11 +33,20 @@ public abstract class BaseActivity extends AppCompatActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         supportRequestWindowFeature(Window.FEATURE_NO_TITLE);
+        //恢复全局的数据
+        if (savedInstanceState != null) {
+            recoverInstanceState(savedInstanceState);
+        }
         super.onCreate(savedInstanceState);
         QMUIStatusBarHelper.translucent(this);
         setContentView(getLayoutId());
         mUnbinder = ButterKnife.bind(this);
         initViews();
+    }
+
+    @Override
+    protected void onRestart() {
+        super.onRestart();
     }
 
     @Override
@@ -49,6 +59,30 @@ public abstract class BaseActivity extends AppCompatActivity {
 
     @LayoutRes
     protected abstract int getLayoutId();
+
+    /**
+     * 获取系统保存的数据
+     */
+    private void recoverInstanceState(Bundle savedInstanceState) {
+        if (savedInstanceState.containsKey("name")) {
+            String name = savedInstanceState.getString("name");
+            L.i("recoveryInstanceState : " + name);
+        }
+    }
+
+    @Override
+    protected void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+        outState.putString("name", "martin");
+        L.i("onSaveInstanceState : martin");
+    }
+
+
+    @Override
+    protected void onRestoreInstanceState(Bundle savedInstanceState) {
+        super.onRestoreInstanceState(savedInstanceState);
+        L.i("onRestoreInstanceState : " + savedInstanceState.getString("name"));
+    }
 
     /**
      * 初始化View
@@ -102,5 +136,6 @@ public abstract class BaseActivity extends AppCompatActivity {
                 getResources().getString(R.string.emptyView_mode_desc_retry),
                 onClickListener);
     }
+
 
 }
