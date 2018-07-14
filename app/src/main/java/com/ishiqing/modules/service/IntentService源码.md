@@ -5,6 +5,7 @@
 startServiceIntent.setPackage(BuildConfig.APPLICATION_ID);
 ```
 详见：com.ishiqing.modules.service.IntentServiceFragment
+> IntentService 面试题 [https://blog.csdn.net/lijizhi19950123/article/details/77935082](https://blog.csdn.net/lijizhi19950123/article/details/77935082)
 
 - 概念
 > IntentService是继承于Service并处理异步请求的一个类，在IntentService内有一个工作线程来处理耗时操作，
