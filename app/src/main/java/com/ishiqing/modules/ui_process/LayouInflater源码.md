@@ -38,7 +38,7 @@ public View inflate(XmlPullParser parser, @Nullable ViewGroup root, boolean atta
             while ((type = parser.next()) != XmlPullParser.START_TAG && type != XmlPullParser.END_DOCUMENT) {
                 // Empty
             }
-            //2 能走到这里，说明type是START_TAG 或 END_DOCUMENT,如果一开始就是END_DOCUMENT，那说明xml文件有问题.
+            //2 能走到这里，说明type是START_TAG 或 END_DOCUMENT,如果一开始就是 END_DOCUMENT，那说明xml文件有问题.
             if (type != XmlPullParser.START_TAG) {
                 throw new InflateException(parser.getPositionDescription()+ ": No start tag found!");
             }
@@ -125,7 +125,7 @@ public View inflate(XmlPullParser parser, @Nullable ViewGroup root, boolean atta
 }
 ```
 简单总节一下：<br>
-LayoutInflater 中的 inflate 方法首先 通过XmlPullParser去判别layout.xml中的标签是否合理，如果合理<br>
+LayoutInflater 中的 inflate 方法首先通过 XmlPullParser 去判别layout.xml中的标签是否合理，如果合理<br>
 则获取最外层的标签名:
 ```
 final String name = parser.getName();

@@ -123,7 +123,7 @@ public void setId(@IdRes int id) {
 }
 ```
 ②通过if判断，检测子类是否调用父类的 onSaveInstanceState() 方法，否则会抛异常，突然看到这才明白，
-还记得刚刚开始学Android的时候，经常一不小心就把代码里面的 super.onCreate(savedInstanceState);
+还记得刚刚开始学Android的时候，如果一不小心把代码里面的 super.onCreate(savedInstanceState);
 这行代码删掉，报了错误还看不懂，原来系统在这里检测了。
 ③container.put(mID, state)这行代码，将state放进SparseArray中，以view自身的id为key，
 并且从注释来看打印mID的Hex值用来保证每页的id必须是唯一的，难怪每当我给view取id的时候，一个页面有重复的id就会报错，
