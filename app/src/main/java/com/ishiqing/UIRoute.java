@@ -18,6 +18,7 @@ public class UIRoute {
     public static final String FRAG_SERVICE4 = "Service(四)";
     public static final String FRAG_AIDL = "AIDL";
     public static final String FRAG_PROVIDER1 = "Provider";
+    public static final String FRAG_ANNOTATION = "注解开发";
     public static final String FRAG_THREAD_NAV = "线程和消息机制";
     public static final String FRAG_NETWORK = "网络编程";
     public static final String FRAG_ZLGX = "增量更新";

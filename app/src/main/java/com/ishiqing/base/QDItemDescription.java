@@ -1,13 +1,12 @@
 package com.ishiqing.base;
 
-
 public class QDItemDescription {
     private Class<? extends BaseFragment> mKitDemoClass;
     private String mKitName;
     private String mKitDetailDescription;
     private int mIconRes;
 
-    public QDItemDescription(Class<? extends BaseFragment> kitDemoClass, String kitName){
+    public QDItemDescription(Class<? extends BaseFragment> kitDemoClass, String kitName) {
         this(kitDemoClass, kitName, 0);
     }
 
