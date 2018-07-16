@@ -25,7 +25,6 @@ import com.ishiqing.modules.widgets.CatFlexboxLayoutFragment;
 import com.ishiqing.modules.widgets.FlexboxLayoutFragment;
 import com.ishiqing.modules.widgets.TextViewFragment;
 import com.sq.library.utils.AppUtils;
-import com.sq.library.utils.L;
 import com.sq.library.utils.ResourceUtil;
 
 import java.util.ArrayList;
@@ -41,7 +40,7 @@ public class SQDataManager {
         // java求1到10的随机数问题
         // Math.random() * 10 默认为左闭右开区间即[0,9)，所以还需要在最后面+1才能是[1,10]
         Double i = Math.random() * 32 + 1;
-        L.i("i:" + i);
+//        L.i("i:" + i);
         return ResourceUtil.getMipmapId(AppUtils.getContext(), IMAGE_PRE_FIX + i.intValue());
     }
 
