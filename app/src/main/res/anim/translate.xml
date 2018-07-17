@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<set xmlns:android="http://schemas.android.com/apk/res/android"
+    android:fillAfter="true"
+    android:zAdjustment="normal">
+    <!--此动画可以在100ms内将一个View从原始位置向右下角移动100像素-->
+    <translate
+        android:duration="100"
+        android:fromXDelta="0"
+        android:fromYDelta="0"
+        android:interpolator="@android:anim/linear_interpolator"
+        android:toXDelta="100"
+        android:toYDelta="100" />
+</set>
