@@ -4,6 +4,7 @@ import com.ishiqing.UIRoute;
 import com.ishiqing.base.QDItemDescription;
 import com.ishiqing.modules.activity.ActiviyEntranceFragment;
 import com.ishiqing.modules.annotation.AnnotationFragment;
+import com.ishiqing.modules.eventbus3.EventBusMainActivity;
 import com.ishiqing.modules.greendao.GreenDaoFragment;
 import com.ishiqing.modules.greendao.GreenDaoM2MFragment;
 import com.ishiqing.modules.greendao.RxGreenDaoFragment;
@@ -19,6 +20,7 @@ import com.ishiqing.modules.service.ServiceFragment3;
 import com.ishiqing.modules.service.ServiceFragment4;
 import com.ishiqing.modules.service.intentservice.IntentServiceFragment;
 import com.ishiqing.modules.thread.ThreadNavFragment;
+import com.ishiqing.modules.ui_hencoder.DrawMainActivity;
 import com.ishiqing.modules.wanandroid.WanFragment;
 import com.ishiqing.modules.widgets.AutoCompleteTextViewFragment;
 import com.ishiqing.modules.widgets.ButtonFragment;
@@ -53,18 +55,25 @@ public class SQDataManager {
         list.add(new QDItemDescription(ServiceFragment2.class, UIRoute.FRAG_SERVICE2, getImage()));
         list.add(new QDItemDescription(ServiceFragment3.class, UIRoute.FRAG_SERVICE3, getImage()));
         list.add(new QDItemDescription(ServiceFragment4.class, UIRoute.FRAG_SERVICE4, getImage()));
+        list.add(new QDItemDescription(AIDIServiceFragment.class, UIRoute.FRAG_AIDL, getImage()));
         list.add(new QDItemDescription(TCPClientActivity.class, UIRoute.FRAG_TCP_CLIENT, getImage()));
         list.add(new QDItemDescription(ProviderFragment1.class, UIRoute.FRAG_PROVIDER1, getImage()));
         list.add(new QDItemDescription(AnnotationFragment.class, UIRoute.FRAG_ANNOTATION, getImage()));
-        list.add(new QDItemDescription(AIDIServiceFragment.class, UIRoute.FRAG_AIDL, getImage()));
         list.add(new QDItemDescription(ThreadNavFragment.class, UIRoute.FRAG_THREAD_NAV, getImage()));
         list.add(new QDItemDescription(HttpUrlConnectionFragment.class, UIRoute.FRAG_NETWORK, getImage()));
+
+        return list;
+    }
+
+    public static List<QDItemDescription> getPopularDescriptions() {
+        List<QDItemDescription> list = new ArrayList<>();
         list.add(new QDItemDescription(WanFragment.class, UIRoute.FRAG_WAN_ANDROID, getImage()));
         list.add(new QDItemDescription(增量更新.class, UIRoute.FRAG_ZLGX, getImage()));
         list.add(new QDItemDescription(RxJavaFragment1.class, UIRoute.FRAG_RXJAVA2, getImage()));
         list.add(new QDItemDescription(GreenDaoFragment.class, UIRoute.FRAG_GREENDAO, getImage()));
         list.add(new QDItemDescription(GreenDaoM2MFragment.class, UIRoute.FRAG_GREENDAO_M2M, getImage()));
         list.add(new QDItemDescription(RxGreenDaoFragment.class, UIRoute.FRAG_RX_GREENDAO, getImage()));
+        list.add(new QDItemDescription(EventBusMainActivity.class, UIRoute.FRAG_EVENTBUS3, getImage()));
         return list;
     }
 
@@ -75,6 +84,7 @@ public class SQDataManager {
         list.add(new QDItemDescription(ButtonFragment.class, UIRoute.FRAG_WIDGET_BUTTON, getImage()));
         list.add(new QDItemDescription(FlexboxLayoutFragment.class, UIRoute.FRAG_WIDGET_FLEXBOX, getImage()));
         list.add(new QDItemDescription(CatFlexboxLayoutFragment.class, UIRoute.FRAG_WIDGET_FLEXBOX_CAT, getImage()));
+        list.add(new QDItemDescription(DrawMainActivity.class, UIRoute.FRAG_UI_HENCODER, getImage()));
         return list;
     }
 

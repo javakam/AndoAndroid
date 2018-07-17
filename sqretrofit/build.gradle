@@ -44,12 +44,14 @@ android {
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
+    api project(':library')
     androidTestImplementation deps.espresso.core
     //注意：annotationProcessor 不能从 library 继承！
 //    implementation deps.butterknife.runtime
     annotationProcessor deps.butterknife.compiler
     annotationProcessor deps.arouter.compiler
-    api project(':library')
+    annotationProcessor deps.glide.compiler
+    annotationProcessor deps.eventbus_annotation_processor
 
     /*implementation 'com.android.support:appcompat-v7:26.1.0'
     implementation 'com.android.support.constraint:constraint-layout:1.0.2'
@@ -77,10 +79,10 @@ dependencies {
     implementation 'com.squareup.retrofit2:adapter-rxjava:2.4.0'*/
 
     //----------------------------------Support XML WebService-------------------------------------//
-    implementation("com.squareup.retrofit2:converter-simplexml:2.4.0")
-            {
-                exclude module: 'stax'
-                exclude module: 'stax-api'
-                exclude module: 'xpp3'
-            }
+//    implementation("com.squareup.retrofit2:converter-simplexml:2.4.0")
+//            {
+//                exclude module: 'stax'
+//                exclude module: 'stax-api'
+//                exclude module: 'xpp3'
+//            }
 }

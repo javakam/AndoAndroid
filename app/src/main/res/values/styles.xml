@@ -14,4 +14,10 @@
         <item name="android:background">@drawable/flex_item_background</item>
         <item name="android:gravity">center</item>
     </style>
+
+    <!--textSize  Error:(11, 5) No resource found that matches the given name: attr 'textSize'.-->
+    <style name="TabLayoutTextStyle" parent="TextAppearance.Design.Tab">
+        <item name="android:textSize">12sp</item>
+        <item name="textAllCaps">false</item>
+    </style>
 </resources>

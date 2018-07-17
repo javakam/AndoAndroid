@@ -5,7 +5,7 @@ import android.os.Bundle;
 
 import com.ishiqing.base.BaseFragment;
 import com.ishiqing.base.BaseQMUIFragmentActivity;
-import com.ishiqing.fragment.MainFragment;
+import com.ishiqing.home.MainFragment;
 
 public class MainActivityQMUI extends BaseQMUIFragmentActivity {
 

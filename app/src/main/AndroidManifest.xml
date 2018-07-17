@@ -36,7 +36,13 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".modules.activity.SampleActivity1" />
         <activity android:name=".modules.ipc.socket.TCPClientActivity" />
+        <activity android:name=".modules.ui_hencoder.DrawMainActivity" />
+        <activity android:name=".modules.ui_hencoder.PracticeActivity" />
+        <activity android:name=".modules.eventbus3.EventBusMainActivity" />
+        <activity android:name=".modules.eventbus3.EventBusPriorityActivity" />
+        <activity android:name=".modules.eventbus3.EventBusThreadModeActivity" />
 
         <!-- Service一个隐式跳转，一个显示跳转 com.ishiqing.modules.service.IntentServiceFragment -->
         <!-- IntentService一定要配置，否则是不起作用的 -->
@@ -49,8 +55,6 @@
         <service android:name=".modules.service.MyService2" />
         <service android:name=".modules.service.MyService3" />
         <service android:name=".modules.service.MyService4" />
-
-        <activity android:name=".modules.activity.SampleActivity1" />
 
         <!-- 注：我们自己的监测网络状态的广播，要覆盖系统的广播 而且这玩意儿不会自己提示。。。 -->
         <receiver android:name=".modules.network.MyNetStateReceiver">

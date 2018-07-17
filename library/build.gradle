@@ -65,13 +65,14 @@ dependencies {
     api deps.glide.runtime
     api deps.okhttp
     api deps.okhttp_logging_interceptor
-    annotationProcessor deps.glide.compiler
+    //----------------------------------Support XML WebService-------------------------------------//
+    api("com.squareup.retrofit2:converter-simplexml:2.4.0")
+        {
+            exclude module: 'stax'
+            exclude module: 'stax-api'
+            exclude module: 'xpp3'
+        }
 
-    // Popular Library
-    api deps.butterknife.runtime
-//    annotationProcessor deps.butterknife.compiler
-    api deps.eventbus
-    annotationProcessor deps.eventbus_annotation_processor
     api deps.gson
     api deps.recycler_helper
 

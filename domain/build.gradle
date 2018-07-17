@@ -48,7 +48,11 @@ dependencies {
     api deps.qmuiteam_qmui
     api deps.flexbox
     api deps.greendao
+
+
+    api deps.butterknife.runtime
     api deps.arouter.runtime
+    api deps.eventbus
     // 重：交给子模块实现！！！交给子模块实现！！！交给子模块实现！！！
 //    annotationProcessor deps.arouter.compiler
     api deps.junit

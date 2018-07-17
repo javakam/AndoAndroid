@@ -1,4 +1,4 @@
-package com.ishiqing.fragment;
+package com.ishiqing.home;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -106,19 +106,24 @@ public class MainFragment extends BaseFragment {
 //                "Components", false, false
 //        );
 
-        QMUITabSegment.Tab component = new QMUITabSegment.Tab(
+        QMUITabSegment.Tab home = new QMUITabSegment.Tab(
                 ContextCompat.getDrawable(getContext(), R.mipmap.ic_tabbar_home),
                 ContextCompat.getDrawable(getContext(), R.mipmap.ic_tabbar_home_selected),
                 getString(R.string.nav_main), true
         );
 
-        QMUITabSegment.Tab util = new QMUITabSegment.Tab(
+        QMUITabSegment.Tab pop = new QMUITabSegment.Tab(
+                ContextCompat.getDrawable(getContext(), R.mipmap.ic_tabbar_pop),
+                ContextCompat.getDrawable(getContext(), R.mipmap.ic_tabbar_pop_selected),
+                getString(R.string.nav_pop), true
+        );
+        QMUITabSegment.Tab component = new QMUITabSegment.Tab(
                 ContextCompat.getDrawable(getContext(), R.mipmap.ic_tabbar_component),
                 ContextCompat.getDrawable(getContext(), R.mipmap.ic_tabbar_component_selected),
-                getString(R.string.nav_component), false
+                getString(R.string.nav_component), true
         );
 
-        mTabSegment.addTab(component).addTab(util);
+        mTabSegment.addTab(home).addTab(pop).addTab(component);
     }
 
     private void initPagers() {
@@ -137,27 +142,34 @@ public class MainFragment extends BaseFragment {
 
         mPages = new HashMap<>();
 
-        MainController homeGridController = new MainHomeController(mActivity);
-        homeGridController.setMainControlListener(listener);
-        mPages.put(Pager.HOME, homeGridController);
+        MainController homeControl = new MainHomeController(mActivity);
+        homeControl.setMainControlListener(listener);
+        mPages.put(Pager.HOME, homeControl);
 
-        MainController homeComponentsController = new MainComponentsController(mActivity);
-        homeComponentsController.setMainControlListener(listener);
-        mPages.put(Pager.COMPONENT, homeComponentsController);
+        MainController popControl = new MainPopularController(mActivity);
+        popControl.setMainControlListener(listener);
+        mPages.put(Pager.POPULAR, popControl);
+
+        MainController componentsControl = new MainComponentsController(mActivity);
+        componentsControl.setMainControlListener(listener);
+        mPages.put(Pager.COMPONENT, componentsControl);
 
         mViewPager.setAdapter(mPagerAdapter);
         mTabSegment.setupWithViewPager(mViewPager, false);
+        mViewPager.setOffscreenPageLimit(4);
     }
 
 
     enum Pager {
-        HOME, COMPONENT;
+        HOME, POPULAR, COMPONENT;
 
         public static Pager getPagerFromPositon(int position) {
             switch (position) {
                 case 0:
                     return HOME;
                 case 1:
+                    return POPULAR;
+                case 2:
                     return COMPONENT;
                 default:
                     return HOME;

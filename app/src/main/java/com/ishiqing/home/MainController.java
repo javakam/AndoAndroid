@@ -1,4 +1,4 @@
-package com.ishiqing.fragment;
+package com.ishiqing.home;
 
 import android.app.Activity;
 import android.content.Context;
@@ -29,7 +29,6 @@ import butterknife.ButterKnife;
  * @date 2018-6-16
  */
 public abstract class MainController extends FrameLayout {
-
     @BindView(R.id.topbar)
     QMUITopBar mTopBar;
     @BindView(R.id.recyclerView)

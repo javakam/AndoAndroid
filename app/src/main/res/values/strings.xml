@@ -2,7 +2,8 @@
     <string name="app_name">诗情</string>
 
     <string name="nav_main">首页</string>
-    <string name="nav_component">消息</string>
+    <string name="nav_pop">框架</string>
+    <string name="nav_component">视图</string>
     <string name="start_intent_service">开启IntentService</string>
     <string name="start_service">开启服务</string>
     <string name="stop_service">停止服务</string>
@@ -10,7 +11,22 @@
     <string name="unbind_service">解绑服务</string>
     <string name="change_date_format">更改时间输出格式</string>
 
+    <string name="title_draw_color">drawColor</string>
+    <string name="title_draw_circle">drawCircle</string>
+    <string name="title_draw_rect">drawRect</string>
+    <string name="title_draw_point">drawPoint</string>
+    <string name="title_draw_oval">drawOval</string>
+    <string name="title_draw_line">drawLine</string>
+    <string name="title_draw_round_rect">drawRoundRect</string>
+    <string name="title_draw_arc">drawArc</string>
+    <string name="title_draw_path">drawPath</string>
+    <string name="title_draw_histogram">直方图</string>
+    <string name="title_draw_pie_chart">饼图</string>
+
+
     <string name="test_string_1">蓝蓝的天上马儿跑，白云下面鲜花飘。</string>
     <string name="login_username">账号/邮箱/手机</string>
     <string name="login_pwd">密码</string>
+
+
 </resources>

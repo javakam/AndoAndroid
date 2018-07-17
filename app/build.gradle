@@ -11,10 +11,13 @@ android {
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
 
-        // ARouter::Compiler >>> No module name, for more information, look at gradle log.
         javaCompileOptions {
             annotationProcessorOptions {
-                arguments = [moduleName: project.getName()]
+                // ARouter::Compiler >>> No module name, for more information, look at gradle log.
+                // EventBus3 : ReBuild Project之后会在build文件夹下生成MyEventBusIndex.class
+                arguments = [moduleName     : project.getName()
+                             , eventBusIndex: 'com.ishiqing.modules.eventbus3.MyEventBusIndex']
+
             }
         }
     }
@@ -47,10 +50,12 @@ dependencies {
 //    implementation deps.butterknife.runtime
     annotationProcessor deps.butterknife.compiler
     annotationProcessor deps.arouter.compiler
+    annotationProcessor deps.glide.compiler
+    annotationProcessor deps.eventbus_annotation_processor
 //    implementation project(':library')
 
     // 引入子模块后，ARouter才会找到该模块！》》》There's no router matched!
-    if(isModule.toBoolean()){
+    if (isModule.toBoolean()) {
         api project(':sqretrofit')
     }
 }

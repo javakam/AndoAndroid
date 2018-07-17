@@ -39,8 +39,8 @@ public class EG_SingleTaskActivity extends AppCompatActivity {
 
     /*
     退出
-    Intent intent = new Intent(this,MainActivity.class);
-    intent.putExtra(MainActivity.TAG_EXIT, true);
+    Intent intent = new Intent(this,DrawMainActivity.class);
+    intent.putExtra(DrawMainActivity.TAG_EXIT, true);
     startActivity(intent);
      */
     private static final String TAG_EXIT = "exit";

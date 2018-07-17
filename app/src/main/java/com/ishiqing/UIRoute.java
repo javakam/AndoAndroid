@@ -9,6 +9,7 @@ public class UIRoute {
     public static final String FRAG_WIDGET_EDITTEXT = "EditText";
     public static final String FRAG_WIDGET_FLEXBOX = "FlexboxLayout";
     public static final String FRAG_WIDGET_FLEXBOX_CAT = "FlexboxLayout Cat";
+    public static final String FRAG_UI_HENCODER = "HenCoder View";
     public static final String FRAG_WIDGET_BUTTON = "Button";
     public static final String FRAG_ACTIVITY1 = "Activity";
     public static final String FRAG_INTENT_SERVICE = "IntentService";
@@ -28,6 +29,7 @@ public class UIRoute {
     public static final String FRAG_GREENDAO = "GreenDao基本";
     public static final String FRAG_GREENDAO_M2M = "GreenDao多对多";
     public static final String FRAG_RX_GREENDAO = "GreenDao&Rx";
+    public static final String FRAG_EVENTBUS3 = "EventBus3";
     public static final String FRAG_NETWORK_UPLOAD = "上传文件";
     public static final String FRAG_OTHER = "其他组件";
 }
