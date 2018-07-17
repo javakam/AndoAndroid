@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/app_base_bg"
+    android:orientation="vertical">
+
+    <com.qmuiteam.qmui.widget.QMUITopBar
+        android:id="@+id/topbar"
+        style="@style/TopBarStyle" />
+
+    <com.google.android.flexbox.FlexboxLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="#fea"
+        android:padding="3dp"
+        app:alignContent="flex_start"
+        app:alignItems="flex_start"
+        app:flexDirection="row"
+        app:flexWrap="wrap">
+
+        <com.qmuiteam.qmui.widget.roundwidget.QMUIRoundButton
+            android:id="@+id/btShowMyScrollView"
+            style="@style/FlexTwoQMButton"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:background="@color/app_content_bg"
+            android:text="MyScrollView" />
+
+        <com.qmuiteam.qmui.widget.roundwidget.QMUIRoundButton
+            android:id="@+id/btShowMyDrawerMenu"
+            style="@style/FlexTwoQMButton"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:background="@color/app_content_bg"
+            android:text="MyDrawerMenu" />
+    </com.google.android.flexbox.FlexboxLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="10dp"
+        android:background="#aaa" />
+
+    <com.ishiqing.modules.ui_process.heros.MyScrollView
+        android:id="@+id/myScrollView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/app_content_bg">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="fitXY"
+            android:src="@mipmap/test1" />
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="fitXY"
+            android:src="@mipmap/test2" />
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="fitXY"
+            android:src="@mipmap/test3" />
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="fitXY"
+            android:src="@mipmap/test4" />
+    </com.ishiqing.modules.ui_process.heros.MyScrollView>
+
+    <com.ishiqing.modules.ui_process.heros.DrawerMenu
+        android:id="@+id/myDrawerMenu"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/app_content_bg"
+        android:visibility="gone">
+
+        <Button
+            android:id="@+id/btDrawer1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <Button
+            android:id="@+id/btDrawer2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <Button
+            android:id="@+id/btDrawerBottom"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="buttonBottomClick" />
+
+    </com.ishiqing.modules.ui_process.heros.DrawerMenu>
+</LinearLayout>

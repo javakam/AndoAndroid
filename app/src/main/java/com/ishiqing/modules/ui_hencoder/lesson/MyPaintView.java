@@ -30,20 +30,16 @@ public class MyPaintView extends BaseView {
     }
 
     public MyPaintView(Context context, @Nullable AttributeSet attrs) {
-        this(context, attrs, 0);
+        super(context, attrs);
+        init(context);
     }
 
     public MyPaintView(Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
-        this(context, attrs, defStyleAttr, 0);
-    }
-
-    public MyPaintView(Context context, @Nullable AttributeSet attrs, int defStyleAttr, int defStyleRes) {
-        super(context, attrs, defStyleAttr, defStyleRes);
+        super(context, attrs, defStyleAttr);
         init(context);
     }
 
     private void init(Context context) {
-
     }
 
     @Override

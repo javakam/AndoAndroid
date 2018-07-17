@@ -20,13 +20,8 @@ public class Practice1DrawColorView extends BaseView {
     }
 
     public Practice1DrawColorView(Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
-        this(context, attrs, defStyleAttr, 0);
+        super(context, attrs, defStyleAttr);
     }
-
-    public Practice1DrawColorView(Context context, @Nullable AttributeSet attrs, int defStyleAttr, int defStyleRes) {
-        super(context, attrs, defStyleAttr, defStyleRes);
-    }
-
 
     @Override
     protected void onDraw(Canvas canvas) {

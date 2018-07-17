@@ -21,6 +21,8 @@ import com.ishiqing.modules.service.ServiceFragment4;
 import com.ishiqing.modules.service.intentservice.IntentServiceFragment;
 import com.ishiqing.modules.thread.ThreadNavFragment;
 import com.ishiqing.modules.ui_hencoder.DrawMainActivity;
+import com.ishiqing.modules.ui_process.event.ViewEventDispatchFragment;
+import com.ishiqing.modules.ui_process.heros.HeroFragment;
 import com.ishiqing.modules.wanandroid.WanFragment;
 import com.ishiqing.modules.widgets.AutoCompleteTextViewFragment;
 import com.ishiqing.modules.widgets.ButtonFragment;
@@ -61,7 +63,6 @@ public class SQDataManager {
         list.add(new QDItemDescription(AnnotationFragment.class, UIRoute.FRAG_ANNOTATION, getImage()));
         list.add(new QDItemDescription(ThreadNavFragment.class, UIRoute.FRAG_THREAD_NAV, getImage()));
         list.add(new QDItemDescription(HttpUrlConnectionFragment.class, UIRoute.FRAG_NETWORK, getImage()));
-
         return list;
     }
 
@@ -85,6 +86,8 @@ public class SQDataManager {
         list.add(new QDItemDescription(FlexboxLayoutFragment.class, UIRoute.FRAG_WIDGET_FLEXBOX, getImage()));
         list.add(new QDItemDescription(CatFlexboxLayoutFragment.class, UIRoute.FRAG_WIDGET_FLEXBOX_CAT, getImage()));
         list.add(new QDItemDescription(DrawMainActivity.class, UIRoute.FRAG_UI_HENCODER, getImage()));
+        list.add(new QDItemDescription(HeroFragment.class, UIRoute.FRAG_UI_HEROS, getImage()));
+        list.add(new QDItemDescription(ViewEventDispatchFragment.class, UIRoute.FRAG_UI_EVENT_DISPATCH, getImage()));
         return list;
     }
 

@@ -24,10 +24,6 @@ public class Practice2DrawCircleView extends BaseView {
         super(context, attrs, defStyleAttr);
     }
 
-    public Practice2DrawCircleView(Context context, @Nullable AttributeSet attrs, int defStyleAttr, int defStyleRes) {
-        super(context, attrs, defStyleAttr, defStyleRes);
-    }
-
     @Override
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
