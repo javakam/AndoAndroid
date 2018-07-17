@@ -53,7 +53,6 @@ public class IntentServiceFragment extends BaseFragment {
                 mActivity.startService(startServiceIntent2);
                 break;
             case R.id.btnStop:
-
                 break;
         }
     }
