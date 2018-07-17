@@ -1,10 +1,9 @@
-package com.ishiqing.modules.service;
+package com.ishiqing.modules.service.intentservice;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
-import com.ishiqing.BuildConfig;
 import com.ishiqing.R;
 import com.ishiqing.UIRoute;
 import com.ishiqing.base.BaseFragment;
@@ -38,8 +37,9 @@ public class IntentServiceFragment extends BaseFragment {
                     Service Intent must be explicit: Intent { act=com.isq.myintentservice (has extras) }
                  */
                 Intent startServiceIntent = new Intent("suibianqimingdouxing");
-                //【注】让Service可以做隐式跳转的核心配置，必须加上应用包名！
-                startServiceIntent.setPackage(BuildConfig.APPLICATION_ID);// 或者手写 "com.ishiqing"
+                //【注】让Service可以做隐式跳转的核心配置，必须加上应用包名!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+                //【注】这个应用ID是指对方的，不是自己的!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+                startServiceIntent.setPackage("com.ishiqing");// 或者 BuildConfig.APPLICATIONID
                 Bundle bundle = new Bundle();
                 bundle.putString("param", "oper1");
                 startServiceIntent.putExtras(bundle);

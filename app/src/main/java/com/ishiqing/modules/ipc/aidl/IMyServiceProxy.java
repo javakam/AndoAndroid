@@ -1,4 +1,4 @@
-package com.ishiqing.modules.service.aidl;
+package com.ishiqing.modules.ipc.aidl;
 
 /**
  * 此接口定义对外提供的方法

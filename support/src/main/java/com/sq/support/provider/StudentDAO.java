@@ -1,11 +1,9 @@
-package com.sq.support.dao;
+package com.sq.support.provider;
 
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
-
-import com.sq.support.DbHelper;
 
 
 public class StudentDAO {

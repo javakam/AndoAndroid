@@ -119,7 +119,7 @@ public class TestActivity extends Activity {
     </intent-filter>
 </service>
 ```
-- 最后来看看执行结果: <br>
+- 最后来看看执行结果: <br><br>
 ![](.\README_images\IntentService源码.png) <br>
 从结果可以看到，onCreate方法只执行了一次，而onStartCommand和onStart方法执行了两次，开启了两个Work Thread，
 这就证实了之前所说的，启动多次，但IntentService的实例只有一个，这跟传统的Service是一样的。<br>

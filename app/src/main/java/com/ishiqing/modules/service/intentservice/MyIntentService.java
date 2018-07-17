@@ -1,4 +1,4 @@
-package com.ishiqing.modules.service;
+package com.ishiqing.modules.service.intentservice;
 
 import android.app.IntentService;
 import android.content.Intent;

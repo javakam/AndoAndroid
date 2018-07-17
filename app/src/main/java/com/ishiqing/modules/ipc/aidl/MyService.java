@@ -1,4 +1,4 @@
-package com.ishiqing.modules.service.aidl;
+package com.ishiqing.modules.ipc.aidl;
 
 import android.app.Service;
 import android.content.Intent;

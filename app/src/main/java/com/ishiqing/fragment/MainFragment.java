@@ -1,5 +1,7 @@
 package com.ishiqing.fragment;
 
+import android.app.Activity;
+import android.content.Intent;
 import android.support.v4.content.ContextCompat;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
@@ -125,6 +127,11 @@ public class MainFragment extends BaseFragment {
             @Override
             public void startFragment(BaseFragment fragment) {
                 MainFragment.this.startFragment(fragment);
+            }
+
+            @Override
+            public void startActivity(Activity activity) {
+                MainFragment.this.startActivity(new Intent(getActivity(), activity.getClass()));
             }
         };
 

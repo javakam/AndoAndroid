@@ -2,6 +2,10 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.sq.support">
 
+    <!-- Socket进程间通信需要的权限 -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -15,6 +19,13 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <service android:name="com.sq.support.ipc.TCPServerService">
+            <intent-filter>
+                <action android:name="support.tcpserverservice" />
+            </intent-filter>
+        </service>
+
 
         <!--在创建好一个ContentProvider之后，还需要在AndroidManifest.xml文件中对ContentProvider进行配置，使用一个<provider.../>节点，
         一般只需要设置两个属性即可访问，一些额外的属性就是为了设置访问权限而存在的，
@@ -35,7 +46,7 @@
        android:exported:标记允许其他应用程序使用这个Provider。
        android:multiProcess:标记允许系统启动Provider相同的进程中调用客户端。-->
         <provider
-            android:name="com.sq.support.StudentProvider"
-            android:authorities="com.sq.support.StudentProvider"></provider>
+            android:name="com.sq.support.provider.StudentProvider"
+            android:authorities="com.sq.support.provider.StudentProvider"></provider>
     </application>
 </manifest>

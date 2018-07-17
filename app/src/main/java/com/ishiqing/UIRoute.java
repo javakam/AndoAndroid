@@ -16,6 +16,7 @@ public class UIRoute {
     public static final String FRAG_SERVICE2 = "Service(二)";
     public static final String FRAG_SERVICE3 = "Service(三)";
     public static final String FRAG_SERVICE4 = "Service(四)";
+    public static final String FRAG_TCP_CLIENT = "Socket IPC";
     public static final String FRAG_AIDL = "AIDL";
     public static final String FRAG_PROVIDER1 = "Provider";
     public static final String FRAG_ANNOTATION = "注解开发";

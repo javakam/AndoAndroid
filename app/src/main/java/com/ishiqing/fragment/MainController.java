@@ -1,5 +1,6 @@
 package com.ishiqing.fragment;
 
+import android.app.Activity;
 import android.content.Context;
 import android.os.Parcelable;
 import android.support.v7.widget.GridLayoutManager;
@@ -52,6 +53,12 @@ public abstract class MainController extends FrameLayout {
         }
     }
 
+    protected void startActivity(Activity activity) {
+        if (mMainControlListener != null) {
+            mMainControlListener.startActivity(activity);
+        }
+    }
+
     public void setMainControlListener(MainControlListener homeControlListener) {
         mMainControlListener = homeControlListener;
     }
@@ -77,8 +84,14 @@ public abstract class MainController extends FrameLayout {
             public void onItemClick(View itemView, int pos) {
                 QDItemDescription item = mMainItemAdapter.getItem(pos);
                 try {
-                    BaseFragment fragment = item.getDemoClass().newInstance();
-                    startFragment(fragment);
+                    Object o = item.getDemoClass().newInstance();
+                    if (o instanceof BaseFragment) {
+                        BaseFragment fragment = (BaseFragment) o;
+                        startFragment(fragment);
+                    } else if (o instanceof Activity) {
+                        Activity activity = (Activity) o;
+                        startActivity(activity);
+                    }
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
@@ -94,6 +107,8 @@ public abstract class MainController extends FrameLayout {
 
     public interface MainControlListener {
         void startFragment(BaseFragment fragment);
+
+        void startActivity(Activity activity);
     }
 
     @Override

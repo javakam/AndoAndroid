@@ -36,10 +36,11 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".modules.ipc.socket.TCPClientActivity" />
 
         <!-- Service一个隐式跳转，一个显示跳转 com.ishiqing.modules.service.IntentServiceFragment -->
         <!-- IntentService一定要配置，否则是不起作用的 -->
-        <service android:name="com.ishiqing.modules.service.MyIntentService">
+        <service android:name="com.ishiqing.modules.service.intentservice.MyIntentService">
             <intent-filter>
                 <action android:name="suibianqimingdouxing" />
             </intent-filter>
@@ -59,7 +60,7 @@
         </receiver>
         <!-- AIDL Server -->
         <service
-            android:name=".modules.service.aidl.MyService"
+            android:name=".modules.ipc.aidl.MyService"
             android:enabled="true"
             android:exported="true"></service>
     </application>

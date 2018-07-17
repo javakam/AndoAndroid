@@ -1,23 +1,24 @@
 package com.ishiqing.base;
 
 public class QDItemDescription {
-    private Class<? extends BaseFragment> mKitDemoClass;
+    private Class<?> mKitDemoClass;
     private String mKitName;
     private String mKitDetailDescription;
     private int mIconRes;
 
-    public QDItemDescription(Class<? extends BaseFragment> kitDemoClass, String kitName) {
+
+    public QDItemDescription(Class<?> kitDemoClass, String kitName) {
         this(kitDemoClass, kitName, 0);
     }
 
 
-    public QDItemDescription(Class<? extends BaseFragment> kitDemoClass, String kitName, int iconRes) {
+    public QDItemDescription(Class<?> kitDemoClass, String kitName, int iconRes) {
         mKitDemoClass = kitDemoClass;
         mKitName = kitName;
         mIconRes = iconRes;
     }
 
-    public QDItemDescription(Class<? extends BaseFragment> kitDemoClass, String kitName,
+    public QDItemDescription(Class<?> kitDemoClass, String kitName,
                              String kitDetailDescription, int iconRes) {
         mKitDemoClass = kitDemoClass;
         mKitName = kitName;
@@ -29,7 +30,7 @@ public class QDItemDescription {
         mKitDetailDescription = kitDetailDescription;
     }
 
-    public Class<? extends BaseFragment> getDemoClass() {
+    public Class<?> getDemoClass() {
         return mKitDemoClass;
     }
 
