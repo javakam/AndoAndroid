@@ -1,10 +1,10 @@
 ### onSaveInstanceState源码
-Activity失去焦点，很可能被进程终止！，这时候就需要能保存当前的状态。
+---
+>Activity失去焦点，很可能被进程终止！，这时候就需要能保存当前的状态。
 后台的activity被系统自动回收的话，再次回到界面的时候恢复数据。
 
-- 基础操作：com.ishiqing.base.BaseActivity
-
-- 源码
+- DEMO : com.ishiqing.base.BaseActivity
+- 源码 :
 ```
 /**
  * 两个核心注释 1执行机制；另一个说的是执行时机和Activity生命周期的关系

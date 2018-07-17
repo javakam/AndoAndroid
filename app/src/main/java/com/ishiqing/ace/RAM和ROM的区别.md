@@ -1,7 +1,5 @@
-### Java内存模型
-[https://blog.csdn.net/suifeng3051/article/details/52611310](https://blog.csdn.net/suifeng3051/article/details/52611310)
-
 ### RAM和ROM的区别
+---
 [https://zhidao.baidu.com/question/81373514.html](https://zhidao.baidu.com/question/81373514.html)
 - RAM-RamdomAccessMemory
 易挥发性随机存取存储器，高速存取，读写时间相等，且与地址无关，如计算机内存等。

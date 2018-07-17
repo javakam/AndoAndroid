@@ -1,6 +1,8 @@
 package com.ishiqing.modules.thread;
 
 import android.os.Handler;
+import android.os.HandlerThread;
+import android.os.Looper;
 import android.os.Message;
 
 import com.ishiqing.R;
@@ -29,5 +31,26 @@ public class HandlerFragment extends BaseFragment {
     @Override
     protected void initViews() {
         initTopBar("Handler", true);
+    }
+
+
+    private void demo() {
+        HandlerThread handlerThread = new HandlerThread("mythread");
+        handlerThread.start();
+        Looper looper = handlerThread.getLooper();
+        MyHandler myHandler = new MyHandler(looper);
+        new Handler().getLooper();
+    }
+
+    private class MyHandler extends Handler {
+        public MyHandler(Looper looper) {
+            super(looper);
+        }
+
+        @Override
+        public void handleMessage(Message msg) {
+            super.handleMessage(msg);
+
+        }
     }
 }

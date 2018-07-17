@@ -13,6 +13,8 @@ import java.io.UnsupportedEncodingException;
 import butterknife.BindView;
 
 /**
+ * 加载 assets 下图片的 Base64 字符串
+ *
  * @author javakam
  * @date 2018-6-20
  */
@@ -87,6 +89,7 @@ public class SampleActivity1 extends BaseActivity {
         } catch (UnsupportedEncodingException e) {
             e.printStackTrace();
         }
+
 
        /* byte[] encode = Base64.encode(bytes4, Base64.DEFAULT);
         try {
