@@ -31,7 +31,6 @@ public class ArtViewBase extends View {
             case MotionEvent.ACTION_DOWN:
                 break;
             case MotionEvent.ACTION_MOVE:
-
                 break;
             case MotionEvent.ACTION_UP:
                 break;
