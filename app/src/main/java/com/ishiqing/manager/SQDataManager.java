@@ -90,7 +90,7 @@ public class SQDataManager {
         list.add(new QDItemDescription(DrawMainActivity.class, UIRoute.FRAG_UI_HENCODER, getImage()));
         list.add(new QDItemDescription(HeroFragment.class, UIRoute.FRAG_UI_HEROS, getImage()));
         list.add(new QDItemDescription(ViewEventDispatchFragment.class, UIRoute.FRAG_UI_EVENT_DISPATCH, getImage()));
-        list.add(new QDItemDescription(DragViewMainActivity.class, UIRoute.FRAG_UI_EVENT_DISPATCH, getImage()));
+        list.add(new QDItemDescription(DragViewMainActivity.class, UIRoute.FRAG_UI_DRAG, getImage()));
         list.add(new QDItemDescription(ArtFragment.class, UIRoute.FRAG_UI_ART, getImage()));
         return list;
     }
