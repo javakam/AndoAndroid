@@ -9,7 +9,7 @@
 ```
 protected MyUser(Parcel in) {
     this.uname = in.readString();
-    //1 《Android开发艺术探索》
+    //1 《艺术探索》
     this.myBook = in.readParcelable(Thread.currentThread().getContextClassLoader());
     //2 default generate
       this.myBook = in.readParcelable(MyBook.class.getClassLoader());

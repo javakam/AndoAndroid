@@ -69,9 +69,51 @@ mScrollX、mScrollY :就是指View本身的左边界/下边界，到View内容�
 ObjectAnimator.ofFloat(targetView, "traslationX", 0, 100).setDuration(100).start();
 ```
 
-- Android低版本（比3.0还低，连nineoldandroid都兼容不了的内种。。。）动画方案 <br><br>
+- Android低版本（比3.0还低，连nineoldandroid都兼容不了的内种。。。）动画方案
+
 ![](.doc_images\Android2.2动画方案.png)
 
 3.改变布局参数 <br><br>
 ![](.doc_images\改变布局参数.png)
+
+### 弹性滑动
+- 使用Scroller滑动
+
+> computeScrollOffset 返回值 true表示滑动未结束；false表示滑动已结束
+
+![](.doc_images\Scroller滑动.png) <br>
+
+- 使用动画
+
+- 事件分发
+
+![](.doc_images\事件分发.png) <br>
+onTouch 返回false，才会触发touch事件：
+```
+mButton1.setOnTouchListener(new View.OnTouchListener() {
+    @Override
+    public boolean onTouch(View v, MotionEvent event) {
+        return false;
+    }
+});
+```
+由此可见，给View设置的OnTouchListener优先级要高于onTouchEvent！
+
+事件处理方法的优先级：onTouchListener 》 onTouchEvent 》 onClickListener
+
+当产生一个点击事件后，事件的传递顺序为：Activity-》Window-》View , 一个贴近现实的例子：<br><br>
+![](.doc_images\事件传递-举例.png)
+
+事件传递总结：page 143 <br><br>
+![](.doc_images\事件传递总结.png)<br><br>
+![](.doc_images\事件传递总结2.png)
+
+
+
+
+
+
+
+
+
 

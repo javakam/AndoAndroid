@@ -33,10 +33,6 @@ public class MyScrollView extends ViewGroup {
         initView(context);
     }
 
-    public MyScrollView(Context context, AttributeSet attrs, int defStyleAttr, int defStyleRes) {
-        super(context, attrs, defStyleAttr, defStyleRes);
-        initView(context);
-    }
 
     private void initView(Context context) {
         WindowManager wm = (WindowManager) context.getSystemService(Context.WINDOW_SERVICE);

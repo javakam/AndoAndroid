@@ -39,16 +39,14 @@ android {
 }
 
 dependencies {
-    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
     api project(':domain')
-//
-//    implementation 'com.android.support:appcompat-v7:26.1.0'
-//    testImplementation 'junit:junit:4.12'
-//    androidTestImplementation 'com.android.support.test:runner:1.0.2'
-//    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
-
-
-
+    api files('libs/nineoldandroids-2.4.0.jar')
+    //
+    //    implementation 'com.android.support:appcompat-v7:26.1.0'
+    //    testImplementation 'junit:junit:4.12'
+    //    androidTestImplementation 'com.android.support.test:runner:1.0.2'
+    //    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
     // Architecture components
     api deps.lifecycle.runtime
     api deps.lifecycle.extensions
@@ -66,33 +64,28 @@ dependencies {
     api deps.okhttp
     api deps.okhttp_logging_interceptor
     //----------------------------------Support XML WebService-------------------------------------//
-    api("com.squareup.retrofit2:converter-simplexml:2.4.0")
-        {
-            exclude module: 'stax'
-            exclude module: 'stax-api'
-            exclude module: 'xpp3'
-        }
-
+    api('com.squareup.retrofit2:converter-simplexml:2.4.0') {
+        exclude module: 'stax'
+        exclude module: 'stax-api'
+        exclude module: 'xpp3'
+    }
     api deps.gson
     api deps.recycler_helper
-
     // Android Testing Support Library's runner and rules
     androidTestApi deps.arch_core.testing
     androidTestApi deps.room.testing
-
     // Espresso UI Testing
     androidTestApi deps.espresso.core
     androidTestApi deps.espresso.contrib
     androidTestApi deps.espresso.intents
-
     // Resolve conflicts between main and test APK:
     androidTestApi deps.support.annotations
     androidTestApi deps.support.v4
     androidTestApi deps.support.app_compat
     androidTestApi deps.support.design
-
     //leak
     debugApi 'com.squareup.leakcanary:leakcanary-android:1.5.4'
     releaseApi 'com.squareup.leakcanary:leakcanary-android-no-op:1.5.4'
     testApi 'com.squareup.leakcanary:leakcanary-android-no-op:1.5.4'
+
 }

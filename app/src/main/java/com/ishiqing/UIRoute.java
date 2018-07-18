@@ -12,6 +12,7 @@ public class UIRoute {
     public static final String FRAG_UI_HENCODER = "HenCoder View";
     public static final String FRAG_UI_HEROS = "View Heros";
     public static final String FRAG_UI_EVENT_DISPATCH = "View 事件传递";
+    public static final String FRAG_UI_ART = "艺术探索";
     public static final String FRAG_WIDGET_BUTTON = "Button";
     public static final String FRAG_ACTIVITY1 = "Activity";
     public static final String FRAG_INTENT_SERVICE = "IntentService";

@@ -20,6 +20,7 @@ import com.ishiqing.modules.service.ServiceFragment3;
 import com.ishiqing.modules.service.ServiceFragment4;
 import com.ishiqing.modules.service.intentservice.IntentServiceFragment;
 import com.ishiqing.modules.thread.ThreadNavFragment;
+import com.ishiqing.modules.ui_art.c3.ArtFragment;
 import com.ishiqing.modules.ui_hencoder.DrawMainActivity;
 import com.ishiqing.modules.ui_process.event.ViewEventDispatchFragment;
 import com.ishiqing.modules.ui_process.heros.HeroFragment;
@@ -88,6 +89,7 @@ public class SQDataManager {
         list.add(new QDItemDescription(DrawMainActivity.class, UIRoute.FRAG_UI_HENCODER, getImage()));
         list.add(new QDItemDescription(HeroFragment.class, UIRoute.FRAG_UI_HEROS, getImage()));
         list.add(new QDItemDescription(ViewEventDispatchFragment.class, UIRoute.FRAG_UI_EVENT_DISPATCH, getImage()));
+        list.add(new QDItemDescription(ArtFragment.class, UIRoute.FRAG_UI_ART, getImage()));
         return list;
     }
 

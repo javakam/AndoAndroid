@@ -20,7 +20,8 @@
     </style><!-- 三个按钮一行，无 Padding/Margin -->
     <style name="FlexThreeQMButton">
         <item name="android:maxLines">1</item>
-        <item name="android:textColor">#D8DCE4</item>
+        <item name="android:textColor">#eee</item>
+        <item name="android:layout_margin">@dimen/dp_05</item>
         <item name="android:textSize">14sp</item>
         <item name="android:background">@drawable/flex_qmbt</item>
         <item name="android:gravity">center</item>
