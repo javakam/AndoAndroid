@@ -15,4 +15,5 @@
     <color name="text_hint">@color/qmui_config_color_gray_3</color>
 
     <color name="white">#ffffff</color>
+    <color name="reveal_color">#1b000000</color>
 </resources>

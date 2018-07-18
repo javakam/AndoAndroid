@@ -1,4 +1,4 @@
-package com.ishiqing.modules.ui_art.c3;
+package com.ishiqing.modules.ui_art.c3.view;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
@@ -6,35 +6,35 @@ import android.util.AttributeSet;
 import android.util.Log;
 import android.view.MotionEvent;
 import android.view.ViewConfiguration;
+import android.widget.TextView;
 
 import com.nineoldandroids.view.ViewHelper;
 
-/**
- * Created by javakam on 2018/7/17.
- */
-public class ArtTextView extends android.support.v7.widget.AppCompatTextView {
-    private static final String TAG = "123";
+@SuppressLint("AppCompatCustomView")
+public class TestButton extends TextView {
+    private static final String TAG = "TestButton";
     private int mScaledTouchSlop;
     // 分别记录上次滑动的坐标
     private int mLastX = 0;
     private int mLastY = 0;
 
-    public ArtTextView(Context context) {
+    public TestButton(Context context) {
         this(context, null);
     }
 
-    public ArtTextView(Context context, AttributeSet attrs) {
+    public TestButton(Context context, AttributeSet attrs) {
         super(context, attrs);
         init();
     }
 
-    public ArtTextView(Context context, AttributeSet attrs, int defStyle) {
+    public TestButton(Context context, AttributeSet attrs, int defStyle) {
         super(context, attrs, defStyle);
         init();
     }
 
     private void init() {
-        mScaledTouchSlop = ViewConfiguration.get(getContext()).getScaledTouchSlop();
+        mScaledTouchSlop = ViewConfiguration.get(getContext())
+                .getScaledTouchSlop();
         Log.d(TAG, "sts:" + mScaledTouchSlop);
     }
 

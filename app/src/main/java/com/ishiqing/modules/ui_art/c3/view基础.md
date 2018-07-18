@@ -85,7 +85,7 @@ ObjectAnimator.ofFloat(targetView, "traslationX", 0, 100).setDuration(100).start
 
 - 使用动画
 
-- 事件分发
+### 事件分发机制
 
 ![](.doc_images\事件分发.png) <br>
 onTouch 返回false，才会触发touch事件：
@@ -107,6 +107,25 @@ mButton1.setOnTouchListener(new View.OnTouchListener() {
 事件传递总结：page 143 <br><br>
 ![](.doc_images\事件传递总结.png)<br><br>
 ![](.doc_images\事件传递总结2.png)
+
+> 顶级View的事件分发过程
+
+![](.doc_images\事件分发-顶级View.png)  <br>
+
+- P148 ViewGroup.dispatchTouchEvent 源码分析
+
+![](.doc_images\事件分发-源码分析.png) <br><br>
+
+### View的滑动冲突
+---
+- 外部拦截法
+
+先经过父容器进行拦截处理，适合点击事件的分发机制
+
+- 内部拦截法
+
+父容器不拦截，由子元素负责拦截处理，
+
 
 
 

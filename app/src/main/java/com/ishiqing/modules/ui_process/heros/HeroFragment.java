@@ -1,10 +1,12 @@
 package com.ishiqing.modules.ui_process.heros;
 
+import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.view.View;
 
 import com.ishiqing.R;
 import com.ishiqing.base.BaseFragment;
+import com.ishiqing.modules.ui_process.heros.activity.HerosMainActivity;
 
 import butterknife.BindView;
 import butterknife.OnClick;
@@ -32,7 +34,7 @@ public class HeroFragment extends BaseFragment {
     }
 
 
-    @OnClick({R.id.btShowMyScrollView, R.id.btShowMyDrawerMenu})
+    @OnClick({R.id.btShowMyScrollView, R.id.btShowMyDrawerMenu, R.id.btHerosMainActivity})
     public void onViewClicked(View view) {
         switch (view.getId()) {
             case R.id.btShowMyScrollView:
@@ -42,6 +44,9 @@ public class HeroFragment extends BaseFragment {
             case R.id.btShowMyDrawerMenu:
                 myScrollView.setVisibility(View.GONE);
                 myDrawerMenu.setVisibility(View.VISIBLE);
+                break;
+            case R.id.btHerosMainActivity:
+                startActivity(new Intent(mActivity, HerosMainActivity.class));
                 break;
         }
     }

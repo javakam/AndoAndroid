@@ -43,7 +43,19 @@
         <activity android:name=".modules.eventbus3.EventBusMainActivity" />
         <activity android:name=".modules.eventbus3.EventBusPriorityActivity" />
         <activity android:name=".modules.eventbus3.EventBusThreadModeActivity" />
-        <activity android:name=".modules.ui_art.c3.ArtTestActivity" />
+        <activity android:name=".modules.ui_art.c3.activity.ArtTestActivity" />
+        <activity android:name=".modules.ui_art.c3.activity.ArtThirdActivity" />
+        <activity android:name=".modules.ui_art.c3.activity.ArtDemoActivity_1" />
+        <activity android:name=".modules.ui_art.c3.activity.ArtDemoActivity_2" />
+        <activity android:name=".modules.ui_process.dragview.DragViewMainActivity" />
+        <activity android:name=".modules.ui_process.dragview.DragViewGroupActivity" />
+        <activity android:name=".modules.ui_process.dragview.DragViewActivity" />
+        <activity android:name=".modules.ui_process.dragview.my.MyDragViewMainActivity" />
+        <activity android:name=".modules.ui_process.dragview.my.DragActivity" />
+        <activity android:name=".modules.ui_process.dragview.my.MyPracticeActivity" />
+        <activity android:name=".modules.ui_process.heros.activity.HerosMainActivity" />
+        <activity android:name=".modules.ui_process.heros.activity.MyViewTest" />
+        <activity android:name=".modules.ui_process.heros.activity.TopBarTest" />
 
         <!-- Service一个隐式跳转，一个显示跳转 com.ishiqing.modules.service.IntentServiceFragment -->
         <!-- IntentService一定要配置，否则是不起作用的 -->

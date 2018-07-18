@@ -27,31 +27,31 @@
 
             <com.qmuiteam.qmui.alpha.QMUIAlphaButton
                 android:id="@+id/btArt1"
-                style="@style/FlexThreeQMButton"
+                style="@style/FlexTwoQMButton"
                 android:layout_width="wrap_content"
                 android:layout_height="80dp"
-                android:text="ArtTextView" />
+                android:text="View基础" />
 
             <com.qmuiteam.qmui.alpha.QMUIAlphaButton
                 android:id="@+id/btArt2"
-                style="@style/FlexThreeQMButton"
+                style="@style/FlexTwoQMButton"
                 android:layout_width="wrap_content"
                 android:layout_height="80dp"
-                android:text="ArtTextView" />
+                android:text="滑动冲突场景1-外部拦截" />
 
             <com.qmuiteam.qmui.alpha.QMUIAlphaButton
                 android:id="@+id/btArt3"
-                style="@style/FlexThreeQMButton"
+                style="@style/FlexTwoQMButton"
                 android:layout_width="wrap_content"
                 android:layout_height="80dp"
-                android:text="ArtTextView" />
+                android:text="滑动冲突场景1-内部拦截" />
 
             <com.qmuiteam.qmui.alpha.QMUIAlphaButton
                 android:id="@+id/btArt4"
-                style="@style/FlexThreeQMButton"
+                style="@style/FlexTwoQMButton"
                 android:layout_width="wrap_content"
                 android:layout_height="80dp"
-                android:text="ArtTextView" />
+                android:text="DemoActivity_2" />
         </com.google.android.flexbox.FlexboxLayout>
     </FrameLayout>
 </LinearLayout>

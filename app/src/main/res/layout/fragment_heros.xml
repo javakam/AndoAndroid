@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/app_base_bg"
@@ -14,28 +13,35 @@
     <com.google.android.flexbox.FlexboxLayout
         android:layout_width="match_parent"
         android:layout_height="60dp"
-        android:background="#fea"
         android:padding="3dp"
         app:alignContent="flex_start"
         app:alignItems="flex_start"
         app:flexDirection="row"
         app:flexWrap="wrap">
 
-        <com.qmuiteam.qmui.widget.roundwidget.QMUIRoundButton
+        <com.qmuiteam.qmui.alpha.QMUIAlphaButton
             android:id="@+id/btShowMyScrollView"
-            style="@style/FlexTwoQMButton"
+            style="@style/FlexThreeQMButton"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:background="@color/app_content_bg"
             android:text="MyScrollView" />
 
-        <com.qmuiteam.qmui.widget.roundwidget.QMUIRoundButton
+        <com.qmuiteam.qmui.alpha.QMUIAlphaButton
             android:id="@+id/btShowMyDrawerMenu"
-            style="@style/FlexTwoQMButton"
+            style="@style/FlexThreeQMButton"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:background="@color/app_content_bg"
             android:text="MyDrawerMenu" />
+
+        <com.qmuiteam.qmui.alpha.QMUIAlphaButton
+            android:id="@+id/btHerosMainActivity"
+            style="@style/FlexThreeQMButton"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:background="@color/app_content_bg"
+            android:text="HerosMainActivity" />
     </com.google.android.flexbox.FlexboxLayout>
 
     <View

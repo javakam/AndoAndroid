@@ -1,9 +1,8 @@
-package com.ishiqing.modules.ui_art.c3;
+package com.ishiqing.modules.ui_art.c3.activity;
 
 import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.view.View;
-import android.widget.Scroller;
 
 import com.ishiqing.R;
 import com.ishiqing.base.BaseFragment;
@@ -35,12 +34,12 @@ public class ArtFragment extends BaseFragment {
                 startActivity(new Intent(mActivity, ArtTestActivity.class));
                 break;
             case R.id.btArt2:
+                startActivity(new Intent(mActivity, ArtDemoActivity_1.class));
                 break;
             case R.id.btArt3:
+                startActivity(new Intent(mActivity, ArtDemoActivity_2.class));
                 break;
             case R.id.btArt4:
-                Scroller scroller = new Scroller(getContext());
-                scroller.computeScrollOffset();
                 break;
         }
     }

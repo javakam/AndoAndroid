@@ -1,4 +1,4 @@
-package com.ishiqing.modules.ui_art.c3;
+package com.ishiqing.modules.ui_art.c3.activity;
 
 import android.annotation.SuppressLint;
 import android.annotation.TargetApi;
@@ -15,6 +15,7 @@ import android.widget.Button;
 import android.widget.Toast;
 
 import com.ishiqing.R;
+import com.ishiqing.modules.ui_art.c3.view.TestButton;
 
 public class ArtTestActivity extends Activity implements OnClickListener,
         OnLongClickListener {
@@ -26,7 +27,7 @@ public class ArtTestActivity extends Activity implements OnClickListener,
     private static final int DELAYED_TIME = 33;
 
     private Button mButton1;
-    private ArtTextView mButton2;
+    private TestButton mButton2;
 
     private int mCount = 0;
 
@@ -67,7 +68,7 @@ public class ArtTestActivity extends Activity implements OnClickListener,
     private void initView() {
         mButton1 = (Button) findViewById(R.id.button1);
         mButton1.setOnClickListener(this);
-        mButton2 = (ArtTextView) findViewById(R.id.button2);
+        mButton2 = (TestButton) findViewById(R.id.button2);
         mButton2.setOnLongClickListener(this);
 //        mButton1.setOnTouchListener(new View.OnTouchListener() {
 //            @Override

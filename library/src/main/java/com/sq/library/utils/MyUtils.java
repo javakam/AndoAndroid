@@ -2,6 +2,8 @@ package com.sq.library.utils;
 
 import android.app.ActivityManager;
 import android.content.Context;
+import android.util.DisplayMetrics;
+import android.view.WindowManager;
 
 import java.io.Closeable;
 import java.io.IOException;
@@ -32,6 +34,13 @@ public class MyUtils {
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+
+    public static DisplayMetrics getScreenMetrics(Context context) {
+        WindowManager wm = (WindowManager) context.getSystemService(Context.WINDOW_SERVICE);
+        DisplayMetrics dm = new DisplayMetrics();
+        wm.getDefaultDisplay().getMetrics(dm);
+        return dm;
     }
 
     public static void executeInThread(Runnable runnable) {
