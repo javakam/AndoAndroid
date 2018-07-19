@@ -1,5 +1,6 @@
 package com.ishiqing.modules.ui_process;
 
+import android.os.Bundle;
 import android.view.View;
 
 import com.ishiqing.R;
@@ -19,7 +20,7 @@ public class UIDrawingProcessActivity extends BaseActivity {
     }
 
     @Override
-    protected void initViews() {
+    protected void initViews(Bundle savedInstanceState) {
         initTopBar("UI绘制流程", true);
         showLoadingEmptyView();
         mEmptyView.postDelayed(new Runnable() {

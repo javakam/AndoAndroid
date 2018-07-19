@@ -23,7 +23,7 @@ public class ArtFragment extends BaseFragment {
     }
 
     @Override
-    protected void initViews() {
+    protected void initViews(View v) {
         initTopBar("艺术探索", true);
     }
 

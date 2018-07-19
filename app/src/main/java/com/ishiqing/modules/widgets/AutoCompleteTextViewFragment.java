@@ -39,7 +39,7 @@ public class AutoCompleteTextViewFragment extends BaseFragment {
     }
 
     @Override
-    protected void initViews() {
+    protected void initViews(View v) {
         initTopBar(UIRoute.FRAG_WIDGET_ACTV, true);
         //在 AutoCompleteTextView 弹出的列表底部提示 用户名
 //        actvUsername.setCompletionHint("请选择账号"); //不好看

@@ -31,6 +31,7 @@ import com.ishiqing.modules.widgets.ButtonFragment;
 import com.ishiqing.modules.widgets.CatFlexboxLayoutFragment;
 import com.ishiqing.modules.widgets.FlexboxLayoutFragment;
 import com.ishiqing.modules.widgets.TextViewFragment;
+import com.ishiqing.modules.widgets.smarttable.SmartTableFragment;
 import com.sq.library.utils.AppUtils;
 import com.sq.library.utils.ResourceUtil;
 
@@ -92,6 +93,7 @@ public class SQDataManager {
         list.add(new QDItemDescription(ViewEventDispatchFragment.class, UIRoute.FRAG_UI_EVENT_DISPATCH, getImage()));
         list.add(new QDItemDescription(DragViewMainActivity.class, UIRoute.FRAG_UI_DRAG, getImage()));
         list.add(new QDItemDescription(ArtFragment.class, UIRoute.FRAG_UI_ART, getImage()));
+        list.add(new QDItemDescription(SmartTableFragment.class, UIRoute.FRAG_WIDGET_SMARTTABLE, getImage()));
         return list;
     }
 

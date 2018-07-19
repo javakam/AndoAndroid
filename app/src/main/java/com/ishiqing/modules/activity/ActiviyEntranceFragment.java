@@ -1,6 +1,7 @@
 package com.ishiqing.modules.activity;
 
 import android.support.v4.view.ViewPager;
+import android.view.View;
 
 import com.ishiqing.R;
 import com.ishiqing.UIRoute;
@@ -29,7 +30,7 @@ public class ActiviyEntranceFragment extends BaseFragment {
     }
 
     @Override
-    protected void initViews() {
+    protected void initViews(View v) {
         initTopBar(UIRoute.FRAG_ACTIVITY1, true);
         initTabAndPager();
     }

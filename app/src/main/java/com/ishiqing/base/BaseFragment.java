@@ -42,7 +42,7 @@ public abstract class BaseFragment extends QMUIFragment {
     protected View onCreateView() {
         View v = LayoutInflater.from(mActivity).inflate(getLayoutResId(), null);
         mUnBinder = ButterKnife.bind(this, v);
-        initViews();
+        initViews(v);
         return v;
     }
 
@@ -75,7 +75,7 @@ public abstract class BaseFragment extends QMUIFragment {
     /**
      * 处理View事件
      */
-    protected abstract void initViews();
+    protected abstract void initViews(View v);
 
     /**
      * 可以通过重写该方法，重新定义TopBar事件

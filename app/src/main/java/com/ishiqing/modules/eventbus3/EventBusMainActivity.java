@@ -2,6 +2,7 @@ package com.ishiqing.modules.eventbus3;
 
 import android.content.Intent;
 import android.os.AsyncTask;
+import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
 import android.view.View;
@@ -26,7 +27,7 @@ public class EventBusMainActivity extends BaseActivity {
     }
 
     @Override
-    protected void initViews() {
+    protected void initViews(Bundle savedInstanceState) {
         myText = findViewById(R.id.myTextView);
         myText.setOnClickListener(v -> method4());
     }

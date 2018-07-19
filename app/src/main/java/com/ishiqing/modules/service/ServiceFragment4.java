@@ -77,7 +77,7 @@ public class ServiceFragment4 extends BaseFragment {
     }
 
     @Override
-    protected void initViews() {
+    protected void initViews(View v) {
         initTopBar(UIRoute.FRAG_SERVICE4, true);
 
         button.postDelayed(new Runnable() {

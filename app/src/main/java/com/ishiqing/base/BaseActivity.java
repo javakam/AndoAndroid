@@ -47,7 +47,7 @@ public abstract class BaseActivity extends AppCompatActivity {
         QMUIStatusBarHelper.translucent(this);
         setContentView(getLayoutId());
         mUnbinder = ButterKnife.bind(this);
-        initViews();
+        initViews(savedInstanceState);
     }
 
     @Override
@@ -95,7 +95,7 @@ public abstract class BaseActivity extends AppCompatActivity {
     /**
      * 初始化View
      */
-    protected abstract void initViews();
+    protected abstract void initViews(Bundle savedInstanceState);
 
     /**
      * 可以通过重写该方法，重新定义TopBar事件

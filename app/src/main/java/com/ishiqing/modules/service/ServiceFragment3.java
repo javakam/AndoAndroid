@@ -58,7 +58,7 @@ public class ServiceFragment3 extends BaseFragment {
     }
 
     @Override
-    protected void initViews() {
+    protected void initViews(View v) {
         initTopBar(UIRoute.FRAG_SERVICE3, true);
     }
 

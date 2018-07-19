@@ -49,7 +49,7 @@ public class HttpUploadFragment extends BaseFragment {
     }
 
     @Override
-    protected void initViews() {
+    protected void initViews(View v) {
         initTopBar(UIRoute.FRAG_NETWORK_UPLOAD, true);
     }
 

@@ -30,7 +30,7 @@ public class CatFlexboxLayoutFragment extends BaseFragment {
     }
 
     @Override
-    protected void initViews() {
+    protected void initViews(View v) {
 //        initTopBar(UIRoute.FRAG_WIDGET_FLEXBOX, true);
         mActivity.setSupportActionBar(toolbar);
         toolbar.setTitle(UIRoute.FRAG_WIDGET_FLEXBOX_CAT);

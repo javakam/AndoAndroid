@@ -1,5 +1,7 @@
 package com.ishiqing.modules.rxjava;
 
+import android.view.View;
+
 import com.ishiqing.R;
 import com.ishiqing.base.BaseFragment;
 
@@ -21,7 +23,7 @@ public class RxJavaFragment1 extends BaseFragment {
     }
 
     @Override
-    protected void initViews() {
+    protected void initViews(View v) {
         initTopBar("RxJava2 复习", true);
 
         demo1();

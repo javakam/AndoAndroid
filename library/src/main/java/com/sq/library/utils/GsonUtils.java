@@ -13,9 +13,7 @@ import java.util.Map;
  * https://github.com/Blankj/AndroidUtilCode/blob/d9ef5859f4208440c43c0e60aba39f053d8ce330/subutil/src/test/java/com/blankj/subutil/util/GsonUtilsTest.java
  */
 public final class GsonUtils {
-
     private static final Gson GSON = createGson(true);
-
     private static final Gson GSON_NO_NULLS = createGson(false);
 
     private GsonUtils() {

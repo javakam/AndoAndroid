@@ -1,6 +1,7 @@
 package com.ishiqing.modules.activity;
 
 import android.graphics.Bitmap;
+import android.os.Bundle;
 import android.util.Base64;
 import android.widget.ImageView;
 
@@ -28,7 +29,7 @@ public class SampleActivity1 extends BaseActivity {
     }
 
     @Override
-    protected void initViews() {
+    protected void initViews(Bundle savedInstanceState) {
         initTopBar("Base64Util", true);
         showLoadingEmptyView();
         mEmptyView.postDelayed(new Runnable() {

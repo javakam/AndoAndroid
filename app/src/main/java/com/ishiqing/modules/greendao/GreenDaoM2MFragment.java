@@ -45,7 +45,7 @@ public class GreenDaoM2MFragment extends BaseFragment {
     }
 
     @Override
-    protected void initViews() {
+    protected void initViews(View v) {
         initTopBar("GreenDao多对多", true);
         // 当 TextView内容过多时，可以上下滚动查看
         content.setMovementMethod(ScrollingMovementMethod.getInstance());

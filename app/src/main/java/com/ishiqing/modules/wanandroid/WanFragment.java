@@ -24,7 +24,7 @@ public class WanFragment extends BaseFragment {
     }
 
     @Override
-    protected void initViews() {
+    protected void initViews(View v) {
         initTopBar("玩Android", true);
     }
 

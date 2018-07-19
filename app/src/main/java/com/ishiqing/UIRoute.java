@@ -14,6 +14,7 @@ public class UIRoute {
     public static final String FRAG_UI_EVENT_DISPATCH = "事件分发(一)";
     public static final String FRAG_UI_DRAG = "DragView";
     public static final String FRAG_UI_ART = "艺术探索";
+    public static final String FRAG_WIDGET_SMARTTABLE = "SmartTable";
     public static final String FRAG_WIDGET_BUTTON = "Button";
     public static final String FRAG_ACTIVITY1 = "Activity";
     public static final String FRAG_INTENT_SERVICE = "IntentService";

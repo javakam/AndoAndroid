@@ -24,7 +24,7 @@ public class ThreadNavFragment extends BaseFragment {
     }
 
     @Override
-    protected void initViews() {
+    protected void initViews(View v) {
         initTopBar("线程和消息机制", true);
     }
 

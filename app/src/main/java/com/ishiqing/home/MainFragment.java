@@ -76,7 +76,7 @@ public class MainFragment extends BaseFragment {
     }
 
     @Override
-    protected void initViews() {
+    protected void initViews(View v) {
         initTabs();
         initPagers();
     }

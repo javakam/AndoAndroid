@@ -23,7 +23,7 @@ public class AnnotationFragment extends BaseFragment {
     }
 
     @Override
-    protected void initViews() {
+    protected void initViews(View v) {
         ViewUtils.inject(mActivity);
         initTopBar(UIRoute.FRAG_ANNOTATION, true);
     }

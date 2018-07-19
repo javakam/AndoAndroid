@@ -73,7 +73,7 @@ int match(Uri uri)：
     }
 
     @Override
-    protected void initViews() {
+    protected void initViews(View v) {
 
     }
 

@@ -1,5 +1,7 @@
 package com.ishiqing.modules.thread;
 
+import android.view.View;
+
 import com.ishiqing.R;
 import com.ishiqing.base.BaseFragment;
 
@@ -15,7 +17,7 @@ public class ThreadFragment extends BaseFragment {
     }
 
     @Override
-    protected void initViews() {
+    protected void initViews(View v) {
         initTopBar("Thread", true);
     }
 }

@@ -4,6 +4,7 @@ import android.os.Handler;
 import android.os.HandlerThread;
 import android.os.Looper;
 import android.os.Message;
+import android.view.View;
 
 import com.ishiqing.R;
 import com.ishiqing.base.BaseFragment;
@@ -29,7 +30,7 @@ public class HandlerFragment extends BaseFragment {
     }
 
     @Override
-    protected void initViews() {
+    protected void initViews(View v) {
         initTopBar("Handler", true);
     }
 

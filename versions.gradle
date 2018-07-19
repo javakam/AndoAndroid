@@ -67,6 +67,7 @@ versions.greendao = "3.2.2"
 versions.android_database_sqlcipher = "3.5.6"
 versions.test_runner = "1.0.2"
 versions.flexbox = "1.0.0"
+versions.smarttable = "2.2.0"
 
 def deps = [:]
 def support = [:]
@@ -177,6 +178,7 @@ deps.greendao = "org.greenrobot:greendao:$versions.greendao"
 // This is only needed if you want to use encrypted databases
 deps.android_database_sqlcipher = "net.zetetic:android-database-sqlcipher:$versions.android_database_sqlcipher"
 deps.flexbox = "com.google.android:flexbox:$versions.flexbox"
+deps.smarttable = "com.github.huangyanbin:SmartTable:$versions.smarttable"
 ext.deps = deps
 
 def work = [:]

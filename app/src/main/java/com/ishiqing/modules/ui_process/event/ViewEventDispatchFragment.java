@@ -1,6 +1,7 @@
 package com.ishiqing.modules.ui_process.event;
 
 import android.support.annotation.NonNull;
+import android.view.View;
 
 import com.ishiqing.R;
 import com.ishiqing.base.BaseFragment;
@@ -16,7 +17,7 @@ public class ViewEventDispatchFragment extends BaseFragment {
     }
 
     @Override
-    protected void initViews() {
+    protected void initViews(View v) {
         initTopBar("View事件传递", true);
     }
 }
