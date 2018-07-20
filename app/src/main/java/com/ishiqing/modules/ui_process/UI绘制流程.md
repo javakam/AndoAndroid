@@ -78,8 +78,8 @@ return contentParent;
 ```
 总结(淡蓝色部分是我们添加布局的区域)：
 
-<!--![https://images2018.cnblogs.com/blog/803593/201806/803593-20180627112023576-1538255318.png](https://images2018.cnblogs.com/blog/803593/201806/803593-20180627112023576-1538255318.png)
--->
+![https://images2018.cnblogs.com/blog/803593/201806/803593-20180627112023576-1538255318.png](https://images2018.cnblogs.com/blog/803593/201806/803593-20180627112023576-1538255318.png)
+
 
 #### 2 绘制的流程
 
@@ -126,7 +126,7 @@ final class WindowLeaked extends AndroidRuntimeException {
 // ViewGroup 实现了 ViewManger 说明它既是爹又是你的上司，可以聘用你，可以调动你，当然也可以开除你。
 public abstract class ViewGroup extends View implements ViewParent, ViewManager {}
 
-// 爸爸的笤帚疙瘩
+// 笤帚疙瘩
 // 核心方法 performTraversals()
 public final class ViewRootImpl implements ViewParent,View.AttachInfo.Callbacks, ThreadedRenderer.DrawCallbacks {}
 
@@ -329,7 +329,6 @@ ViewGroup 在 invalidateChild(View child, final Rect dirty) 方法中做了一�
 做 performTraversals() 的方法【MS：必问的】对该 ViewGroup 执行了三个操作：测量、布局和绘制！说白了，android中的视图绘制是从外到内一层一层
 进行处理的，最终到 DecorView 的绘制完成。
 
-// TODO 2018-7-4 周三 requestLayout:
 
 #### 3 .View measure\layout\draw
 >通过上面的分析，我们知道所有的视图最终都是通过先后调用 View 中的 measure测量、layout布局、draw绘制 三个步骤完成的（ViewRootImpl->performTraversals->performMeasure...）
@@ -533,13 +532,14 @@ if (!dirtyOpaque) onDraw(canvas);
 // Step 4, draw the children
 dispatchDraw(canvas);
 ```
+可见，View在绘制的时候，先绘制自己，再去绘制子View。【重】
 View.onDraw 是在我们在自定义View中绘制我们自己的图形时 必须要覆写的方法 ！
-View.dispatchDraw 分派视图。顾名思义，这个方法是给 ViewGroup留的，我们看下View.dispatchDraw的源码：
+View.dispatchDraw 绘制子视图。顾名思义，这个方法是给 ViewGroup 留的，View.dispatchDraw是个空实现。我们看下View.dispatchDraw 的源码：
 ```
 /**
  * Called by draw to draw the child views. This may be overridden
  * by derived classes to gain control just before its children are drawn
- * (but after its own view has been drawn).
+ * (but after its own view has been drawn 但是在它自己本身被画出来之后！).
  * @param canvas the canvas on which to draw the view
  */
 protected void dispatchDraw(Canvas canvas) {
