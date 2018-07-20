@@ -127,6 +127,9 @@ mButton1.setOnTouchListener(new View.OnTouchListener() {
 父容器不拦截，由子元素负责拦截处理，
 
 
+### TODO 4.2理解 MeasureSpec   Page 177
+2018年7月20日09:42:17
+
 
 
 

@@ -414,6 +414,7 @@ drawSoftware(Surface surface, AttachInfo attachInfo, int xoff, int yoff, boolean
 mView.draw(canvas);// 在 drawSoftware 初始化了 Canvas 后调用 View.draw(canvas) 进行绘制
 
 ##### ViewGroup 的测量 measureChild\measureChildren
+ViewGroup 中没有onMeasure方法 <br>
 measureChildren 内部通过 for 循环执行 measureChild 方法 <br>
 measureChild: 注：child 可能是 View 也可能是 ViewGroup 。 突发奇想：我们页面中有多个View，而VIew中有2.5w行代码，为什么不卡呢？
 ```
