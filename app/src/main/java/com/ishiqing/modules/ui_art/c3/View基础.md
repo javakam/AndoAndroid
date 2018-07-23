@@ -130,6 +130,8 @@ mButton1.setOnTouchListener(new View.OnTouchListener() {
 ### TODO 4.2理解 MeasureSpec   Page 177
 2018年7月20日09:42:17
 
+2018年7月23日17:19:33 加油！
+
 
 
 
