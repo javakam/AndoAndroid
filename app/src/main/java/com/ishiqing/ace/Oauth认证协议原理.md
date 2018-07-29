@@ -23,7 +23,7 @@
 9.客户端使用获取的访问令牌访问存放在服务提供方上的相应的资源。<br>
 
 > Oauth简单示意图:<br>
-![](\images\oauth简单示意图.png) <br>
+![](images\oauth简单示意图.png) <br>
 > Oauth全面的示意图:<br>
-![](\images\oauth全面示意图.png)
+![](images\oauth全面示意图.png)
 
