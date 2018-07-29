@@ -23,7 +23,6 @@
 9.客户端使用获取的访问令牌访问存放在服务提供方上的相应的资源。<br>
 
 > Oauth简单示意图:<br>
-![](https://github.com/javakam/IShiQing/blob/master/app/src/main/java/com/ishiqing/ace/images/oauth%E7%AE%80%E5%8D%95%E7%A4%BA%E6%84%8F%E5%9B%BE.png) <br>
+![Image text](.\images\oauth简单示意图.png) <br>
 > Oauth全面的示意图:<br>
-![](https://github.com/javakam/IShiQing/blob/master/app/src/main/java/com/ishiqing/ace\images\oauth全面示意图.png)
-
+![Image text](.\images\oauth全面示意图.png)
