@@ -152,7 +152,8 @@ Ok！<br>
       ...
   }
 ```
-由此可见，inflate 和 addView 是等效的！因为LayoutInflater.inflate 内部最终调用的就是ViewGroup.addView方法进行渲染的。<br>
+由此可见，inflate 和 addView 是等效的！因为LayoutInflater.inflate 内部则是遍历我们的XML布局文件并利用反射生成每一个Tag标签所对应的视图
+，最终调用 ViewGroup.addView方法进行渲染。<br>
 > ViewGroup.addView 中的代码:
 ```
 /**
@@ -209,7 +210,7 @@ do(){
 ```
 ViewRootImpl > invalidateChildInParent -> invalidateRectOnScreen -> scheduleTraversals() 中 :
 ```
- mChoreographer.postCallback(Choreographer.CALLBACK_TRAVERSAL, mTraversalRunnable, null);
+mChoreographer.postCallback(Choreographer.CALLBACK_TRAVERSAL, mTraversalRunnable, null);
 ```
 mTraversalRunnable :
 ```
