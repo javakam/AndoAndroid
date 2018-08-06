@@ -1,5 +1,7 @@
 package com.ishiqing.modules.window;
 
+import android.app.Dialog;
+import android.graphics.Color;
 import android.graphics.PixelFormat;
 import android.os.Bundle;
 import android.view.Gravity;
@@ -7,6 +9,7 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
+import android.widget.TextView;
 
 import com.ishiqing.R;
 import com.ishiqing.base.BaseActivity;
@@ -62,10 +65,33 @@ public class WindowActivity extends BaseActivity {
                     default:
                         break;
                 }
-
                 return false;
             }
         });
 
+
+        button.setOnClickListener(v -> {
+            showCusDialog();
+        });
+    }
+
+    /**
+     * 普通的Dialog需要Activity的Context才能启动，如果使用 Application的Context会报错:
+     * <p>
+     * android.view.WindowManager$BadTokenException: Unable to add window -- token null is not for an application
+     * <p>
+     * 需要设置成系统window才能显示： dialog.getWindow().setType(WindowManager.LayoutParams.TYPE_SYSTEM_ERROR);
+     * <p>
+     * 另外，系统的Dialog比较特殊，不需要token
+     */
+    private void showCusDialog() {
+        Dialog dialog = new Dialog(getApplicationContext());// this
+        TextView textView = new TextView(this);
+        textView.setBackgroundColor(Color.YELLOW);
+        textView.setText("this is a dialog");
+        dialog.setContentView(textView);
+        // 神奇的一幕发生了。。。在使用 TYPE_SYSTEM_OVERLAY 时，会弹出一个回退键无法关闭的系统级的Dialog！！！
+        dialog.getWindow().setType(WindowManager.LayoutParams.TYPE_SYSTEM_ERROR);//
+        dialog.show();
     }
 }

@@ -5,6 +5,7 @@
 
     <uses-sdk tools:overrideLibrary="com.bin.david.form" />
 
+    <!-- 可以使用系统Window -->
     <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
     <!-- 获取系统联系人的读/写权限 -->
     <uses-permission android:name="android.permission.READ_CONTACTS" />

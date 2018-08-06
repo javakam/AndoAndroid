@@ -137,7 +137,8 @@ protected Parcelable onSaveInstanceState() {
     return BaseSavedState.EMPTY_STATE;
 }
 ```
-设置位标志， 默认不save任何东西，状态为空，这就是为啥我们每次随便写个类继承activity实现onCreate方法的时候可以使用参数savedInstanceState保存状态，
+设置位标志， 默认不save任何东西，状态为空，这就是为啥我们每次随便写个类继承activity实现onCreate方法的时候可以
+使用参数savedInstanceState保存状态，
 因为默认为null，代码如下：
 ```
 protected void onCreate(Bundle savedInstanceState) {
