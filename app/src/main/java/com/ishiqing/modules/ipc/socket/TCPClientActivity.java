@@ -70,7 +70,7 @@ public class TCPClientActivity extends Activity implements View.OnClickListener 
         mSendButton.setOnClickListener(this);
         mMessageEditText = (EditText) findViewById(R.id.msg);
         Intent service = new Intent("support.tcpserverservice");
-        // 【注】这个应用ID是指对方的，不是自己的！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！
+        // 【注】这个 应用ID 是指对方的，不是自己的！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！
         service.setPackage("com.sq.support");//Application ID
         startService(service);
         new Thread() {
