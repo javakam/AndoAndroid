@@ -28,7 +28,6 @@ public class WindowActivity extends BaseActivity {
     @Override
     protected void initViews(Bundle savedInstanceState) {
         initTopBar("WindowManager", true);
-
         Button button = new Button(this);
         button.setText("button...");
         WindowManager.LayoutParams layoutParams = new WindowManager.LayoutParams(WindowManager.LayoutParams.WRAP_CONTENT
