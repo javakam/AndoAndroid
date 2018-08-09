@@ -20,7 +20,17 @@
             </intent-filter>
         </activity>
 
-        <service android:name="com.sq.support.ipc.TCPServerService">
+        <!-- IPC AIDL Server -->
+        <service
+            android:name=".ipc.aidl.AIDLRemoteService"
+            android:enabled="true"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="it.is.an.aidl.service.server" />
+            </intent-filter>
+        </service>
+        <!-- IPC Socket -->
+        <service android:name="com.sq.support.ipc.socket.TCPServerService">
             <intent-filter>
                 <action android:name="support.tcpserverservice" />
             </intent-filter>

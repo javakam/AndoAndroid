@@ -1,4 +1,4 @@
-package com.sq.support.ipc;
+package com.sq.support.ipc.socket;
 
 import android.app.Service;
 import android.content.Intent;
@@ -17,7 +17,7 @@ import java.net.Socket;
 import java.util.Random;
 
 /**
- * Socket实现进程间通信服务端
+ * Socket实现进程间通信 服务端
  */
 public class TCPServerService extends Service {
 

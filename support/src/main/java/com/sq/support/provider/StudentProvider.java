@@ -40,7 +40,7 @@ public class StudentProvider extends ContentProvider {
     public boolean onCreate() {
         // 初始化一个数据持久层
         studentDao = new StudentDAO(getContext());
-        Log.i(TAG, "---->>onCreate()被调用");
+        Log.i(TAG, "---->>StudentProvider.onCreate()被调用");
         return true;
     }
 

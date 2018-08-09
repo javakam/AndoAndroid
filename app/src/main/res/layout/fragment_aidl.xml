@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/app_base_bg"
@@ -15,57 +16,66 @@
         android:layout_height="match_parent"
         android:layout_marginTop="@dimen/topbar_height"
         android:background="@color/qmui_config_color_white"
-        android:gravity="center"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:padding="@dimen/dp_15">
 
         <com.qmuiteam.qmui.widget.roundwidget.QMUIRoundButton
-            android:id="@+id/btnStart"
+            android:id="@+id/btnAIDLBind"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="?attr/qmui_content_spacing_horizontal"
             android:layout_marginRight="?attr/qmui_content_spacing_horizontal"
             android:gravity="center"
             android:padding="10dp"
-            android:text="@string/start_service"
+            android:text="@string/ipc_aidl_bind_service"
             app:qmui_isRadiusAdjustBounds="true" />
 
         <com.qmuiteam.qmui.widget.roundwidget.QMUIRoundButton
-            android:id="@+id/btnBind"
+            android:id="@+id/btnAIDLUnBind"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="?attr/qmui_content_spacing_horizontal"
             android:layout_marginRight="?attr/qmui_content_spacing_horizontal"
-            android:layout_marginTop="30dp"
+            android:layout_marginTop="15dp"
             android:gravity="center"
             android:padding="10dp"
-
-            android:text="@string/bind_service"
+            android:text="@string/ipc_aidl_unbind_service"
             app:qmui_isRadiusAdjustBounds="true" />
 
         <com.qmuiteam.qmui.widget.roundwidget.QMUIRoundButton
-            android:id="@+id/btnUnbind"
+            android:id="@+id/btnBindSysAIDL"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="?attr/qmui_content_spacing_horizontal"
             android:layout_marginRight="?attr/qmui_content_spacing_horizontal"
-            android:layout_marginTop="30dp"
+            android:layout_marginTop="15dp"
             android:gravity="center"
             android:padding="10dp"
-            android:text="@string/unbind_service"
+            android:text="@string/ipc_aidl_bind_service_sys"
+            android:textColor="@color/colorAccent"
             app:qmui_isRadiusAdjustBounds="true" />
 
         <com.qmuiteam.qmui.widget.roundwidget.QMUIRoundButton
-            android:id="@+id/btnStop"
+            android:id="@+id/btnUnBindSysAIDL"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="?attr/qmui_content_spacing_horizontal"
             android:layout_marginRight="?attr/qmui_content_spacing_horizontal"
-            android:layout_marginTop="30dp"
+            android:layout_marginTop="15dp"
             android:gravity="center"
             android:padding="10dp"
-            android:text="@string/stop_service"
+            android:text="@string/ipc_aidl_unbind_service_sys"
+            android:textColor="@color/colorAccent"
             app:qmui_isRadiusAdjustBounds="true" />
 
+        <TextView
+            android:id="@+id/tvAIDLResult"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="@dimen/dp_15"
+            android:textColor="@color/qmui_config_color_red"
+            android:textSize="@dimen/sp_16"
+            tools:text="Hello World!!!" />
     </LinearLayout>
 
 </FrameLayout>

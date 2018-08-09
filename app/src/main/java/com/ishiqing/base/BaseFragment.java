@@ -2,6 +2,8 @@ package com.ishiqing.base;
 
 
 import android.content.Context;
+import android.content.Intent;
+import android.content.ServiceConnection;
 import android.support.annotation.LayoutRes;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -92,6 +94,30 @@ public abstract class BaseFragment extends QMUIFragment {
                     }
                 });
             }
+        }
+    }
+
+    protected void startService(Intent service) {
+        if (service != null && mActivity != null && isAttachedToActivity()) {
+            mActivity.startService(service);
+        }
+    }
+
+    protected void stopService(Intent service) {
+        if (service != null && mActivity != null && isAttachedToActivity()) {
+            mActivity.stopService(service);
+        }
+    }
+
+    protected void bindService(Intent service, ServiceConnection conn, int flags) {
+        if (service != null && mActivity != null && isAttachedToActivity()) {
+            mActivity.bindService(service, conn, flags);
+        }
+    }
+
+    protected void unbindService(ServiceConnection conn) {
+        if (mActivity != null && isAttachedToActivity()) {
+            mActivity.unbindService(conn);
         }
     }
 }

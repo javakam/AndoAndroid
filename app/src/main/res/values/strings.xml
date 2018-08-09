@@ -27,6 +27,10 @@
     <string name="test_string_1">蓝蓝的天上马儿跑，白云下面鲜花飘。</string>
     <string name="login_username">账号/邮箱/手机</string>
     <string name="login_pwd">密码</string>
+    <string name="ipc_aidl_bind_service">IPC - AIDL绑定远程服务</string>
+    <string name="ipc_aidl_unbind_service">IPC - AIDL解绑远程服务</string>
+    <string name="ipc_aidl_bind_service_sys">IPC - AIDL绑定系统服务</string>
+    <string name="ipc_aidl_unbind_service_sys">IPC - AIDL解绑系统服务</string>
 
 
 </resources>

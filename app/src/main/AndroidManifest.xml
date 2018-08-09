@@ -17,6 +17,8 @@
     <uses-permission android:name="android.permission.INTERNET" />
     <!-- 获取网络连接状态的权限 -->
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <!-- 拨打电话和挂断电话的权限 -->
+    <uses-permission android:name="android.permission.CALL_PHONE" />
 
     <!--
         <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
@@ -79,11 +81,6 @@
                 <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
             </intent-filter>
         </receiver>
-        <!-- AIDL Server -->
-        <service
-            android:name=".modules.ipc.aidl.MyService"
-            android:enabled="true"
-            android:exported="true" />
 
         <activity android:name=".modules.window.WindowActivity"></activity>
     </application>
