@@ -14,6 +14,10 @@ public class SQApplication extends BaseApplication {
     @Override
     public void onCreate() {
         super.onCreate();
+        // 配置方法数超过 64K 的应用  --  代码混淆涉及到很多的点，inspect code、analyze apk、classesN.dex
+        // 方法数64K限制 ： 65536=64*1024
+//        MultiDex.install(this);
+
         // ARouter
         initArouter();
         // LeakCanary

@@ -83,6 +83,11 @@
         </receiver>
 
         <activity android:name=".modules.window.WindowActivity"></activity>
+
+
+        <meta-data
+            android:name="CHANNEL"
+            android:value="${channel}" />
     </application>
 
 </manifest>

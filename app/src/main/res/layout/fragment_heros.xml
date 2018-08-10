@@ -24,7 +24,6 @@
             style="@style/FlexThreeQMButton"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:background="@color/app_content_bg"
             android:text="MyScrollView" />
 
         <com.qmuiteam.qmui.alpha.QMUIAlphaButton
@@ -32,7 +31,6 @@
             style="@style/FlexThreeQMButton"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:background="@color/app_content_bg"
             android:text="MyDrawerMenu" />
 
         <com.qmuiteam.qmui.alpha.QMUIAlphaButton
@@ -40,7 +38,6 @@
             style="@style/FlexThreeQMButton"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:background="@color/app_content_bg"
             android:text="HerosMainActivity" />
     </com.google.android.flexbox.FlexboxLayout>
 
@@ -100,8 +97,7 @@
         <Button
             android:id="@+id/btDrawerBottom"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:onClick="buttonBottomClick" />
+            android:layout_height="wrap_content" />
 
     </com.ishiqing.modules.ui_process.heros.DrawerMenu>
 </LinearLayout>
