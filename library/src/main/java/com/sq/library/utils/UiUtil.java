@@ -20,6 +20,7 @@ import android.view.ViewPropertyAnimator;
 import android.view.Window;
 import android.view.WindowManager;
 import android.view.animation.PathInterpolator;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.Spinner;
 
 import com.sq.library.R;
@@ -27,7 +28,7 @@ import com.sq.library.R;
 import java.util.List;
 
 /**
- * Created by monday on 2016/1/7.
+ * Created by javakam on 2018/6/28.
  */
 public class UiUtil {
 
@@ -231,4 +232,24 @@ public class UiUtil {
         sp.setSelection(position == -1 ? 0 : position);
     }
 
+
+    /**
+     * 隐藏输入法
+     *
+     * @param context
+     */
+    public static void hideIputKeyboard(final Context context) {
+        final Activity activity = (Activity) context;
+        activity.runOnUiThread(new Runnable() {
+            @Override
+            public void run() {
+                InputMethodManager mInputKeyBoard = (InputMethodManager) context.getSystemService(Context.INPUT_METHOD_SERVICE);
+                // mInputKeyBoard.isActive()
+                if (activity.getCurrentFocus() != null) {
+                    mInputKeyBoard.hideSoftInputFromWindow(activity.getCurrentFocus().getWindowToken(), InputMethodManager.HIDE_NOT_ALWAYS);
+                    activity.getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_HIDDEN);
+                }
+            }
+        });
+    }
 }

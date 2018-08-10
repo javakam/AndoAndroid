@@ -5,7 +5,7 @@
 
     <uses-sdk tools:overrideLibrary="com.bin.david.form" />
 
-    <!-- 可以使用系统Window -->
+    <!-- 可以使用系统 Window -->
     <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
     <!-- 获取系统联系人的读/写权限 -->
     <uses-permission android:name="android.permission.READ_CONTACTS" />
@@ -62,6 +62,8 @@
         <activity android:name=".modules.ui_process.heros.activity.HerosMainActivity" />
         <activity android:name=".modules.ui_process.heros.activity.MyViewTest" />
         <activity android:name=".modules.ui_process.heros.activity.TopBarTest" />
+        <activity android:name=".modules.window.WindowActivity" />
+
 
         <!-- Service一个隐式跳转，一个显示跳转 com.ishiqing.modules.service.IntentServiceFragment -->
         <!-- IntentService一定要配置，否则是不起作用的 -->
@@ -81,9 +83,6 @@
                 <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
             </intent-filter>
         </receiver>
-
-        <activity android:name=".modules.window.WindowActivity"></activity>
-
 
         <meta-data
             android:name="CHANNEL"

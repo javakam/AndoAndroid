@@ -15,10 +15,6 @@ import com.ishiqing.R;
 import com.ishiqing.base.BaseActivity;
 
 public class WindowActivity extends BaseActivity {
-    @Override
-    public void onContentChanged() {
-        super.onContentChanged();
-    }
 
     @Override
     protected int getLayoutId() {
@@ -28,8 +24,10 @@ public class WindowActivity extends BaseActivity {
     @Override
     protected void initViews(Bundle savedInstanceState) {
         initTopBar("WindowManager", true);
+
+
         Button button = new Button(this);
-        button.setText("button...");
+        button.setText("动态添加Button");
         WindowManager.LayoutParams layoutParams = new WindowManager.LayoutParams(WindowManager.LayoutParams.WRAP_CONTENT
                 , WindowManager.LayoutParams.WRAP_CONTENT, 0, 0, PixelFormat.TRANSPARENT);
 
@@ -43,6 +41,7 @@ public class WindowActivity extends BaseActivity {
         layoutParams.x = 100;
         layoutParams.y = 200;
         WindowManager wm = getWindowManager();
+        wm.addView(button, layoutParams);
         wm.addView(button, layoutParams);
 
         /*

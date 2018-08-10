@@ -61,9 +61,9 @@ public class SQDataManager {
         list.add(new QDItemDescription(ServiceFragment2.class, UIRoute.FRAG_SERVICE2, getImage()));
         list.add(new QDItemDescription(ServiceFragment3.class, UIRoute.FRAG_SERVICE3, getImage()));
         list.add(new QDItemDescription(ServiceFragment4.class, UIRoute.FRAG_SERVICE4, getImage()));
+        list.add(new QDItemDescription(ProviderFragment1.class, UIRoute.FRAG_PROVIDER1, getImage()));
         list.add(new QDItemDescription(AIDIServiceFragment.class, UIRoute.FRAG_AIDL, getImage()));
         list.add(new QDItemDescription(TCPClientActivity.class, UIRoute.FRAG_TCP_CLIENT, getImage()));
-        list.add(new QDItemDescription(ProviderFragment1.class, UIRoute.FRAG_PROVIDER1, getImage()));
         list.add(new QDItemDescription(AnnotationFragment.class, UIRoute.FRAG_ANNOTATION, getImage()));
         list.add(new QDItemDescription(ThreadNavFragment.class, UIRoute.FRAG_THREAD_NAV, getImage()));
         list.add(new QDItemDescription(HttpUrlConnectionFragment.class, UIRoute.FRAG_NETWORK, getImage()));

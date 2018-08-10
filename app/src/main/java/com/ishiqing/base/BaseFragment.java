@@ -14,7 +14,7 @@ import com.ishiqing.R;
 import com.ishiqing.base.qmui.QMUIFragment;
 import com.qmuiteam.qmui.util.QMUIDisplayHelper;
 import com.qmuiteam.qmui.widget.QMUITopBar;
-import com.sq.library.utils.UIUtils;
+import com.sq.library.utils.UiUtil;
 import com.sq.library.widget.SQTipDialogUtil;
 
 import butterknife.BindView;
@@ -89,7 +89,7 @@ public abstract class BaseFragment extends QMUIFragment {
                 mTopBar.addLeftBackImageButton().setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        UIUtils.hideIputKeyboard(mActivity);
+                        UiUtil.hideIputKeyboard(mActivity);
                         popBackStack();
                     }
                 });

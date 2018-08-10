@@ -21,7 +21,7 @@ import android.view.animation.AnimationUtils;
 import com.ishiqing.R;
 import com.qmuiteam.qmui.QMUILog;
 import com.qmuiteam.qmui.util.QMUIViewHelper;
-import com.sq.library.utils.UIUtils;
+import com.sq.library.utils.UiUtil;
 
 import java.lang.reflect.Field;
 import java.lang.reflect.InvocationTargetException;
@@ -310,7 +310,7 @@ public abstract class QMUIFragment extends Fragment {
             @Override
             public void onScrollStateChange(int state, float scrollPercent) {
                 //滑动退出时关闭输入法
-                UIUtils.hideIputKeyboard(getContext());
+                UiUtil.hideIputKeyboard(getContext());
                 Log.i(TAG, "SwipeListener:onScrollStateChange: state = " + state + " ;scrollPercent = " + scrollPercent);
                 ViewGroup container = getBaseFragmentActivity().getFragmentContainer();
                 int childCount = container.getChildCount();

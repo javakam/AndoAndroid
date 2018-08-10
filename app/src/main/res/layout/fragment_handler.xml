@@ -32,34 +32,42 @@
                 app:flexWrap="wrap">
 
                 <com.qmuiteam.qmui.layout.QMUIButton
-                    android:id="@+id/btAsyncTask"
+                    android:id="@+id/btChildThread"
                     style="@style/FlexThreeQMButton"
                     android:layout_width="wrap_content"
-                    android:layout_height="@dimen/dp_80"
-                    android:text="AsyncTask"
+                    android:layout_height="@dimen/dp_60"
+                    android:text="子线程更新UI"
                     app:qmui_isRadiusAdjustBounds="true" />
 
                 <com.qmuiteam.qmui.layout.QMUIButton
-                    android:id="@+id/btHandler"
+                    android:id="@+id/btChildThreadErrLog"
                     style="@style/FlexThreeQMButton"
                     android:layout_width="wrap_content"
-                    android:layout_height="@dimen/dp_80"
-                    android:text="Handler"
+                    android:layout_height="@dimen/dp_60"
+                    android:text="子线程更新UI-错误日志"
                     app:qmui_isRadiusAdjustBounds="true" />
 
-                <com.qmuiteam.qmui.layout.QMUIButton
-                    android:id="@+id/btThread"
-                    style="@style/FlexThreeQMButton"
-                    android:layout_width="wrap_content"
-                    android:layout_height="@dimen/dp_80"
-                    android:text="Thread"
-                    app:qmui_isRadiusAdjustBounds="true" />
             </com.google.android.flexbox.FlexboxLayout>
 
             <View
                 android:layout_width="match_parent"
-                android:layout_height="15dp"
-                android:background="#ffa" />
+                android:layout_height="10dp"
+                android:background="#aaf" />
+
+            <TextView
+                android:id="@+id/tvThreadInfo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/dp_05"
+                android:scrollbars="vertical"
+                android:textColor="@android:color/holo_blue_dark"
+                android:textSize="@dimen/sp_12"
+                tools:text="AAAAaaaaAAA" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="10dp"
+                android:background="#faa" />
 
             <TextView
                 android:id="@+id/tvResult"
@@ -68,7 +76,7 @@
                 android:padding="@dimen/dp_05"
                 android:scrollbars="vertical"
                 android:textColor="@android:color/holo_blue_dark"
-                android:textSize="@dimen/text_size_12sp"
+                android:textSize="@dimen/sp_12"
                 tools:text="AAAAaaaaAAA" />
         </LinearLayout>
     </ScrollView>

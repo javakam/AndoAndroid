@@ -7,6 +7,9 @@ import com.ishiqing.base.BaseFragment;
 import com.ishiqing.base.BaseQMUIFragmentActivity;
 import com.ishiqing.home.MainFragment;
 
+/**
+ * @author changbao
+ */
 public class MainActivityQMUI extends BaseQMUIFragmentActivity {
 
     @SuppressLint("ResourceType")

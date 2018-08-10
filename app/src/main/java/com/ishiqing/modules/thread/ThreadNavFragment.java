@@ -10,7 +10,7 @@ import butterknife.BindView;
 import butterknife.OnClick;
 
 /**
- * Handler
+ * 线程和消息机制
  * <p>
  * Created by javakam on 2018/7/9 .
  */
