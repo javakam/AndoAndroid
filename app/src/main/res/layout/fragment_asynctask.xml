@@ -36,24 +36,9 @@
                     style="@style/FlexThreeQMButton"
                     android:layout_width="wrap_content"
                     android:layout_height="@dimen/dp_80"
-                    android:text="AsyncTask"
+                    android:text="一下开仨AsyncTask任务-串行/并行"
                     app:qmui_isRadiusAdjustBounds="true" />
 
-                <com.qmuiteam.qmui.layout.QMUIButton
-                    android:id="@+id/btHandler"
-                    style="@style/FlexThreeQMButton"
-                    android:layout_width="wrap_content"
-                    android:layout_height="@dimen/dp_80"
-                    android:text="Handler"
-                    app:qmui_isRadiusAdjustBounds="true" />
-
-                <com.qmuiteam.qmui.layout.QMUIButton
-                    android:id="@+id/btThread"
-                    style="@style/FlexThreeQMButton"
-                    android:layout_width="wrap_content"
-                    android:layout_height="@dimen/dp_80"
-                    android:text="Thread"
-                    app:qmui_isRadiusAdjustBounds="true" />
             </com.google.android.flexbox.FlexboxLayout>
 
             <View
