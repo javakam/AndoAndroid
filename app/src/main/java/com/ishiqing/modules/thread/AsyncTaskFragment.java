@@ -23,10 +23,24 @@ public class AsyncTaskFragment extends BaseFragment {
     }
 
     class MyAsyncTask extends AsyncTask<Integer,String,String>{
+        @Override
+        protected void onPreExecute() {
+            super.onPreExecute();
+        }
 
         @Override
         protected String doInBackground(Integer... integers) {
             return null;
+        }
+
+        @Override
+        protected void onProgressUpdate(String... values) {
+            super.onProgressUpdate(values);
+        }
+
+        @Override
+        protected void onPostExecute(String s) {
+            super.onPostExecute(s);
         }
     }
 }
