@@ -32,35 +32,27 @@
                 app:flexWrap="wrap">
 
                 <com.qmuiteam.qmui.layout.QMUIButton
-                    android:id="@+id/btAsyncTaskSerial"
+                    android:id="@+id/btTest1"
                     style="@style/FlexTwoQMButton"
                     android:layout_width="wrap_content"
                     android:layout_height="@dimen/dp_45"
-                    android:text="串行执行"
+                    android:text="TEST1"
                     app:qmui_isRadiusAdjustBounds="true" />
 
                 <com.qmuiteam.qmui.layout.QMUIButton
-                    android:id="@+id/btAsyncTaskParallel"
+                    android:id="@+id/btTest2"
                     style="@style/FlexTwoQMButton"
                     android:layout_width="wrap_content"
                     android:layout_height="@dimen/dp_45"
-                    android:text="并行执行"
+                    android:text="TEST2"
                     app:qmui_isRadiusAdjustBounds="true" />
 
                 <com.qmuiteam.qmui.layout.QMUIButton
-                    android:id="@+id/btAsyncTaskParallelByUs"
+                    android:id="@+id/btTest3"
                     style="@style/FlexTwoQMButton"
                     android:layout_width="wrap_content"
                     android:layout_height="@dimen/dp_45"
-                    android:text="并行执行(自定义线程池)"
-                    app:qmui_isRadiusAdjustBounds="true" />
-
-                <com.qmuiteam.qmui.layout.QMUIButton
-                    android:id="@+id/btAsyncTaskParallelByUs2"
-                    style="@style/FlexTwoQMButton"
-                    android:layout_width="wrap_content"
-                    android:layout_height="@dimen/dp_45"
-                    android:text="并行执行(自定义线程池2)"
+                    android:text="TEST3"
                     app:qmui_isRadiusAdjustBounds="true" />
             </com.google.android.flexbox.FlexboxLayout>
 
