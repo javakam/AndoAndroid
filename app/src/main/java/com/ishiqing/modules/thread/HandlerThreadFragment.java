@@ -6,13 +6,16 @@ import android.widget.TextView;
 
 import com.ishiqing.R;
 import com.ishiqing.base.BaseFragment;
+import com.ishiqing.modules.service.intentservice.IntentServiceFragment;
 import com.sq.library.utils.L;
 
 import butterknife.BindView;
 import butterknife.OnClick;
 
 /**
- * HandlerThread {}
+ * HandlerThread -- 【疑惑】
+ * <p>
+ * 其实跟 HandlerThread 半毛钱关系都没有。。。skr skr 正文{@link IntentServiceFragment}
  * <p>
  * Created by javakam on 2018/8/15.
  */
@@ -32,7 +35,6 @@ public class HandlerThreadFragment extends BaseFragment {
     }
 
     /*
-    其实跟 HandlerThread 半毛钱关系都没有。。。skr skr
     【重】静态成员 会在类加载的时候初始化
     【重】静态成员变量 属于类不属于对象，所以不会参与序列化过程；其次用 transient 关键字标记的成员变量不参与序列化过程。
      */

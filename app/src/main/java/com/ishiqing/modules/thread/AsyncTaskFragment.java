@@ -16,6 +16,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.Executor;
+import java.util.concurrent.Executors;
 import java.util.concurrent.LinkedBlockingQueue;
 import java.util.concurrent.ThreadFactory;
 import java.util.concurrent.ThreadPoolExecutor;
@@ -26,9 +27,11 @@ import butterknife.BindView;
 import butterknife.OnClick;
 
 /**
- * AsyncTask  {@see AsyncTask缺陷问题.md}
+ * AsyncTask  & 多线程 ThreadPoolExecutor + Executors
  * <p>
- * 郭霖 https://blog.csdn.net/guolin_blog/article/details/11711405
+ * {@see AsyncTask缺陷问题.md}
+ * <p>
+ * 郭霖 AsyncTask  https://blog.csdn.net/guolin_blog/article/details/11711405
  * <p>
  * Created by javakam on 2018/7/9 .
  */
@@ -47,15 +50,41 @@ public class AsyncTaskFragment extends BaseFragment {
     @Override
     protected void initViews(View v) {
         initTopBar("AsyncTask", true);
+        /*
+        About Executors
+         */
+        Executors.newFixedThreadPool(2);
+        //适合执行大量的耗时较少的任务 -- 容易开启过多线程，不推荐
+        Executors.newCachedThreadPool();
+        //定时执行任务
+        Executors.newScheduledThreadPool(2);
+        Executors.newSingleThreadExecutor();
     }
 
     //自定义线程池
-    private static final int CPU_COUNT = Runtime.getRuntime().availableProcessors();
-    private static final int CORE_POOL_SIZE = Math.max(2, Math.min(CPU_COUNT - 1, 4));
-    private static final int MAXIMUM_POOL_SIZE = CPU_COUNT * 2 + 1;
-    private static final int KEEP_ALIVE_SECONDS = 60;
     public static final Executor MY_THREAD_POOL_EXECUTOR;
+    //Java虚拟机可用的处理器数量 -- 即 CPU核❤数
+    private static final int CPU_COUNT = Runtime.getRuntime().availableProcessors();
 
+    //线程池的核心线程数。默认情况下，核心线程会一直存活，即使它们处于闲置状态。
+    //【注】设置了超时机制除外，当 allowCoreThreadTimeOut 属性为 true 时,那么闲置的核心线程在等待新任务到来时会有超时策略，
+    //当等待时间超过 keepAliveTime 所指定的时长后，核心线程就会被终止！
+    private static final int CORE_POOL_SIZE = Math.max(2, Math.min(CPU_COUNT - 1, 4));
+
+    //线程池所能容纳的最大线程数。当活动线程数达到这个数值后，后续的新任务将会被阻塞。
+    private static final int MAXIMUM_POOL_SIZE = CPU_COUNT * 2 + 1;
+
+    //非核心线程闲置时的超时时长，超过这个时长，非核心线程就会被回收。
+    //当 allowCoreThreadTimeOut 属性为 true 时，keepAliveTime 同样作用于核心线程。
+    private static final int KEEP_ALIVE_SECONDS = 60;
+
+    //线程池中的任务队列。
+    //通过 线程池 的 execute 方法提交的 Runnable 对象会存储在里面。
+    private static final BlockingQueue<Runnable> sPoolWorkQueue =
+            new LinkedBlockingQueue<Runnable>(128);
+
+    //线程工厂，为线程池提供创建线程的功能。
+    //ThreadFactory是个接口，只有一个方法：Thread newThread(Runnable r);
     private static final ThreadFactory sThreadFactory = new ThreadFactory() {
         private final AtomicInteger mCount = new AtomicInteger(1);
 
@@ -64,15 +93,16 @@ public class AsyncTaskFragment extends BaseFragment {
             return new Thread(r, "我的 AsyncTask #" + mCount.getAndIncrement());
         }
     };
-    private static final BlockingQueue<Runnable> sPoolWorkQueue =
-            new LinkedBlockingQueue<Runnable>(128);
 
     static {
+        //征服手持机 Android6.0: CPU核心数 : 8
+        L.d("CPU_COUNT : " + CPU_COUNT);
         //征服手持机 Android6.0: 自定义线程池的配置：CORE_POOL_SIZE: 4  MAXIMUM_POOL_SIZE: 17  KEEP_ALIVE_SECONDS: 60
         L.i("自定义线程池的配置：" + "CORE_POOL_SIZE: " + CORE_POOL_SIZE + "  MAXIMUM_POOL_SIZE: " + MAXIMUM_POOL_SIZE
                 + "  KEEP_ALIVE_SECONDS: " + KEEP_ALIVE_SECONDS);
         ThreadPoolExecutor threadPoolExecutor = new ThreadPoolExecutor(
-                CORE_POOL_SIZE, MAXIMUM_POOL_SIZE, KEEP_ALIVE_SECONDS, TimeUnit.SECONDS,
+                CORE_POOL_SIZE, MAXIMUM_POOL_SIZE, KEEP_ALIVE_SECONDS,
+                TimeUnit.SECONDS,//指定 keepAliveTime 的时间单位
                 sPoolWorkQueue, sThreadFactory);
         threadPoolExecutor.allowCoreThreadTimeOut(true);
         MY_THREAD_POOL_EXECUTOR = threadPoolExecutor;

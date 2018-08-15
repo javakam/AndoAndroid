@@ -11,7 +11,7 @@ import com.ishiqing.base.BaseFragment;
 import butterknife.OnClick;
 
 /**
- * Service混合调用 -- stopService
+ * IntentService -- IntentService中的ServiceHandler.handleMessage{...}是在 子线程HandlerThread 中执行的
  * <p>
  * Created by javakam on 2018/6/17.
  */
@@ -43,14 +43,14 @@ public class IntentServiceFragment extends BaseFragment {
                 Bundle bundle = new Bundle();
                 bundle.putString("param", "oper1");
                 startServiceIntent.putExtras(bundle);
-                mActivity.startService(startServiceIntent);
+                startService(startServiceIntent);
 
                 //Operation 2
                 Intent startServiceIntent2 = new Intent(mActivity, MyIntentService.class);
                 Bundle bundle2 = new Bundle();
                 bundle2.putString("param", "oper2");
                 startServiceIntent2.putExtras(bundle2);
-                mActivity.startService(startServiceIntent2);
+                startService(startServiceIntent2);
                 break;
             case R.id.btnStop:
                 break;

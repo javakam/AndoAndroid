@@ -120,7 +120,7 @@ public class TestActivity extends Activity {
 </service>
 ```
 - 最后来看看执行结果: <br><br>
-![](.\README_images\IntentService源码.png) <br>
+![](.\images\IntentService源码.png) <br>
 从结果可以看到，onCreate方法只执行了一次，而onStartCommand和onStart方法执行了两次，开启了两个Work Thread，
 这就证实了之前所说的，启动多次，但IntentService的实例只有一个，这跟传统的Service是一样的。<br>
 Operation1也是先于Operation2打印，并且我让两个操作间停顿了2s，最后是onDestroy销毁了IntentService。
@@ -173,21 +173,14 @@ private final class ServiceHandler extends Handler {
 1）在 onStartCommand() 中直接调用了 onStart() 方法 <br>
 2）而上面 stopSelf() 方法使用的 startId 来停止当前的此次任务服务。 <br>
 3）而 Service 如果被启动多次，就会存在多个 startId ，当所有的 startId 都被停止之后，才会调用 onDestory() 自我销毁。<br>
-我们在看看HandlerThread启动之后的源码 <br>
-```
-@Override
-public void run() {
-        mTid = Process.myTid();
-        Looper.prepare();
-        synchronized (this) {
-            mLooper = Looper.myLooper();
-            notifyAll();
-        }
-        Process.setThreadPriority(mPriority);
-        onLooperPrepared();
-        Looper.loop();
-        mTid = -1;
-    }
-```
-源码可知 <br>
-1）run方法里面添加了锁，这也解释了为什么多次 start 同一个 IntentService 它会顺序执行，全部执行完成之后，再自我销毁。
+
+总结：
+
+IntentSercie是一种特殊的Service，继承了Service并且是抽象类，任务执行完成后会自动停
+止，优先级远高于普通线程，适合执行一些高优先级的后台任务； IntentService封装
+了 HandlerThread 和 Handler
+1. onCreate 方法自动创建一个HandlerThread
+2. 然后用它的Looper构造了一个Handler对象 mServiceHandler ，这样通过mServiceHandler发送的消息都会在HandlerThread执行；
+3. IntentServiced的 onHandlerIntent 方法是一个抽象方法，需要在子类实现，
+onHandlerIntent方法执行后，stopSelf(int startId)就会停止服务，如果存在多个后台任
+务，执行完最后一个stopSelf(int startId)才会停止服务。
