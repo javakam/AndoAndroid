@@ -10,7 +10,6 @@ import java.io.IOException;
 import java.util.List;
 
 public class MyUtils {
-
     public static String getProcessName(Context cxt, int pid) {
         ActivityManager am = (ActivityManager) cxt
                 .getSystemService(Context.ACTIVITY_SERVICE);

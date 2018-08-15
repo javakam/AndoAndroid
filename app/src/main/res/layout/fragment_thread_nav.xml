@@ -31,25 +31,34 @@
                 app:flexDirection="row"
                 app:flexWrap="wrap">
 
-                <com.qmuiteam.qmui.layout.QMUIButton
-                    android:id="@+id/btAsyncTask"
-                    style="@style/FlexThreeQMButton"
-                    android:layout_width="wrap_content"
-                    android:layout_height="@dimen/dp_80"
-                    android:text="AsyncTask"
-                    app:qmui_isRadiusAdjustBounds="true" />
 
                 <com.qmuiteam.qmui.layout.QMUIButton
                     android:id="@+id/btHandler"
-                    style="@style/FlexThreeQMButton"
+                    style="@style/FlexTwoQMButton"
                     android:layout_width="wrap_content"
                     android:layout_height="@dimen/dp_80"
                     android:text="Handler"
                     app:qmui_isRadiusAdjustBounds="true" />
 
                 <com.qmuiteam.qmui.layout.QMUIButton
+                    android:id="@+id/btAsyncTask"
+                    style="@style/FlexTwoQMButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/dp_80"
+                    android:text="AsyncTask"
+                    app:qmui_isRadiusAdjustBounds="true" />
+
+                <com.qmuiteam.qmui.layout.QMUIButton
+                    android:id="@+id/btHandlerThread"
+                    style="@style/FlexTwoQMButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/dp_80"
+                    android:text="HandlerThread"
+                    app:qmui_isRadiusAdjustBounds="true" />
+
+                <com.qmuiteam.qmui.layout.QMUIButton
                     android:id="@+id/btThread"
-                    style="@style/FlexThreeQMButton"
+                    style="@style/FlexTwoQMButton"
                     android:layout_width="wrap_content"
                     android:layout_height="@dimen/dp_80"
                     android:text="Thread"

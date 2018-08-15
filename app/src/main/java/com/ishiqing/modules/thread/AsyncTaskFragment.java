@@ -26,7 +26,9 @@ import butterknife.BindView;
 import butterknife.OnClick;
 
 /**
- * AsyncTask
+ * AsyncTask  {@see AsyncTask缺陷问题.md}
+ * <p>
+ * 郭霖 https://blog.csdn.net/guolin_blog/article/details/11711405
  * <p>
  * Created by javakam on 2018/7/9 .
  */
@@ -59,18 +61,24 @@ public class AsyncTaskFragment extends BaseFragment {
 
         @Override
         public Thread newThread(Runnable r) {
-            return new Thread(r, "AsyncTask #" + mCount.getAndIncrement());
+            return new Thread(r, "我的 AsyncTask #" + mCount.getAndIncrement());
         }
     };
     private static final BlockingQueue<Runnable> sPoolWorkQueue =
             new LinkedBlockingQueue<Runnable>(128);
 
     static {
+        //征服手持机 Android6.0: 自定义线程池的配置：CORE_POOL_SIZE: 4  MAXIMUM_POOL_SIZE: 17  KEEP_ALIVE_SECONDS: 60
+        L.i("自定义线程池的配置：" + "CORE_POOL_SIZE: " + CORE_POOL_SIZE + "  MAXIMUM_POOL_SIZE: " + MAXIMUM_POOL_SIZE
+                + "  KEEP_ALIVE_SECONDS: " + KEEP_ALIVE_SECONDS);
         ThreadPoolExecutor threadPoolExecutor = new ThreadPoolExecutor(
                 CORE_POOL_SIZE, MAXIMUM_POOL_SIZE, KEEP_ALIVE_SECONDS, TimeUnit.SECONDS,
                 sPoolWorkQueue, sThreadFactory);
         threadPoolExecutor.allowCoreThreadTimeOut(true);
         MY_THREAD_POOL_EXECUTOR = threadPoolExecutor;
+        //或者简单点的线程池
+//        Executor exec = new ThreadPoolExecutor(15, 200, 10,
+//                TimeUnit.SECONDS, new LinkedBlockingQueue<Runnable>());
     }
 
     @OnClick({R.id.btAsyncTaskSerial, R.id.btAsyncTaskParallel, R.id.btAsyncTaskParallelByUs, R.id.btAsyncTaskParallelByUs2})
@@ -79,19 +87,19 @@ public class AsyncTaskFragment extends BaseFragment {
         tvResult.setText("");
         switch (view.getId()) {
             case R.id.btAsyncTaskSerial://串行执行
-                new MyAsyncTask(mActivity, "Task#1 ").execute("123");
-                new MyAsyncTask(mActivity, "Task#2 ").execute("123");
-                new MyAsyncTask(mActivity, "Task#3 ").execute("123");
+                new MyAsyncTask(mActivity, "Task#c1 ").execute("123");
+                new MyAsyncTask(mActivity, "Task#c2 ").execute("123");
+                new MyAsyncTask(mActivity, "Task#c3 ").execute("123");
                 break;
             case R.id.btAsyncTaskParallel://并行执行 -- 这里使用 AsyncTask 自带的线程池
-                new MyAsyncTask(mActivity, "Task#1 ").executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR, "123");
-                new MyAsyncTask(mActivity, "Task#2 ").executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR, "123");
-                new MyAsyncTask(mActivity, "Task#3 ").executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR, "123");
+                new MyAsyncTask(mActivity, "Task#b1 ").executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR, "123");
+                new MyAsyncTask(mActivity, "Task#b2 ").executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR, "123");
+                new MyAsyncTask(mActivity, "Task#b3 ").executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR, "123");
                 break;
             case R.id.btAsyncTaskParallelByUs://并行执行 -- 自定义线程池
-                new MyAsyncTask(mActivity, "Task#1 ").executeOnExecutor(MY_THREAD_POOL_EXECUTOR, "123");
-                new MyAsyncTask(mActivity, "Task#2 ").executeOnExecutor(MY_THREAD_POOL_EXECUTOR, "123");
-                new MyAsyncTask(mActivity, "Task#3 ").executeOnExecutor(MY_THREAD_POOL_EXECUTOR, "123");
+                new MyAsyncTask(mActivity, "Task#bb1 ").executeOnExecutor(MY_THREAD_POOL_EXECUTOR, "123");
+                new MyAsyncTask(mActivity, "Task#bb2 ").executeOnExecutor(MY_THREAD_POOL_EXECUTOR, "123");
+                new MyAsyncTask(mActivity, "Task#bb3 ").executeOnExecutor(MY_THREAD_POOL_EXECUTOR, "123");
                 break;
             case R.id.btAsyncTaskParallelByUs2://并行执行 -- 自定义线程池 另外一种方式
                 MyAsyncTask.setDefaultExecutor(MY_THREAD_POOL_EXECUTOR);//替换掉默认的  AsyncTask.SERIAL_EXECUTOR
@@ -126,6 +134,11 @@ public class AsyncTaskFragment extends BaseFragment {
                 e.printStackTrace();
             }
             return mName;
+        }
+
+        @Override
+        protected void onCancelled(String s) {
+            super.onCancelled(s);
         }
 
         @Override

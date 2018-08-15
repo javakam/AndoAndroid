@@ -28,14 +28,17 @@ public class ThreadNavFragment extends BaseFragment {
         initTopBar("线程和消息机制", true);
     }
 
-    @OnClick({R.id.btAsyncTask, R.id.btHandler, R.id.btThread})
+    @OnClick({R.id.btHandler, R.id.btAsyncTask, R.id.btHandlerThread, R.id.btThread})
     public void onViewClicked(View view) {
         switch (view.getId()) {
+            case R.id.btHandler:
+                mActivity.startFragment(new HandlerFragment());
+                break;
             case R.id.btAsyncTask:
                 mActivity.startFragment(new AsyncTaskFragment());
                 break;
-            case R.id.btHandler:
-                mActivity.startFragment(new HandlerFragment());
+            case R.id.btHandlerThread:
+                mActivity.startFragment(new HandlerThreadFragment());
                 break;
             case R.id.btThread:
                 mActivity.startFragment(new ThreadFragment());

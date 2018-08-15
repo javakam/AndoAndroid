@@ -87,14 +87,17 @@ public class HandlerFragment extends BaseFragment {
                      }
                      */
                     Looper.prepare();
-                    Handler inHandler = new Handler() {
-                        @Override
-                        public void handleMessage(Message msg) {
-                            super.handleMessage(msg);
-                            mResult.setTextColor(Color.GREEN);
-                            mResult.setText(msg.obj.toString());
-                        }
-                    };
+                    //不能更新UI
+//                    Handler inHandler = new Handler() {
+//                        @Override
+//                        public void handleMessage(Message msg) {
+//                            super.handleMessage(msg);
+//                            mResult.setTextColor(Color.GREEN);
+//                            mResult.setText(msg.obj.toString());
+//                        }
+//                    };
+                    //use this
+                    Handler inHandler = new Handler();
                     Message message = new Message();
                     message.obj = "inHandler...";
                     inHandler.sendMessage(message);
