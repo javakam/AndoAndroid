@@ -1,7 +1,7 @@
 ### Service 服务
 com.ishiqing.modules.service
 #### startService
-> com.ishiqing.modules.service.ServiceFragment1
+> com.ishiqing.modules.service.ServiceSwipeFragment1
 ```
 com.ishiqing I/System.out: MyService.onCreate
 com.ishiqing I/System.out: MyService.onStartCommand
@@ -20,7 +20,7 @@ com.ishiqing I/System.out: 实时时间： 2018-06-17 12:18:10
 com.ishiqing I/System.out: MyService.onDestroy
 ```
 #### bindService
-> com.ishiqing.modules.service.ServiceFragment2
+> com.ishiqing.modules.service.ServiceSwipeFragment2
 ```
 com.ishiqing I/System.out: MyService2.onCreate
 com.ishiqing I/System.out: MyService2.onBind
@@ -37,10 +37,10 @@ com.ishiqing I/System.out: MyService2.onUnbind
 com.ishiqing I/System.out: MyService2.onDestroy
 ```
 #### 混合调用(Service生命周期)
-> com.ishiqing.modules.service.ServiceFragment3
+> com.ishiqing.modules.service.ServiceSwipeFragment3
 
   1. 一次绑定只能解绑一次，多次解绑（unbindService）会有问题 [stopService没事儿]：
-  java.lang.IllegalArgumentException: Service not registered: com.ishiqing.modules.service.ServiceFragment2$1@db7c143
+  java.lang.IllegalArgumentException: Service not registered: com.ishiqing.modules.service.ServiceSwipeFragment2$1@db7c143
   解决办法：为unbindService加上一个try catch代码块
   2. 既需要服务长期在后台运行（即使Activity销毁了也在运行），
   又需要与服务进行通讯，可以采用混合调用
@@ -89,7 +89,7 @@ com.ishiqing I/System.out: MyService3.onCreate<br>
 com.ishiqing I/System.out: MyService3.onStartCommand<br>
 **bind**<br>
 com.ishiqing I/System.out: MyService3.onBind<br>
-com.ishiqing I/System.out: ServiceFragment3.onServiceConnected<br>
+com.ishiqing I/System.out: ServiceSwipeFragment3.onServiceConnected<br>
 **unbind**<br>
 com.ishiqing I/System.out: MyService3.onUnbind<br>
 

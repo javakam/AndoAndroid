@@ -42,7 +42,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".modules.activity.SampleActivity1" />
         <activity android:name=".modules.ipc.socket.TCPClientActivity" />
         <activity android:name=".modules.ui_hencoder.DrawMainActivity" />
         <activity android:name=".modules.ui_hencoder.PracticeActivity" />
@@ -65,7 +64,7 @@
         <activity android:name=".modules.window.WindowActivity" />
 
 
-        <!-- Service一个隐式跳转，一个显示跳转 com.ishiqing.modules.service.IntentServiceFragment -->
+        <!-- Service一个隐式跳转，一个显示跳转 com.ishiqing.modules.service.IntentServiceSwipeFragment -->
         <!-- IntentService一定要配置，否则是不起作用的 -->
         <service android:name=".modules.service.intentservice.MyIntentService">
             <intent-filter>
@@ -84,6 +83,7 @@
             </intent-filter>
         </receiver>
 
+        <!-- app build.gradle -->
         <meta-data
             android:name="CHANNEL"
             android:value="${channel}" />

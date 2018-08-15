@@ -11,10 +11,10 @@ import android.view.View;
 import android.widget.FrameLayout;
 
 import com.ishiqing.R;
-import com.ishiqing.base.BaseFragment;
 import com.ishiqing.base.QDItemDescription;
 import com.ishiqing.base.adapter.BaseRecyclerAdapter;
 import com.ishiqing.base.adapter.RecyclerViewHolder;
+import com.ishiqing.base.fragment.BaseSwipeFragment;
 import com.qmuiteam.qmui.util.QMUIViewHelper;
 import com.qmuiteam.qmui.widget.QMUITopBar;
 import com.sq.library.widget.recyclerview.GridDividerItemDecoration;
@@ -46,7 +46,7 @@ public abstract class MainController extends FrameLayout {
         initRecyclerView();
     }
 
-    protected void startFragment(BaseFragment fragment) {
+    protected void startFragment(BaseSwipeFragment fragment) {
         if (mMainControlListener != null) {
             mMainControlListener.startFragment(fragment);
         }
@@ -84,8 +84,8 @@ public abstract class MainController extends FrameLayout {
                 QDItemDescription item = mMainItemAdapter.getItem(pos);
                 try {
                     Object o = item.getDemoClass().newInstance();
-                    if (o instanceof BaseFragment) {
-                        BaseFragment fragment = (BaseFragment) o;
+                    if (o instanceof BaseSwipeFragment) {
+                        BaseSwipeFragment fragment = (BaseSwipeFragment) o;
                         startFragment(fragment);
                     } else if (o instanceof Activity) {
                         Activity activity = (Activity) o;
@@ -105,7 +105,7 @@ public abstract class MainController extends FrameLayout {
     protected abstract MainItemAdapter getItemAdapter();
 
     public interface MainControlListener {
-        void startFragment(BaseFragment fragment);
+        void startFragment(BaseSwipeFragment fragment);
 
         void startActivity(Activity activity);
     }

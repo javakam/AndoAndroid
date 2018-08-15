@@ -1,5 +1,7 @@
 package com.sq.library.utils;
 
+import android.annotation.Nullable;
+import android.content.Context;
 import android.widget.Toast;
 
 /**
@@ -12,10 +14,20 @@ public class ToastUtils {
     private static Toast toast;
 
     /**
-     * 短时间显示Toast
+     * 短时间显示Toast  ApplicationContext
      *
      * @param message
      */
+    public static void showShort(@Nullable Context context, CharSequence message) {
+        if (null == toast) {
+            toast = Toast.makeText(context, message, Toast.LENGTH_SHORT);
+            // toast.setGravity(Gravity.CENTER, 0, 0);
+        } else {
+            toast.setText(message);
+        }
+        toast.show();
+    }
+
     public static void showShort(CharSequence message) {
         if (null == toast) {
             toast = Toast.makeText(AppUtils.getContext(), message, Toast.LENGTH_SHORT);
@@ -46,6 +58,16 @@ public class ToastUtils {
      *
      * @param message
      */
+    public static void showLong(@Nullable Context context, CharSequence message) {
+        if (null == toast) {
+            toast = Toast.makeText(context, message, Toast.LENGTH_LONG);
+            // toast.setGravity(Gravity.CENTER, 0, 0);
+        } else {
+            toast.setText(message);
+        }
+        toast.show();
+    }
+
     public static void showLong(CharSequence message) {
         if (null == toast) {
             toast = Toast.makeText(AppUtils.getContext(), message, Toast.LENGTH_LONG);

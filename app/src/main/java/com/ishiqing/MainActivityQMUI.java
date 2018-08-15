@@ -3,9 +3,9 @@ package com.ishiqing;
 import android.annotation.SuppressLint;
 import android.os.Bundle;
 
-import com.ishiqing.base.BaseFragment;
 import com.ishiqing.base.BaseQMUIFragmentActivity;
-import com.ishiqing.home.MainFragment;
+import com.ishiqing.base.fragment.BaseSwipeFragment;
+import com.ishiqing.home.MainSwipeFragment;
 
 /**
  * @author changbao
@@ -23,7 +23,7 @@ public class MainActivityQMUI extends BaseQMUIFragmentActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         if (savedInstanceState == null) {
-            BaseFragment fragment = new MainFragment();
+            BaseSwipeFragment fragment = new MainSwipeFragment();
 
             getSupportFragmentManager()
                     .beginTransaction()

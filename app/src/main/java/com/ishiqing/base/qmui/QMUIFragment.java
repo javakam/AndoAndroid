@@ -497,7 +497,7 @@ public abstract class QMUIFragment extends Fragment {
     }
 
 
-    protected void popBackStack() {
+    public void popBackStack() {
         if (mEnterAnimationStatus != ANIMATION_ENTER_STATUS_END) {
             return;
         }
