@@ -32,19 +32,57 @@
                 app:flexWrap="wrap">
 
                 <com.qmuiteam.qmui.layout.QMUIButton
-                    android:id="@+id/btAsyncTask"
-                    style="@style/FlexThreeQMButton"
+                    android:id="@+id/btAsyncTaskSerial"
+                    style="@style/FlexTwoQMButton"
                     android:layout_width="wrap_content"
-                    android:layout_height="@dimen/dp_80"
-                    android:text="一下开仨AsyncTask任务-串行/并行"
+                    android:layout_height="@dimen/dp_40"
+                    android:text="串行执行"
                     app:qmui_isRadiusAdjustBounds="true" />
 
+                <com.qmuiteam.qmui.layout.QMUIButton
+                    android:id="@+id/btAsyncTaskParallel"
+                    style="@style/FlexTwoQMButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/dp_40"
+                    android:text="并行执行"
+                    app:qmui_isRadiusAdjustBounds="true" />
+
+                <com.qmuiteam.qmui.layout.QMUIButton
+                    android:id="@+id/btAsyncTaskParallelByUs"
+                    style="@style/FlexTwoQMButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/dp_40"
+                    android:text="并行执行(自定义线程池)"
+                    app:qmui_isRadiusAdjustBounds="true" />
+
+                <com.qmuiteam.qmui.layout.QMUIButton
+                    android:id="@+id/btAsyncTaskParallelByUs2"
+                    style="@style/FlexTwoQMButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/dp_40"
+                    android:text="并行执行(自定义线程池2)"
+                    app:qmui_isRadiusAdjustBounds="true" />
             </com.google.android.flexbox.FlexboxLayout>
 
             <View
                 android:layout_width="match_parent"
-                android:layout_height="15dp"
+                android:layout_height="5dp"
                 android:background="#ffa" />
+
+            <TextView
+                android:id="@+id/tvCurrentThread"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/dp_05"
+                android:scrollbars="vertical"
+                android:textColor="@android:color/holo_red_light"
+                android:textSize="@dimen/text_size_14sp"
+                tools:text="AAAAaaaaAAA" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="5dp"
+                android:background="#fa9" />
 
             <TextView
                 android:id="@+id/tvResult"
@@ -52,8 +90,8 @@
                 android:layout_height="wrap_content"
                 android:padding="@dimen/dp_05"
                 android:scrollbars="vertical"
-                android:textColor="@android:color/holo_blue_dark"
-                android:textSize="@dimen/text_size_12sp"
+                android:textColor="@android:color/holo_red_light"
+                android:textSize="@dimen/text_size_14sp"
                 tools:text="AAAAaaaaAAA" />
         </LinearLayout>
     </ScrollView>
