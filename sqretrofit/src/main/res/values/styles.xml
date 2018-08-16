@@ -17,12 +17,23 @@
         <item name="android:layout_margin">@dimen/dp_03</item>
         <item name="layout_flexBasisPercent">40%</item>
         <item name="layout_flexGrow">1</item>
-    </style><!-- 三个按钮一行，无 Padding/Margin -->
+    </style>
+    <!-- 三个按钮一行，无 Padding/Margin -->
     <style name="FlexThreeQMButton">
         <item name="android:maxLines">1</item>
         <item name="android:textColor">#eee</item>
         <item name="android:layout_margin">@dimen/dp_03</item>
         <item name="android:textSize">12sp</item>
+        <item name="android:background">@drawable/flex_qmbt</item>
+        <item name="android:gravity">center</item>
+        <item name="layout_flexBasisPercent">30%</item>
+        <item name="layout_flexGrow">1</item>
+    </style>
+    <!-- 三个按钮一行，无 Padding/Margin , Vertical-->
+    <style name="FlexThreeQMButtonVertical">
+        <item name="android:textColor">#eee</item>
+        <item name="android:layout_margin">@dimen/dp_05</item>
+        <item name="android:textSize">14sp</item>
         <item name="android:background">@drawable/flex_qmbt</item>
         <item name="android:gravity">center</item>
         <item name="layout_flexBasisPercent">30%</item>

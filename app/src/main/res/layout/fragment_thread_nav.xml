@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/app_base_bg"
@@ -11,74 +10,36 @@
         android:id="@+id/topbar"
         style="@style/TopBarStyle" />
 
-    <ScrollView
+    <com.google.android.flexbox.FlexboxLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginTop="@dimen/topbar_height"
-        android:background="@color/white"
-        android:overScrollMode="never">
+        android:layout_height="wrap_content"
+        app:alignContent="stretch"
+        app:alignItems="flex_start"
+        app:flexDirection="column"
+        app:flexWrap="wrap">
 
-        <LinearLayout
+        <com.qmuiteam.qmui.layout.QMUIButton
+            android:id="@+id/btHandler"
+            style="@style/FlexThreeQMButtonVertical"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:layout_height="@dimen/dp_80"
+            android:text="Handler"
+            app:qmui_isRadiusAdjustBounds="true" />
 
-            <com.google.android.flexbox.FlexboxLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                app:alignContent="flex_start"
-                app:alignItems="flex_start"
-                app:flexDirection="row"
-                app:flexWrap="wrap">
+        <com.qmuiteam.qmui.layout.QMUIButton
+            android:id="@+id/btAsyncTask"
+            style="@style/FlexThreeQMButtonVertical"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_80"
+            android:text="AsyncTask"
+            app:qmui_isRadiusAdjustBounds="true" />
 
-
-                <com.qmuiteam.qmui.layout.QMUIButton
-                    android:id="@+id/btHandler"
-                    style="@style/FlexTwoQMButton"
-                    android:layout_width="wrap_content"
-                    android:layout_height="@dimen/dp_80"
-                    android:text="Handler"
-                    app:qmui_isRadiusAdjustBounds="true" />
-
-                <com.qmuiteam.qmui.layout.QMUIButton
-                    android:id="@+id/btAsyncTask"
-                    style="@style/FlexTwoQMButton"
-                    android:layout_width="wrap_content"
-                    android:layout_height="@dimen/dp_80"
-                    android:text="AsyncTask"
-                    app:qmui_isRadiusAdjustBounds="true" />
-
-                <com.qmuiteam.qmui.layout.QMUIButton
-                    android:id="@+id/btHandlerThread"
-                    style="@style/FlexTwoQMButton"
-                    android:layout_width="wrap_content"
-                    android:layout_height="@dimen/dp_80"
-                    android:text="HandlerThread"
-                    app:qmui_isRadiusAdjustBounds="true" />
-
-                <com.qmuiteam.qmui.layout.QMUIButton
-                    android:id="@+id/btThread"
-                    style="@style/FlexTwoQMButton"
-                    android:layout_width="wrap_content"
-                    android:layout_height="@dimen/dp_80"
-                    android:text="Thread"
-                    app:qmui_isRadiusAdjustBounds="true" />
-            </com.google.android.flexbox.FlexboxLayout>
-
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="15dp"
-                android:background="#ffa" />
-
-            <TextView
-                android:id="@+id/tvResult"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:padding="@dimen/dp_05"
-                android:scrollbars="vertical"
-                android:textColor="@android:color/holo_blue_dark"
-                android:textSize="@dimen/text_size_12sp"
-                tools:text="AAAAaaaaAAA" />
-        </LinearLayout>
-    </ScrollView>
-</FrameLayout>
+        <com.qmuiteam.qmui.layout.QMUIButton
+            android:id="@+id/btHandlerThread"
+            style="@style/FlexThreeQMButtonVertical"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_80"
+            android:text="HandlerThread"
+            app:qmui_isRadiusAdjustBounds="true" />
+    </com.google.android.flexbox.FlexboxLayout>
+</LinearLayout>

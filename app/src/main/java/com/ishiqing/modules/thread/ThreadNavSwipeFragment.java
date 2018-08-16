@@ -28,7 +28,7 @@ public class ThreadNavSwipeFragment extends BaseSwipeFragment {
         initTopBar("线程和消息机制", true);
     }
 
-    @OnClick({R.id.btHandler, R.id.btAsyncTask, R.id.btHandlerThread, R.id.btThread})
+    @OnClick({R.id.btHandler, R.id.btAsyncTask, R.id.btHandlerThread})
     public void onViewClicked(View view) {
         switch (view.getId()) {
             case R.id.btHandler:
@@ -39,9 +39,6 @@ public class ThreadNavSwipeFragment extends BaseSwipeFragment {
                 break;
             case R.id.btHandlerThread:
                 mActivity.startFragment(new HandlerThreadSwipeFragment());
-                break;
-            case R.id.btThread:
-                mActivity.startFragment(new ThreadSwipeFragment());
                 break;
         }
     }
