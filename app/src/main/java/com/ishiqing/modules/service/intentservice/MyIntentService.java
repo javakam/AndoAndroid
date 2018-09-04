@@ -13,7 +13,7 @@ import com.sq.library.utils.L;
 public class MyIntentService extends IntentService {
     private static final String THREAD_NAME = "My IntentService";
 
-    public MyIntentService(String name) {
+    public MyIntentService() {
         super(THREAD_NAME);
     }
 

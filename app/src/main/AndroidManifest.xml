@@ -62,6 +62,7 @@
         <activity android:name=".modules.ui_process.heros.activity.MyViewTest" />
         <activity android:name=".modules.ui_process.heros.activity.TopBarTest" />
         <activity android:name=".modules.window.WindowActivity" />
+        <activity android:name=".modules.annotation.AnnotationActivity" />
 
 
         <!-- Service一个隐式跳转，一个显示跳转 com.ishiqing.modules.service.IntentServiceSwipeFragment -->

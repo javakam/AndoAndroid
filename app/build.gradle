@@ -32,9 +32,9 @@ android {
         versionName build_versions.versionName
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
 //        ndk {
-            //选择要添加的对应cpu类型的.so库
+        //选择要添加的对应cpu类型的.so库
 //            abiFilters 'armeabi', 'arm64-v8a', 'armeabi-v7a', 'x86'
-            //还可以添加
+        //还可以添加
 //        }
 
         //当应用不需要支持几十种语言时，去除无用的语言资源
@@ -226,4 +226,6 @@ dependencies {
     if (isModule.toBoolean()) {
         api project(':sqretrofit')
     }
+//    Android 无法使用 javax.* 问题 -- 或是拷贝一个rt.jar放到libs里面
+//    provided files ('C:\fastwork\Java\jdk1.8.0_162\jre\lib')
 }

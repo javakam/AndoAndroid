@@ -3,7 +3,7 @@ package com.ishiqing.manager;
 import com.ishiqing.UIRoute;
 import com.ishiqing.base.QDItemDescription;
 import com.ishiqing.modules.activity.ActiviyEntranceSwipeFragment;
-import com.ishiqing.modules.annotation.AnnotationSwipeFragment;
+import com.ishiqing.modules.annotation.AnnotationActivity;
 import com.ishiqing.modules.eventbus3.EventBusMainActivity;
 import com.ishiqing.modules.greendao.GreenDaoM2MSwipeFragment;
 import com.ishiqing.modules.greendao.GreenDaoSwipeFragment;
@@ -64,7 +64,7 @@ public class SQDataManager {
         list.add(new QDItemDescription(ProviderSwipeFragment1.class, UIRoute.FRAG_PROVIDER1, getImage()));
         list.add(new QDItemDescription(AIDIServiceSwipeFragment.class, UIRoute.FRAG_AIDL, getImage()));
         list.add(new QDItemDescription(TCPClientActivity.class, UIRoute.FRAG_TCP_CLIENT, getImage()));
-        list.add(new QDItemDescription(AnnotationSwipeFragment.class, UIRoute.FRAG_ANNOTATION, getImage()));
+        list.add(new QDItemDescription(AnnotationActivity.class, UIRoute.FRAG_ANNOTATION, getImage()));
         list.add(new QDItemDescription(ThreadNavSwipeFragment.class, UIRoute.FRAG_THREAD_NAV, getImage()));
         list.add(new QDItemDescription(HttpUrlConnectionSwipeFragment.class, UIRoute.FRAG_NETWORK, getImage()));
         return list;

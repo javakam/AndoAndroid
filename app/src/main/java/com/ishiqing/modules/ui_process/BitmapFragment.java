@@ -17,11 +17,17 @@ public class BitmapFragment extends BaseSwipeFragment {
 
     @Override
     protected void initViews(View v) {
+        bitmapDemo();
+    }
+
+    private void bitmapDemo() {
 
         //前两者间接调用了 decodeStream
 //        BitmapFactory.decodeFile();
 //        BitmapFactory.decodeResource();
 //        BitmapFactory.decodeStream();
 //        BitmapFactory.decodeByteArray();
+
+//        BitmapFactory.Options
     }
 }
