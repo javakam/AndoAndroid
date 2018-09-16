@@ -1,4 +1,4 @@
-package com.ishiqing.modules.ui_art.c3.view;
+package com.ishiqing.modules.ui_process.art.c3.view;
 
 import android.content.Context;
 import android.util.AttributeSet;

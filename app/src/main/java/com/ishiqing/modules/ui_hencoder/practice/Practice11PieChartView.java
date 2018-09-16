@@ -130,7 +130,7 @@ public class Practice11PieChartView extends BaseView {
             canvas.drawLine(pxs, pys, pxt, pyt, paintLine);
             Log.w("123", " 坐标： " + pxs + " $    " + pys + " $    " + pxt + " $    " + pyt);
             //再画直线 & 文字
-            //pxt > 0 第一、四象限 ； pxt > 0 第二、三象限
+            //pxt > 0 第一、四象限 ； pxt < 0 第二、三象限
             String textStr = subjectNames.get(i);
             float textBounds = getTextBounds(textStr);
             if (pxt > 0) {

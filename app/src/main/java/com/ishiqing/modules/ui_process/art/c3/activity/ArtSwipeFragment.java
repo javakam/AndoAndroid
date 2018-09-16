@@ -1,4 +1,4 @@
-package com.ishiqing.modules.ui_art.c3.activity;
+package com.ishiqing.modules.ui_process.art.c3.activity;
 
 import android.content.Intent;
 import android.support.annotation.NonNull;

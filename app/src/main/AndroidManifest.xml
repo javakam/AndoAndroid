@@ -48,10 +48,10 @@
         <activity android:name=".modules.eventbus3.EventBusMainActivity" />
         <activity android:name=".modules.eventbus3.EventBusPriorityActivity" />
         <activity android:name=".modules.eventbus3.EventBusThreadModeActivity" />
-        <activity android:name=".modules.ui_art.c3.activity.ArtTestActivity" />
-        <activity android:name=".modules.ui_art.c3.activity.ArtThirdActivity" />
-        <activity android:name=".modules.ui_art.c3.activity.ArtDemoActivity_1" />
-        <activity android:name=".modules.ui_art.c3.activity.ArtDemoActivity_2" />
+        <activity android:name=".modules.ui_process.art.c3.activity.ArtTestActivity" />
+        <activity android:name=".modules.ui_process.art.c3.activity.ArtThirdActivity" />
+        <activity android:name=".modules.ui_process.art.c3.activity.ArtDemoActivity_1" />
+        <activity android:name=".modules.ui_process.art.c3.activity.ArtDemoActivity_2" />
         <activity android:name=".modules.ui_process.dragview.DragViewMainActivity" />
         <activity android:name=".modules.ui_process.dragview.DragViewGroupActivity" />
         <activity android:name=".modules.ui_process.dragview.DragViewActivity" />
@@ -63,6 +63,7 @@
         <activity android:name=".modules.ui_process.heros.activity.TopBarTest" />
         <activity android:name=".modules.window.WindowActivity" />
         <activity android:name=".modules.annotation.AnnotationActivity" />
+        <activity android:name=".modules.ui_process.imageloader.ImageLoaderActivity" />
 
 
         <!-- Service一个隐式跳转，一个显示跳转 com.ishiqing.modules.service.IntentServiceSwipeFragment -->

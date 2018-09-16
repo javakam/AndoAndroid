@@ -1,4 +1,4 @@
-package com.ishiqing.modules.ui_art.c3.view;
+package com.ishiqing.modules.ui_process.imageloader.ui;
 
 import android.annotation.TargetApi;
 import android.content.Context;
@@ -91,7 +91,6 @@ public class RevealLayout extends LinearLayout implements Runnable {
         mMaxRevealRadius = Math.max(transformedCenterX, mTargetWidth - transformedCenterX);
     }
 
-    @Override
     protected void dispatchDraw(Canvas canvas) {
         super.dispatchDraw(canvas);
         if (!mShouldDoAnimation || mTargetWidth <= 0 || mTouchTarget == null) {

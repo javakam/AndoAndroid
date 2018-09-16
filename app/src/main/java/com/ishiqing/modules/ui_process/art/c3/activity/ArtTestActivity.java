@@ -1,4 +1,4 @@
-package com.ishiqing.modules.ui_art.c3.activity;
+package com.ishiqing.modules.ui_process.art.c3.activity;
 
 import android.annotation.SuppressLint;
 import android.annotation.TargetApi;
@@ -15,7 +15,7 @@ import android.widget.Button;
 import android.widget.Toast;
 
 import com.ishiqing.R;
-import com.ishiqing.modules.ui_art.c3.view.TestButton;
+import com.ishiqing.modules.ui_process.art.c3.view.TestButton;
 
 public class ArtTestActivity extends Activity implements OnClickListener,
         OnLongClickListener {

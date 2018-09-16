@@ -9,6 +9,7 @@ public class UIRoute {
     public static final String FRAG_WIDGET_EDITTEXT = "EditText";
     public static final String FRAG_WIDGET_FLEXBOX = "FlexboxLayout";
     public static final String FRAG_WIDGET_FLEXBOX_CAT = "FlexboxLayout Cat";
+    public static final String FRAG_UI_IMAGELOADER = "Bitmap的加载和Cache";
     public static final String FRAG_UI_HENCODER = "HenCoder View";
     public static final String FRAG_UI_HEROS = "View Heros";
     public static final String FRAG_UI_EVENT_DISPATCH = "事件分发(一)";

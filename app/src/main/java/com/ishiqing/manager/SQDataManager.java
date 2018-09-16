@@ -20,11 +20,12 @@ import com.ishiqing.modules.service.ServiceSwipeFragment3;
 import com.ishiqing.modules.service.ServiceSwipeFragment4;
 import com.ishiqing.modules.service.intentservice.IntentServiceSwipeFragment;
 import com.ishiqing.modules.thread.ThreadNavSwipeFragment;
-import com.ishiqing.modules.ui_art.c3.activity.ArtSwipeFragment;
 import com.ishiqing.modules.ui_hencoder.DrawMainActivity;
+import com.ishiqing.modules.ui_process.art.c3.activity.ArtSwipeFragment;
 import com.ishiqing.modules.ui_process.dragview.DragViewMainActivity;
 import com.ishiqing.modules.ui_process.event.ViewEventDispatchSwipeFragment;
 import com.ishiqing.modules.ui_process.heros.HeroSwipeFragment;
+import com.ishiqing.modules.ui_process.imageloader.ImageLoaderActivity;
 import com.ishiqing.modules.wanandroid.WanSwipeFragment;
 import com.ishiqing.modules.widgets.AutoCompleteTextViewSwipeFragment;
 import com.ishiqing.modules.widgets.ButtonSwipeFragment;
@@ -84,6 +85,7 @@ public class SQDataManager {
 
     public static List<QDItemDescription> getComponentsDescriptions() {
         List<QDItemDescription> list = new ArrayList<>();
+        list.add(new QDItemDescription(ImageLoaderActivity.class, UIRoute.FRAG_UI_IMAGELOADER, getImage()));
         list.add(new QDItemDescription(TextViewSwipeFragment.class, UIRoute.FRAG_WIDGET_TEXTVIEW, getImage()));
         list.add(new QDItemDescription(AutoCompleteTextViewSwipeFragment.class, UIRoute.FRAG_WIDGET_EDITTEXT, getImage()));
         list.add(new QDItemDescription(ButtonSwipeFragment.class, UIRoute.FRAG_WIDGET_BUTTON, getImage()));

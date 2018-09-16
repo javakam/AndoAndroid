@@ -1,11 +1,5 @@
 package com.ishiqing.modules.annotation.base;
 
-import java.util.Set;
-
-import javax.annotation.processing.AbstractProcessor;
-import javax.annotation.processing.RoundEnvironment;
-import javax.lang.model.element.TypeElement;
-
 /**
  * Annotation Processor
  * <p>
@@ -16,10 +10,11 @@ import javax.lang.model.element.TypeElement;
  * <p>
  * Created by javakam on 2018/9/4.
  */
-public class ViewInjectProcessor extends AbstractProcessor {
+public class ViewInjectProcessor {
+// extends AbstractProcessor
 
-    @Override
-    public boolean process(Set<? extends TypeElement> set, RoundEnvironment roundEnvironment) {
-        return false;
-    }
+//    @Override
+//    public boolean process(Set<? extends TypeElement> set, RoundEnvironment roundEnvironment) {
+//        return false;
+//    }
 }

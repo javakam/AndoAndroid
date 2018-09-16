@@ -12,7 +12,7 @@
         android:background="#ff0000"
         android:text="MovingButton" />
 
-    <com.ishiqing.modules.ui_art.c3.view.TestButton
+    <com.ishiqing.modules.ui_process.art.c3.view.TestButton
         android:id="@+id/button2"
         android:layout_width="100dp"
         android:layout_height="100dp"

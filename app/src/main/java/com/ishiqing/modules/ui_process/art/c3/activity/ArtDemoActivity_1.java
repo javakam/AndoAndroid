@@ -1,4 +1,4 @@
-package com.ishiqing.modules.ui_art.c3.activity;
+package com.ishiqing.modules.ui_process.art.c3.activity;
 
 import android.app.Activity;
 import android.graphics.Color;
@@ -15,7 +15,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.ishiqing.R;
-import com.ishiqing.modules.ui_art.c3.view.HorizontalScrollViewEx;
+import com.ishiqing.modules.ui_process.art.c3.view.HorizontalScrollViewEx;
 import com.sq.library.utils.MyUtils;
 
 import java.util.ArrayList;
