@@ -52,5 +52,4 @@ public class BitmapUtils {
         }
         return inSampleSize;
     }
-
 }
