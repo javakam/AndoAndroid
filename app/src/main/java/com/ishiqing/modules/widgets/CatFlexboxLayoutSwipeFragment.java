@@ -8,7 +8,7 @@ import com.google.android.flexbox.FlexDirection;
 import com.google.android.flexbox.FlexWrap;
 import com.google.android.flexbox.FlexboxLayoutManager;
 import com.ishiqing.R;
-import com.ishiqing.UIRoute;
+import com.ishiqing.UIRouter;
 import com.ishiqing.base.fragment.BaseSwipeFragment;
 
 import butterknife.BindView;
@@ -31,9 +31,9 @@ public class CatFlexboxLayoutSwipeFragment extends BaseSwipeFragment {
 
     @Override
     protected void initViews(View v) {
-//        initTopBar(UIRoute.FRAG_WIDGET_FLEXBOX, true);
+//        initTopBar(UIRouter.FRAG_WIDGET_FLEXBOX, true);
         mActivity.setSupportActionBar(toolbar);
-        toolbar.setTitle(UIRoute.FRAG_WIDGET_FLEXBOX_CAT);
+        toolbar.setTitle(UIRouter.FRAG_WIDGET_FLEXBOX_CAT);
         //关键下面两句话，设置了回退按钮，及点击事件的效果
         mActivity.getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {

@@ -2,7 +2,6 @@ package com.ishiqing.modules.wanandroid;
 
 import android.view.View;
 
-import com.alibaba.android.arouter.launcher.ARouter;
 import com.ishiqing.R;
 import com.ishiqing.base.fragment.BaseSwipeFragment;
 
@@ -30,12 +29,21 @@ public class WanSwipeFragment extends BaseSwipeFragment {
 
     @OnClick(R.id.btWanAndroid)
     void wan(View v) {
-        if (v.getId() == R.id.btWanAndroid) {
-            ARouter.getInstance().build("/sq/mainactivity")
-                    .withLong("key1", 666L)
-                    .withString("key3", "888")
-//                    .withObject("key4", new Object())
-                    .navigation();
+        /*
+        app.gradle
+
+        // 引入子模块后，ARouter才会找到该模块！》》》There's no router matched!
+        if (isModule.toBoolean()) {
+            api project(':sqretrofit')
         }
+         */
+
+//        if (v.getId() == R.id.btWanAndroid) {
+//            ARouter.getInstance().build("/sq/mainactivity")
+//                    .withLong("key1", 666L)
+//                    .withString("key3", "888")
+////                    .withObject("key4", new Object())
+//                    .navigation();
+//        }
     }
 }

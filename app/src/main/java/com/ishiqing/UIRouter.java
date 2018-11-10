@@ -3,7 +3,7 @@ package com.ishiqing;
 /**
  * Created by javakam on 2018/6/17.
  */
-public class UIRoute {
+public class UIRouter {
     public static final String FRAG_WIDGET_TEXTVIEW = "TextView";
     public static final String FRAG_WIDGET_ACTV = "AutoCompleteTextView";
     public static final String FRAG_WIDGET_EDITTEXT = "EditText";

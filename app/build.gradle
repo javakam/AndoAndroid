@@ -31,20 +31,20 @@ android {
         versionCode build_versions.versionCode
         versionName build_versions.versionName
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
-//        ndk {
         //选择要添加的对应cpu类型的.so库
-//            abiFilters 'armeabi', 'arm64-v8a', 'armeabi-v7a', 'x86'
-        //还可以添加
-//        }
+        /*ndk {
+            biFilters 'armeabi', 'arm64-v8a', 'armeabi-v7a', 'x86'
+            //还可以添加...
+        }*/
 
         //当应用不需要支持几十种语言时，去除无用的语言资源
         /*
         注：resConfigs "hdpi", "xhdpi", "xxhdpi", "xxxhdpi"
         在新版本中已经废弃，替代方案是在 gradle 中使用 splits 根据不同的 ABI 以及不同的屏幕密度分别打包。 */
         resConfigs "zh", "en"
-        multiDexEnabled false
-//        renderscriptTargetApi 27
-//        renderscriptSupportModeEnabled true
+        multiDexEnabled true    //突破65535限制
+        //renderscriptTargetApi 27
+        //renderscriptSupportModeEnabled true
 
         /*
         manifestPlaceholders 用于替换变量
@@ -82,6 +82,8 @@ android {
 
     //签名文件配置
     signingConfigs {
+        sign_debug {
+        }
         sign_xiaomi {
             keyAlias 'ishiqing'
             keyPassword 'lovekam12'
@@ -101,7 +103,8 @@ android {
              <meta-data
                 android:name="CHANNEL"
                 android:value="${CHANNEL}" /> */
-//            manifestPlaceholders = [app_icon: "@drawable/icon"]
+            // manifestPlaceholders = [app_icon: "@drawable/icon"]
+
             // 正式版不显示log
             buildConfigField "boolean", "LOG_DEBUG", "false"
             //是否zip对齐
@@ -121,13 +124,15 @@ android {
                     }
                 }
             }
-//            signingConfig signingConfigs.release
         }
+
         debug {
             // 正式版不显示log
             buildConfigField "boolean", "LOG_DEBUG", "true"
             shrinkResources false
             minifyEnabled false
+            zipAlignEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
 
@@ -135,27 +140,28 @@ android {
         在productFlavors容器下添加一个自定义名称的元素
         使用闭包进行配置*/
     productFlavors {
-        xiaomi {
-//          manifestPlaceholders = [CHANNEL: "SQ"]
+        demo {
+            //manifestPlaceholders = [CHANNEL: "SQ"]
+
             //buildConfigField -- TreeMap
             buildConfigField "String", "SERVER_URL", '"http://www.jooy.top/SQ/MobileProcess/"'
             buildConfigField "String", "CONFIG_FILE_NAME", '"SQ_Config.json"'
-            buildConfigField "String", "APP_NAME", '"诗情"'
+            buildConfigField('String', 'ROOT_DIR', '"SqGeneral"')
+            buildConfigField "String", "APP_NAME", '"Feel"'
             buildConfigField "boolean", "ISSERVICEDL", 'true'
             versionCode 1
             versionName "1.0"
             //签名
-            signingConfig signingConfigs.sign_xiaomi
+            //signingConfig signingConfigs.sign_debug
         }
-        huawei {
-//            dimension "channle"
-            minSdkVersion 21
-            versionCode 1
-//            versionName "1.0"
+        xiaomi {
+            //同上...
+            //signingConfig signingConfigs.sign_xiaomi
         }
     }
-    productFlavors.all { flavor ->
-        flavor.manifestPlaceholders = [CHANNEL: name]
+
+    productFlavors.all {
+        flavor -> flavor.manifestPlaceholders = [CHANNEL: name]
     }
 
     //recommend
@@ -164,34 +170,24 @@ android {
         javaMaxHeapSize "4g"
         jumboMode true
     }
+
     dataBinding {
         enabled = true
     }
 
-    //Android lint 自动检测并删除无用资源          http://blog.csdn.net/imesong/article/details/49187695
-    lintOptions {
-        //build release 版本 时 开启lint 检测
-        checkReleaseBuilds true
-        //lint 遇到 error 时继续构建
-        abortOnError false
+    //在Android视图下显示 jniLibs 文件夹
+    /*sourceSets {
+        main {
+            jniLibs.srcDirs = ['libs']
+        }
+    }*/
 
-        //disable 'InvalidPackage'
-        //只要添加下面这一句就可以了
-        disable 'MissingTranslation'
-    }
-
-    //在安卓视图下显示jniLibs文件夹
-//    sourceSets {
-//        main {
-//            jniLibs.srcDirs = ['libs']
-//        }
-//    }
-
-    //指定java版本，支持lambda表达式
+    //指定Java版本，支持Lambda表达式
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility 1.8
     }
+
     //排除不想添加到apk中的文件
     packagingOptions {
         exclude('META-INF/rxjava.properties')
@@ -206,26 +202,40 @@ android {
         exclude 'META-INF/dependencies.txt'
         exclude 'META-INF/LGPL2.1'
     }
+
+    //Android lint 自动检测并删除无用资源  http://blog.csdn.net/imesong/article/details/49187695
+    lintOptions {
+        showAll true
+        //build release 版本 时 开启lint 检测
+        checkReleaseBuilds true
+        //lint 遇到 error 时继续构建
+        abortOnError false
+
+        //disable 'InvalidPackage'
+        //只要添加下面这一句就可以了
+        disable 'MissingTranslation'
+    }
 }
 
 dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
-    //配置应用进行 Dalvik 可执行文件分包  https://developer.android.google.cn/studio/build/multidex#mdex-gradle
+    // 配置应用进行 Dalvik 可执行文件分包  https://developer.android.google.cn/studio/build/multidex#mdex-gradle
     implementation 'com.android.support:multidex:1.0.3'
     implementation 'com.android.support.constraint:constraint-layout:1.1.2'
     androidTestImplementation deps.espresso.core
     // 注意：annotationProcessor 不能从 library 继承！
-//    implementation deps.butterknife.runtime
+    // implementation deps.butterknife.runtime
     annotationProcessor deps.butterknife.compiler
     annotationProcessor deps.arouter.compiler
     annotationProcessor deps.glide.compiler
     annotationProcessor deps.eventbus_annotation_processor
-//    implementation project(':library')
 
+    api project(':library')
     // 引入子模块后，ARouter才会找到该模块！》》》There's no router matched!
-    if (isModule.toBoolean()) {
+    /*if (isModule.toBoolean()) {
         api project(':sqretrofit')
-    }
-//    Android 无法使用 javax.* 问题 -- 或是拷贝一个rt.jar放到libs里面
-//    provided files ('C:\fastwork\Java\jdk1.8.0_162\jre\lib')
+    }*/
+
+    // Android 无法使用 javax.* 问题 -- 或是拷贝一个rt.jar放到libs里面
+    // provided files ('C:\fastwork\Java\jdk1.8.0_162\jre\lib')
 }

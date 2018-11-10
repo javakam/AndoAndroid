@@ -10,7 +10,7 @@ import android.os.RemoteException;
 import android.view.View;
 
 import com.ishiqing.R;
-import com.ishiqing.UIRoute;
+import com.ishiqing.UIRouter;
 import com.ishiqing.base.fragment.BaseSwipeFragment;
 import com.qmuiteam.qmui.widget.dialog.QMUITipDialog;
 import com.qmuiteam.qmui.widget.roundwidget.QMUIRoundButton;
@@ -78,7 +78,7 @@ public class ServiceSwipeFragment4 extends BaseSwipeFragment {
 
     @Override
     protected void initViews(View v) {
-        initTopBar(UIRoute.FRAG_SERVICE4, true);
+        initTopBar(UIRouter.FRAG_SERVICE4, true);
 
         button.postDelayed(new Runnable() {
             @Override

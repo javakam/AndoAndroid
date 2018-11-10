@@ -52,7 +52,7 @@
             android:gravity="center"
             android:padding="10dp"
             android:text="@string/ipc_aidl_bind_service_sys"
-            android:textColor="@color/colorAccent"
+            android:textColor="@color/black"
             app:qmui_isRadiusAdjustBounds="true" />
 
         <com.qmuiteam.qmui.widget.roundwidget.QMUIRoundButton
@@ -65,7 +65,7 @@
             android:gravity="center"
             android:padding="10dp"
             android:text="@string/ipc_aidl_unbind_service_sys"
-            android:textColor="@color/colorAccent"
+            android:textColor="@color/black"
             app:qmui_isRadiusAdjustBounds="true" />
 
         <TextView

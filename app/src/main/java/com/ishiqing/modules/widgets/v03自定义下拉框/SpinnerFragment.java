@@ -12,7 +12,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.ishiqing.R;
-import com.ishiqing.UIRoute;
+import com.ishiqing.UIRouter;
 import com.ishiqing.base.fragment.BaseSwipeFragment;
 import com.sq.library.utils.UiUtil;
 
@@ -47,7 +47,7 @@ public class SpinnerFragment extends BaseSwipeFragment {
 
     @Override
     protected void initViews(View v) {
-        initTopBar(UIRoute.FRAG_SPINNER, true);
+        initTopBar(UIRouter.FRAG_SPINNER, true);
 
         et_input.setOnClickListener(new View.OnClickListener() {
             @Override

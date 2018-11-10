@@ -49,8 +49,10 @@
             style="@style/FlexItem"
             android:layout_width="wrap_content"
             android:layout_height="@dimen/flex_item_length"
-            android:background="@color/colorAccent"
+            android:background="@color/reveal_color"
             android:text="添加"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_size_18sp"
             app:layout_flexBasisPercent="100%" />
 
         <TextView

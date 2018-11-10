@@ -6,7 +6,7 @@ import android.view.View;
 import android.widget.TextView;
 
 import com.ishiqing.R;
-import com.ishiqing.UIRoute;
+import com.ishiqing.UIRouter;
 import com.ishiqing.base.fragment.BaseSwipeFragment;
 import com.sq.library.utils.L;
 
@@ -50,7 +50,7 @@ public class HttpUploadSwipeFragment extends BaseSwipeFragment {
 
     @Override
     protected void initViews(View v) {
-        initTopBar(UIRoute.FRAG_NETWORK_UPLOAD, true);
+        initTopBar(UIRouter.FRAG_NETWORK_UPLOAD, true);
     }
 
     @OnClick({R.id.btnUpload, R.id.btnGetProjectClass})

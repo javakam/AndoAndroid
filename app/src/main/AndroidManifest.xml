@@ -30,7 +30,8 @@
         android:icon="@mipmap/logo"
         android:label="@string/app_name"
         android:supportsRtl="true"
-        android:theme="@style/SQAppTheme">
+        android:theme="@style/SQAppTheme"
+        tools:ignore="GoogleAppIndexingWarning">
         <activity
             android:name=".MainActivityQMUI"
             android:configChanges="orientation|keyboardHidden|screenSize"
@@ -78,10 +79,11 @@
         <service android:name=".modules.service.MyService3" />
         <service android:name=".modules.service.MyService4" />
 
-        <!-- 注：我们自己的监测网络状态的广播，要覆盖系统的广播 而且这玩意儿不会自己提示。。。 -->
+        <!-- 注：我们自己的监测网络状态的广播，要覆盖系统的广播 -->
         <receiver android:name=".modules.network.MyNetStateReceiver">
             <intent-filter>
-                <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE"
+                    tools:ignore="BatteryLife" />
             </intent-filter>
         </receiver>
 

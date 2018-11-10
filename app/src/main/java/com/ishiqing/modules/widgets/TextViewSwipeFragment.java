@@ -17,7 +17,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.ishiqing.R;
-import com.ishiqing.UIRoute;
+import com.ishiqing.UIRouter;
 import com.ishiqing.base.fragment.BaseSwipeFragment;
 
 import org.xml.sax.XMLReader;
@@ -59,7 +59,7 @@ public class TextViewSwipeFragment extends BaseSwipeFragment {
 
     @Override
     protected void initViews(View v) {
-        initTopBar(UIRoute.FRAG_WIDGET_TEXTVIEW, true);
+        initTopBar(UIRouter.FRAG_WIDGET_TEXTVIEW, true);
         //        FF34B3  C5C1AA
         tvWidget1.setTextColor(Color.parseColor("#A0522D"));
         tvWidget2.setTextColor(Color.parseColor("#EE7621"));

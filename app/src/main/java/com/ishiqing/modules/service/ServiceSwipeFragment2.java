@@ -8,7 +8,7 @@ import android.os.IBinder;
 import android.view.View;
 
 import com.ishiqing.R;
-import com.ishiqing.UIRoute;
+import com.ishiqing.UIRouter;
 import com.ishiqing.base.fragment.BaseSwipeFragment;
 
 import butterknife.OnClick;
@@ -38,7 +38,7 @@ public class ServiceSwipeFragment2 extends BaseSwipeFragment {
 
     @Override
     protected void initViews(View v) {
-        initTopBar(UIRoute.FRAG_SERVICE2, true);
+        initTopBar(UIRouter.FRAG_SERVICE2, true);
     }
 
     @OnClick({R.id.btnStart, R.id.btnStop, R.id.btnChangeFormat})

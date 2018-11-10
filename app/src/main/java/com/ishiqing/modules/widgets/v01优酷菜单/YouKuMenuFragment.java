@@ -5,7 +5,7 @@ import android.widget.ImageView;
 import android.widget.RelativeLayout;
 
 import com.ishiqing.R;
-import com.ishiqing.UIRoute;
+import com.ishiqing.UIRouter;
 import com.ishiqing.base.fragment.BaseSwipeFragment;
 import com.sq.library.utils.UiUtil;
 
@@ -37,7 +37,7 @@ public class YouKuMenuFragment extends BaseSwipeFragment {
 
     @Override
     protected void initViews(View v) {
-        initTopBar(UIRoute.FRAG_YOUKUMENU, true);
+        initTopBar(UIRouter.FRAG_YOUKUMENU, true);
     }
 
     @OnClick({R.id.icon_home, R.id.icon_menu})

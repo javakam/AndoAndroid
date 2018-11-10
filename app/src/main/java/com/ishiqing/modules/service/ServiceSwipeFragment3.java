@@ -8,7 +8,7 @@ import android.os.IBinder;
 import android.view.View;
 
 import com.ishiqing.R;
-import com.ishiqing.UIRoute;
+import com.ishiqing.UIRouter;
 import com.ishiqing.base.fragment.BaseSwipeFragment;
 import com.qmuiteam.qmui.widget.dialog.QMUITipDialog;
 import com.qmuiteam.qmui.widget.roundwidget.QMUIRoundButton;
@@ -59,7 +59,7 @@ public class ServiceSwipeFragment3 extends BaseSwipeFragment {
 
     @Override
     protected void initViews(View v) {
-        initTopBar(UIRoute.FRAG_SERVICE3, true);
+        initTopBar(UIRouter.FRAG_SERVICE3, true);
     }
 
     @OnClick({R.id.btnStart, R.id.btnBind, R.id.btnUnbind, R.id.btnStop})

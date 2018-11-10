@@ -20,7 +20,7 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import com.ishiqing.R;
-import com.ishiqing.UIRoute;
+import com.ishiqing.UIRouter;
 import com.ishiqing.base.fragment.BaseSwipeFragment;
 import com.qmuiteam.qmui.widget.dialog.QMUITipDialog;
 
@@ -58,7 +58,7 @@ public class HttpUrlConnectionSwipeFragment extends BaseSwipeFragment {
 
     @Override
     protected void initViews(View v) {
-        initTopBar(UIRoute.FRAG_NETWORK, true);
+        initTopBar(UIRouter.FRAG_NETWORK, true);
     }
 
     @OnClick({R.id.btnGetActiveNet, R.id.btnGetAllNet, R.id.btnDownLoad, R.id.btnGoToUpload

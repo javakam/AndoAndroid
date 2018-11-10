@@ -8,7 +8,7 @@ import android.view.View;
 import android.widget.AutoCompleteTextView;
 
 import com.ishiqing.R;
-import com.ishiqing.UIRoute;
+import com.ishiqing.UIRouter;
 import com.ishiqing.base.fragment.BaseSwipeFragment;
 
 import butterknife.BindView;
@@ -32,7 +32,7 @@ public class EditTextSwipeFragment extends BaseSwipeFragment {
 
     @Override
     protected void initViews(View v) {
-        initTopBar(UIRoute.FRAG_WIDGET_EDITTEXT, true);
+        initTopBar(UIRouter.FRAG_WIDGET_EDITTEXT, true);
     }
 
     @OnClick({R.id.btAddImage1, R.id.btAddImage2, R.id.btAddImage3, R.id.btq_show_actv})

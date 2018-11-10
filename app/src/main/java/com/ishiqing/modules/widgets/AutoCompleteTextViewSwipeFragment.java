@@ -8,7 +8,7 @@ import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
 
 import com.ishiqing.R;
-import com.ishiqing.UIRoute;
+import com.ishiqing.UIRouter;
 import com.ishiqing.base.fragment.BaseSwipeFragment;
 
 import java.util.ArrayList;
@@ -40,7 +40,7 @@ public class AutoCompleteTextViewSwipeFragment extends BaseSwipeFragment {
 
     @Override
     protected void initViews(View v) {
-        initTopBar(UIRoute.FRAG_WIDGET_ACTV, true);
+        initTopBar(UIRouter.FRAG_WIDGET_ACTV, true);
         //在 AutoCompleteTextView 弹出的列表底部提示 用户名
 //        actvUsername.setCompletionHint("请选择账号"); //不好看
         //取出上次登录过的用户名，方便登录

@@ -7,7 +7,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.ishiqing.R;
-import com.ishiqing.UIRoute;
+import com.ishiqing.UIRouter;
 import com.ishiqing.base.fragment.BaseSwipeFragment;
 import com.ishiqing.modules.ui_process.UIProcessSwipeFragment;
 import com.qmuiteam.qmui.util.QMUIDisplayHelper;
@@ -36,7 +36,7 @@ public class ActiviyEntranceSwipeFragment extends BaseSwipeFragment {
 
     @Override
     protected void initViews(View v) {
-        initTopBar(UIRoute.FRAG_ACTIVITY1, true);
+        initTopBar(UIRouter.FRAG_ACTIVITY1, true);
         initTabs();
         initPagers();
     }

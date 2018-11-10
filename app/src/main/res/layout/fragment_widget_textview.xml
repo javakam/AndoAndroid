@@ -9,10 +9,12 @@
     <com.qmuiteam.qmui.widget.QMUITopBar
         android:id="@+id/topbar"
         style="@style/TopBarStyle" />
+
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="@dimen/topbar_height"        android:background="@color/qmui_config_color_white">
+        android:layout_marginTop="@dimen/topbar_height"
+        android:background="@color/qmui_config_color_white">
 
         <LinearLayout
             android:layout_width="match_parent"

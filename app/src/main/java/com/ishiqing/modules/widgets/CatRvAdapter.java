@@ -22,12 +22,7 @@ public class CatRvAdapter extends RecyclerView.Adapter<CatRvAdapter.CatViewHolde
             R.drawable.cat_2,
             R.drawable.cat_3,
             R.drawable.cat_4,
-            R.drawable.cat_5,
-            R.drawable.cat_6,
-            R.drawable.cat_7,
-            R.drawable.cat_8,
-            R.drawable.cat_9,
-            R.drawable.cat_10
+            R.drawable.cat_5
     };
 
     @NonNull

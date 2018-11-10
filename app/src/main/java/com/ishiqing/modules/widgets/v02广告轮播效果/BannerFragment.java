@@ -11,7 +11,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.ishiqing.R;
-import com.ishiqing.UIRoute;
+import com.ishiqing.UIRouter;
 import com.ishiqing.base.fragment.BaseSwipeFragment;
 import com.sq.library.utils.ResourceUtil;
 import com.sq.library.utils.UiUtil;
@@ -63,7 +63,7 @@ public class BannerFragment extends BaseSwipeFragment {
 
     @Override
     protected void initViews(View v) {
-        initTopBar(UIRoute.FRAG_BANNER, true);
+        initTopBar(UIRouter.FRAG_BANNER, true);
         initBannerDatas();//初始化广告信息
 
         viewpager = (ViewPager) v.findViewById(R.id.viewpager);

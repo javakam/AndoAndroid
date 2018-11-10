@@ -1,1 +1,1 @@
-include ':app', ':library', ':support', ':domain','sqretrofit'
+include ':app', ':library', ':support', ':domain'

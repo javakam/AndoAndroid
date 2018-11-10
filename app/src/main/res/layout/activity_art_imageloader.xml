@@ -13,6 +13,6 @@
         android:verticalSpacing="5dp"
         android:listSelector="@android:color/transparent"
         android:numColumns="3"
-        android:stretchMode="columnWidth"></GridView>
+        android:stretchMode="columnWidth" />
 
 </LinearLayout>

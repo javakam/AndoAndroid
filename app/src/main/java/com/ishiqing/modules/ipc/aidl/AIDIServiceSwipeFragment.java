@@ -11,7 +11,7 @@ import android.widget.TextView;
 
 import com.android.internal.telephony.ITelephony;
 import com.ishiqing.R;
-import com.ishiqing.UIRoute;
+import com.ishiqing.UIRouter;
 import com.ishiqing.base.fragment.BaseSwipeFragment;
 import com.sq.library.utils.L;
 import com.sq.support.ipc.aidl.IMyServiceProxy;
@@ -41,7 +41,7 @@ public class AIDIServiceSwipeFragment extends BaseSwipeFragment {
 
     @Override
     protected void initViews(View v) {
-        initTopBar(UIRoute.FRAG_AIDL, true);
+        initTopBar(UIRouter.FRAG_AIDL, true);
     }
 
     /**
