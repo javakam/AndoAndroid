@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/app_base_bg"
+    android:orientation="vertical">
+
+    <com.qmuiteam.qmui.widget.QMUITopBar
+        android:id="@+id/topbar"
+        style="@style/TopBarStyle" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="@dimen/topbar_height"
+        android:background="@color/qmui_config_color_white">
+
+        <RelativeLayout
+            android:id="@+id/level3"
+            android:layout_width="285dp"
+            android:layout_height="140dp"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:background="@drawable/level3">
+
+            <ImageView
+                android:id="@+id/channel1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginLeft="15dp"
+                android:layout_marginBottom="10dp"
+                android:src="@drawable/channel1" />
+
+            <ImageView
+                android:id="@+id/channel2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_above="@id/channel1"
+                android:layout_alignParentLeft="true"
+                android:layout_marginLeft="40dp"
+                android:layout_marginBottom="15dp"
+                android:src="@drawable/channel2" />
+
+            <ImageView
+                android:id="@+id/channel3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_above="@id/channel2"
+                android:layout_alignParentLeft="true"
+                android:layout_marginLeft="75dp"
+                android:layout_marginBottom="5dp"
+                android:src="@drawable/channel3" />
+
+            <ImageView
+                android:id="@+id/channel4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="8dp"
+                android:src="@drawable/channel4" />
+
+
+            <ImageView
+                android:id="@+id/channel7"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginRight="15dp"
+                android:layout_marginBottom="10dp"
+                android:src="@drawable/channel7" />
+
+            <ImageView
+                android:id="@+id/channel6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_above="@id/channel7"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="40dp"
+                android:layout_marginBottom="15dp"
+                android:src="@drawable/channel6" />
+
+            <ImageView
+                android:id="@+id/channel5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_above="@id/channel6"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="75dp"
+                android:layout_marginBottom="5dp"
+                android:src="@drawable/channel5" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/level2"
+            android:layout_width="185dp"
+            android:layout_height="90dp"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:background="@drawable/level2">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginLeft="8dp"
+                android:layout_marginBottom="8dp"
+                android:src="@drawable/icon_search" />
+
+            <ImageView
+                android:id="@+id/icon_menu"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="8dp"
+                android:src="@drawable/icon_menu" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginRight="8dp"
+                android:layout_marginBottom="8dp"
+                android:src="@drawable/icon_myyouku" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:background="@drawable/level1">
+
+            <ImageView
+                android:id="@+id/icon_home"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:layout_centerInParent="true"
+                android:src="@drawable/icon_home" />
+
+        </RelativeLayout>
+
+
+    </RelativeLayout>
+</FrameLayout>

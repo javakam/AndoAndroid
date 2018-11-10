@@ -25,7 +25,6 @@ public class WindowActivity extends BaseActivity {
     protected void initViews(Bundle savedInstanceState) {
         initTopBar("WindowManager", true);
 
-
         Button button = new Button(this);
         button.setText("动态添加Button");
         WindowManager.LayoutParams layoutParams = new WindowManager.LayoutParams(WindowManager.LayoutParams.WRAP_CONTENT
@@ -42,7 +41,7 @@ public class WindowActivity extends BaseActivity {
         layoutParams.y = 200;
         WindowManager wm = getWindowManager();
         wm.addView(button, layoutParams);
-        wm.addView(button, layoutParams);
+//        wm.addView(button, layoutParams);
 
         /*
         利用ViewManager中的

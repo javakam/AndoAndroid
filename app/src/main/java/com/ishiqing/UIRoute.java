@@ -13,11 +13,7 @@ public class UIRoute {
     public static final String FRAG_UI_HENCODER = "HenCoder View";
     public static final String FRAG_UI_HEROS = "View Heros";
     public static final String FRAG_UI_EVENT_DISPATCH = "事件分发(一)";
-    public static final String FRAG_UI_DRAG = "DragView";
-    public static final String FRAG_UI_ART = "艺术探索";
-    public static final String FRAG_WIDGET_SMARTTABLE = "SmartTable";
-    public static final String FRAG_WINDOW = "WMS";
-    public static final String FRAG_WIDGET_BUTTON = "Button";
+    public static final String FRAG_UI_DRAG = "视图拖动";
     public static final String FRAG_ACTIVITY1 = "Activity";
     public static final String FRAG_INTENT_SERVICE = "IntentService";
     public static final String FRAG_SERVICE1 = "Service(一)";
@@ -33,10 +29,20 @@ public class UIRoute {
     public static final String FRAG_ZLGX = "增量更新";
     public static final String FRAG_WAN_ANDROID = "玩安卓";
     public static final String FRAG_RXJAVA2 = "RxJava2";
-    public static final String FRAG_GREENDAO = "GreenDao基本";
-    public static final String FRAG_GREENDAO_M2M = "GreenDao多对多";
-    public static final String FRAG_RX_GREENDAO = "GreenDao&Rx";
+    public static final String FRAG_GREENDAO = "GreenDao Basic";
+    public static final String FRAG_GREENDAO_M2M = "GreenDao 多对多";
+    public static final String FRAG_RX_GREENDAO = "GreenDao Rx";
     public static final String FRAG_EVENTBUS3 = "EventBus3";
     public static final String FRAG_NETWORK_UPLOAD = "上传文件";
     public static final String FRAG_OTHER = "其他组件";
+
+
+    //-----------------------------视图-----------------------------------//
+    public static final String FRAG_UI_ART = "艺术探索";
+    public static final String FRAG_WIDGET_SMARTTABLE = "SmartTable";
+    public static final String FRAG_WINDOW = "Window窗体";
+    public static final String FRAG_WIDGET_BUTTON = "Button";
+    public static final String FRAG_YOUKUMENU = "优酷菜单";
+    public static final String FRAG_BANNER = "广告条效果";
+    public static final String FRAG_SPINNER = "自定义下拉框";
 }

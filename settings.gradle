@@ -1,1 +1,1 @@
-include ':app', ':library', ':support', ':domain', ':Java8lib','sqretrofit'
+include ':app', ':library', ':support', ':domain','sqretrofit'

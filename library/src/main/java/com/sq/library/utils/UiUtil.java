@@ -2,6 +2,8 @@ package com.sq.library.utils;
 
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
+import android.animation.AnimatorSet;
+import android.animation.ObjectAnimator;
 import android.annotation.TargetApi;
 import android.app.Activity;
 import android.content.Context;
@@ -16,6 +18,7 @@ import android.util.DisplayMetrics;
 import android.util.TypedValue;
 import android.view.View;
 import android.view.ViewAnimationUtils;
+import android.view.ViewGroup;
 import android.view.ViewPropertyAnimator;
 import android.view.Window;
 import android.view.WindowManager;
@@ -28,7 +31,7 @@ import com.sq.library.R;
 import java.util.List;
 
 /**
- * Created by javakam on 2018/6/28.
+ * Created by changbao on 2018/6/28.
  */
 public class UiUtil {
 
@@ -203,8 +206,7 @@ public class UiUtil {
         try {
             Class<?> clazz = Class.forName("com.android.internal.R$dimen");
             Object object = clazz.newInstance();
-            int height = Integer.parseInt(clazz.getField("status_bar_height")
-                    .get(object).toString());
+            int height = Integer.parseInt(clazz.getField("status_bar_height").get(object).toString());
             statusHeight = context.getResources().getDimensionPixelSize(height);
         } catch (Exception e) {
             e.printStackTrace();
@@ -251,5 +253,70 @@ public class UiUtil {
                 }
             }
         });
+    }
+
+    //=====================================01优酷菜单======================================//
+
+    public static void hideView(ViewGroup view) {
+        hideView(view, 500, 0);
+    }
+
+    public static void hideView(ViewGroup view, long startOffset) {
+        hideView(view, 500, startOffset);
+    }
+
+    /**
+     * 解决视图动画的BUG
+     * <p>
+     * 两种方案：
+     * 一、遍历ViewGroup中的Child，动态设置setEnable属性；
+     * 二、使用属性动画
+     */
+    public static void hideView(ViewGroup view, long duration, long startOffset) {
+//        RotateAnimation ra = new RotateAnimation(0, 180, view.getWidth() / 2, view.getHeight());
+//        ra.setDuration(duration);
+//        ra.setFillAfter(true);
+//        ra.setStartOffset(startOffset);
+//        view.startAnimation(ra);
+//        for (int i = 0; i < view.getChildCount(); i++) {
+//            view.getChildAt(i).setEnabled(false);
+//        }
+
+        //还可以使用属性动画 - 此处提供的两种写法
+        //设置旋转轴心
+        view.setPivotX(view.getWidth() / 2);
+        view.setPivotY(view.getHeight());
+        ObjectAnimator animator = ObjectAnimator.ofFloat(view, "rotation", 0, 180);
+        AnimatorSet set = new AnimatorSet();
+        set.setDuration(duration);//设置动画时长
+        set.setStartDelay(startOffset);//设置延时动画
+        set.playTogether(animator);
+        set.start();
+        //属性动画2
+//        view.animate().rotation()
+    }
+
+    public static void showView(ViewGroup view) {
+        showView(view, 500);
+    }
+
+    public static void showView(ViewGroup view, long duration) {
+//        RotateAnimation ra = new RotateAnimation(180, 360, view.getWidth() / 2, view.getHeight());
+//        ra.setDuration(duration);
+//        ra.setFillAfter(true);
+//        view.startAnimation(ra);
+        //处理视图动画移动后事件任在原处的问题
+//        for (int i = 0; i < view.getChildCount(); i++) {
+//            view.getChildAt(i).setEnabled(true);
+//        }
+
+        ObjectAnimator animator = ObjectAnimator.ofFloat(view, "rotation", 180, 360);
+        AnimatorSet set = new AnimatorSet();
+        set.setDuration(duration);//设置动画时长
+        set.setStartDelay(0);//设置延时动画
+        set.playTogether(animator);
+        set.start();
+        view.setPivotX(view.getWidth() / 2);
+        view.setPivotY(view.getHeight());
     }
 }

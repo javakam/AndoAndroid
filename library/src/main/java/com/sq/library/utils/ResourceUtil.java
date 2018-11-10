@@ -1,11 +1,12 @@
 package com.sq.library.utils;
 
+import android.annotation.NonNull;
 import android.content.Context;
 
 /**
  * 工具类，可以通过资源名来获取资源id
  * <p>
- * Created by javakam on 2018/7/16.
+ * Created by changbao on 2018/7/16.
  */
 public class ResourceUtil {
 
@@ -61,7 +62,7 @@ public class ResourceUtil {
         return getIdentifierByType(context, resourceName, "bool");
     }
 
-    private static int getIdentifierByType(Context context, String resourceName, String defType) {
+    private static int getIdentifierByType(@NonNull Context context, String resourceName, String defType) {
         return context.getResources().getIdentifier(resourceName,
                 defType,
                 context.getPackageName());

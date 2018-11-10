@@ -33,6 +33,9 @@ import com.ishiqing.modules.widgets.CatFlexboxLayoutSwipeFragment;
 import com.ishiqing.modules.widgets.FlexboxLayoutSwipeFragment;
 import com.ishiqing.modules.widgets.TextViewSwipeFragment;
 import com.ishiqing.modules.widgets.smarttable.SmartTableSwipeFragment;
+import com.ishiqing.modules.widgets.v01优酷菜单.YouKuMenuFragment;
+import com.ishiqing.modules.widgets.v02广告轮播效果.BannerFragment;
+import com.ishiqing.modules.widgets.v03自定义下拉框.SpinnerFragment;
 import com.ishiqing.modules.window.WindowActivity;
 import com.sq.library.utils.AppUtils;
 import com.sq.library.utils.ResourceUtil;
@@ -45,11 +48,12 @@ import java.util.List;
  */
 public class SQDataManager {
     private static final String IMAGE_PRE_FIX = "ic_style_";
+    private static final int IMAGE_COUNT = 12;
 
     private static int getImage() {
         // java求1到10的随机数问题
         // Math.random() * 10 默认为左闭右开区间即[0,9)，所以还需要在最后面+1才能是[1,10]
-        Double i = Math.random() * 32 + 1;
+        Double i = Math.random() * IMAGE_COUNT + 1;
 //        L.i("i:" + i);
         return ResourceUtil.getMipmapId(AppUtils.getContext(), IMAGE_PRE_FIX + i.intValue());
     }
@@ -98,6 +102,10 @@ public class SQDataManager {
         list.add(new QDItemDescription(ArtSwipeFragment.class, UIRoute.FRAG_UI_ART, getImage()));
         list.add(new QDItemDescription(SmartTableSwipeFragment.class, UIRoute.FRAG_WIDGET_SMARTTABLE, getImage()));
         list.add(new QDItemDescription(WindowActivity.class, UIRoute.FRAG_WINDOW, getImage()));
+        list.add(new QDItemDescription(YouKuMenuFragment.class, UIRoute.FRAG_YOUKUMENU, getImage()));
+        list.add(new QDItemDescription(BannerFragment.class, UIRoute.FRAG_BANNER, getImage()));
+        list.add(new QDItemDescription(SpinnerFragment.class, UIRoute.FRAG_SPINNER, getImage()));
+
         return list;
     }
 
