@@ -100,7 +100,7 @@
             android:id="@+id/tvResult"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="@dimen/dp_05"
+            android:padding="@dimen/size_5"
             android:scrollbars="vertical"
             android:textColor="@android:color/holo_blue_dark"
             android:textSize="@dimen/text_size_12sp"

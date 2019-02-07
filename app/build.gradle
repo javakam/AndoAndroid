@@ -3,6 +3,7 @@
  * https://github.com/javakam/ModuleApp/blob/c892a42bef2354068d6176a3a99f1723f5aca2ea/app/build.gradle
  */
 apply plugin: 'com.android.application'
+apply plugin: 'org.greenrobot.greendao'
 //apply plugin: 'realm-android'
 
 /*
@@ -22,10 +23,10 @@ def releaseTime() {
 }
 
 android {
-    compileSdkVersion build_versions.target_sdk
+    compileSdkVersion build_versions.compile_sdk
     buildToolsVersion build_versions.build_tools
     defaultConfig {
-        applicationId "com.ishiqing"
+        applicationId build_versions.applicationId
         minSdkVersion build_versions.min_sdk
         targetSdkVersion build_versions.target_sdk
         versionCode build_versions.versionCode
@@ -70,7 +71,7 @@ android {
                 // ARouter::Compiler >>> No module name, for more information, look at gradle log.
                 // EventBus3 : ReBuild Project之后会在build文件夹下生成MyEventBusIndex.class
                 arguments = [moduleName     : project.getName()
-                             , eventBusIndex: 'com.ishiqing.modules.eventbus3.MyEventBusIndex']
+                             , eventBusIndex: 'com.improve.modules.eventbus3.MyEventBusIndex']
 
                 includeCompileClasspath false
             }
@@ -154,10 +155,10 @@ android {
             //签名
             //signingConfig signingConfigs.sign_debug
         }
-        xiaomi {
-            //同上...
-            //signingConfig signingConfigs.sign_xiaomi
-        }
+//        demo {
+//            //同上...
+//            //signingConfig signingConfigs.sign_xiaomi
+//        }
     }
 
     productFlavors.all {
@@ -185,7 +186,7 @@ android {
     //指定Java版本，支持Lambda表达式
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
-        targetCompatibility 1.8
+        targetCompatibility JavaVersion.VERSION_1_8
     }
 
     //排除不想添加到apk中的文件
@@ -205,32 +206,84 @@ android {
 
     //Android lint 自动检测并删除无用资源  http://blog.csdn.net/imesong/article/details/49187695
     lintOptions {
-        showAll true
+        showAll false
         //build release 版本 时 开启lint 检测
-        checkReleaseBuilds true
+        checkReleaseBuilds false
         //lint 遇到 error 时继续构建
         abortOnError false
 
         //disable 'InvalidPackage'
         //只要添加下面这一句就可以了
-        disable 'MissingTranslation'
+        //disable 'MissingTranslation'
     }
+}
+
+greendao {
+    schemaVersion 1 // 数据库版本号
+    // 设置DaoMaster、DaoSession、Dao 包名, 一般为app包名+生成文件的文件夹名
+    daoPackage 'com.improve.data.dao'
+    //设置DaoMaster、DaoSession、Dao目录，生成文件路径
+    targetGenDir 'src/main/java'
 }
 
 dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
-    // 配置应用进行 Dalvik 可执行文件分包  https://developer.android.google.cn/studio/build/multidex#mdex-gradle
-    implementation 'com.android.support:multidex:1.0.3'
-    implementation 'com.android.support.constraint:constraint-layout:1.1.2'
-    androidTestImplementation deps.espresso.core
-    // 注意：annotationProcessor 不能从 library 继承！
-    // implementation deps.butterknife.runtime
+    implementation files('libs/nineoldandroids-2.4.0.jar')
+    // Test
+    testImplementation deps.junit
+    androidTestImplementation deps.test_runner
+    androidTestImplementation deps.test_espresso
+
+    // Support libraries
+    implementation deps.support.support_v4
+    implementation deps.support.appcompat_v7
+    implementation deps.support.cardview_v7
+    implementation deps.support.recyclerview_v7
+    implementation deps.support.design
+    implementation deps.support.annotations
+    implementation deps.support.constraint
+
+    // RxJava & Retrofit & Glide4
+    implementation deps.gson
+    implementation deps.rxjava2
+    implementation deps.rx_android
+    implementation deps.rxbinding2
+    implementation deps.okhttp
+    implementation deps.okhttp_logging_interceptor
+    implementation deps.retrofit.runtime
+    implementation deps.retrofit.retrofit_converter_gson
+    implementation deps.retrofit.retrofit_adapter_rxjava2
+
+    // 重：annotationProcessor 不能从 library 继承！交给子模块实现！
+    // annotationProcessor deps.arouter.compiler
+    implementation deps.glide.runtime
+    implementation deps.butterknife.runtime
+    implementation deps.arouter.runtime
+    implementation deps.eventbus.runtime
+    annotationProcessor deps.glide.compiler
     annotationProcessor deps.butterknife.compiler
     annotationProcessor deps.arouter.compiler
-    annotationProcessor deps.glide.compiler
-    annotationProcessor deps.eventbus_annotation_processor
+    annotationProcessor deps.eventbus.processor
+    
+    implementation deps.greendao
+    implementation deps.qmui
+    implementation deps.recycler_helper
+    implementation deps.flexbox
+    implementation deps.smarttable
+    // 配置应用进行 Dalvik 可执行文件分包  https://developer.android.google.cn/studio/build/multidex#mdex-gradle
+    implementation 'com.android.support:multidex:1.0.3'
 
-    api project(':library')
+    //----------------------------------Support XML WebService-------------------------------------//
+    implementation('com.squareup.retrofit2:converter-simplexml:2.4.0') {
+        exclude module: 'stax'
+        exclude module: 'stax-api'
+        exclude module: 'xpp3'
+    }
+    //leak
+    debugImplementation 'com.squareup.leakcanary:leakcanary-android:1.5.4'
+    releaseImplementation 'com.squareup.leakcanary:leakcanary-android-no-op:1.5.4'
+    testImplementation 'com.squareup.leakcanary:leakcanary-android-no-op:1.5.4'
+
     // 引入子模块后，ARouter才会找到该模块！》》》There's no router matched!
     /*if (isModule.toBoolean()) {
         api project(':sqretrofit')

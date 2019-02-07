@@ -35,7 +35,7 @@
                     android:id="@+id/btAsyncTaskSerial"
                     style="@style/FlexTwoQMButton"
                     android:layout_width="wrap_content"
-                    android:layout_height="@dimen/dp_45"
+                    android:layout_height="@dimen/size_45"
                     android:text="串行执行"
                     app:qmui_isRadiusAdjustBounds="true" />
 
@@ -43,7 +43,7 @@
                     android:id="@+id/btAsyncTaskParallel"
                     style="@style/FlexTwoQMButton"
                     android:layout_width="wrap_content"
-                    android:layout_height="@dimen/dp_45"
+                    android:layout_height="@dimen/size_45"
                     android:text="并行执行"
                     app:qmui_isRadiusAdjustBounds="true" />
 
@@ -51,7 +51,7 @@
                     android:id="@+id/btAsyncTaskParallelByUs"
                     style="@style/FlexTwoQMButton"
                     android:layout_width="wrap_content"
-                    android:layout_height="@dimen/dp_45"
+                    android:layout_height="@dimen/size_45"
                     android:text="并行执行(自定义线程池)"
                     app:qmui_isRadiusAdjustBounds="true" />
 
@@ -59,7 +59,7 @@
                     android:id="@+id/btAsyncTaskParallelByUs2"
                     style="@style/FlexTwoQMButton"
                     android:layout_width="wrap_content"
-                    android:layout_height="@dimen/dp_45"
+                    android:layout_height="@dimen/size_45"
                     android:text="并行执行(自定义线程池2)"
                     app:qmui_isRadiusAdjustBounds="true" />
             </com.google.android.flexbox.FlexboxLayout>
@@ -73,7 +73,7 @@
                 android:id="@+id/tvCurrentThread"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:padding="@dimen/dp_05"
+                android:padding="@dimen/size_5"
                 android:scrollbars="vertical"
                 android:textColor="@android:color/holo_red_light"
                 android:textSize="@dimen/text_size_14sp"
@@ -88,7 +88,7 @@
                 android:id="@+id/tvResult"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:padding="@dimen/dp_05"
+                android:padding="@dimen/size_5"
                 android:scrollbars="vertical"
                 android:textColor="@android:color/holo_red_light"
                 android:textSize="@dimen/text_size_14sp"

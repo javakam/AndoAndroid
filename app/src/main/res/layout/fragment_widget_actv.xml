@@ -22,11 +22,11 @@
 
         <android.support.v7.widget.CardView
             android:layout_width="match_parent"
-            android:layout_height="@dimen/dp_50"
+            android:layout_height="@dimen/size_50"
             android:layout_marginTop="20dp"
             app:cardBackgroundColor="#ffe"
-            app:cardCornerRadius="@dimen/dp_05"
-            app:contentPadding="@dimen/dp_05">
+            app:cardCornerRadius="@dimen/size_5"
+            app:contentPadding="@dimen/size_5">
 
             <LinearLayout
                 android:id="@+id/ll_login_uname"
@@ -69,11 +69,11 @@
 
         <android.support.v7.widget.CardView
             android:layout_width="match_parent"
-            android:layout_height="@dimen/dp_50"
+            android:layout_height="@dimen/size_50"
             android:layout_marginTop="20dp"
             app:cardBackgroundColor="#ffe"
-            app:cardCornerRadius="@dimen/dp_05"
-            app:contentPadding="@dimen/dp_05">
+            app:cardCornerRadius="@dimen/size_5"
+            app:contentPadding="@dimen/size_5">
 
             <LinearLayout
                 android:id="@+id/ll_login_pwd"

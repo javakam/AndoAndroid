@@ -22,7 +22,7 @@
             android:id="@+id/btHandler"
             style="@style/FlexThreeQMButtonVertical"
             android:layout_width="match_parent"
-            android:layout_height="@dimen/dp_80"
+            android:layout_height="@dimen/size_80"
             android:text="Handler"
             app:qmui_isRadiusAdjustBounds="true" />
 
@@ -30,7 +30,7 @@
             android:id="@+id/btAsyncTask"
             style="@style/FlexThreeQMButtonVertical"
             android:layout_width="match_parent"
-            android:layout_height="@dimen/dp_80"
+            android:layout_height="@dimen/size_80"
             android:text="AsyncTask"
             app:qmui_isRadiusAdjustBounds="true" />
 
@@ -38,7 +38,7 @@
             android:id="@+id/btHandlerThread"
             style="@style/FlexThreeQMButtonVertical"
             android:layout_width="match_parent"
-            android:layout_height="@dimen/dp_80"
+            android:layout_height="@dimen/size_80"
             android:text="HandlerThread"
             app:qmui_isRadiusAdjustBounds="true" />
     </com.google.android.flexbox.FlexboxLayout>

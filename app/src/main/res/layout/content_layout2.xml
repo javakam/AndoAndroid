@@ -12,7 +12,7 @@
         android:layout_marginBottom="5dp"
         android:text="TextView" />
 
-    <com.ishiqing.modules.ui_process.art.c3.view.ListViewEx
+    <com.improve.modules.ui_process.art.c3.view.ListViewEx
         android:id="@+id/list"
         android:layout_width="match_parent"
         android:layout_height="match_parent"

@@ -46,7 +46,7 @@
         android:layout_height="10dp"
         android:background="#aaa" />
 
-    <com.ishiqing.modules.ui_process.heros.MyScrollView
+    <com.improve.modules.ui_process.heros.MyScrollView
         android:id="@+id/myScrollView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -75,9 +75,9 @@
             android:layout_height="match_parent"
             android:scaleType="fitXY"
             android:src="@mipmap/test4" />
-    </com.ishiqing.modules.ui_process.heros.MyScrollView>
+    </com.improve.modules.ui_process.heros.MyScrollView>
 
-    <com.ishiqing.modules.ui_process.heros.DrawerMenu
+    <com.improve.modules.ui_process.heros.DrawerMenu
         android:id="@+id/myDrawerMenu"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -99,5 +99,5 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
 
-    </com.ishiqing.modules.ui_process.heros.DrawerMenu>
+    </com.improve.modules.ui_process.heros.DrawerMenu>
 </LinearLayout>

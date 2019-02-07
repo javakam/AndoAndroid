@@ -4,7 +4,7 @@
     android:background="#ffffff"
     android:orientation="vertical">
 
-    <com.ishiqing.modules.ui_process.art.c3.view.HorizontalScrollViewEx
+    <com.improve.modules.ui_process.art.c3.view.HorizontalScrollViewEx
         android:id="@+id/container"
         android:layout_width="wrap_content"
         android:layout_height="match_parent" />

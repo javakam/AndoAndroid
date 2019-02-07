@@ -1,6 +1,11 @@
 <resources>
     <string name="app_name">Feel</string>
 
+    <!--EmptyView 显示内容-->
+    <string name="emptyView_mode_desc_fail_title">加载失败</string>
+    <string name="emptyView_mode_desc_fail_desc">请检测网络是否能正常连接</string>
+    <string name="emptyView_mode_desc_retry">点击重试</string>
+
     <string name="nav_main">首页</string>
     <string name="nav_pop">框架</string>
     <string name="nav_component">视图</string>

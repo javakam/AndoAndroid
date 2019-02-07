@@ -15,7 +15,7 @@
         android:layout_height="400dp"
         android:background="#acc">
 
-        <com.ishiqing.modules.ui_process.dragview.my.DragDemoScroller
+        <com.improve.modules.ui_process.dragview.my.DragDemoScroller
             android:id="@+id/dragScroller"
             android:layout_width="100dp"
             android:layout_height="100dp" />

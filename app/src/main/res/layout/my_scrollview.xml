@@ -4,7 +4,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <com.ishiqing.modules.ui_process.heros.MyScrollView
+    <com.improve.modules.ui_process.heros.MyScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
@@ -32,5 +32,5 @@
             android:scaleType="fitXY"
             android:src="@mipmap/test4" />
 
-    </com.ishiqing.modules.ui_process.heros.MyScrollView>
+    </com.improve.modules.ui_process.heros.MyScrollView>
 </LinearLayout>

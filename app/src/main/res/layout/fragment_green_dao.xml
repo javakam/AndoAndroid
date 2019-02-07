@@ -23,10 +23,10 @@
             android:layout_width="match_parent"
             android:layout_height="30dp"
             android:layout_gravity="center"
-            android:layout_margin="@dimen/dp_05"
-            android:layout_marginLeft="@dimen/dp_15"
-            android:layout_marginRight="@dimen/dp_15"
-            android:padding="@dimen/dp_05"
+            android:layout_margin="@dimen/size_5"
+            android:layout_marginLeft="@dimen/size_16"
+            android:layout_marginRight="@dimen/size_16"
+            android:padding="@dimen/size_5"
             android:text="增加" />
 
         <com.qmuiteam.qmui.widget.roundwidget.QMUIRoundButton
@@ -34,10 +34,10 @@
             android:layout_width="match_parent"
             android:layout_height="30dp"
             android:layout_gravity="center"
-            android:layout_margin="@dimen/dp_05"
-            android:layout_marginLeft="@dimen/dp_15"
-            android:layout_marginRight="@dimen/dp_15"
-            android:padding="@dimen/dp_05"
+            android:layout_margin="@dimen/size_5"
+            android:layout_marginLeft="@dimen/size_16"
+            android:layout_marginRight="@dimen/size_16"
+            android:padding="@dimen/size_5"
             android:text="修改" />
 
         <com.qmuiteam.qmui.widget.roundwidget.QMUIRoundButton
@@ -45,10 +45,10 @@
             android:layout_width="match_parent"
             android:layout_height="30dp"
             android:layout_gravity="center"
-            android:layout_margin="@dimen/dp_05"
-            android:layout_marginLeft="@dimen/dp_15"
-            android:layout_marginRight="@dimen/dp_15"
-            android:padding="@dimen/dp_05"
+            android:layout_margin="@dimen/size_5"
+            android:layout_marginLeft="@dimen/size_16"
+            android:layout_marginRight="@dimen/size_16"
+            android:padding="@dimen/size_5"
             android:text="查询全部" />
 
         <com.qmuiteam.qmui.widget.roundwidget.QMUIRoundButton
@@ -56,10 +56,10 @@
             android:layout_width="match_parent"
             android:layout_height="30dp"
             android:layout_gravity="center"
-            android:layout_margin="@dimen/dp_05"
-            android:layout_marginLeft="@dimen/dp_15"
-            android:layout_marginRight="@dimen/dp_15"
-            android:padding="@dimen/dp_05"
+            android:layout_margin="@dimen/size_5"
+            android:layout_marginLeft="@dimen/size_16"
+            android:layout_marginRight="@dimen/size_16"
+            android:padding="@dimen/size_5"
             android:text="查询(User Id Key)" />
 
         <com.qmuiteam.qmui.widget.roundwidget.QMUIRoundButton
@@ -67,10 +67,10 @@
             android:layout_width="match_parent"
             android:layout_height="30dp"
             android:layout_gravity="center"
-            android:layout_margin="@dimen/dp_05"
-            android:layout_marginLeft="@dimen/dp_15"
-            android:layout_marginRight="@dimen/dp_15"
-            android:padding="@dimen/dp_05"
+            android:layout_margin="@dimen/size_5"
+            android:layout_marginLeft="@dimen/size_16"
+            android:layout_marginRight="@dimen/size_16"
+            android:padding="@dimen/size_5"
             android:text="查询(小明3)" />
 
         <com.qmuiteam.qmui.widget.roundwidget.QMUIRoundButton
@@ -78,10 +78,10 @@
             android:layout_width="match_parent"
             android:layout_height="30dp"
             android:layout_gravity="center"
-            android:layout_margin="@dimen/dp_05"
-            android:layout_marginLeft="@dimen/dp_15"
-            android:layout_marginRight="@dimen/dp_15"
-            android:padding="@dimen/dp_05"
+            android:layout_margin="@dimen/size_5"
+            android:layout_marginLeft="@dimen/size_16"
+            android:layout_marginRight="@dimen/size_16"
+            android:padding="@dimen/size_5"
             android:text="查询(id in 1003~1006)" />
 
         <com.qmuiteam.qmui.widget.roundwidget.QMUIRoundButton
@@ -89,10 +89,10 @@
             android:layout_width="match_parent"
             android:layout_height="30dp"
             android:layout_gravity="center"
-            android:layout_margin="@dimen/dp_05"
-            android:layout_marginLeft="@dimen/dp_15"
-            android:layout_marginRight="@dimen/dp_15"
-            android:padding="@dimen/dp_05"
+            android:layout_margin="@dimen/size_5"
+            android:layout_marginLeft="@dimen/size_16"
+            android:layout_marginRight="@dimen/size_16"
+            android:padding="@dimen/size_5"
             android:text="查询(id大于1005的用户)" />
 
         <com.qmuiteam.qmui.widget.roundwidget.QMUIRoundButton
@@ -100,10 +100,10 @@
             android:layout_width="match_parent"
             android:layout_height="30dp"
             android:layout_gravity="center"
-            android:layout_margin="@dimen/dp_05"
-            android:layout_marginLeft="@dimen/dp_15"
-            android:layout_marginRight="@dimen/dp_15"
-            android:padding="@dimen/dp_05"
+            android:layout_margin="@dimen/size_5"
+            android:layout_marginLeft="@dimen/size_16"
+            android:layout_marginRight="@dimen/size_16"
+            android:padding="@dimen/size_5"
             android:text="删除" />
 
         <com.qmuiteam.qmui.widget.roundwidget.QMUIRoundButton
@@ -111,10 +111,10 @@
             android:layout_width="match_parent"
             android:layout_height="30dp"
             android:layout_gravity="center"
-            android:layout_margin="@dimen/dp_05"
-            android:layout_marginLeft="@dimen/dp_15"
-            android:layout_marginRight="@dimen/dp_15"
-            android:padding="@dimen/dp_05"
+            android:layout_margin="@dimen/size_5"
+            android:layout_marginLeft="@dimen/size_16"
+            android:layout_marginRight="@dimen/size_16"
+            android:padding="@dimen/size_5"
             android:text="删除全部" />
 
         <TextView

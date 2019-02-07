@@ -7,7 +7,7 @@
 
     <!-- <include layout="@layout/topbar" /> -->
 
-    <com.ishiqing.modules.ui_process.heros.view.TopBar
+    <com.improve.modules.ui_process.heros.view.TopBar
         android:id="@+id/topBar"
         android:layout_width="match_parent"
         android:layout_height="40dp"

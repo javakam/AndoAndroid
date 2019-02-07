@@ -3,28 +3,24 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/app_content_bg"
-    android:fitsSystemWindows="true"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin">
+    android:fitsSystemWindows="true">
 
-    <com.ishiqing.modules.ui_process.event.MyViewGroupA
+    <com.improve.modules.ui_process.event.MyViewGroupA
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@android:color/holo_blue_bright">
 
-        <com.ishiqing.modules.ui_process.event.MyViewGroupB
+        <com.improve.modules.ui_process.event.MyViewGroupB
             android:layout_width="300dp"
             android:layout_height="300dp"
             android:background="@android:color/holo_green_dark">
 
-            <com.ishiqing.modules.ui_process.event.MyView
+            <com.improve.modules.ui_process.event.MyView
                 android:layout_width="150dp"
                 android:layout_height="150dp"
                 android:background="@android:color/darker_gray" />
 
-        </com.ishiqing.modules.ui_process.event.MyViewGroupB>
+        </com.improve.modules.ui_process.event.MyViewGroupB>
 
-    </com.ishiqing.modules.ui_process.event.MyViewGroupA>
+    </com.improve.modules.ui_process.event.MyViewGroupA>
 </RelativeLayout>

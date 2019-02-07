@@ -15,7 +15,7 @@
         android:layout_height="400dp"
         android:background="#fbf">
 
-        <com.ishiqing.modules.ui_process.dragview.my.DragDemoDefault
+        <com.improve.modules.ui_process.dragview.my.DragDemoDefault
             android:id="@+id/dragDemo"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />

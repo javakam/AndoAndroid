@@ -30,7 +30,7 @@
                 android:id="@+id/btnGetActiveNet"
                 style="@style/FlexTwoQMButton"
                 android:layout_width="wrap_content"
-                android:layout_height="@dimen/dp_45"
+                android:layout_height="@dimen/size_45"
                 android:text="获取活动的网络连接"
                 app:qmui_isRadiusAdjustBounds="true" />
 
@@ -38,7 +38,7 @@
                 android:id="@+id/btnGetAllNet"
                 style="@style/FlexTwoQMButton"
                 android:layout_width="wrap_content"
-                android:layout_height="@dimen/dp_45"
+                android:layout_height="@dimen/size_45"
                 android:text="获取全部网络连接"
                 app:qmui_isRadiusAdjustBounds="true" />
 
@@ -46,7 +46,7 @@
                 android:id="@+id/btnDownLoad"
                 style="@style/FlexTwoQMButton"
                 android:layout_width="wrap_content"
-                android:layout_height="@dimen/dp_45"
+                android:layout_height="@dimen/size_45"
                 android:text="下载"
                 app:qmui_isRadiusAdjustBounds="true" />
 
@@ -54,7 +54,7 @@
                 android:id="@+id/btnGoToUpload"
                 style="@style/FlexTwoQMButton"
                 android:layout_width="wrap_content"
-                android:layout_height="@dimen/dp_45"
+                android:layout_height="@dimen/size_45"
                 android:text="上传"
                 app:qmui_isRadiusAdjustBounds="true" />
 
@@ -62,7 +62,7 @@
                 android:id="@+id/btnDownAndInstallApk"
                 style="@style/FlexTwoQMButton"
                 android:layout_width="wrap_content"
-                android:layout_height="@dimen/dp_45"
+                android:layout_height="@dimen/size_45"
                 android:text="下载APK并安装"
                 app:qmui_isRadiusAdjustBounds="true" />
         </com.google.android.flexbox.FlexboxLayout>

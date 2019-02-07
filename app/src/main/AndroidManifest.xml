@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="com.ishiqing">
+    package="com.improve">
 
     <uses-sdk tools:overrideLibrary="com.bin.david.form" />
 
@@ -67,7 +67,7 @@
         <activity android:name=".modules.ui_process.imageloader.ImageLoaderActivity" />
 
 
-        <!-- Service一个隐式跳转，一个显示跳转 com.ishiqing.modules.service.IntentServiceSwipeFragment -->
+        <!-- Service一个隐式跳转，一个显示跳转 com.improve.modules.service.IntentServiceSwipeFragment -->
         <!-- IntentService一定要配置，否则是不起作用的 -->
         <service android:name=".modules.service.intentservice.MyIntentService">
             <intent-filter>

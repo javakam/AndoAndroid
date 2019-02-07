@@ -35,7 +35,7 @@
                     android:id="@+id/btChildThread"
                     style="@style/FlexThreeQMButton"
                     android:layout_width="wrap_content"
-                    android:layout_height="@dimen/dp_60"
+                    android:layout_height="@dimen/size_60"
                     android:text="子线程更新UI"
                     app:qmui_isRadiusAdjustBounds="true" />
 
@@ -43,7 +43,7 @@
                     android:id="@+id/btChildThreadErrLog"
                     style="@style/FlexThreeQMButton"
                     android:layout_width="wrap_content"
-                    android:layout_height="@dimen/dp_60"
+                    android:layout_height="@dimen/size_60"
                     android:text="子线程更新UI-错误日志"
                     app:qmui_isRadiusAdjustBounds="true" />
 
@@ -58,7 +58,7 @@
                 android:id="@+id/tvThreadInfo"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:padding="@dimen/dp_05"
+                android:padding="@dimen/size_5"
                 android:scrollbars="vertical"
                 android:textColor="@android:color/holo_blue_dark"
                 android:textSize="@dimen/sp_12"
@@ -73,7 +73,7 @@
                 android:id="@+id/tvResult"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:padding="@dimen/dp_05"
+                android:padding="@dimen/size_5"
                 android:scrollbars="vertical"
                 android:textColor="@android:color/holo_blue_dark"
                 android:textSize="@dimen/sp_12"

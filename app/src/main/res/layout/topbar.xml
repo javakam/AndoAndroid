@@ -1,4 +1,4 @@
-<com.ishiqing.modules.ui_process.heros.view.TopBar xmlns:android="http://schemas.android.com/apk/res/android"
+<com.improve.modules.ui_process.heros.view.TopBar xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:custom="http://schemas.android.com/apk/res-auto"
     android:id="@+id/topBar"
     android:layout_width="match_parent"
@@ -13,4 +13,4 @@
     custom:titleTextColor="#123412"
     custom:titleTextSize="15sp">
 
-</com.ishiqing.modules.ui_process.heros.view.TopBar>
+</com.improve.modules.ui_process.heros.view.TopBar>

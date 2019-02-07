@@ -4,7 +4,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <com.ishiqing.modules.ui_process.dragview.DragView5
+    <com.improve.modules.ui_process.dragview.DragView5
         android:layout_width="100dp"
         android:layout_height="100dp" />
 </LinearLayout>

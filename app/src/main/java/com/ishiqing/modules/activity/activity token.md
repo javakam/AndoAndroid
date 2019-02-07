@@ -1,1 +1,0 @@
-![](.doc_images\6158b534.png)

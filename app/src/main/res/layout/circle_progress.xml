@@ -4,7 +4,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <com.ishiqing.modules.ui_process.heros.view.CircleProgressView
+    <com.improve.modules.ui_process.heros.view.CircleProgressView
         android:id="@+id/circle"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
