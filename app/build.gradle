@@ -15,7 +15,7 @@ Please use 'annotationProcessor' configuration instead.
 
 //获取产品的名字
 def getProductName() {
-    return "sq"
+    return "improve"
 }
 //获取当前系统的时间
 def releaseTime() {

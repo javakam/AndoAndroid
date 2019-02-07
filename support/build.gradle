@@ -5,7 +5,7 @@ android {
     compileSdkVersion 27
 
     defaultConfig {
-        applicationId "com.sq.support"
+        applicationId "com.improve.support"
         minSdkVersion 14
         targetSdkVersion 27
         versionCode 1
@@ -27,7 +27,7 @@ android {
 
 greendao {
     schemaVersion 1 // 数据库版本号
-    daoPackage 'com.sq.support.greendao.dao' // 设置DaoMaster、DaoSession、Dao 包名, 一般为app包名+生成文件的文件夹名
+    daoPackage 'com.improve.support.greendao.dao' // 设置DaoMaster、DaoSession、Dao 包名, 一般为app包名+生成文件的文件夹名
     targetGenDir 'src/main/java'//设置DaoMaster、DaoSession、Dao目录，生成文件路径
 }
 

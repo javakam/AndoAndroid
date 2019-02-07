@@ -14,7 +14,7 @@ import com.improve.R;
 import com.improve.UIRouter;
 import com.improve.base.fragment.BaseSwipeFragment;
 import com.improve.utils.L;
-import com.sq.support.ipc.aidl.IMyServiceProxy;
+import com.improve.support.ipc.aidl.IMyServiceProxy;
 
 import java.lang.reflect.Method;
 
@@ -73,7 +73,7 @@ public class AIDIServiceSwipeFragment extends BaseSwipeFragment {
                     };
                     Intent service = new Intent("it.is.an.aidl.service.server");
                     // 【注】这个 应用ID 是指对方的，不是自己的！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！
-                    service.setPackage("com.sq.support");//Application ID
+                    service.setPackage("com.improve.support");//Application ID
                     bindService(service, conn, Context.BIND_AUTO_CREATE);
                 }
                 break;

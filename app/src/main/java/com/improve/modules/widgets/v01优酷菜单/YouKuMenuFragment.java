@@ -13,7 +13,7 @@ import butterknife.BindView;
 import butterknife.OnClick;
 
 /**
- * 01优酷菜单 {@link com.sq.library.utils.UiUtil hideView() }
+ * 01优酷菜单 {@link com.improve.library.utils.UiUtil hideView() }
  * Created by machangbao on 2018/10/1.
  */
 public class YouKuMenuFragment extends BaseSwipeFragment {

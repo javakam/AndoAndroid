@@ -39,7 +39,7 @@ public class WanSwipeFragment extends BaseSwipeFragment {
          */
 
 //        if (v.getId() == R.id.btWanAndroid) {
-//            ARouter.getInstance().build("/sq/mainactivity")
+//            ARouter.getInstance().build("/improve/mainactivity")
 //                    .withLong("key1", 666L)
 //                    .withString("key3", "888")
 ////                    .withObject("key4", new Object())
