@@ -1,13 +1,13 @@
 <table>
     <tr>
         <td>
-            <img src="art/img1.jpg"  width="320" height="520" />
+            <img src="art/img1.jpg"  width="330" height="500" />
         </td>
         <td>
-            <img src="art/img2.jpg"  width="320" height="520" />
+            <img src="art/img2.jpg"  width="330" height="500" />
         </td> 
         <td>
-            <img src="art/img3.jpg"  width="320" height="520"/>
+            <img src="art/img3.jpg"  width="330" height="500"/>
         </td> 
     </tr>
 </table>
