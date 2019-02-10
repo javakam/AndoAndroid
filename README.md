@@ -1,19 +1,13 @@
 <table aria-rowcount="3">
     <tr>
         <td>
-            <center>
-                <img src="art/img1.jpg"  width="360" height="640" />
-            </center>
+            <img src="art/img1.jpg"  width="311" height="511" />
         </td>
         <td>
-            <center>
-                <img src="art/img2.jpg"  width="360" height="640" />
-            </center>
+            <img src="art/img2.jpg"  width="311" height="511" />
         </td> 
         <td>
-            <center>
-                <img src="art/img3.jpg"  width="360" height="640"/>
-            </center>
+            <img src="art/img3.jpg"  width="311" height="511"/>
         </td> 
     </tr>
 </table>
