@@ -18,7 +18,7 @@ import com.improve.modules.service.ServiceSwipeFragment1;
 import com.improve.modules.service.ServiceSwipeFragment2;
 import com.improve.modules.service.ServiceSwipeFragment3;
 import com.improve.modules.service.ServiceSwipeFragment4;
-import com.improve.modules.service.intentservice.IntentServiceSwipeFragment;
+import com.improve.modules.service.intentservice.IntentServiceFragment;
 import com.improve.modules.thread.ThreadNavFragment;
 import com.improve.modules.ui_hencoder.DrawMainActivity;
 import com.improve.modules.ui_process.art.c3.activity.ArtSwipeFragment;
@@ -60,7 +60,7 @@ public class SQDataManager {
     public static List<QDItemDescription> getHomeGridDescriptions() {
         List<QDItemDescription> list = new ArrayList<>();
         list.add(new QDItemDescription(ActiviyEntranceSwipeFragment.class, UIRouter.FRAG_ACTIVITY1, getImage()));
-        list.add(new QDItemDescription(IntentServiceSwipeFragment.class, UIRouter.FRAG_INTENT_SERVICE, getImage()));
+        list.add(new QDItemDescription(IntentServiceFragment.class, UIRouter.FRAG_INTENT_SERVICE, getImage()));
         list.add(new QDItemDescription(ServiceSwipeFragment1.class, UIRouter.FRAG_SERVICE1, getImage()));
         list.add(new QDItemDescription(ServiceSwipeFragment2.class, UIRouter.FRAG_SERVICE2, getImage()));
         list.add(new QDItemDescription(ServiceSwipeFragment3.class, UIRouter.FRAG_SERVICE3, getImage()));

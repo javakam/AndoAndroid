@@ -15,7 +15,7 @@ import butterknife.OnClick;
  * <p>
  * Created by javakam on 2018/6/17.
  */
-public class IntentServiceSwipeFragment extends BaseSwipeFragment {
+public class IntentServiceFragment extends BaseSwipeFragment {
     @Override
     protected int getLayoutResId() {
         return R.layout.fragment_intentservice;
@@ -54,6 +54,7 @@ public class IntentServiceSwipeFragment extends BaseSwipeFragment {
                 break;
             case R.id.btnStop:
                 break;
+            default:
         }
     }
 }
