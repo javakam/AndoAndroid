@@ -14,5 +14,10 @@ Intent intent = new Intent(Settings.ACTION_WIRELESS_SETTINGS);
 
 #### 下载APK
 - 流程分析 <br>
-![](.README_images\下载APK流程.png) <br>
+![](images\下载APK流程.png) <br>
 - 操作
+
+
+乱弹
+
+![计算机语言的发展过程](images\计算机语言的发展过程.png)

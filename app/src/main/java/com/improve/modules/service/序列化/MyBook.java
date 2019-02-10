@@ -6,7 +6,7 @@ import android.os.Parcelable;
 /**
  * Created by javakam on 2018/7/17.
  */
-public class MyBook implements Parcelable {
+class MyBook implements Parcelable {
     private String bid;
     private String author;
 

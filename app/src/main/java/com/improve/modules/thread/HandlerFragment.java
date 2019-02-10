@@ -22,7 +22,7 @@ import butterknife.OnClick;
  * <p>
  * Created by javakam on 2018/7/9 .
  */
-public class HandlerSwipeFragment extends BaseSwipeFragment {
+public class HandlerFragment extends BaseSwipeFragment {
     private static final int MSG_ERROR = 0x001;
 
     @BindView(R.id.tvThreadInfo)
@@ -33,13 +33,13 @@ public class HandlerSwipeFragment extends BaseSwipeFragment {
     private Handler mHandler = new Handler(new Handler.Callback() {
         @Override
         public boolean handleMessage(Message msg) {
-            mThreadInfo.setText("Thread id : " + mHandler.getLooper().getThread().getId()
-                    + " Name : " + mHandler.getLooper().getThread().getName());
+            mThreadInfo.setText(String.format("Thread id : %d Name : %s",
+                    mHandler.getLooper().getThread().getId(), mHandler.getLooper().getThread().getName()));
             if (msg.what == MSG_ERROR) {
                 mResult.setText("错误信息：");
                 mResult.setTextColor(Color.parseColor("#FF0000"));//红色  ff0099cc
             }
-            mResult.setText(mResult.getText().toString() + "\n" + msg.obj.toString());
+            mResult.setText(String.format("%s\n%s", mResult.getText().toString(), msg.obj.toString()));
             return false;//默认false
         }
     });

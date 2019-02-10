@@ -110,6 +110,7 @@ public class ServiceSwipeFragment4 extends BaseSwipeFragment {
             case R.id.btnStop:
                 mActivity.stopService(intent);
                 break;
+            default:
         }
     }
 }

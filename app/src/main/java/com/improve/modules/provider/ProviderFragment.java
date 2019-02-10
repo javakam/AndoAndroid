@@ -28,7 +28,7 @@ import butterknife.OnClick;
  * 自定义Provider
  * 参考：https://www.cnblogs.com/plokmju/p/android_ContentProvider.html
  */
-public class ProviderSwipeFragment1 extends BaseSwipeFragment {
+public class ProviderFragment extends BaseSwipeFragment {
     /*
 1 概述:
 　　ContentProvider可以理解为一个Android应用对外开放的接口，只要是符合它所定义的Uri格式的请求，均可以正常访问执行操作。
@@ -77,7 +77,7 @@ int match(Uri uri)：
 
     }
 
-    @OnClick({R.id.btProvider,R.id.btProvider2})
+    @OnClick({R.id.btProvider, R.id.btProvider2})
     void getContacts(View v) {
         switch (v.getId()) {
             case R.id.btProvider:
@@ -106,7 +106,7 @@ int match(Uri uri)：
                 }
                 break;
             case R.id.btProvider2:
-                ContentResolver contentResolver =mActivity.getContentResolver();
+                ContentResolver contentResolver = mActivity.getContentResolver();
                 Uri uri = Uri
                         .parse("content://com.improve.support.StudentProvider/student");
                 ContentValues values = new ContentValues();
@@ -117,6 +117,7 @@ int match(Uri uri)：
                 Toast.makeText(mActivity, "自定义提供者: \n" + returnuir.toString(), Toast.LENGTH_LONG).show();
                 tvProvider.setText("自定义提供者: \n" + returnuir.toString());
                 break;
+            default:
         }
 
     }

@@ -123,6 +123,7 @@ public class GreenDaoM2MSwipeFragment extends BaseSwipeFragment {
                 mFriendDao.deleteAll();
                 mUserDao.deleteAll();
                 break;
+            default:
         }
     }
 }

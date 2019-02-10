@@ -14,12 +14,12 @@ import com.improve.R;
 import com.improve.UIRouter;
 import com.improve.base.fragment.BaseSwipeFragment;
 import com.improve.utils.L;
-import com.improve.support.ipc.aidl.IMyServiceProxy;
 
 import java.lang.reflect.Method;
 
 import butterknife.BindView;
 import butterknife.OnClick;
+import improve.support.ipc.aidl.IMyServiceProxy;
 
 /**
  * AIDL Client - https://blog.csdn.net/u011240877/article/details/72765136#1创建-aidl
@@ -29,6 +29,7 @@ import butterknife.OnClick;
  * Created by javakam on 2018/6/25.
  */
 public class AIDIServiceSwipeFragment extends BaseSwipeFragment {
+
     @BindView(R.id.tvAIDLResult)
     TextView mTvResult;
 

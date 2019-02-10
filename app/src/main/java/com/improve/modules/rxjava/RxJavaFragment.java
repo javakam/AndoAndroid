@@ -16,7 +16,7 @@ import io.reactivex.schedulers.Schedulers;
 /**
  * Created by javakam on 2018/7/2.
  */
-public class RxJavaSwipeFragment1 extends BaseSwipeFragment {
+public class RxJavaFragment extends BaseSwipeFragment {
     @Override
     protected int getLayoutResId() {
         return R.layout.main_layout;

@@ -8,7 +8,7 @@ import java.util.List;
 /**
  * Created by javakam on 2018/7/17.
  */
-public class MyUser implements Parcelable {
+class MyUser implements Parcelable {
     private String uname;
     private MyBook myBook;
     private List<MyBook> books;

@@ -2,6 +2,7 @@ package com.improve.modules.thread;
 
 import android.view.View;
 import android.widget.TextView;
+
 import com.improve.R;
 import com.improve.base.fragment.BaseSwipeFragment;
 
@@ -13,7 +14,7 @@ import butterknife.OnClick;
  * <p>
  * Created by javakam on 2018/7/9 .
  */
-public class ThreadNavSwipeFragment extends BaseSwipeFragment {
+public class ThreadNavFragment extends BaseSwipeFragment {
     @BindView(R.id.tvResult)
     TextView tvResult;
 
@@ -31,14 +32,15 @@ public class ThreadNavSwipeFragment extends BaseSwipeFragment {
     public void onViewClicked(View view) {
         switch (view.getId()) {
             case R.id.btHandler:
-                mActivity.startFragment(new HandlerSwipeFragment());
+                mActivity.startFragment(new HandlerFragment());
                 break;
             case R.id.btAsyncTask:
-                mActivity.startFragment(new AsyncTaskSwipeFragment());
+                mActivity.startFragment(new AsyncTaskFragment());
                 break;
             case R.id.btHandlerThread:
-                mActivity.startFragment(new HandlerThreadSwipeFragment());
+                mActivity.startFragment(new ClassLoaderFragment());
                 break;
+            default:
         }
     }
 }

@@ -1,7 +1,7 @@
 ### Parcelable
 ---
 
-- Parcel可以再Binder中自由传输
+- Parcel可以在Binder中自由传输
 
 - writeToParcel负责序列化功能，反序列化则由CREATOR完成
 
@@ -21,4 +21,4 @@ protected MyUser(Parcel in) {
 同时List和Map也是可以序列化，前提是它们内部的元素是可以序列化的。
 
 - Serializble和Parcelable的区别 <br><br>
-![](.document_images\Serializable和Parcelable的区别.png)
+![](images\Serializable和Parcelable的区别.png)

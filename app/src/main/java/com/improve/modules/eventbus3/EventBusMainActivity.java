@@ -116,7 +116,7 @@ public class EventBusMainActivity extends BaseActivity {
      */
     private void method4() {
         //UI线程中执行
-        new LoadTask().execute("www.91dota.com");
+        new LoadTask().execute("www.baidu.com");
     }
 
     private class LoadTask extends AsyncTask<Object, Object, String> {

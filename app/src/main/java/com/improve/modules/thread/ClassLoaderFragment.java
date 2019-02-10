@@ -14,11 +14,12 @@ import butterknife.OnClick;
 /**
  * HandlerThread -- 【疑惑】
  * <p>
- * 其实跟 HandlerThread 半毛钱关系都没有。。。skr skr 正文{@see IntentService}
+ * 测试类加载,跟 HandlerThread 半毛钱关系都没有。。。正文{@see IntentService}
  * <p>
  * Created by javakam on 2018/8/15.
  */
-public class HandlerThreadSwipeFragment extends BaseSwipeFragment {
+public class ClassLoaderFragment extends BaseSwipeFragment {
+
     @BindView(R.id.tvResult)
     TextView tvResult;
 
@@ -59,6 +60,7 @@ public class HandlerThreadSwipeFragment extends BaseSwipeFragment {
                 tvResult.setText(TestClassLoad.POS222);
                 L.e("Test3: " + TestClassLoad.POS222);
                 break;
+            default:
         }
     }
 }

@@ -35,7 +35,7 @@ import butterknife.OnClick;
  * <p>
  * Created by javakam on 2018/7/9 .
  */
-public class AsyncTaskSwipeFragment extends BaseSwipeFragment {
+public class AsyncTaskFragment extends BaseSwipeFragment {
     private static final SimpleDateFormat SDF = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
     @BindView(R.id.tvCurrentThread)
     TextView tvCurrentThread;
@@ -137,11 +137,12 @@ public class AsyncTaskSwipeFragment extends BaseSwipeFragment {
 //                new MyAsyncTask(mActivity, "Task#b ").execute("abc");
 //                new MyAsyncTask(mActivity, "Task#c ").execute("abc");
                 break;
+            default:
         }
     }
 
-    class MyAsyncTask extends AsyncTask<String, Integer, String> {
-        WeakReference<Activity> mWeakActivity;
+    private class MyAsyncTask extends AsyncTask<String, Integer, String> {
+        private WeakReference<Activity> mWeakActivity;
         private String mName;
 
         public MyAsyncTask(Activity activity, String mName) {
@@ -181,10 +182,10 @@ public class AsyncTaskSwipeFragment extends BaseSwipeFragment {
         protected void onPostExecute(String result) {
             super.onPostExecute(result);
             String curThread = Thread.currentThread().getId() + "   " + Thread.currentThread().getName() + "\n";
-            tvCurrentThread.setText("onPostExecute : " + curThread);
+            tvCurrentThread.setText(String.format("onPostExecute : %s", curThread));
             L.d("onPostExecute : " + curThread);
 
-            // 重新获取Actiity的强引用，并且判断是否存活
+            // 重新获取Activity的强引用，并且判断是否存活
             Activity activity = mWeakActivity.get();
             if (activity == null || activity.isFinishing() || activity.isDestroyed()) {
                 // activity死亡了，不再做任何的事情
@@ -193,7 +194,7 @@ public class AsyncTaskSwipeFragment extends BaseSwipeFragment {
             // The activity is still valid, do main-thread stuff here
             String s = result + " finished at " + SDF.format(new Date()) + "\n";
             L.e(s);
-            tvResult.setText(tvResult.getText() + s);
+            tvResult.setText(String.format("%s%s", tvResult.getText(), s));
         }
     }
 }

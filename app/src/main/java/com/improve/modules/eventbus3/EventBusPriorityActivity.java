@@ -17,6 +17,7 @@ import org.greenrobot.eventbus.Subscribe;
  * 优先级只是针对于相同的ThreadMode中。默认的优先级为0。
  */
 public class EventBusPriorityActivity extends AppCompatActivity {
+
     private static final String TAG = "123";
 
     @Override
