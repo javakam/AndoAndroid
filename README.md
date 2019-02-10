@@ -1,4 +1,23 @@
-![效果1](art/img1.jpg) ![效果2](art/img2.jpg) ![效果3](art/img3.jpg)
+<table aria-rowcount="3">
+    <tr>
+        <td>
+            <center>
+                <img src="art/img1.jpg"  width="360" height="640" />
+            </center>
+        </td>
+        <td>
+            <center>
+                <img src="art/img2.jpg"  width="360" height="640" />
+            </center>
+        </td> 
+        <td>
+            <center>
+                <img src="art/img3.jpg"  width="360" height="640"/>
+            </center>
+        </td> 
+    </tr>
+</table>
+
 - 常用控件、视图总结 [AndroidViews](https://github.com/javakam/AndroidViews)
 - 项目结构 : [app](art) 主工程基于 QMUI Android ; [support](art) 用于测试进程间通信、内容提供者的辅助工程
 
