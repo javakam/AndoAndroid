@@ -1,5 +1,6 @@
+![效果](art/Screenrecorder-2019-02-10.mp4)
 - 常用控件、视图总结 [AndroidViews](https://github.com/javakam/AndroidViews)
-- 项目结构 : app 主工程 ; support 用于测试进程间通信、内容提供者的辅助工程
+- 项目结构 : [app](art) 主工程基于 QMUI Android ; [support](art) 用于测试进程间通信、内容提供者的辅助工程
 
 #### 四大组件
 - [Service](app/src/main/java/com/improve/modules/service/Service.md)
@@ -65,7 +66,7 @@
 - [Android增量更新](app/src/main/java/com/improve/modules/network)
 - [RxJava2](app/src/main/java/com/improve/modules/rxjava)
 - [WebView](app/src/main/java/com/improve/modules/webview)
-
+- 加入动态权限申请
 
 
 
