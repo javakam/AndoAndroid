@@ -1,4 +1,4 @@
-package com.improve.widget.recyclerview;
+package com.improve.view;
 
 import android.content.Context;
 import android.content.res.TypedArray;

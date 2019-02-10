@@ -144,6 +144,4 @@ public abstract class BaseActivity extends AppCompatActivity {
                 getResources().getString(R.string.emptyView_mode_desc_retry),
                 onClickListener);
     }
-
-
 }

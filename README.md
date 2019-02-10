@@ -1,5 +1,5 @@
-### 项目结构
-> AndroidViews [https://github.com/javakam/AndroidViews](https://github.com/javakam/AndroidViews)
+- Android Views See [AndroidViews](https://github.com/javakam/AndroidViews)
+- 项目结构 : app 主工程 ; support 用于测试进程间通信、内容提供者的辅助工程
 
 #### 四大组件
 - [Service](app/src/main/java/com/improve/modules/service/Service.md)

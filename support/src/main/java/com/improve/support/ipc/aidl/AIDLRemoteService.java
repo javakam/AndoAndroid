@@ -6,6 +6,8 @@ import android.os.IBinder;
 import android.os.RemoteException;
 import android.util.Log;
 
+import improve.support.ipc.aidl.IMyServiceProxy;
+
 /**
  * AIDL 客户端
  * <p>

@@ -10,7 +10,7 @@ import com.improve.home.MainSwipeFragment;
 /**
  * @author changbao
  */
-public class MainActivityQMUI extends BaseQMUIFragmentActivity {
+public class MainActivity extends BaseQMUIFragmentActivity {
 
     @SuppressLint("ResourceType")
     @Override

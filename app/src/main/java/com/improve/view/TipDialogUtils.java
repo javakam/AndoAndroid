@@ -1,12 +1,12 @@
-package com.improve.widget;
+package com.improve.view;
 
 import android.content.Context;
 import android.support.annotation.LayoutRes;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 
+import com.improve.Constant;
 import com.improve.utils.StringUtils;
-import com.improve.Global;
 import com.qmuiteam.qmui.widget.dialog.QMUITipDialog;
 
 /**
@@ -47,7 +47,7 @@ public class TipDialogUtils {
      */
     public void createLoadingTipDialog(@NonNull Context context, @Nullable String tipWord) {
         if (StringUtils.isBlank(tipWord)) {
-            tipWord = Global.DIALOG_LOADING;
+            tipWord = Constant.DIALOG_LOADING;
         }
         this.createIconWithTipDialog(context, QMUITipDialog.Builder.ICON_TYPE_LOADING, tipWord);
     }

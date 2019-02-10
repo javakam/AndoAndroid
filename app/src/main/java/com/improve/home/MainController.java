@@ -15,7 +15,7 @@ import com.improve.base.QDItemDescription;
 import com.improve.base.adapter.BaseRecyclerAdapter;
 import com.improve.base.adapter.RecyclerViewHolder;
 import com.improve.base.fragment.BaseSwipeFragment;
-import com.improve.widget.recyclerview.GridDividerItemDecoration;
+import com.improve.view.GridDividerItemDecoration;
 import com.qmuiteam.qmui.util.QMUIViewHelper;
 import com.qmuiteam.qmui.widget.QMUITopBar;
 

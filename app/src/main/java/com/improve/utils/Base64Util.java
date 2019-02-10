@@ -5,7 +5,7 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.support.annotation.NonNull;
 
-import com.improve.Global;
+import com.improve.Constant;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -92,7 +92,7 @@ public class Base64Util {
      */
     public static void base64BitmapToFile(byte[] bytes, String filePath, String fileName) {
         // todo test
-        filePath = Global.PATH_IMAGE;
+        filePath = Constant.PATH_IMAGE;
 
         File listnames = new File(filePath);
         if (!listnames.exists()) {
@@ -135,7 +135,7 @@ public class Base64Util {
      */
     public static void base64BitmapToFile(@NonNull Bitmap bitmap, String filePath, String fileName) {
         // todo test
-        filePath = Global.PATH_IMAGE;
+        filePath = Constant.PATH_IMAGE;
 
         File listnames = new File(filePath);
         if (!listnames.exists()) {
@@ -177,7 +177,7 @@ public class Base64Util {
      */
     public static void base64StrToFile(String base64Str, String filePath, String fileName) {
         // todo test
-        filePath = Global.PATH_FILE;
+        filePath = Constant.PATH_FILE;
 
         File listnames = new File(filePath);
         if (!listnames.exists()) {
@@ -224,7 +224,7 @@ public class Base64Util {
      */
     public static void base64BytesToFile(@NonNull byte[] bytes, String filePath, String fileName) {
         // todo test
-        filePath = Global.PATH_FILE;
+        filePath = Constant.PATH_FILE;
 
         File listnames = new File(filePath);
         if (!listnames.exists()) {

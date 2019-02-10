@@ -16,7 +16,7 @@ import android.view.ViewGroup;
 
 import com.improve.R;
 import com.improve.base.BaseQMUIFragmentActivity;
-import com.improve.widget.TipDialogUtils;
+import com.improve.view.TipDialogUtils;
 import com.qmuiteam.qmui.widget.QMUIEmptyView;
 import com.qmuiteam.qmui.widget.QMUITopBar;
 
