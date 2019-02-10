@@ -1,4 +1,4 @@
-![效果](art/Screenrecorder-2019-02-10.mp4)
+![效果](art/display.gif)
 - 常用控件、视图总结 [AndroidViews](https://github.com/javakam/AndroidViews)
 - 项目结构 : [app](art) 主工程基于 QMUI Android ; [support](art) 用于测试进程间通信、内容提供者的辅助工程
 
