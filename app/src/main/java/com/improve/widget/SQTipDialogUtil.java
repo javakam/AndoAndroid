@@ -17,6 +17,7 @@ import com.qmuiteam.qmui.widget.dialog.QMUITipDialog;
  * @date 2018/6/18
  */
 public class SQTipDialogUtil {
+
     private static final SQTipDialogUtil ourInstance = new SQTipDialogUtil();
 
     public static SQTipDialogUtil getInstance() {
