@@ -1,11 +1,11 @@
 ### 项目结构
 
 #### 四大组件
+- [Service](app/src/main/java/com/improve/modules/service/Service.md)
+- [Activity工作过程](app/src/main/java/com/improve/modules/componet_process/四大组件工作过程.md)
 - [Activity管理方式](app/src/main/java/com/improve/base/安全退出已调用多个Activity的App.md)
 - [Activity-Token](app/src/main/java/com/improve/modules/activity/Activity-Token.md)
-- [Service](app/src/main/java/com/improve/modules/service/Service.md)
 - [ContentProvider共享机制](app/src/main/java/com/improve/modules/provider/ProviderFragment)
-- [四大组件工作过程](app/src/main/java/com/improve/modules/componet_process/四大组件工作过程.md)
 - [注解开发](app/src/main/java/com/improve/modules/annotation/注解开发.md)
 
 #### 数据
