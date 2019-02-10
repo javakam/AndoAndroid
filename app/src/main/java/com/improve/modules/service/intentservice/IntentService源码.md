@@ -1,7 +1,7 @@
 ### IntentService源码分析
 - IntentService的顺序执行机制：
 
-![](.\images\IntentService顺序执行机制.png)
+![](..\images\IntentService顺序执行机制.png)
 ![](batman.jpg)
 
 > Android5.0不能隐式启动service，必须显示，解决办法，加服务端包名
