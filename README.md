@@ -1,19 +1,19 @@
 <table>
     <tr>
         <td>
-            <img src="art/img1.jpg"  width="330" height="500" />
+            <img src="art/img1.jpg"  width="360" height="480" />
         </td>
         <td>
-            <img src="art/img2.jpg"  width="330" height="500" />
+            <img src="art/img2.jpg"  width="360" height="480" />
         </td> 
         <td>
-            <img src="art/img3.jpg"  width="330" height="500"/>
+            <img src="art/img3.jpg"  width="360" height="480"/>
         </td> 
     </tr>
 </table>
 
 - 常用控件、视图总结 [AndroidViews](https://github.com/javakam/AndroidViews)
-- 项目结构 : [app](art) 主工程基于 QMUI Android ; [support](art) 用于测试进程间通信、内容提供者的辅助工程
+- 项目结构 : [app](art) 主工程基于 [QMUI Android](https://github.com/Tencent/QMUI_Android) ; [support](art) 用于测试进程间通信、内容提供者的辅助工程
 
 #### 四大组件
 - [Service](app/src/main/java/com/improve/modules/service/Service.md)
