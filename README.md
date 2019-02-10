@@ -1,4 +1,4 @@
-- Android Views See [AndroidViews](https://github.com/javakam/AndroidViews)
+- 常用控件、视图总结 [AndroidViews](https://github.com/javakam/AndroidViews)
 - 项目结构 : app 主工程 ; support 用于测试进程间通信、内容提供者的辅助工程
 
 #### 四大组件
