@@ -112,6 +112,7 @@ public class MyScrollView extends ViewGroup {
                 }
                 postInvalidate();
                 break;
+            default:
 
         }
         return true;

@@ -19,7 +19,7 @@ import butterknife.BindView;
 import butterknife.OnClick;
 
 /**
- * FlexboxLayout {@link CatFlexboxLayoutSwipeFragment }
+ * FlexboxLayout {@link CatFlexboxLayoutFragment }
  * <p>
  * https://www.jianshu.com/p/b3a9c4a99053
  * 单选多选 https://blog.csdn.net/LXLYHM/article/details/78753558
@@ -33,7 +33,7 @@ import butterknife.OnClick;
  * @author javakam
  * @date 2018/7/6.
  */
-public class FlexboxLayoutSwipeFragment extends BaseSwipeFragment {
+public class FlexboxLayoutFragment extends BaseSwipeFragment {
     @BindView(R.id.flexbox)
     FlexboxLayout mFlexboxLayout;
 

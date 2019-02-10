@@ -16,15 +16,15 @@ import com.qmuiteam.qmui.widget.dialog.QMUITipDialog;
  * @author javakam
  * @date 2018/6/18
  */
-public class SQTipDialogUtil {
+public class TipDialogUtils {
 
-    private static final SQTipDialogUtil ourInstance = new SQTipDialogUtil();
+    private static final TipDialogUtils ourInstance = new TipDialogUtils();
 
-    public static SQTipDialogUtil getInstance() {
+    public static TipDialogUtils getInstance() {
         return ourInstance;
     }
 
-    private SQTipDialogUtil() {
+    private TipDialogUtils() {
     }
 
     private QMUITipDialog tipDialog;

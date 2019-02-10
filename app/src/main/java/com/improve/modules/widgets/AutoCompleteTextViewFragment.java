@@ -19,7 +19,7 @@ import butterknife.BindView;
  * AutoCompleteTextView & TextInputLayout 基本操作
  * Created by javakam on 2018/6/28.
  */
-public class AutoCompleteTextViewSwipeFragment extends BaseSwipeFragment {
+public class AutoCompleteTextViewFragment extends BaseSwipeFragment {
     @BindView(R.id.actv_username)
     AutoCompleteTextView actvUsername;
     @BindView(R.id.til_username)

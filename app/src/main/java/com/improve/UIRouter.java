@@ -27,7 +27,6 @@ public class UIRouter {
     public static final String FRAG_THREAD_NAV = "线程和消息机制";
     public static final String FRAG_NETWORK = "网络编程";
     public static final String FRAG_ZLGX = "增量更新";
-    public static final String FRAG_WAN_ANDROID = "玩安卓";
     public static final String FRAG_RXJAVA2 = "RxJava2";
     public static final String FRAG_GREENDAO = "GreenDao Basic";
     public static final String FRAG_GREENDAO_M2M = "GreenDao 多对多";
@@ -41,7 +40,6 @@ public class UIRouter {
     public static final String FRAG_UI_ART = "艺术探索";
     public static final String FRAG_WIDGET_SMARTTABLE = "SmartTable";
     public static final String FRAG_WINDOW = "Window窗体";
-    public static final String FRAG_WIDGET_BUTTON = "Button";
     public static final String FRAG_YOUKUMENU = "优酷菜单";
     public static final String FRAG_BANNER = "广告条效果";
     public static final String FRAG_SPINNER = "自定义下拉框";

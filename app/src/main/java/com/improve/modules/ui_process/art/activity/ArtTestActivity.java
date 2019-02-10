@@ -1,4 +1,4 @@
-package com.improve.modules.ui_process.art.c3.activity;
+package com.improve.modules.ui_process.art.activity;
 
 import android.annotation.SuppressLint;
 import android.annotation.TargetApi;
@@ -15,7 +15,7 @@ import android.widget.Button;
 import android.widget.Toast;
 
 import com.improve.R;
-import com.improve.modules.ui_process.art.c3.view.TestButton;
+import com.improve.modules.ui_process.art.view.TestButton;
 
 
 public class ArtTestActivity extends Activity implements OnClickListener,

@@ -1,4 +1,4 @@
-package com.improve.modules.ui_process.art.c3.view;
+package com.improve.modules.ui_process.art.view;
 
 import android.annotation.TargetApi;
 import android.content.Context;

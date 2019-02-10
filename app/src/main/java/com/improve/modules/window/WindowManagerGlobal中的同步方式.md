@@ -1,7 +1,7 @@
 # WindowManagerGlobal中的同步方式的理解
 
 问题如图：<br>
-![](.images\WMG同步方式.png)
+![](images/WMG同步方式.png)
 
 其中private final Object mLock = new Object();<br>
 问两种方式的区别？

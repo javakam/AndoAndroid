@@ -1,4 +1,4 @@
-package com.improve;
+package com.improve.base;
 
 import android.app.Application;
 import android.content.res.Configuration;

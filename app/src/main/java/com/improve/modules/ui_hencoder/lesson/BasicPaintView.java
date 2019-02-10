@@ -22,20 +22,20 @@ import com.improve.modules.ui_hencoder.practice.BaseView;
  * <p>
  * Created by javakam on 2018/5/21.
  */
-public class MyPaintView extends BaseView {
+public class BasicPaintView extends BaseView {
     private Shader shader;
     private float mCenterX, mCenterY;
 
-    public MyPaintView(Context context) {
+    public BasicPaintView(Context context) {
         this(context, null);
     }
 
-    public MyPaintView(Context context, @Nullable AttributeSet attrs) {
+    public BasicPaintView(Context context, @Nullable AttributeSet attrs) {
         super(context, attrs);
         init(context);
     }
 
-    public MyPaintView(Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
+    public BasicPaintView(Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
         init(context);
     }

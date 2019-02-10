@@ -16,6 +16,7 @@ import butterknife.OnClick;
  * Created by javakam on 2018/6/17.
  */
 public class IntentServiceFragment extends BaseSwipeFragment {
+
     @Override
     protected int getLayoutResId() {
         return R.layout.fragment_intentservice;

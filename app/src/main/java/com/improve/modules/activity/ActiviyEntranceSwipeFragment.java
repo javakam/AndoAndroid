@@ -9,7 +9,7 @@ import android.view.ViewGroup;
 import com.improve.R;
 import com.improve.UIRouter;
 import com.improve.base.fragment.BaseSwipeFragment;
-import com.improve.modules.ui_process.UIProcessSwipeFragment;
+import com.improve.modules.ui_process.UIProcessFragment;
 import com.qmuiteam.qmui.util.QMUIDisplayHelper;
 import com.qmuiteam.qmui.util.QMUIResHelper;
 import com.qmuiteam.qmui.widget.QMUIPagerAdapter;
@@ -80,11 +80,11 @@ public class ActiviyEntranceSwipeFragment extends BaseSwipeFragment {
             protected Object hydrate(ViewGroup container, int position) {
                 switch (position) {
                     case 0:
-                        return new UIProcessSwipeFragment();
+                        return new UIProcessFragment();
                     case 1:
                         return new Base64SwipeFragment();
                     default:
-                        return new UIProcessSwipeFragment();
+                        return new UIProcessFragment();
                 }
             }
 

@@ -36,7 +36,7 @@ import butterknife.BindView;
  * <p>
  * Created by javakam on 2018/6/19.
  */
-public class TextViewSwipeFragment extends BaseSwipeFragment {
+public class TextViewFragment extends BaseSwipeFragment {
     @BindView(R.id.tvWidget1)
     TextView tvWidget1;
     @BindView(R.id.tvWidget2)

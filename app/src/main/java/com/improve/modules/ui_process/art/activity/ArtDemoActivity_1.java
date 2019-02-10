@@ -1,4 +1,4 @@
-package com.improve.modules.ui_process.art.c3.activity;
+package com.improve.modules.ui_process.art.activity;
 
 import android.app.Activity;
 import android.graphics.Color;
@@ -15,7 +15,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.improve.R;
-import com.improve.modules.ui_process.art.c3.view.HorizontalScrollViewEx;
+import com.improve.modules.ui_process.art.view.HorizontalScrollViewEx;
 import com.improve.utils.MyUtils;
 
 import java.util.ArrayList;

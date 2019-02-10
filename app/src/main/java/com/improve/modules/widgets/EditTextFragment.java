@@ -21,7 +21,7 @@ import butterknife.OnClick;
  * @author javakam
  * @date 2018/6/19
  */
-public class EditTextSwipeFragment extends BaseSwipeFragment {
+public class EditTextFragment extends BaseSwipeFragment {
     @BindView(R.id.actv1)
     AutoCompleteTextView actvImage;
 
@@ -64,7 +64,7 @@ public class EditTextSwipeFragment extends BaseSwipeFragment {
                 actvImage.append(spStr);
                 break;
             case R.id.btq_show_actv:
-                startFragment(new AutoCompleteTextViewSwipeFragment());
+                startFragment(new AutoCompleteTextViewFragment());
                 break;
             default:
                 break;

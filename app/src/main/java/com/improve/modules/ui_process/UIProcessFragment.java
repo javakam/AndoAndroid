@@ -13,7 +13,7 @@ import com.improve.base.fragment.BaseSwipeFragment;
  * @author javakam
  * @date 2018/6/27
  */
-public class UIProcessSwipeFragment extends BaseSwipeFragment {
+public class UIProcessFragment extends BaseSwipeFragment {
     @NonNull
     @Override
     protected int getLayoutResId() {

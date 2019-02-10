@@ -16,22 +16,22 @@ import android.view.View;
  * <p>
  * Created by javakam on 2018/5/20.
  */
-public class MyPathView extends View {
+public class BasicPathView extends View {
     private Paint paint = new Paint(Paint.ANTI_ALIAS_FLAG);
     /**
      * 初始化 Path 对象
      */
     private Path path = new Path();
 
-    public MyPathView(Context context) {
+    public BasicPathView(Context context) {
         this(context, null);
     }
 
-    public MyPathView(Context context, @Nullable AttributeSet attrs) {
+    public BasicPathView(Context context, @Nullable AttributeSet attrs) {
         this(context, attrs, 0);
     }
 
-    public MyPathView(Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
+    public BasicPathView(Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr); initViews(context);
     }
 

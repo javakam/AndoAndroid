@@ -16,7 +16,7 @@ import android.view.ViewGroup;
 
 import com.improve.R;
 import com.improve.base.BaseQMUIFragmentActivity;
-import com.improve.widget.SQTipDialogUtil;
+import com.improve.widget.TipDialogUtils;
 import com.qmuiteam.qmui.widget.QMUIEmptyView;
 import com.qmuiteam.qmui.widget.QMUITopBar;
 
@@ -37,7 +37,7 @@ public abstract class BaseFragment extends Fragment {
     public static final String FM_BACKSTACK = "FM_BACKSTACK";
 
     protected FragmentDelegate mDelegate;
-    protected SQTipDialogUtil mTipDialogUtil;
+    protected TipDialogUtils mTipDialogUtil;
     public BaseQMUIFragmentActivity mActivity;
 
     @Nullable
@@ -62,7 +62,7 @@ public abstract class BaseFragment extends Fragment {
     public void onAttach(Context context) {
         super.onAttach(context);
         mActivity = mDelegate.onAttach(context);
-        mTipDialogUtil = SQTipDialogUtil.getInstance();
+        mTipDialogUtil = TipDialogUtils.getInstance();
     }
 
     @Override

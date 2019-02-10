@@ -1,4 +1,4 @@
-package com.improve.modules.ui_process.art.c3.activity;
+package com.improve.modules.ui_process.art.activity;
 
 
 import android.app.Activity;

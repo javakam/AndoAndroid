@@ -24,7 +24,6 @@ import java.security.NoSuchAlgorithmException;
  */
 public class LruCacheFragment extends BaseSwipeFragment {
 
-
     @Override
     protected int getLayoutResId() {
         return 0;

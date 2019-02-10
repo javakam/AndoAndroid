@@ -13,7 +13,7 @@ import android.view.View;
 import com.improve.R;
 import com.improve.base.BaseQMUIFragmentActivity;
 import com.improve.base.qmui.QMUIFragment;
-import com.improve.widget.SQTipDialogUtil;
+import com.improve.widget.TipDialogUtils;
 import com.qmuiteam.qmui.util.QMUIDisplayHelper;
 import com.qmuiteam.qmui.widget.QMUIEmptyView;
 import com.qmuiteam.qmui.widget.QMUITopBar;
@@ -27,7 +27,7 @@ import butterknife.Unbinder;
  */
 public abstract class BaseSwipeFragment extends QMUIFragment {
     protected FragmentDelegate mDelegate;
-    protected SQTipDialogUtil mTipDialogUtil;
+    protected TipDialogUtils mTipDialogUtil;
     public BaseQMUIFragmentActivity mActivity;
 
     @Nullable
@@ -52,7 +52,7 @@ public abstract class BaseSwipeFragment extends QMUIFragment {
     public void onAttach(Context context) {
         super.onAttach(context);
         mActivity = mDelegate.onAttach(context);
-        mTipDialogUtil = SQTipDialogUtil.getInstance();
+        mTipDialogUtil = TipDialogUtils.getInstance();
     }
 
     @NonNull

@@ -30,7 +30,7 @@ ViewConfiguration.get(context).getScaledTouchSlop();
 - VelocityTracker 速度追踪器
 
 - GestureDetector 手势检测 <br><br>
-![](.doc_images\GestureDetector.png)
+![](images/GestureDetector.png)
 
 - Scroller 弹性滑动对象，用于实现View的弹性滑动。
 > 优化用户体验，做有过渡效果的滑动。
@@ -71,23 +71,23 @@ ObjectAnimator.ofFloat(targetView, "traslationX", 0, 100).setDuration(100).start
 
 - Android低版本（比3.0还低，连nineoldandroid都兼容不了的内种。。。）动画方案
 
-![](.doc_images\Android2.2动画方案.png)
+![](images/Android2.2动画方案.png)
 
 3.改变布局参数 <br><br>
-![](.doc_images\改变布局参数.png)
+![](images/改变布局参数.png)
 
 ### 弹性滑动
 - 使用Scroller滑动
 
 > computeScrollOffset 返回值 true表示滑动未结束；false表示滑动已结束
 
-![](.doc_images\Scroller滑动.png) <br>
+![](images/Scroller滑动.png) <br>
 
 - 使用动画
 
 ### 事件分发机制
 
-![](.doc_images\事件分发.png) <br>
+![](images/事件分发.png) <br>
 onTouch 返回false，才会触发touch事件：
 ```
 mButton1.setOnTouchListener(new View.OnTouchListener() {
@@ -102,19 +102,19 @@ mButton1.setOnTouchListener(new View.OnTouchListener() {
 事件处理方法的优先级：onTouchListener 》 onTouchEvent 》 onClickListener
 
 当产生一个点击事件后，事件的传递顺序为：Activity-》Window-》View , 一个贴近现实的例子：<br><br>
-![](.doc_images\事件传递-举例.png)
+![](images/事件传递-举例.png)
 
 事件传递总结：page 143 <br><br>
-![](.doc_images\事件传递总结.png)<br><br>
-![](.doc_images\事件传递总结2.png)
+![](images/事件传递总结.png)<br><br>
+![](images/事件传递总结2.png)
 
 > 顶级View的事件分发过程
 
-![](.doc_images\事件分发-顶级View.png)  <br>
+![](images/事件分发-顶级View.png)  <br>
 
 - P148 ViewGroup.dispatchTouchEvent 源码分析
 
-![](.doc_images\事件分发-源码分析.png) <br><br>
+![](images/事件分发-源码分析.png) <br><br>
 
 ### View的滑动冲突
 ---

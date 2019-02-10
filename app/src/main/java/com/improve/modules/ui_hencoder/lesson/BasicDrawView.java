@@ -19,18 +19,18 @@ import android.view.View;
  * <p>
  * Created by javakam on 2018/5/19.
  */
-public class MyDrawView extends View {
+public class BasicDrawView extends View {
     private Paint paint = new Paint();
 
-    public MyDrawView(Context context) {
+    public BasicDrawView(Context context) {
         this(context, null);
     }
 
-    public MyDrawView(Context context, @Nullable AttributeSet attrs) {
+    public BasicDrawView(Context context, @Nullable AttributeSet attrs) {
         this(context, attrs, 0);
     }
 
-    public MyDrawView(Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
+    public BasicDrawView(Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
         initViews(context);
     }
@@ -155,7 +155,7 @@ public class MyDrawView extends View {
         //以上就是 Canvas 所有的简单图形的绘制.除了简单图形的绘制， Canvas 还可以使用 drawPath(Path path) 来绘制自定义图形。
 
         //8 绘制自定义图形
-        //com.jooy.sqdraw.lesson.MyPathView
+        //com.improve.modules.ui_hencoder.lesson.BasicPathView
 
 
         //9
@@ -198,6 +198,4 @@ public class MyDrawView extends View {
         //设置文字的位置和尺寸，这些只是绘制文字最基本的操作。
         //文字的绘制具有极高的定制性，不过由于它的定制性实在太高了，所以我会在后面专门用一期来讲文字的绘制。这一期就不多讲了。
     }
-
-
 }

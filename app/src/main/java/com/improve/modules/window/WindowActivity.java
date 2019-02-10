@@ -1,5 +1,6 @@
 package com.improve.modules.window;
 
+import android.annotation.SuppressLint;
 import android.app.Dialog;
 import android.graphics.Color;
 import android.graphics.PixelFormat;

@@ -1,12 +1,14 @@
 package com.improve;
 
 import com.alibaba.android.arouter.launcher.ARouter;
-import com.improve.BaseApplication;
+import com.improve.base.BaseApplication;
 import com.improve.data.dao.DaoUtils;
 import com.improve.utils.AppUtils;
 import com.squareup.leakcanary.LeakCanary;
 
 /**
+ * TODO 2019年2月10日 18:14:35 待优化 - 初始化操作放到子线程中执行
+ * <p>
  * Created by javakam on 2018/6/16.
  */
 public class SQApplication extends BaseApplication {
