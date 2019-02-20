@@ -46,11 +46,11 @@
 
 <br>
 
-- [TextView](app/src/main/java/com.improve.modules.widgets.TextViewFragment)
-- [AutoCompleteTextView & TextInputLayout](app/src/main/java/com.improve.modules.widgets.AutoCompleteTextViewFragment)
-- [AutoCompleteTextView & SpannableString & ImageSpan](app/src/main/java/com.improve.modules.widgets.EditTextFragment)
-- [FlexboxLayout基础](app/src/main/java/com.improve.modules.widgets.FlexboxLayoutFragment)
-- [FlexboxLayout流式布局](app/src/main/java/com.improve.modules.widgets.CatFlexboxLayoutFragment)
+- [TextView](app/src/main/java/com/improve/modules/widgets/TextViewFragment)
+- [AutoCompleteTextView & TextInputLayout](app/src/main/java/com/improve/modules/widgets/AutoCompleteTextViewFragment)
+- [AutoCompleteTextView & SpannableString & ImageSpan](app/src/main/java/com/improve/modules/widgets/EditTextFragment)
+- [FlexboxLayout基础](app/src/main/java/com/improve/modules/widgets/FlexboxLayoutFragment)
+- [FlexboxLayout流式布局](app/src/main/java/com/improve/modules/widgets/CatFlexboxLayoutFragment)
 - [SmartTable](app/src/main/java/com/improve/modules/widgets/smarttable)
 - [01优酷菜单](app/src/main/java/com/improve/modules/widgets/v01优酷菜单)
 - [02广告轮播效果](app/src/main/java/com/improve/modules/widgets/v02广告轮播效果)
