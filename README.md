@@ -14,6 +14,7 @@
 
 - 常用控件、视图总结 [AndroidViews](https://github.com/javakam/AndroidViews)
 - 项目结构 : [app](art) 主工程基于 [QMUI Android](https://github.com/Tencent/QMUI_Android) ; [support](art) 用于测试进程间通信、内容提供者的辅助工程
+- TODO 待整理 有道&博客园笔记 [https://www.cnblogs.com/jooy](https://www.cnblogs.com/jooy)
 
 #### 四大组件
 - [Service](app/src/main/java/com/improve/modules/service/Service.md)
@@ -29,7 +30,7 @@
 #### 多线程
 - [Android线程和线程池](app/src/main/java/com/improve/modules/thread/Android线程和线程池.md)
 - [IntentService 源码分析](app/src/main/java/com/improve/modules/service/intentservice/IntentService源码.md)
-- [AsyncTask](app/src/main/java/com/improve/modules/thread/AsyncTaskFragment)
+- [AsyncTask](app/src/main/java/com/improve/modules/thread/AsyncTaskFragment.java)
 - [AsyncTask缺陷问题](app/src/main/java/com/improve/modules/thread/AsyncTask缺陷问题.md)
 - [ThreadLocal](app/src/main/java/com/improve/modules/thread/ThreadLocal.md)
 
@@ -46,11 +47,11 @@
 
 <br>
 
-- [TextView](app/src/main/java/com/improve/modules/widgets/TextViewFragment)
-- [AutoCompleteTextView & TextInputLayout](app/src/main/java/com/improve/modules/widgets/AutoCompleteTextViewFragment)
-- [AutoCompleteTextView & SpannableString & ImageSpan](app/src/main/java/com/improve/modules/widgets/EditTextFragment)
-- [FlexboxLayout基础](app/src/main/java/com/improve/modules/widgets/FlexboxLayoutFragment)
-- [FlexboxLayout流式布局](app/src/main/java/com/improve/modules/widgets/CatFlexboxLayoutFragment)
+- [TextView](app/src/main/java/com/improve/modules/widgets/TextViewFragment.java)
+- [AutoCompleteTextView & TextInputLayout](app/src/main/java/com/improve/modules/widgets/AutoCompleteTextViewFragment.java)
+- [AutoCompleteTextView & SpannableString & ImageSpan](app/src/main/java/com/improve/modules/widgets/EditTextFragment.java)
+- [FlexboxLayout基础](app/src/main/java/com/improve/modules/widgets/FlexboxLayoutFragment.java)
+- [FlexboxLayout流式布局](app/src/main/java/com/improve/modules/widgets/CatFlexboxLayoutFragment.java)
 - [SmartTable](app/src/main/java/com/improve/modules/widgets/smarttable)
 - [01优酷菜单](app/src/main/java/com/improve/modules/widgets/v01优酷菜单)
 - [02广告轮播效果](app/src/main/java/com/improve/modules/widgets/v02广告轮播效果)
