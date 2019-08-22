@@ -5,7 +5,7 @@ import android.support.annotation.LayoutRes;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 
-import com.improve.Constant;
+import com.improve.common.Constant;
 import com.improve.utils.StringUtils;
 import com.qmuiteam.qmui.widget.dialog.QMUITipDialog;
 

@@ -161,6 +161,9 @@ public class MainSwipeFragment extends BaseSwipeFragment {
 
 
     enum Pager {
+        /**
+         *
+         */
         HOME, POPULAR, COMPONENT;
 
         public static Pager getPagerFromPositon(int position) {

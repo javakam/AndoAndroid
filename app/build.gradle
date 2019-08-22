@@ -3,8 +3,12 @@
  * https://github.com/javakam/ModuleApp/blob/c892a42bef2354068d6176a3a99f1723f5aca2ea/app/build.gradle
  */
 apply plugin: 'com.android.application'
+apply plugin: 'com.jakewharton.butterknife'
 apply plugin: 'org.greenrobot.greendao'
 //apply plugin: 'realm-android'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
 
 /*
 Android Studio2.3.3到3.0版本后，同时也更新了gradle到4.1后,出现问题：
@@ -226,6 +230,12 @@ greendao {
     targetGenDir 'src/main/java'
 }
 
+kotlin {
+    experimental {
+        coroutines "enable"
+    }
+}
+
 dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
     implementation files('libs/nineoldandroids-2.4.0.jar')
@@ -246,7 +256,7 @@ dependencies {
     // RxJava & Retrofit & Glide4
     implementation deps.gson
     implementation deps.rxjava2
-    implementation deps.rx_android
+    implementation deps.rxandroid
     implementation deps.rxbinding2
     implementation deps.okhttp
     implementation deps.okhttp_logging_interceptor
@@ -257,12 +267,12 @@ dependencies {
     // 重：annotationProcessor 不能从 library 继承！交给子模块实现！
     // annotationProcessor deps.arouter.compiler
     implementation deps.glide.runtime
-    implementation deps.butterknife.runtime
-    implementation deps.arouter.runtime
-    implementation deps.eventbus.runtime
     annotationProcessor deps.glide.compiler
+    implementation deps.butterknife.runtime
     annotationProcessor deps.butterknife.compiler
+    implementation deps.arouter.runtime
     annotationProcessor deps.arouter.compiler
+    implementation deps.eventbus.runtime
     annotationProcessor deps.eventbus.processor
     
     implementation deps.greendao
@@ -291,4 +301,9 @@ dependencies {
 
     // Android 无法使用 javax.* 问题 -- 或是拷贝一个rt.jar放到libs里面
     // provided files ('C:\fastwork\Java\jdk1.8.0_162\jre\lib')
+
+    //------------------------------------------------------------------------------//
+
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+
 }

@@ -1,4 +1,4 @@
-package com.improve.manager;
+package com.improve.common;
 
 /**
  * Created by javakam on 2018/6/16.

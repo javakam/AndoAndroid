@@ -1,8 +1,9 @@
-package com.improve;
+package com.improve.common;
 
 import android.annotation.SuppressLint;
 import android.os.Bundle;
 
+import com.improve.R;
 import com.improve.base.BaseQMUIFragmentActivity;
 import com.improve.base.fragment.BaseSwipeFragment;
 import com.improve.home.MainSwipeFragment;

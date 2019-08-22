@@ -5,7 +5,7 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.support.annotation.NonNull;
 
-import com.improve.Constant;
+import com.improve.common.Constant;
 
 import java.io.File;
 import java.io.FileNotFoundException;

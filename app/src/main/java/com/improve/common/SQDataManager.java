@@ -1,4 +1,4 @@
-package com.improve.manager;
+package com.improve.common;
 
 import com.improve.UIRouter;
 import com.improve.base.QDItemDescription;
@@ -10,6 +10,7 @@ import com.improve.modules.greendao.GreenDaoSwipeFragment;
 import com.improve.modules.greendao.RxGreenDaoSwipeFragment;
 import com.improve.modules.ipc.aidl.AIDIServiceSwipeFragment;
 import com.improve.modules.ipc.socket.TCPClientActivity;
+import com.improve.modules.kotlin.KotlinSwipeFragment;
 import com.improve.modules.network.HttpUrlConnectionSwipeFragment;
 import com.improve.modules.network.增量更新;
 import com.improve.modules.provider.ProviderFragment;
@@ -70,6 +71,7 @@ public class SQDataManager {
         list.add(new QDItemDescription(AnnotationActivity.class, UIRouter.FRAG_ANNOTATION, getImage()));
         list.add(new QDItemDescription(ThreadNavFragment.class, UIRouter.FRAG_THREAD_NAV, getImage()));
         list.add(new QDItemDescription(HttpUrlConnectionSwipeFragment.class, UIRouter.FRAG_NETWORK, getImage()));
+        list.add(new QDItemDescription(KotlinSwipeFragment.class, UIRouter.FRAG_KOTLIN, getImage()));
         return list;
     }
 

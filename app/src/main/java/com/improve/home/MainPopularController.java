@@ -3,7 +3,7 @@ package com.improve.home;
 import android.content.Context;
 
 import com.improve.R;
-import com.improve.manager.SQDataManager;
+import com.improve.common.SQDataManager;
 
 /**
  * Created by javakam on 2018/7/17.
