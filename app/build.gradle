@@ -221,35 +221,38 @@ android {
     }
 }
 
-greendao {
-    schemaVersion 1 // 数据库版本号
-    // 设置DaoMaster、DaoSession、Dao 包名, 一般为app包名+生成文件的文件夹名
-    daoPackage 'com.improve.data.dao'
-    //设置DaoMaster、DaoSession、Dao目录，生成文件路径
-    targetGenDir 'src/main/java'
-}
-
-kotlin {
-    experimental {
-        coroutines "enable"
-    }
-}
-
 dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
     implementation files('libs/nineoldandroids-2.4.0.jar')
+
+    //Kotlin Anko
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+    implementation "org.jetbrains.anko:anko-sdk25:$anko_version"
+    implementation "org.jetbrains.anko:anko-sdk25-coroutines:$anko_version"
+    implementation "org.jetbrains.anko:anko-appcompat-v7:$anko_version"
+
+    //Jetpack
+    implementation dep["app_compat"]
+    implementation dep["annotations"]
+    implementation dep["recyclerview"]
+    implementation dep["cardview"]
+    implementation dep["design"]
+    implementation dep["core_utils"]
+    implementation dep["fragment_runtime"]
+    implementation dep["lifecycle-extensions"]
+
     // Test
     testImplementation deps.junit
     androidTestImplementation deps.test_runner
     androidTestImplementation deps.test_espresso
 
     // Support libraries
-    implementation deps.support.support_v4
-    implementation deps.support.appcompat_v7
-    implementation deps.support.cardview_v7
-    implementation deps.support.recyclerview_v7
+    // TODO 2019年8月23日 17:11:21
+    implementation deps["support-v4"]
+    implementation deps.support.appcompat-v7
+    implementation deps.support.cardview-v7
+    implementation deps.support.recyclerview-v7
     implementation deps.support.design
-    implementation deps.support.annotations
     implementation deps.support.constraint
 
     // RxJava & Retrofit & Glide4
@@ -258,7 +261,7 @@ dependencies {
     implementation deps.rxandroid
     implementation deps.rxbinding2
     implementation deps.okhttp
-    implementation deps.okhttp_logging_interceptor
+    implementation deps.okhttp-logging-interceptor
     implementation deps.retrofit.runtime
     implementation deps.retrofit.retrofit_converter_gson
     implementation deps.retrofit.retrofit_adapter_rxjava2
@@ -304,3 +307,19 @@ dependencies {
     implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
 
 }
+
+
+greendao {
+    schemaVersion 1 // 数据库版本号
+    // 设置DaoMaster、DaoSession、Dao 包名, 一般为app包名+生成文件的文件夹名
+    daoPackage 'com.improve.data.dao'
+    //设置DaoMaster、DaoSession、Dao目录，生成文件路径
+    targetGenDir 'src/main/java'
+}
+
+kotlin {
+    experimental {
+        coroutines "enable"
+    }
+}
+

@@ -22,6 +22,11 @@ ext {
 
     dependencies = [
 
+            //base test
+            "junit"                        : "junit:junit:4.12",
+            "test-runner"                  : "com.android.support.test:runner:1.0.2",
+            "test-espresso-core"           : "com.android.support.test.espresso:espresso-core:3.0.2",
+
             //base
             "support-v4"                   : "com.android.support:support-v4:${version.support}",
             "appcompat-v7"                 : "com.android.support:appcompat-v7:${version.support}",
@@ -31,31 +36,23 @@ ext {
             "constraint"                   : "com.android.support.constraint:constraint-layout:1.1.3",
             "multidex"                     : "com.android.support:multidex:1.0.1",
 
-            //base test
-            "junit"                        : "junit:junit:4.12",
-            "test-runner"                  : "com.android.support.test:runner:1.0.2",
-            "test-espresso-core"           : "com.android.support.test.espresso:espresso-core:3.0.2",
-
             //network
             "gson"                         : "com.google.code.gson:gson:2.8.4",
-            "rxjava"                       : "io.reactivex.rxjava2:rxjava:2.1.9",
+            "rxjava2"                       : "io.reactivex.rxjava2:rxjava:2.1.9",
             "rxandroid"                    : "io.reactivex.rxjava2:rxandroid:2.0.2",
-            "rxbinding"                    : "com.jakewharton.rxbinding2:rxbinding:2.1.1",
+            "rxbinding2"                    : "com.jakewharton.rxbinding2:rxbinding:2.1.1",
             "retrofit"                     : "com.squareup.retrofit2:retrofit:${version.retrofit}",
             "retrofit-converter-gson"      : "com.squareup.retrofit2:converter-gson:${version.retrofit}",
             "retrofit-adapter-rxjava2"     : "com.squareup.retrofit2:adapter-rxjava2:${version.retrofit}",
             "okhttp"                       : "com.squareup.okhttp3:okhttp:${version.okhttp}",
             "okhttp-logging-interceptor"   : "com.squareup.okhttp3:logging-interceptor:${version.okhttp}",
 
-            // 图片加载
             "glide"                        : "com.github.bumptech.glide:glide:${version.glide}",
             "glide-compiler"               : "com.github.bumptech.glide:compiler:${version.glide}",
-            //路由组件
             "arouter-api"                  : "com.alibaba:arouter-api:1.3.1",
             "arouter-compiler"             : "com.alibaba:arouter-compiler:1.1.4",
-            //
             "eventbus"                     : "org.greenrobot:eventbus:${version.eventbus}",
-            "eventbus-annotation-processor": "org.greenrobot:eventbus:${version.eventbus}",
+            "eventbus-annotation-processor": "org.greenrobot:eventbus-annotation-processor:${version.eventbus}",
 
             "qmui"                         : "com.qmuiteam:qmui:${version.qmui}",
             "flexbox"                      : "com.google.android:flexbox:1.0.0",
@@ -64,7 +61,24 @@ ext {
             // This is only needed if you want to use encrypted databases
             "database-sqlcipher"           : "net.zetetic:android-database-sqlcipher:3.5.6",
             "recycler-helper"              : "com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.40",
-            "greendao"                     : "org.greenrobot:greendao:${version.greendao}"
+            "greendao"                     : "org.greenrobot:greendao:${version.greendao}",
+
+            //*********************************** Jetpack ***********************************//
+            //support
+            "app_compat"                : "androidx.appcompat:appcompat:${version.appcompat}",
+            "annotations"               : "androidx.annotation:annotation:${version.support}",
+            "recyclerview"              : "androidx.recyclerview:recyclerview:${version.support}",
+            "cardview"                  : "androidx.cardview:cardview:${version.support}",
+            "design"                    : "com.google.android.material:material:${version.support}",
+            "core_utils"                : "androidx.legacy:legacy-support-core-utils:${version.support}",
+            "core_ktx"                  : "androidx.core:core-ktx:${version.core_ktx}",
+            "fragment_runtime"          : "androidx.fragment:fragment:${version.fragment}",
+            "fragment_runtime_ktx"      : "androidx.fragment:fragment-ktx:${version.fragment}",
+            "fragment_testing"          : "androidx.fragment:fragment-testing:${version.fragment}",
+
+            //Lifecycle -> All Dep https://developer.android.google.cn/jetpack/androidx/releases/lifecycle
+            //ViewModel and LiveData
+            "lifecycle-extensions"      : "androidx.lifecycle:lifecycle-extensions:${version.lifecycle_version}"
     ]
 }
 
