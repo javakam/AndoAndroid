@@ -1,18 +1,86 @@
-<resources>
-    <!-- IShiQing application theme. -->
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- improve application theme. -->
     <!-- 你可以通过在项目中的 theme 中用 <item name="(name)">(value)</item> 的形式来覆盖 QMUI 组件的默认表现。
          具体可指定的属性名请参考 @style/QMUI.Compat 中的属性。 -->
     <style name="SQAppTheme" parent="QMUI.Compat">
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
         <!-- 配置app自己的theme -->
+        <!-- 配置qmui提供的theme -->
         <item name="app_primary_color">?attr/qmui_config_color_blue</item>
         <item name="app_content_bg_color">@color/qmui_config_color_white</item>
+    </style>
+
+    <style name="FlexItem">
+        <item name="android:background">@drawable/flex_item_background</item>
+        <item name="android:gravity">center</item>
+    </style>
+
+    <!--textSize  Error:(11, 5) No resource found that matches the given name: attr 'textSize'.-->
+    <style name="TabLayoutTextStyle" parent="TextAppearance.Design.Tab">
+        <item name="android:textSize">12sp</item>
+        <item name="textAllCaps">false</item>
+    </style>
+
+
+    <!-- 两个按钮一行，有 Padding/Margin -->
+    <style name="FlexTwoQMButton">
+        <item name="android:maxLines">1</item>
+        <item name="android:textSize">12sp</item>
+        <item name="android:background">@drawable/flex_qmbt</item>
+        <item name="android:gravity">center</item>
+        <item name="android:layout_margin">@dimen/size_3</item>
+        <item name="layout_flexBasisPercent">40%</item>
+        <item name="layout_flexGrow">1</item>
+    </style>
+    <!-- 三个按钮一行，无 Padding/Margin -->
+    <style name="FlexThreeQMButton">
+        <item name="android:maxLines">1</item>
+        <item name="android:textColor">#eee</item>
+        <item name="android:layout_margin">@dimen/size_3</item>
+        <item name="android:textSize">12sp</item>
+        <item name="android:background">@drawable/flex_qmbt</item>
+        <item name="android:gravity">center</item>
+        <item name="layout_flexBasisPercent">30%</item>
+        <item name="layout_flexGrow">1</item>
+    </style>
+    <!-- 三个按钮一行，无 Padding/Margin , Vertical-->
+    <style name="FlexThreeQMButtonVertical">
+        <item name="android:textColor">#eee</item>
+        <item name="android:layout_margin">@dimen/size_6</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:background">@drawable/flex_qmbt</item>
+        <item name="android:gravity">center</item>
+        <item name="layout_flexBasisPercent">30%</item>
+        <item name="layout_flexGrow">1</item>
+    </style>
+
+    <style name="TopBarStyle">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/topbar_height</item>
+        <item name="qmui_topbar_bg_color">@color/app_base_bg</item>
+        <item name="qmui_topbar_title_color">@color/qmui_config_color_white</item>
     </style>
 
     <style name="SwipeBackLayout">
         <item name="shadow_left">@drawable/shadow_left</item>
         <item name="shadow_right">@drawable/shadow_right</item>
         <item name="shadow_bottom">@drawable/shadow_bottom</item>
+    </style>
+
+    <!-- activity或fragment切换的动画时间 -->
+    <integer name="qmui_anim_duration">300</integer>
+
+    <style name="SQTextInput"></style>
+
+    <style name="SQEditText">
+        <item name="android:textColorHint">@color/text_hint</item>
+        <item name="android:textCursorDrawable">@color/text_cursor</item>
+        <item name="android:gravity">left|center_vertical</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:maxLines">1</item>
+        <item name="android:background">@null</item>
+        <item name="android:padding">5dp</item>
+        <item name="android:ellipsize">end</item>
     </style>
 </resources>

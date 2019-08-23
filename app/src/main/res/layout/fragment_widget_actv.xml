@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/app_base_bg"
+    android:orientation="vertical">
+
+    <com.qmuiteam.qmui.widget.QMUITopBar
+        android:id="@+id/topbar"
+        style="@style/TopBarStyle" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="@dimen/topbar_height"
+        android:background="@color/qmui_config_color_white"
+        android:orientation="vertical"
+        android:paddingLeft="@dimen/dp_10"
+        android:paddingRight="@dimen/dp_10">
+
+        <android.support.v7.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/size_50"
+            android:layout_marginTop="20dp"
+            app:cardBackgroundColor="#ffe"
+            app:cardCornerRadius="@dimen/size_5"
+            app:contentPadding="@dimen/size_5">
+
+            <LinearLayout
+                android:id="@+id/ll_login_uname"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/imgPhone"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="3dp"
+                    android:layout_marginRight="3dp"
+                    android:src="@mipmap/ic_login_phone" />
+
+                <android.support.design.widget.TextInputLayout
+                    android:id="@+id/til_username"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_weight="1"
+                    android:gravity="center_vertical"
+                    android:textColorHint="@color/app_base_bg">
+
+                    <AutoCompleteTextView
+                        android:id="@+id/actv_username"
+                        style="@style/SQEditText"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:completionThreshold="1"
+                        android:hint="@string/login_username"
+                        android:inputType="text"
+                        tools:text="@string/test_string_1" />
+                </android.support.design.widget.TextInputLayout>
+            </LinearLayout>
+        </android.support.v7.widget.CardView>
+
+        <android.support.v7.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/size_50"
+            android:layout_marginTop="20dp"
+            app:cardBackgroundColor="#ffe"
+            app:cardCornerRadius="@dimen/size_5"
+            app:contentPadding="@dimen/size_5">
+
+            <LinearLayout
+                android:id="@+id/ll_login_pwd"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/imgPwd"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="3dp"
+                    android:layout_marginRight="3dp"
+                    android:src="@mipmap/ic_login_lock" />
+
+                <android.support.design.widget.TextInputLayout
+                    android:id="@+id/til_password"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_weight="1"
+                    android:gravity="center_vertical"
+                    android:textColorHint="@color/app_base_bg">
+
+                    <AutoCompleteTextView
+                        android:id="@+id/actv_password"
+                        style="@style/SQEditText"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:completionThreshold="1"
+                        android:hint="@string/login_pwd"
+                        android:imeActionId="6"
+                        android:imeActionLabel="Sign In"
+                        android:imeOptions="actionUnspecified"
+                        android:inputType="textPassword"
+                        tools:text="123456" />
+                </android.support.design.widget.TextInputLayout>
+            </LinearLayout>
+        </android.support.v7.widget.CardView>
+    </LinearLayout>
+</FrameLayout>

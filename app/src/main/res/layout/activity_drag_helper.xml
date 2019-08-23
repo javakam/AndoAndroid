@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.improve.modules.ui_process.dragview.my.ViewDragHelperDemo xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/viewDragHelper"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#cfa">
+
+        <Button
+            android:id="@+id/btMenu"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="菜单Menu" />
+    </FrameLayout>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#acc">
+
+        <Button
+            android:id="@+id/btMain"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="主界面Main" />
+
+    </FrameLayout>
+
+</com.improve.modules.ui_process.dragview.my.ViewDragHelperDemo>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="startScroll"
+        android:text="开始滑动" />
+
+    <FrameLayout
+        android:layout_width="300dp"
+        android:layout_height="400dp"
+        android:background="#acc">
+
+        <com.improve.modules.ui_process.dragview.my.DragDemoScroller
+            android:id="@+id/dragScroller"
+            android:layout_width="100dp"
+            android:layout_height="100dp" />
+
+    </FrameLayout>
+
+</LinearLayout>

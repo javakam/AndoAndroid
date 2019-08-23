@@ -1,0 +1,26 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/app_content_bg"
+    android:fitsSystemWindows="true">
+
+    <com.improve.modules.ui_process.event.MyViewGroupA
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@android:color/holo_blue_bright">
+
+        <com.improve.modules.ui_process.event.MyViewGroupB
+            android:layout_width="300dp"
+            android:layout_height="300dp"
+            android:background="@android:color/holo_green_dark">
+
+            <com.improve.modules.ui_process.event.MyView
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:background="@android:color/darker_gray" />
+
+        </com.improve.modules.ui_process.event.MyViewGroupB>
+
+    </com.improve.modules.ui_process.event.MyViewGroupA>
+</RelativeLayout>

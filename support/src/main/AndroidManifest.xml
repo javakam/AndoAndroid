@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.improve.support">
+
+    <!-- Socket进程间通信需要的权限 -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
+    <application
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme"
+        tools:ignore="GoogleAppIndexingWarning">
+        <activity android:name="com.improve.support.MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <!-- IPC AIDL Server -->
+        <service
+            android:name="com.improve.support.ipc.aidl.AIDLRemoteService"
+            android:enabled="true"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="it.is.an.aidl.service.server" />
+            </intent-filter>
+        </service>
+        <!-- IPC Socket -->
+        <service android:name="com.improve.support.ipc.socket.TCPServerService">
+            <intent-filter>
+                <action android:name="support.tcpserverservice" />
+            </intent-filter>
+        </service>
+
+
+        <!--在创建好一个ContentProvider之后，还需要在AndroidManifest.xml文件中对ContentProvider进行配置，使用一个<provider.../>节点，
+        一般只需要设置两个属性即可访问，一些额外的属性就是为了设置访问权限而存在的，
+            android:name：provider的响应类。
+            android:authorities：Provider的唯一标识，用于Uri匹配，一般为ContentProvider类的全名。-->
+
+        <!--访问权限
+       对于ContentProvider暴露出来的数据，应该是存储在自己应用内存中的数据，对于一些存储在外部存储器上的数据
+       ，并不能限制访问权限，使用ContentProvider就没有意义了。
+       对于ContentProvider而言，有很多权限控制，可以在AndroidManifest.xml文件中对<provider>节点的属性进行配置，
+
+       一般使用如下一些属性设置：
+       android:grantUriPermssions:临时许可标志。
+       android:permission:Provider读写权限。
+       android:readPermission:Provider的读权限。
+       android:writePermission:Provider的写权限。
+       android:enabled:标记允许系统启动Provider。
+       android:exported:标记允许其他应用程序使用这个Provider。
+       android:multiProcess:标记允许系统启动Provider相同的进程中调用客户端。-->
+        <provider
+            android:name="com.improve.support.provider.StudentProvider"
+            android:authorities="com.improve.support.provider.StudentProvider"></provider>
+    </application>
+</manifest>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/app_base_bg"
+    android:orientation="vertical">
+
+    <com.qmuiteam.qmui.widget.QMUITopBar
+        android:id="@+id/topbar"
+        style="@style/TopBarStyle" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="@dimen/topbar_height"
+        android:background="@color/qmui_config_color_white"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <com.qmuiteam.qmui.widget.roundwidget.QMUIRoundButton
+            android:id="@+id/btnStart"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="?attr/qmui_content_spacing_horizontal"
+            android:layout_marginRight="?attr/qmui_content_spacing_horizontal"
+            android:gravity="center"
+            android:padding="10dp"
+            android:text="@string/start_intent_service"
+            app:qmui_isRadiusAdjustBounds="true" />
+    </LinearLayout>
+</FrameLayout>

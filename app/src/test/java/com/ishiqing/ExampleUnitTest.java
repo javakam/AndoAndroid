@@ -1,4 +1,4 @@
-package com.ishiqing;
+package com.improve;
 
 import org.junit.Test;
 

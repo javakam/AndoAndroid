@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical">
+
+    <com.improve.modules.ui_hencoder.lesson.BasicDrawView
+        android:id="@+id/myDrawView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <com.improve.modules.ui_hencoder.lesson.BasicPathView
+        android:id="@+id/myPathView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone" />
+
+    <com.improve.modules.ui_hencoder.lesson.BasicPaintView
+        android:id="@+id/myPaintView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone" />
+</LinearLayout>

@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.ishiqing">
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.improve">
 
+    <uses-sdk tools:overrideLibrary="com.bin.david.form" />
+
+    <!-- 可以使用系统 Window -->
     <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
     <!-- 获取系统联系人的读/写权限 -->
     <uses-permission android:name="android.permission.READ_CONTACTS" />
@@ -9,17 +13,27 @@
     <!-- 文件夹读写权限 -->
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <!-- 联网权限 -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <!-- 获取网络连接状态的权限 -->
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <!-- 拨打电话和挂断电话的权限 -->
+    <uses-permission android:name="android.permission.CALL_PHONE" />
 
+    <!--
+        <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+        <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    -->
     <application
         android:name=".SQApplication"
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@mipmap/logo"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/SQAppTheme">
+        android:theme="@style/SQAppTheme"
+        tools:ignore="GoogleAppIndexingWarning">
         <activity
-            android:name=".MainActivityQMUI"
+            android:name=".common.MainActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:label="@string/app_name"
             android:windowSoftInputMode="stateAlwaysHidden|adjustResize">
@@ -29,13 +43,54 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".modules.ipc.socket.TCPClientActivity" />
+        <activity android:name=".modules.ui_hencoder.DrawMainActivity" />
+        <activity android:name=".modules.ui_hencoder.PracticeActivity" />
+        <activity android:name=".modules.eventbus3.EventBusMainActivity" />
+        <activity android:name=".modules.eventbus3.EventBusPriorityActivity" />
+        <activity android:name=".modules.eventbus3.EventBusThreadModeActivity" />
+        <activity android:name=".modules.ui_process.art.activity.ArtTestActivity" />
+        <activity android:name=".modules.ui_process.art.activity.ArtThirdActivity" />
+        <activity android:name=".modules.ui_process.art.activity.ArtDemoActivity_1" />
+        <activity android:name=".modules.ui_process.art.activity.ArtDemoActivity_2" />
+        <activity android:name=".modules.ui_process.dragview.DragViewMainActivity" />
+        <activity android:name=".modules.ui_process.dragview.DragViewGroupActivity" />
+        <activity android:name=".modules.ui_process.dragview.DragViewActivity" />
+        <activity android:name=".modules.ui_process.dragview.my.MyDragViewMainActivity" />
+        <activity android:name=".modules.ui_process.dragview.my.DragActivity" />
+        <activity android:name=".modules.ui_process.dragview.my.MyPracticeActivity" />
+        <activity android:name=".modules.ui_process.heros.activity.HerosMainActivity" />
+        <activity android:name=".modules.ui_process.heros.activity.MyViewTest" />
+        <activity android:name=".modules.ui_process.heros.activity.TopBarTest" />
+        <activity android:name=".modules.window.WindowActivity" />
+        <activity android:name=".modules.annotation.AnnotationActivity" />
+        <activity android:name=".modules.ui_process.imageloader.ImageLoaderActivity" />
 
+
+        <!-- Service一个隐式跳转，一个显示跳转 com.improve.modules.service.IntentServiceSwipeFragment -->
+        <!-- IntentService一定要配置，否则是不起作用的 -->
+        <service android:name=".modules.service.intentservice.MyIntentService">
+            <intent-filter>
+                <action android:name="suibianqimingdouxing" />
+            </intent-filter>
+        </service>
         <service android:name=".modules.service.MyService1" />
         <service android:name=".modules.service.MyService2" />
         <service android:name=".modules.service.MyService3" />
         <service android:name=".modules.service.MyService4" />
 
-        <activity android:name=".modules.activity.SampleActivity1"></activity>
+        <!-- 注：我们自己的监测网络状态的广播，要覆盖系统的广播 -->
+        <receiver android:name=".modules.network.MyNetStateReceiver">
+            <intent-filter>
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE"
+                    tools:ignore="BatteryLife" />
+            </intent-filter>
+        </receiver>
+
+        <!-- app build.gradle -->
+        <meta-data
+            android:name="CHANNEL"
+            android:value="${channel}" />
     </application>
 
 </manifest>

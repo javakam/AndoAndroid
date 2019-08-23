@@ -1,0 +1,10 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.improve.modules.ui_process.heros.view.ShineTextView
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:text="My Android TextView"
+        android:textSize="30sp" />
+</LinearLayout>

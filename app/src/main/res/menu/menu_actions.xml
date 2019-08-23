@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/item_menu_canvas"
+        android:title="Canvas基础"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/item_menu_path"
+        android:title="Path进阶"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/item_menu_paint"
+        android:title="Paint详解"
+        app:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/item_menu_practice"
+        android:title="UI 1-1绘制基础练习"
+        app:showAsAction="never" />
+</menu>
