@@ -112,6 +112,8 @@ public class DragDemoDefault extends View {
                 lastX = x;
                 lastY = y;
                 break;
+            default:
+                break;
         }
         return true;
     }

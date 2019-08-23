@@ -25,6 +25,7 @@ import java.util.List;
  * Created by javakam on 2018/9/6.
  */
 public class ImageLoaderActivity extends BaseActivity implements AbsListView.OnScrollListener {
+
     private static final String TAG = "ImageLoaderActivity";
 
     private List<String> mUrList = new ArrayList<String>();

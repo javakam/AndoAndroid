@@ -24,7 +24,6 @@ versions.okhttp = "3.10.0"
 versions.retrofit = "2.4.0"
 
 versions.glide = "4.7.1"
-versions.butterknife = "8.8.1"
 versions.arouter_api = "1.3.1"
 versions.arouter_compiler = "1.1.4"
 versions.qmui = "1.1.5"
@@ -54,7 +53,7 @@ deps.test_espresso = "com.android.support.test.espresso:espresso-core:$versions.
 //network
 deps.gson = "com.google.code.gson:gson:$versions.gson"
 deps.rxjava2 = "io.reactivex.rxjava2:rxjava:$versions.rxjava2"
-deps.rxandroid = "io.reactivex.rxjava2:rxandroid:$versions.rx_android"
+deps.rxandroid = "io.reactivex.rxjava2:rxandroid:$versions.rxandroid"
 deps.rxbinding2 = "com.jakewharton.rxbinding2:rxbinding:$versions.rxbinding2"
 deps.okhttp = "com.squareup.okhttp3:okhttp:$versions.okhttp"
 deps.okhttp_logging_interceptor = "com.squareup.okhttp3:logging-interceptor:$versions.okhttp"
@@ -70,11 +69,6 @@ def glide = [:]
 glide.runtime = "com.github.bumptech.glide:glide:$versions.glide"
 glide.compiler = "com.github.bumptech.glide:compiler:$versions.glide"
 deps.glide = glide
-// 黄油刀
-def butterknife = [:]
-butterknife.runtime = "com.jakewharton:butterknife:$versions.butterknife"
-butterknife.compiler = "com.jakewharton:butterknife-compiler:$versions.butterknife"
-deps.butterknife = butterknife
 // 路由组件
 def arouter = [:]
 arouter.runtime = "com.alibaba:arouter-api:$versions.arouter_api"

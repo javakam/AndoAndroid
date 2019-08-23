@@ -16,17 +16,14 @@ import com.qmuiteam.qmui.widget.QMUIPagerAdapter;
 import com.qmuiteam.qmui.widget.QMUITabSegment;
 import com.qmuiteam.qmui.widget.QMUIViewPager;
 
-import butterknife.BindView;
-
 /**
  * Activity
  * <p>
  * Created by javakam on 2018/6/20.
  */
-public class ActiviyEntranceSwipeFragment extends BaseSwipeFragment {
-    @BindView(R.id.pager)
+public class ActivityEntranceFragment extends BaseSwipeFragment {
+
     QMUIViewPager mViewPager;
-    @BindView(R.id.tabs)
     QMUITabSegment mTabSegment;
 
     @Override
@@ -37,6 +34,8 @@ public class ActiviyEntranceSwipeFragment extends BaseSwipeFragment {
     @Override
     protected void initViews(View v) {
         initTopBar(UIRouter.FRAG_ACTIVITY1, true);
+        mViewPager=v.findViewById(R.id.pager);
+        mTabSegment=v.findViewById(R.id.tabs);
         initTabs();
         initPagers();
     }
@@ -82,7 +81,7 @@ public class ActiviyEntranceSwipeFragment extends BaseSwipeFragment {
                     case 0:
                         return new UIProcessFragment();
                     case 1:
-                        return new Base64SwipeFragment();
+                        return new Base64Fragment();
                     default:
                         return new UIProcessFragment();
                 }

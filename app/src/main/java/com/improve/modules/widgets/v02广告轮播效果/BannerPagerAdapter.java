@@ -70,6 +70,8 @@ class BannerPagerAdapter extends PagerAdapter {
                         mHandler.removeCallbacksAndMessages(null);
                         mHandler.sendEmptyMessageDelayed(0, 4000);
                         break;
+                    default:
+                        break;
                 }
                 return false;
             }

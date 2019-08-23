@@ -13,20 +13,15 @@ import com.improve.base.fragment.BaseSwipeFragment;
 
 import java.util.ArrayList;
 
-import butterknife.BindView;
-
 /**
  * AutoCompleteTextView & TextInputLayout 基本操作
  * Created by javakam on 2018/6/28.
  */
 public class AutoCompleteTextViewFragment extends BaseSwipeFragment {
-    @BindView(R.id.actv_username)
+
     AutoCompleteTextView actvUsername;
-    @BindView(R.id.til_username)
     TextInputLayout tilUsername;
-    @BindView(R.id.actv_password)
     AutoCompleteTextView actvPassword;
-    @BindView(R.id.til_password)
     TextInputLayout tilPassword;
     /**
      * Data List
@@ -41,6 +36,11 @@ public class AutoCompleteTextViewFragment extends BaseSwipeFragment {
     @Override
     protected void initViews(View v) {
         initTopBar(UIRouter.FRAG_WIDGET_ACTV, true);
+        actvUsername=v.findViewById(R.id.actv_username);
+        tilUsername=v.findViewById(R.id.til_username);
+        actvPassword=v.findViewById(R.id.actv_password);
+        tilPassword=v.findViewById(R.id.til_password);
+
         //在 AutoCompleteTextView 弹出的列表底部提示 用户名
 //        actvUsername.setCompletionHint("请选择账号"); //不好看
         //取出上次登录过的用户名，方便登录

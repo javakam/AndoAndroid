@@ -22,9 +22,10 @@ import java.util.List;
 /**
  * Created by javakam on 2018/7/19.
  */
-public class SmartTableSwipeFragment extends BaseSwipeFragment {
-    private SmartTable<ResultBean> table;
-    private FloatingActionButton floatButton;
+public class SmartTableFragment extends BaseSwipeFragment {
+
+    private SmartTable<ResultBean> mSmartTable;
+    private FloatingActionButton mFloatButton;
     //演示数据
     private List<ResultBean> resultBeans = new ArrayList<>();
 
@@ -39,12 +40,12 @@ public class SmartTableSwipeFragment extends BaseSwipeFragment {
         initTopBar("SmartTable", true);
 
         FontStyle.setDefaultTextSize(DensityUtils.sp2px(mActivity, 15));
-        table = (SmartTable) v.findViewById(R.id.table);
-        floatButton = v.findViewById(R.id.floatButton);
+        mSmartTable = (SmartTable) v.findViewById(R.id.table);
+        mFloatButton = v.findViewById(R.id.floatButton);
         //  定制SmartTable显示效果
         makeTableNice();
         //  模拟扫描完成更新行状态（颜色等）
-        floatButton.setOnClickListener(new View.OnClickListener() {
+        mFloatButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 if (!resultBeans.isEmpty()) {
@@ -61,21 +62,21 @@ public class SmartTableSwipeFragment extends BaseSwipeFragment {
     private void makeTableNice() {
 //        FontStyle.setDefaultTextSize(DensityUtils.sp2px(mActivity, 15));
         int dp5 = DensityUtils.dp2px(mActivity, 10);
-        table.getConfig().setVerticalPadding(dp5)
+        mSmartTable.getConfig().setVerticalPadding(dp5)
                 .setTextLeftOffset(dp5);
         //展示Table名
-        table.getConfig().setShowTableTitle(true);
+        mSmartTable.getConfig().setShowTableTitle(true);
         //X序号列
-        table.getConfig().setShowXSequence(false);
+        mSmartTable.getConfig().setShowXSequence(false);
         //Y序号列
-        table.getConfig().setShowYSequence(true);
+        mSmartTable.getConfig().setShowYSequence(true);
         //固定列标题
-        table.getConfig().setFixedTitle(true);
-        table.getConfig().setColumnTitleBackground(new BaseBackgroundFormat(
+        mSmartTable.getConfig().setFixedTitle(true);
+        mSmartTable.getConfig().setColumnTitleBackground(new BaseBackgroundFormat(
                 ContextCompat.getColor(mActivity, android.R.color.holo_purple)));
-        table.getConfig().setColumnTitleVerticalPadding(14);
+        mSmartTable.getConfig().setColumnTitleVerticalPadding(14);
         //设置最小宽度 - 不铺满屏幕宽度情况下会很丑。。。
-        table.getConfig().setMinTableWidth(UiUtil.getScreenWidth(mActivity));
+        mSmartTable.getConfig().setMinTableWidth(UiUtil.getScreenWidth(mActivity));
     }
 
     /**
@@ -114,7 +115,7 @@ public class SmartTableSwipeFragment extends BaseSwipeFragment {
         resultBeans.add(resultExtra);
 
         //2重置颜色
-        table.getConfig().setContentCellBackgroundFormat(new BaseCellBackgroundFormat<CellInfo>() { // 设置行颜色
+        mSmartTable.getConfig().setContentCellBackgroundFormat(new BaseCellBackgroundFormat<CellInfo>() { // 设置行颜色
             @Override
             public int getBackGroundColor(CellInfo cellInfo) {
                 int color = 0;
@@ -132,7 +133,7 @@ public class SmartTableSwipeFragment extends BaseSwipeFragment {
                 return Color.WHITE;
             }
         });
-        table.setData(resultBeans);
+        mSmartTable.setData(resultBeans);
     }
 
     public void getData() {
@@ -171,6 +172,6 @@ public class SmartTableSwipeFragment extends BaseSwipeFragment {
         }
 //        MapTableData tableData = MapTableData.create("Json表格", JsonHelper.jsonToMapList(json));
 //        table.setTableData(tableData);
-        table.setData(resultBeans);
+        mSmartTable.setData(resultBeans);
     }
 }

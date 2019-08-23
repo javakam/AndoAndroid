@@ -8,9 +8,6 @@ import com.improve.R;
 import com.improve.base.fragment.BaseSwipeFragment;
 import com.improve.utils.L;
 
-import butterknife.BindView;
-import butterknife.OnClick;
-
 /**
  * HandlerThread -- 【疑惑】
  * <p>
@@ -20,7 +17,6 @@ import butterknife.OnClick;
  */
 public class ClassLoaderFragment extends BaseSwipeFragment {
 
-    @BindView(R.id.tvResult)
     TextView tvResult;
 
     @NonNull
@@ -32,14 +28,19 @@ public class ClassLoaderFragment extends BaseSwipeFragment {
     @Override
     protected void initViews(View v) {
         initTopBar("HandlerThread", true);
+        tvResult = v.findViewById(R.id.tvResult);
+
+        v.findViewById(R.id.btTest1).setOnClickListener(this);
+        v.findViewById(R.id.btTest2).setOnClickListener(this);
+        v.findViewById(R.id.btTest3).setOnClickListener(this);
     }
 
     /*
     【重】静态成员 会在类加载的时候初始化
     【重】静态成员变量 属于类不属于对象，所以不会参与序列化过程；其次用 transient 关键字标记的成员变量不参与序列化过程。
      */
-    @OnClick({R.id.btTest1, R.id.btTest2, R.id.btTest3})
-    void onclick(View v) {
+    @Override
+    public void onClick(View v) {
         switch (v.getId()) {
             case R.id.btTest1:
                 //注意看 TestClassLoad中的静态代码块是否执行
@@ -61,6 +62,7 @@ public class ClassLoaderFragment extends BaseSwipeFragment {
                 L.e("Test3: " + TestClassLoad.POS222);
                 break;
             default:
+                break;
         }
     }
 }

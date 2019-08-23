@@ -8,8 +8,6 @@ import com.improve.R;
 import com.improve.UIRouter;
 import com.improve.base.fragment.BaseSwipeFragment;
 
-import butterknife.OnClick;
-
 /**
  * IntentService -- IntentService中的ServiceHandler.handleMessage{...}是在 子线程HandlerThread 中执行的
  * <p>
@@ -25,10 +23,11 @@ public class IntentServiceFragment extends BaseSwipeFragment {
     @Override
     protected void initViews(View v) {
         initTopBar(UIRouter.FRAG_INTENT_SERVICE, true);
+        v.findViewById(R.id.btnStart).setOnClickListener(this);
     }
 
-    @OnClick({R.id.btnStart})
-    void start(View v) {
+    @Override
+    public void onClick(View v) {
         switch (v.getId()) {
             case R.id.btnStart:
                 //可以启动多次，每启动一次，就会新建一个work thread，但IntentService的实例始终只有一个
@@ -56,6 +55,7 @@ public class IntentServiceFragment extends BaseSwipeFragment {
             case R.id.btnStop:
                 break;
             default:
+                break;
         }
     }
 }

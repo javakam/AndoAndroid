@@ -7,11 +7,8 @@ import com.improve.R;
 import com.improve.UIRouter;
 import com.improve.base.fragment.BaseSwipeFragment;
 
-import butterknife.BindView;
-import butterknife.OnClick;
-
 /**
- * Title:KotlinSwipeFragment
+ * Title:KotlinFragment
  * <p>
  * Description:Kotlin
  * </p>
@@ -19,10 +16,9 @@ import butterknife.OnClick;
  * @author Changbao
  * @date 2019/8/22 16:54
  */
-public class KotlinSwipeFragment extends BaseSwipeFragment {
+public class KotlinFragment extends BaseSwipeFragment {
 
-    @BindView(R.id.tvKotlin)
-    TextView tvKotlin;
+    private TextView tvKotlin;
 
     @Override
     protected int getLayoutResId() {
@@ -32,10 +28,13 @@ public class KotlinSwipeFragment extends BaseSwipeFragment {
     @Override
     protected void initViews(View v) {
         initTopBar(UIRouter.FRAG_KOTLIN, true);
+        tvKotlin = v.findViewById(R.id.tvKotlin);
+
+        v.findViewById(R.id.tvKotlin).setOnClickListener(this);
     }
 
-    @OnClick({R.id.tvKotlin})
-    void getNetConn(View v) {
+    @Override
+    public void onClick(View v) {
         final int vid = v.getId();
         switch (vid) {
             case R.id.tvKotlin:

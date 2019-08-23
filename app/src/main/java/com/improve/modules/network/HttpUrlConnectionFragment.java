@@ -11,7 +11,6 @@ import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.AsyncTask;
 import android.provider.Settings;
-import android.support.annotation.Nullable;
 import android.support.v4.app.NotificationCompat;
 import android.support.v4.app.NotificationManagerCompat;
 import android.view.View;
@@ -30,8 +29,6 @@ import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
 
-import butterknife.BindView;
-import butterknife.OnClick;
 
 /**
  * 网络编程常用的API
@@ -44,11 +41,8 @@ import butterknife.OnClick;
  * <p>
  * Created by javakam on 2018/6/26 0026.
  */
-public class HttpUrlConnectionSwipeFragment extends BaseSwipeFragment {
-    @BindView(R.id.tvNetWork)
+public class HttpUrlConnectionFragment extends BaseSwipeFragment {
     TextView tvNetWork;
-    @Nullable
-    @BindView(R.id.imgDownLoad)
     ImageView imgDownLoad;
 
     @Override
@@ -59,12 +53,19 @@ public class HttpUrlConnectionSwipeFragment extends BaseSwipeFragment {
     @Override
     protected void initViews(View v) {
         initTopBar(UIRouter.FRAG_NETWORK, true);
+        tvNetWork = v.findViewById(R.id.tvNetWork);
+        imgDownLoad = v.findViewById(R.id.imgDownLoad);
+
+        v.findViewById(R.id.btnGetActiveNet).setOnClickListener(this);
+        v.findViewById(R.id.btnGetAllNet).setOnClickListener(this);
+        v.findViewById(R.id.btnDownLoad).setOnClickListener(this);
+        v.findViewById(R.id.btnGoToUpload).setOnClickListener(this);
+        v.findViewById(R.id.btnDownAndInstallApk).setOnClickListener(this);
     }
 
-    @OnClick({R.id.btnGetActiveNet, R.id.btnGetAllNet, R.id.btnDownLoad, R.id.btnGoToUpload
-            , R.id.btnDownAndInstallApk})
-    void getNetConn(View v) {
-        ConnectivityManager connManager
+    @Override
+    public void onClick(View v) {
+        final ConnectivityManager connManager
                 = (ConnectivityManager) mActivity.getSystemService(Context.CONNECTIVITY_SERVICE);
         switch (v.getId()) {
             case R.id.btnGetActiveNet:
@@ -119,7 +120,7 @@ public class HttpUrlConnectionSwipeFragment extends BaseSwipeFragment {
                 上传文件头文件的格式
                 客户端实现文件上传
                  */
-                mActivity.startFragment(new HttpUploadSwipeFragment());
+                mActivity.startFragment(new HttpUploadFragment());
                 break;
             case R.id.btnDownAndInstallApk:
                 //下载并安装 APK

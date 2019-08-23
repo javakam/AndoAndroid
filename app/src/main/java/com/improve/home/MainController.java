@@ -21,17 +21,12 @@ import com.qmuiteam.qmui.widget.QMUITopBar;
 
 import java.util.List;
 
-import butterknife.BindView;
-import butterknife.ButterKnife;
-
 /**
  * @author javakam
  * @date 2018-6-16
  */
 public abstract class MainController extends FrameLayout {
-    @BindView(R.id.topbar)
     QMUITopBar mTopBar;
-    @BindView(R.id.recyclerView)
     RecyclerView mRecyclerView;
 
     private MainControlListener mMainControlListener;
@@ -41,7 +36,8 @@ public abstract class MainController extends FrameLayout {
     public MainController(Context context) {
         super(context);
         LayoutInflater.from(context).inflate(R.layout.main_layout, this);
-        ButterKnife.bind(this);
+        mTopBar = findViewById(R.id.topbar);
+        mRecyclerView = findViewById(R.id.recyclerView);
         initTopBar();
         initRecyclerView();
     }

@@ -1,13 +1,13 @@
 package com.improve.base;
 
-import android.app.Application;
 import android.content.res.Configuration;
 import android.content.res.Resources;
+import android.support.multidex.MultiDexApplication;
 
 /**
  * Created by javakam on 2018/7/3.
  */
-public class BaseApplication extends Application {
+public abstract class BaseApplication extends MultiDexApplication {
 
     private static BaseApplication instance;
 

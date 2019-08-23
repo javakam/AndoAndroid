@@ -3,7 +3,6 @@
  * https://github.com/javakam/ModuleApp/blob/c892a42bef2354068d6176a3a99f1723f5aca2ea/app/build.gradle
  */
 apply plugin: 'com.android.application'
-apply plugin: 'com.jakewharton.butterknife'
 apply plugin: 'org.greenrobot.greendao'
 //apply plugin: 'realm-android'
 apply plugin: 'kotlin-android'
@@ -141,9 +140,7 @@ android {
         }
     }
 
-    /*创建一个新的ProductFlavor的步骤为：
-        在productFlavors容器下添加一个自定义名称的元素
-        使用闭包进行配置*/
+    /*创建一个新的ProductFlavor的步骤为：在productFlavors容器下添加一个自定义名称的元素，使用闭包进行配置*/
     productFlavors {
         demo {
             //manifestPlaceholders = [CHANNEL: "SQ"]
@@ -268,13 +265,11 @@ dependencies {
     // annotationProcessor deps.arouter.compiler
     implementation deps.glide.runtime
     annotationProcessor deps.glide.compiler
-    implementation deps.butterknife.runtime
-    annotationProcessor deps.butterknife.compiler
     implementation deps.arouter.runtime
     annotationProcessor deps.arouter.compiler
     implementation deps.eventbus.runtime
     annotationProcessor deps.eventbus.processor
-    
+
     implementation deps.greendao
     implementation deps.qmui
     implementation deps.recycler_helper

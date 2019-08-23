@@ -22,9 +22,6 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Set;
 
-import butterknife.BindView;
-import butterknife.OnClick;
-
 /**
  * 文件上传
  * <p>
@@ -35,13 +32,13 @@ import butterknife.OnClick;
  * <p>
  * Created by javakam on 2018/6/26 0026.
  */
-public class HttpUploadSwipeFragment extends BaseSwipeFragment {
-    @BindView(R.id.tvResult)
+public class HttpUploadFragment extends BaseSwipeFragment {
+
     TextView tvResult;
 
-    private String URL_LOGIN_WANANDROID = "http://www.wanandroid.com/user/login";
-    //    private String URL_PROJECT_TREE = "http://www.wanandroid.com/project/tree/json";
-    private String URL_PROJECT_TREE = "https://www.sojson.com/open/api/weather/json.shtml";// ?city=北京
+    private final static String URL_LOGIN_WANANDROID = "http://www.wanandroid.com/user/login";
+    // private final static String URL_PROJECT_TREE = "http://www.wanandroid.com/project/tree/json";
+    private final static String URL_PROJECT_TREE = "https://www.sojson.com/open/api/weather/json.shtml";// ?city=北京
 
     @Override
     protected int getLayoutResId() {
@@ -51,11 +48,13 @@ public class HttpUploadSwipeFragment extends BaseSwipeFragment {
     @Override
     protected void initViews(View v) {
         initTopBar(UIRouter.FRAG_NETWORK_UPLOAD, true);
+        tvResult = v.findViewById(R.id.tvResult);
+        v.findViewById(R.id.btnUpload).setOnClickListener(this);
+        v.findViewById(R.id.btnGetProjectClass).setOnClickListener(this);
     }
 
-    @OnClick({R.id.btnUpload, R.id.btnGetProjectClass})
-    void getNetConn(View v) {
-
+    @Override
+    public void onClick(View v) {
         switch (v.getId()) {
             case R.id.btnUpload:
                 // 登录操作
@@ -96,7 +95,9 @@ public class HttpUploadSwipeFragment extends BaseSwipeFragment {
         @Override
         public void handleMessage(Message msg) {
             super.handleMessage(msg);
-            tvResult.setText(String.valueOf(msg.obj));
+            if (tvResult != null) {
+                tvResult.setText(String.valueOf(msg.obj));
+            }
         }
     };
 

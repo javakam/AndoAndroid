@@ -13,22 +13,13 @@ import com.qmuiteam.qmui.util.QMUIStatusBarHelper;
 import com.qmuiteam.qmui.widget.QMUIEmptyView;
 import com.qmuiteam.qmui.widget.QMUITopBar;
 
-import butterknife.BindView;
-import butterknife.ButterKnife;
-import butterknife.Unbinder;
-
 /**
  * Created by javakam on 2018/6/20.
  */
 public abstract class BaseActivity extends AppCompatActivity {
-    @Nullable
-    @BindView(R.id.topbar)
-    protected QMUITopBar mTopBar;
-    @Nullable
-    @BindView(R.id.emptyView)
-    protected QMUIEmptyView mEmptyView;
 
-    private Unbinder mUnbinder;
+    protected QMUITopBar mTopBar;
+    protected QMUIEmptyView mEmptyView;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -46,7 +37,8 @@ public abstract class BaseActivity extends AppCompatActivity {
 
         QMUIStatusBarHelper.translucent(this);
         setContentView(getLayoutId());
-        mUnbinder = ButterKnife.bind(this);
+        mTopBar = findViewById(R.id.topbar);
+        mEmptyView = findViewById(R.id.emptyView);
         initViews(savedInstanceState);
     }
 
@@ -58,9 +50,6 @@ public abstract class BaseActivity extends AppCompatActivity {
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        if (mUnbinder != null) {
-            mUnbinder.unbind();
-        }
         // 从栈中移除该Activity & 结束Activity
         ActivityManager.getActivityManager().finishActivity();
     }

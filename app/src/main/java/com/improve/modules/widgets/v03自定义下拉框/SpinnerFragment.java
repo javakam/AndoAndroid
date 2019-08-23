@@ -18,27 +18,20 @@ import com.improve.utils.UiUtil;
 
 import java.util.ArrayList;
 
-import butterknife.BindView;
-
 /**
  * 01优酷菜单 {@link UiUtil hideView() }
  * Created by machangbao on 2018/10/1.
  */
 public class SpinnerFragment extends BaseSwipeFragment {
-    @BindView(R.id.et_input)
-    protected EditText et_input;
-    @BindView(R.id.iv_down_arrow)
-    protected ImageView iv_down_arrow;
 
-    /**
-     *
-     */
+    protected EditText et_input;
+    protected ImageView iv_down_arrow;
+    //
     private PopupWindow popupWindow;
     private ListView listview;
     private MyAdapter myAdapter;
 
     private ArrayList<String> msgs;
-
 
     @Override
     protected int getLayoutResId() {
@@ -48,6 +41,8 @@ public class SpinnerFragment extends BaseSwipeFragment {
     @Override
     protected void initViews(View v) {
         initTopBar(UIRouter.FRAG_SPINNER, true);
+        et_input = v.findViewById(R.id.et_input);
+        iv_down_arrow = v.findViewById(R.id.iv_down_arrow);
 
         et_input.setOnClickListener(new View.OnClickListener() {
             @Override

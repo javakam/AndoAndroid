@@ -14,9 +14,6 @@ import com.improve.R;
 import com.improve.base.fragment.BaseSwipeFragment;
 import com.improve.utils.CommonUtils;
 
-import butterknife.BindView;
-import butterknife.OnClick;
-
 /**
  * Handler
  * <p>
@@ -25,10 +22,8 @@ import butterknife.OnClick;
 public class HandlerFragment extends BaseSwipeFragment {
     private static final int MSG_ERROR = 0x001;
 
-    @BindView(R.id.tvThreadInfo)
-    TextView mThreadInfo;
-    @BindView(R.id.tvResult)
-    TextView mResult;
+    private TextView mThreadInfo;
+    private TextView mResult;
 
     private Handler mHandler = new Handler(new Handler.Callback() {
         @Override
@@ -52,10 +47,15 @@ public class HandlerFragment extends BaseSwipeFragment {
     @Override
     protected void initViews(View v) {
         initTopBar("Handler", true);
+        mThreadInfo = v.findViewById(R.id.tvThreadInfo);
+        mResult = v.findViewById(R.id.tvResult);
+
+        v.findViewById(R.id.btChildThread).setOnClickListener(this);
+        v.findViewById(R.id.btChildThreadErrLog).setOnClickListener(this);
     }
 
-    @OnClick({R.id.btChildThread, R.id.btChildThreadErrLog})
-    void onclick(View v) {
+    @Override
+    public void onClick(View v) {
         //神奇。。。
 //        mResult.setText("");
         switch (v.getId()) {
@@ -64,6 +64,8 @@ public class HandlerFragment extends BaseSwipeFragment {
                 break;
             case R.id.btChildThreadErrLog:
                 childThreadLog();
+                break;
+            default:
                 break;
         }
     }

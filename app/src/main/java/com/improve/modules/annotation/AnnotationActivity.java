@@ -8,11 +8,8 @@ import android.widget.Toast;
 
 import com.improve.R;
 import com.improve.modules.annotation.base.ContentView;
-import com.improve.modules.annotation.base.ViewInject;
 import com.improve.modules.annotation.base.ViewInjectUtils;
 import com.qmuiteam.qmui.alpha.QMUIAlphaButton;
-
-import butterknife.OnClick;
 
 /**
  * Android注解开发
@@ -21,8 +18,8 @@ import butterknife.OnClick;
  */
 @ContentView(R.layout.fragment_annotation)
 public class AnnotationActivity extends AppCompatActivity {
-    @ViewInject(R.id.btAnnotation)
-    QMUIAlphaButton mBtAnno;
+
+    private QMUIAlphaButton mBtAnnotation;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -31,22 +28,21 @@ public class AnnotationActivity extends AppCompatActivity {
         //【核心方法】
         ViewInjectUtils.inject(this);
 
+        mBtAnnotation = findViewById(R.id.btAnnotation);
         //测试  @ViewInject 是否生效
-        mBtAnno.setOnClickListener(v -> Toast.makeText(AnnotationActivity.this,
+        mBtAnnotation.setOnClickListener(v -> Toast.makeText(AnnotationActivity.this,
                 "测试  @ViewInject 是否生效", Toast.LENGTH_SHORT).show());
+
+        findViewById(R.id.btAnnotationProcessor).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(AnnotationActivity.this, "Android注解处理机", Toast.LENGTH_SHORT).show();
+            }
+        });
     }
 
     private void 初始化标题栏() {
         setTitle("Android注解处理机");
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-    }
-
-    @OnClick({R.id.btAnnotationProcessor})
-    void click(View v) {
-        switch (v.getId()) {
-            case R.id.btAnnotationProcessor:
-                Toast.makeText(this, "Android注解处理机", Toast.LENGTH_SHORT).show();
-                break;
-        }
     }
 }

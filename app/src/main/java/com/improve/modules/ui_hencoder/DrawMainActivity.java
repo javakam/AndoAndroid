@@ -69,6 +69,8 @@ public class DrawMainActivity extends AppCompatActivity {
             case R.id.item_menu_practice:
                 startActivity(new Intent(this, PracticeActivity.class));
                 break;
+            default:
+                break;
         }
         return super.onOptionsItemSelected(item);
     }

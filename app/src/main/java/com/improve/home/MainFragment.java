@@ -15,18 +15,16 @@ import com.qmuiteam.qmui.widget.QMUITabSegment;
 
 import java.util.HashMap;
 
-import butterknife.BindView;
-
 /**
  * @author javakam
  * @date 2018-6-16
  */
-public class MainSwipeFragment extends BaseSwipeFragment {
-    private final static String TAG = MainSwipeFragment.class.getSimpleName();
-    @BindView(R.id.pager)
-    ViewPager mViewPager;
-    @BindView(R.id.tabs)
-    QMUITabSegment mTabSegment;
+public class MainFragment extends BaseSwipeFragment {
+
+    private final static String TAG = MainFragment.class.getSimpleName();
+
+    private ViewPager mViewPager;
+    private QMUITabSegment mTabSegment;
     private HashMap<Pager, MainController> mPages;
     private PagerAdapter mPagerAdapter = new PagerAdapter() {
 
@@ -77,6 +75,8 @@ public class MainSwipeFragment extends BaseSwipeFragment {
 
     @Override
     protected void initViews(View v) {
+        mViewPager = v.findViewById(R.id.pager);
+        mTabSegment = v.findViewById(R.id.tabs);
         initTabs();
         initPagers();
     }
@@ -131,12 +131,12 @@ public class MainSwipeFragment extends BaseSwipeFragment {
         MainController.MainControlListener listener = new MainController.MainControlListener() {
             @Override
             public void startFragment(BaseSwipeFragment fragment) {
-                MainSwipeFragment.this.startFragment(fragment);
+                MainFragment.this.startFragment(fragment);
             }
 
             @Override
             public void startActivity(Activity activity) {
-                MainSwipeFragment.this.startActivity(new Intent(getActivity(), activity.getClass()));
+                MainFragment.this.startActivity(new Intent(getActivity(), activity.getClass()));
             }
         };
 

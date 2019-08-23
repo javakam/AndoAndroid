@@ -13,6 +13,7 @@ import android.widget.Scroller;
  * Created by machangbao on 2018/3/6 0006.
  */
 public class MyScrollView extends ViewGroup {
+
     private int mScreenHeight;
     private Scroller mScroller;
     private int mLastY;

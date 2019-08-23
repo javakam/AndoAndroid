@@ -26,8 +26,6 @@ import java.io.File;
 import java.io.IOException;
 import java.lang.reflect.Field;
 
-import butterknife.BindView;
-
 /**
  * 推荐：
  * 1   Android TextView中文字通过SpannableString来设置超链接、颜色、字体等属性
@@ -37,18 +35,13 @@ import butterknife.BindView;
  * Created by javakam on 2018/6/19.
  */
 public class TextViewFragment extends BaseSwipeFragment {
-    @BindView(R.id.tvWidget1)
-    TextView tvWidget1;
-    @BindView(R.id.tvWidget2)
-    TextView tvWidget2;
-    @BindView(R.id.tvWidget3)
-    TextView tvWidget3;
-    @BindView(R.id.tvWidget4)
-    TextView tvWidget4;
-    @BindView(R.id.tvWidget5)
-    TextView tvWidget5;
-    @BindView(R.id.tvWidget6)
-    TextView tvWidget6;
+
+    private TextView tvWidget1;
+    private TextView tvWidget2;
+    private TextView tvWidget3;
+    private TextView tvWidget4;
+    private TextView tvWidget5;
+    private TextView tvWidget6;
 
     private static final String LINE = "\n ------------------------------------------> \n";
 
@@ -60,6 +53,12 @@ public class TextViewFragment extends BaseSwipeFragment {
     @Override
     protected void initViews(View v) {
         initTopBar(UIRouter.FRAG_WIDGET_TEXTVIEW, true);
+        tvWidget1 = v.findViewById(R.id.tvWidget1);
+        tvWidget2 = v.findViewById(R.id.tvWidget2);
+        tvWidget3 = v.findViewById(R.id.tvWidget3);
+        tvWidget4 = v.findViewById(R.id.tvWidget4);
+        tvWidget5 = v.findViewById(R.id.tvWidget5);
+        tvWidget6 = v.findViewById(R.id.tvWidget6);
         //        FF34B3  C5C1AA
         tvWidget1.setTextColor(Color.parseColor("#A0522D"));
         tvWidget2.setTextColor(Color.parseColor("#EE7621"));
