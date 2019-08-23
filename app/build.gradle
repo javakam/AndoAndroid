@@ -16,6 +16,8 @@ Please use 'annotationProcessor' configuration instead.
 同时：apt dependencies["butterknife-compiler"]，apt改为 annotationProcessor */
 //apply plugin: 'android-apt'
 
+def dep = rootProject.ext.dependencies
+
 //获取产品的名字
 def getProductName() {
     return "improve"
