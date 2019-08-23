@@ -13,36 +13,32 @@ import com.improve.base.fragment.BaseSwipeFragment;
 import com.qmuiteam.qmui.widget.dialog.QMUITipDialog;
 import com.qmuiteam.qmui.widget.roundwidget.QMUIRoundButton;
 
-import butterknife.BindView;
-import butterknife.OnClick;
-
 /**
  * Service混合调用 -- stopService
  * <p>
  * Created by javakam on 2018/6/17.
  */
-public class ServiceSwipeFragment3 extends BaseSwipeFragment {
+public class ServiceFragment3 extends BaseSwipeFragment {
 
-    @BindView(R.id.btnStart)
-    QMUIRoundButton button;
-
+    private QMUIRoundButton button;
+    //
     private Intent intent;
     private MyService3.MyService3Binder myService3Binder;
     private ServiceConnection conn = new ServiceConnection() {
         @Override
         public void onServiceConnected(ComponentName name, IBinder service) {
-            System.out.println("ServiceSwipeFragment3.onServiceConnected");
+            System.out.println("ServiceFragment3.onServiceConnected");
             myService3Binder = (MyService3.MyService3Binder) service;
         }
 
         @Override
         public void onServiceDisconnected(ComponentName name) {
-            System.out.println("ServiceSwipeFragment3.onServiceDisconnected");
+            System.out.println("ServiceFragment3.onServiceDisconnected");
         }
 
         @Override
         public void onBindingDied(ComponentName name) {
-            System.out.println("ServiceSwipeFragment3.onBindingDied");
+            System.out.println("ServiceFragment3.onBindingDied");
         }
     };
 
@@ -60,10 +56,16 @@ public class ServiceSwipeFragment3 extends BaseSwipeFragment {
     @Override
     protected void initViews(View v) {
         initTopBar(UIRouter.FRAG_SERVICE3, true);
+        button = v.findViewById(R.id.btnStart);
+
+        v.findViewById(R.id.btnStart).setOnClickListener(this);
+        v.findViewById(R.id.btnBind).setOnClickListener(this);
+        v.findViewById(R.id.btnUnbind).setOnClickListener(this);
+        v.findViewById(R.id.btnStop).setOnClickListener(this);
     }
 
-    @OnClick({R.id.btnStart, R.id.btnBind, R.id.btnUnbind, R.id.btnStop})
-    public void onViewClicked(View v) {
+    @Override
+    public void onClick(View v) {
         switch (v.getId()) {
             case R.id.btnStart:
                 mActivity.startService(intent);
@@ -88,6 +90,8 @@ public class ServiceSwipeFragment3 extends BaseSwipeFragment {
                 break;
             case R.id.btnStop:
                 mActivity.stopService(intent);
+                break;
+            default:
                 break;
         }
     }

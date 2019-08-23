@@ -4,7 +4,6 @@ import android.view.View;
 
 import com.improve.base.fragment.BaseSwipeFragment;
 
-
 /**
  * Created by javakam on 2018/9/5.
  */

@@ -40,7 +40,6 @@ public class EventBusMainActivity extends BaseActivity {
         startActivity(new Intent(EventBusMainActivity.this, EventBusPriorityActivity.class));
     }
 
-
     /**
      * 方法一：Handler
      */

@@ -1,5 +1,6 @@
 package com.improve.modules.kotlin.basic
 
+import android.os.Build
 import java.nio.file.Files
 import java.nio.file.Paths
 
@@ -70,7 +71,7 @@ fun main() {
     line()
 
     //声明方法时给默认值，给了默认值后再有调用foo则不用传参了
-    practice.kotlin.clazz.foo()
+    com.improve.modules.kotlin.clazz.foo()
 
     //lazy
     val p: String by lazy {
@@ -129,13 +130,21 @@ fun main() {
 
     val filePath = "/Users/TANGRONG/fastwork/IdeaProjects/src/practice/kotlin/静夜思.txt"
     //读取本地文件中的数据
-    val stream = Files.newInputStream(Paths.get(filePath))
+    val stream = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+        Files.newInputStream(Paths.get(filePath))
+    } else {
+        TODO("VERSION.SDK_INT < O")
+    }
     stream.buffered().reader().use { reader ->
         println(reader.readText())
     }
     line()
     //或者
-    val lines = Files.newBufferedReader(Paths.get(filePath)).buffered().readText()
+    val lines = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+        Files.newBufferedReader(Paths.get(filePath)).buffered().readText()
+    } else {
+        TODO("VERSION.SDK_INT < O")
+    }
     println(lines)
 }
 

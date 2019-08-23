@@ -19,18 +19,14 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import butterknife.BindView;
-import butterknife.OnClick;
-
 /**
  * GreenDao 在组件化项目中的基本使用
  * <p>
  * Created by javakam on 2018-7-5 19:56:05
  */
-public class GreenDaoM2MSwipeFragment extends BaseSwipeFragment {
-    @BindView(R.id.content)
-    TextView content;
+public class GreenDaoManyToManyFragment extends BaseSwipeFragment {
 
+    private TextView tvContent;
     private GreenUserDao mUserDao;
     private GreenFriendDao mFriendDao;
 
@@ -47,20 +43,25 @@ public class GreenDaoM2MSwipeFragment extends BaseSwipeFragment {
     @Override
     protected void initViews(View v) {
         initTopBar("GreenDao多对多", true);
+        tvContent = v.findViewById(R.id.content);
         // 当 TextView内容过多时，可以上下滚动查看
-        content.setMovementMethod(ScrollingMovementMethod.getInstance());
+        tvContent.setMovementMethod(ScrollingMovementMethod.getInstance());
 
         mUserDao = DaoUtils.getDao().getGreenUserDao();
         mFriendDao = DaoUtils.getDao().getGreenFriendDao();
         greenUser = new GreenUser();
         greenUser.setUid("123456");
         greenUser.setUsername("小明");
+
+        rootView.findViewById(R.id.btAddFriendList1).setOnClickListener(this);
+        rootView.findViewById(R.id.btAddFriendList2).setOnClickListener(this);
+        rootView.findViewById(R.id.btGetFriends).setOnClickListener(this);
     }
 
-    @OnClick({R.id.btAddFriendList1, R.id.btAddFriendList2, R.id.btGetFriends})
-    public void onViewClicked(View view) {
+    @Override
+    public void onClick(View v) {
         greenFriends.clear();
-        switch (view.getId()) {
+        switch (v.getId()) {
             case R.id.btAddFriendList1:
                 for (int i = 1; i <= 5; i++) {
                     GreenFriend friend = new GreenFriend();
@@ -119,7 +120,7 @@ public class GreenDaoM2MSwipeFragment extends BaseSwipeFragment {
                 Map<String, Object> map3 = new HashMap<>();
                 map3.put("data", userList); // users
                 L.ee(GsonUtils.map2Json(map3));
-                content.setText("GreenUser: \n" + GsonUtils.map2Json(map3));
+                tvContent.setText("GreenUser: \n" + GsonUtils.map2Json(map3));
                 mFriendDao.deleteAll();
                 mUserDao.deleteAll();
                 break;

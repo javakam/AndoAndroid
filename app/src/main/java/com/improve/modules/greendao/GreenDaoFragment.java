@@ -16,17 +16,14 @@ import org.greenrobot.greendao.query.QueryBuilder;
 
 import java.util.List;
 
-import butterknife.BindView;
-import butterknife.OnClick;
-
 /**
  * GreenDao 在组件化项目中的基本使用
  * <p>
  * Created by javakam on 2018-7-5 19:56:05
  */
-public class GreenDaoSwipeFragment extends BaseSwipeFragment {
-    @BindView(R.id.content)
-    TextView content;
+public class GreenDaoFragment extends BaseSwipeFragment {
+
+    TextView tvContent;
 
     private UserDao userDao;
     private RoleDao roleDao;
@@ -39,20 +36,31 @@ public class GreenDaoSwipeFragment extends BaseSwipeFragment {
     @Override
     protected void initViews(View v) {
         initTopBar("GreenDao", true);
+        tvContent = v.findViewById(R.id.content);
         // 当 TextView内容过多时，可以上下滚动查看
-        content.setMovementMethod(ScrollingMovementMethod.getInstance());
+        tvContent.setMovementMethod(ScrollingMovementMethod.getInstance());
         //1 获取 XXXDao
         userDao = DaoUtils.getDao().getUserDao();
         roleDao = DaoUtils.getDao().getRoleDao();
+
+        rootView.findViewById(R.id.btAdd).setOnClickListener(this);
+        rootView.findViewById(R.id.btDelete).setOnClickListener(this);
+        rootView.findViewById(R.id.btChange).setOnClickListener(this);
+        rootView.findViewById(R.id.btGetAll).setOnClickListener(this);
+        rootView.findViewById(R.id.btGetByKey).setOnClickListener(this);
+        rootView.findViewById(R.id.btGetByName).setOnClickListener(this);
+        rootView.findViewById(R.id.btGetByName2).setOnClickListener(this);
+        rootView.findViewById(R.id.btGetByName3).setOnClickListener(this);
+        rootView.findViewById(R.id.btDeleteTable).setOnClickListener(this);
     }
 
     int i = 0;
 
     //2 操作 XXXDao
-    @OnClick({R.id.btAdd, R.id.btDelete, R.id.btChange, R.id.btGetAll,
-            R.id.btGetByKey, R.id.btGetByName, R.id.btGetByName2, R.id.btGetByName3, R.id.btDeleteTable})
-    public void onViewClicked(View view) {
-        switch (view.getId()) {
+
+    @Override
+    public void onClick(View v) {
+        switch (v.getId()) {
             case R.id.btAdd:
                 User user1 = new User();
                 user1.setId(1000L + i);
@@ -74,11 +82,11 @@ public class GreenDaoSwipeFragment extends BaseSwipeFragment {
                 for (int i = 0; i < userList.size(); i++) {
                     sb.append(userList.get(i).toString()).append(" ; \n");
                 }
-                content.setText("查询全部数据==>\n" + sb.toString());
+                tvContent.setText("查询全部数据==>\n" + sb.toString());
                 break;
             case R.id.btGetByKey:
                 User user4 = userDao.load(1000L);
-                content.setText("查询到的用户==>\n" + user4.toString());
+                tvContent.setText("查询到的用户==>\n" + user4.toString());
                 break;
             case R.id.btGetByName:
                 List<User> userList1 = userDao.queryRaw("where name = ? ", "小明3");
@@ -86,7 +94,7 @@ public class GreenDaoSwipeFragment extends BaseSwipeFragment {
                 for (int i = 0; i < userList1.size(); i++) {
                     sb1.append(userList1.get(i).toString()).append(" ; \n");
                 }
-                content.setText("查询到的用户为==>\n" + sb1.toString());
+                tvContent.setText("查询到的用户为==>\n" + sb1.toString());
                 break;
             case R.id.btGetByName2:
                 List<User> userList2 = userDao.queryRaw("where _id between ? and ? ", "1003", "1006");
@@ -94,7 +102,7 @@ public class GreenDaoSwipeFragment extends BaseSwipeFragment {
                 for (int i = 0; i < userList2.size(); i++) {
                     sb2.append(userList2.get(i).toString()).append(" ; \n");
                 }
-                content.setText("查询到的用户为==>\n" + sb2.toString());
+                tvContent.setText("查询到的用户为==>\n" + sb2.toString());
                 break;
             case R.id.btGetByName3:
                 QueryBuilder<User> builder = userDao.queryBuilder();
@@ -103,7 +111,7 @@ public class GreenDaoSwipeFragment extends BaseSwipeFragment {
                 for (int i = 0; i < userList3.size(); i++) {
                     sb3.append(userList3.get(i).toString()).append(" ; \n");
                 }
-                content.setText("查询到的用户为==>\n" + sb3.toString());
+                tvContent.setText("查询到的用户为==>\n" + sb3.toString());
                 break;
             case R.id.btDelete:
                 userDao.deleteByKey(1000L);
@@ -112,6 +120,8 @@ public class GreenDaoSwipeFragment extends BaseSwipeFragment {
             case R.id.btDeleteTable:
                 userDao.deleteAll();
                 Toast.makeText(mActivity, "删除全部用户", Toast.LENGTH_SHORT).show();
+                break;
+            default:
                 break;
         }
     }

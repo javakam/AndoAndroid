@@ -9,7 +9,7 @@ import com.improve.base.fragment.BaseSwipeFragment;
 /**
  * Created by javakam on 2018/7/17 0017.
  */
-public class ViewEventDispatchSwipeFragment extends BaseSwipeFragment {
+public class ViewEventDispatchFragment extends BaseSwipeFragment {
     @NonNull
     @Override
     protected int getLayoutResId() {

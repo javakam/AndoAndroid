@@ -17,8 +17,6 @@ import com.improve.utils.L;
 
 import java.lang.reflect.Method;
 
-import butterknife.BindView;
-import butterknife.OnClick;
 import improve.support.ipc.aidl.IMyServiceProxy;
 
 /**
@@ -28,9 +26,8 @@ import improve.support.ipc.aidl.IMyServiceProxy;
  * <p>
  * Created by javakam on 2018/6/25.
  */
-public class AIDIServiceSwipeFragment extends BaseSwipeFragment {
+public class AIDIServiceFragment extends BaseSwipeFragment {
 
-    @BindView(R.id.tvAIDLResult)
     TextView mTvResult;
 
     private ServiceConnection conn;
@@ -43,6 +40,12 @@ public class AIDIServiceSwipeFragment extends BaseSwipeFragment {
     @Override
     protected void initViews(View v) {
         initTopBar(UIRouter.FRAG_AIDL, true);
+        mTvResult = v.findViewById(R.id.tvAIDLResult);
+
+        rootView.findViewById(R.id.btnAIDLBind).setOnClickListener(this);
+        rootView.findViewById(R.id.btnAIDLUnBind).setOnClickListener(this);
+        rootView.findViewById(R.id.btnBindSysAIDL).setOnClickListener(this);
+        rootView.findViewById(R.id.btnUnBindSysAIDL).setOnClickListener(this);
     }
 
     /**
@@ -50,8 +53,8 @@ public class AIDIServiceSwipeFragment extends BaseSwipeFragment {
      *
      * @param v
      */
-    @OnClick({R.id.btnAIDLBind, R.id.btnAIDLUnBind, R.id.btnBindSysAIDL, R.id.btnUnBindSysAIDL})
-    public void onViewClicked(View v) {
+    @Override
+    public void onClick(View v) {
         switch (v.getId()) {
             case R.id.btnAIDLBind://调用自定义的AIDL
                 if (conn == null) {

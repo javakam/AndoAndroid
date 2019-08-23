@@ -6,7 +6,7 @@ import android.os.Bundle;
 import com.improve.R;
 import com.improve.base.BaseQMUIFragmentActivity;
 import com.improve.base.fragment.BaseSwipeFragment;
-import com.improve.home.MainSwipeFragment;
+import com.improve.home.MainFragment;
 
 /**
  * @author changbao
@@ -24,7 +24,7 @@ public class MainActivity extends BaseQMUIFragmentActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         if (savedInstanceState == null) {
-            BaseSwipeFragment fragment = new MainSwipeFragment();
+            BaseSwipeFragment fragment = new MainFragment();
 
             getSupportFragmentManager()
                     .beginTransaction()

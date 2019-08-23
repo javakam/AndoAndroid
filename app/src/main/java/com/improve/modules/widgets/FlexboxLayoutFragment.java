@@ -15,9 +15,6 @@ import com.improve.R;
 import com.improve.base.fragment.BaseSwipeFragment;
 import com.qmuiteam.qmui.widget.dialog.QMUITipDialog;
 
-import butterknife.BindView;
-import butterknife.OnClick;
-
 /**
  * FlexboxLayout {@link CatFlexboxLayoutFragment }
  * <p>
@@ -34,7 +31,6 @@ import butterknife.OnClick;
  * @date 2018/7/6.
  */
 public class FlexboxLayoutFragment extends BaseSwipeFragment {
-    @BindView(R.id.flexbox)
     FlexboxLayout mFlexboxLayout;
 
     @Override
@@ -44,6 +40,9 @@ public class FlexboxLayoutFragment extends BaseSwipeFragment {
 
     @Override
     protected void initViews(View v) {
+        mFlexboxLayout = v.findViewById(R.id.flexbox);
+
+        v.findViewById(R.id.textviewDynamic).setOnClickListener(this);
     }
 
     /**
@@ -71,8 +70,8 @@ public class FlexboxLayoutFragment extends BaseSwipeFragment {
     int i = 0;
 
     @TargetApi(Build.VERSION_CODES.JELLY_BEAN)
-    @OnClick(R.id.textviewDynamic)
-    void addDynamic(View v) {  // 通过代码向FlexboxLayout添加View
+    @Override
+    public void onClick(View v) {  // 通过代码向 FlexboxLayout 添加View
         TextView textView = new TextView(mActivity);
         textView.setBackground(getResources().getDrawable(R.drawable.flex_item_background));
         textView.setText("Dynamic Label" + (i = i + 3));

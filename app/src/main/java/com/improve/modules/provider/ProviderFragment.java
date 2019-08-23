@@ -13,9 +13,6 @@ import android.widget.Toast;
 import com.improve.R;
 import com.improve.base.fragment.BaseSwipeFragment;
 
-import butterknife.BindView;
-import butterknife.OnClick;
-
 /**
  * ContentProvider共享机制
  * <p>
@@ -35,6 +32,7 @@ public class ProviderFragment extends BaseSwipeFragment {
    其他的Android应用可以使用ContentResolver对象通过与ContentProvider同名的方法请求执行，被执行的就是ContentProvider中的同名方法。
    所以ContentProvider很多对外可以访问的方法，在ContentResolver中均有同名的方法，是一一对应的，
      */
+
     /*
 2 Uri:
 　　在Android中，Uri是一种比较常见的资源访问方式。而对于ContentProvider而言，
@@ -64,7 +62,6 @@ int match(Uri uri)：
 4
      */
 
-    @BindView(R.id.tvProvider)
     TextView tvProvider;
 
     @Override
@@ -74,11 +71,14 @@ int match(Uri uri)：
 
     @Override
     protected void initViews(View v) {
+        tvProvider = v.findViewById(R.id.tvProvider);
 
+        v.findViewById(R.id.btProvider).setOnClickListener(this);
+        v.findViewById(R.id.btProvider2).setOnClickListener(this);
     }
 
-    @OnClick({R.id.btProvider, R.id.btProvider2})
-    void getContacts(View v) {
+    @Override
+    public void onClick(View v) {
         switch (v.getId()) {
             case R.id.btProvider:
                 Toast.makeText(mActivity, "使用系统提供者", Toast.LENGTH_LONG).show();
@@ -115,7 +115,7 @@ int match(Uri uri)：
                 Uri returnuir = contentResolver.insert(uri, values);
                 Log.i("123", "-------------->" + returnuir.getPath());
                 Toast.makeText(mActivity, "自定义提供者: \n" + returnuir.toString(), Toast.LENGTH_LONG).show();
-                tvProvider.setText("自定义提供者: \n" + returnuir.toString());
+                tvProvider.setText(String.format("自定义提供者: \n%s", returnuir.toString()));
                 break;
             default:
         }

@@ -23,9 +23,6 @@ import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicInteger;
 
-import butterknife.BindView;
-import butterknife.OnClick;
-
 /**
  * AsyncTask  & 多线程 ThreadPoolExecutor + Executors
  * <p>
@@ -36,11 +33,11 @@ import butterknife.OnClick;
  * Created by javakam on 2018/7/9 .
  */
 public class AsyncTaskFragment extends BaseSwipeFragment {
+
     private static final SimpleDateFormat SDF = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-    @BindView(R.id.tvCurrentThread)
-    TextView tvCurrentThread;
-    @BindView(R.id.tvResult)
-    TextView tvResult;
+
+    private TextView tvCurrentThread;
+    private TextView tvResult;
 
     @Override
     protected int getLayoutResId() {
@@ -50,9 +47,15 @@ public class AsyncTaskFragment extends BaseSwipeFragment {
     @Override
     protected void initViews(View v) {
         initTopBar("AsyncTask", true);
-        /*
-        About Executors
-         */
+        tvCurrentThread = v.findViewById(R.id.tvCurrentThread);
+        tvResult = v.findViewById(R.id.tvResult);
+
+        v.findViewById(R.id.btAsyncTaskSerial).setOnClickListener(this);
+        v.findViewById(R.id.btAsyncTaskParallel).setOnClickListener(this);
+        v.findViewById(R.id.btAsyncTaskParallelByUs).setOnClickListener(this);
+        v.findViewById(R.id.btAsyncTaskParallelByUs2).setOnClickListener(this);
+
+        /* About Executors */
         Executors.newFixedThreadPool(2);
         //适合执行大量的耗时较少的任务 -- 容易开启过多线程，不推荐
         Executors.newCachedThreadPool();
@@ -111,11 +114,11 @@ public class AsyncTaskFragment extends BaseSwipeFragment {
 //                TimeUnit.SECONDS, new LinkedBlockingQueue<Runnable>());
     }
 
-    @OnClick({R.id.btAsyncTaskSerial, R.id.btAsyncTaskParallel, R.id.btAsyncTaskParallelByUs, R.id.btAsyncTaskParallelByUs2})
-    void startAsyncTask(View view) {
+    @Override
+    public void onClick(View v) {
         tvCurrentThread.setText("");
         tvResult.setText("");
-        switch (view.getId()) {
+        switch (v.getId()) {
             case R.id.btAsyncTaskSerial://串行执行
                 new MyAsyncTask(mActivity, "Task#c1 ").execute("123");
                 new MyAsyncTask(mActivity, "Task#c2 ").execute("123");

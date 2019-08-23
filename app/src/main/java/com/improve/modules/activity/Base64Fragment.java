@@ -12,16 +12,14 @@ import com.improve.utils.Base64Util;
 
 import java.io.UnsupportedEncodingException;
 
-import butterknife.BindView;
-
 /**
  * 加载 assets 下图片的 Base64 字符串
  *
  * @author javakam
  * @date 2018-6-20
  */
-public class Base64SwipeFragment extends BaseSwipeFragment {
-    @BindView(R.id.imgFromBase64Str)
+public class Base64Fragment extends BaseSwipeFragment {
+
     ImageView imgFromBase64Str;
 
     @NonNull
@@ -33,6 +31,8 @@ public class Base64SwipeFragment extends BaseSwipeFragment {
     @Override
     protected void initViews(View v) {
 //        initTopBar("Base64Util", true);
+
+        imgFromBase64Str = v.findViewById(R.id.imgFromBase64Str);
         showLoadingEmptyView();
         v.postDelayed(new Runnable() {
             @Override

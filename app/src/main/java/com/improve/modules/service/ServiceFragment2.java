@@ -11,14 +11,12 @@ import com.improve.R;
 import com.improve.UIRouter;
 import com.improve.base.fragment.BaseSwipeFragment;
 
-import butterknife.OnClick;
-
 /**
  * @see MyService2
  * <p>
  * Created by javakam on 2018/6/16.
  */
-public class ServiceSwipeFragment2 extends BaseSwipeFragment {
+public class ServiceFragment2 extends BaseSwipeFragment {
 
     //不能直接声明，需要在onAttach时执行
     //    private Intent intent=new Intent(getContext(), MyService2.class);
@@ -39,11 +37,15 @@ public class ServiceSwipeFragment2 extends BaseSwipeFragment {
     @Override
     protected void initViews(View v) {
         initTopBar(UIRouter.FRAG_SERVICE2, true);
+
+        v.findViewById(R.id.btnStart).setOnClickListener(this);
+        v.findViewById(R.id.btnStop).setOnClickListener(this);
+        v.findViewById(R.id.btnChangeFormat).setOnClickListener(this);
     }
 
-    @OnClick({R.id.btnStart, R.id.btnStop, R.id.btnChangeFormat})
-    protected void click(View view) {
-        int id = view.getId();
+    @Override
+    public void onClick(View v) {
+        int id = v.getId();
         if (id == R.id.btnStart) {
             mActivity.bindService(intent, conn, Context.BIND_AUTO_CREATE);
         } else if (id == R.id.btnStop) {
@@ -52,7 +54,7 @@ public class ServiceSwipeFragment2 extends BaseSwipeFragment {
                     mActivity.unbindService(conn);
                 } catch (Exception e) {
                     //多次解绑 unbindService 会出现异常
-                    // Service not registered: com.improve.modules.service.ServiceSwipeFragment2$1@235144d8
+                    // Service not registered: com.improve.modules.service.ServiceFragment2$1@235144d8
                     System.err.println(e.getMessage());
                 }
             }
@@ -71,7 +73,7 @@ public class ServiceSwipeFragment2 extends BaseSwipeFragment {
         @Override
         public void onServiceConnected(ComponentName name, IBinder service) {
             //注：只在绑定【成功】时执行--Service中的onBind有返回值时执行
-            System.out.println("ServiceSwipeFragment2.onServiceConnected " + name.getClassName());
+            System.out.println("ServiceFragment2.onServiceConnected " + name.getClassName());
             serviceBinder = (MyService2.ServiceBinder) service;
         }
 
@@ -79,7 +81,7 @@ public class ServiceSwipeFragment2 extends BaseSwipeFragment {
         public void onServiceDisconnected(ComponentName name) {
             //当服务所在进程被杀死 或 程序崩溃时执行
             //？？？？？？？？？？？？？为什么不执行？？？？？？？？
-            System.out.println("ServiceSwipeFragment2.onServiceDisconnected " + name.getClassName());
+            System.out.println("ServiceFragment2.onServiceDisconnected " + name.getClassName());
         }
     };
 }

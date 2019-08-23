@@ -20,11 +20,6 @@ import com.improve.view.TipDialogUtils;
 import com.qmuiteam.qmui.widget.QMUIEmptyView;
 import com.qmuiteam.qmui.widget.QMUITopBar;
 
-import butterknife.BindView;
-import butterknife.ButterKnife;
-import butterknife.Unbinder;
-
-
 /**
  * Fragment基类  -- 不带侧滑的Fragment
  * <p>
@@ -39,19 +34,12 @@ public abstract class BaseFragment extends Fragment {
     protected FragmentDelegate mDelegate;
     protected TipDialogUtils mTipDialogUtil;
     public BaseQMUIFragmentActivity mActivity;
-
-    @Nullable
-    @BindView(R.id.topbar)
+    //
     public QMUITopBar mTopBar;
-    @Nullable
-    @BindView(R.id.emptyView)
     public QMUIEmptyView mEmptyView;
-    private Unbinder mUnBinder;
 
     public BaseFragment() {
-        if (mDelegate == null) {
-            mDelegate = new FragmentDelegate(this);
-        }
+        mDelegate = new FragmentDelegate(this);
     }
 
     public FragmentDelegate getDelegate() {
@@ -80,7 +68,8 @@ public abstract class BaseFragment extends Fragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View v = LayoutInflater.from(mActivity).inflate(getLayoutResId(), null);
-        mUnBinder = ButterKnife.bind(this, v);
+        mTopBar = v.findViewById(R.id.topbar);
+        mEmptyView = v.findViewById(R.id.emptyView);
         initViews(v);
         return v;
     }
@@ -90,9 +79,6 @@ public abstract class BaseFragment extends Fragment {
     @Override
     public void onDestroy() {
         super.onDestroy();
-        if (mUnBinder != null) {
-            mUnBinder.unbind();
-        }
         if (mDelegate != null) {
             mDelegate = null;
         }

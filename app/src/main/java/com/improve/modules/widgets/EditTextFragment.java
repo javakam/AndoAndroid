@@ -11,9 +11,6 @@ import com.improve.R;
 import com.improve.UIRouter;
 import com.improve.base.fragment.BaseSwipeFragment;
 
-import butterknife.BindView;
-import butterknife.OnClick;
-
 /**
  * 使用 SpannableString + ImageSpan 为 EditText 添加图片
  * <p>
@@ -22,7 +19,6 @@ import butterknife.OnClick;
  * @date 2018/6/19
  */
 public class EditTextFragment extends BaseSwipeFragment {
-    @BindView(R.id.actv1)
     AutoCompleteTextView actvImage;
 
     @Override
@@ -33,10 +29,16 @@ public class EditTextFragment extends BaseSwipeFragment {
     @Override
     protected void initViews(View v) {
         initTopBar(UIRouter.FRAG_WIDGET_EDITTEXT, true);
+        actvImage = v.findViewById(R.id.actv1);
+
+        v.findViewById(R.id.btAddImage1).setOnClickListener(this);
+        v.findViewById(R.id.btAddImage2).setOnClickListener(this);
+        v.findViewById(R.id.btAddImage3).setOnClickListener(this);
+        v.findViewById(R.id.btq_show_actv).setOnClickListener(this);
     }
 
-    @OnClick({R.id.btAddImage1, R.id.btAddImage2, R.id.btAddImage3, R.id.btq_show_actv})
-    void addImageToAcTextView(View v) {
+    @Override
+    public void onClick(View v) {
         // 必须先有个  SpannableString !!!
         SpannableString spStr = new SpannableString("用于显示图片的SpannableString，这里写什么都行");
         // 做个 ImageSpan 放到 SpannableString 上
@@ -69,7 +71,6 @@ public class EditTextFragment extends BaseSwipeFragment {
             default:
                 break;
         }
-
     }
 
 }

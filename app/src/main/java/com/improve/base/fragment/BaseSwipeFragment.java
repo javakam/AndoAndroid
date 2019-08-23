@@ -18,25 +18,17 @@ import com.qmuiteam.qmui.util.QMUIDisplayHelper;
 import com.qmuiteam.qmui.widget.QMUIEmptyView;
 import com.qmuiteam.qmui.widget.QMUITopBar;
 
-import butterknife.BindView;
-import butterknife.ButterKnife;
-import butterknife.Unbinder;
-
 /**
  * Created by javakam on 2018/6/20.
  */
-public abstract class BaseSwipeFragment extends QMUIFragment {
+public abstract class BaseSwipeFragment extends QMUIFragment implements View.OnClickListener {
     protected FragmentDelegate mDelegate;
     protected TipDialogUtils mTipDialogUtil;
     public BaseQMUIFragmentActivity mActivity;
 
-    @Nullable
-    @BindView(R.id.topbar)
+    public View rootView;
     public QMUITopBar mTopBar;
-    @Nullable
-    @BindView(R.id.emptyView)
     public QMUIEmptyView mEmptyView;
-    private Unbinder mUnBinder;
 
     public BaseSwipeFragment() {
         if (mDelegate == null) {
@@ -61,10 +53,11 @@ public abstract class BaseSwipeFragment extends QMUIFragment {
 
     @Override
     protected View onCreateView() {
-        View v = LayoutInflater.from(mActivity).inflate(getLayoutResId(), null);
-        mUnBinder = ButterKnife.bind(this, v);
-        initViews(v);
-        return v;
+        rootView = LayoutInflater.from(mActivity).inflate(getLayoutResId(), null);
+        mTopBar = rootView.findViewById(R.id.topbar);
+        mEmptyView = rootView.findViewById(R.id.emptyView);
+        initViews(rootView);
+        return rootView;
     }
 
     protected abstract void initViews(View v);
@@ -78,9 +71,6 @@ public abstract class BaseSwipeFragment extends QMUIFragment {
     @Override
     public void onDestroy() {
         super.onDestroy();
-        if (mUnBinder != null) {
-            mUnBinder.unbind();
-        }
         if (mDelegate != null) {
             mDelegate = null;
         }
@@ -89,6 +79,10 @@ public abstract class BaseSwipeFragment extends QMUIFragment {
     @Override
     protected int backViewInitOffset() {
         return QMUIDisplayHelper.dp2px(getContext(), 100);
+    }
+
+    @Override
+    public void onClick(View v) {
     }
 
     /**

@@ -1,0 +1,45 @@
+ext {
+
+    android = [
+            compileSdkVersion: 28,
+            buildToolsVersion: '28.0.3',
+            minSdkVersion    : 19,
+            targetSdkVersion : 28,
+            versionCode      : 1,
+            versionName      : "1.0"
+    ]
+
+    version = [
+            support : "28.0.0",
+            retrofit: "2.4.0",
+            okhttp  : "3.10.0"
+    ]
+
+    dependencies = [
+            //base
+            "support-v4"                : "com.android.support:support-v4:${version.support}",
+            "appcompat-v7"              : "com.android.support:appcompat-v7:${version.support}",
+            "cardview-v7"               : "com.android.support:cardview-v7:${version.support}",
+            "recyclerview-v7"           : "com.android.support:recyclerview-v7:${version.support}",
+            "design"                    : "com.android.support:design:${version.support}",
+            "constraint-layout"         : "com.android.support.constraint:constraint-layout:1.1.3",
+            "multidex"                  : "com.android.support:multidex:1.0.1",
+
+            //base test
+            "junit"                     : "junit:junit:4.12",
+            "test-runner"               : "com.android.support.test:runner:1.0.2",
+            "test-espresso-core"        : "com.android.support.test.espresso:espresso-core:3.0.2",
+
+            //network
+            "gson"                      : "com.google.code.gson:gson:2.8.4",
+            "rxjava"                    : "io.reactivex.rxjava2:rxjava:2.1.9",
+            "rxandroid"                 : "io.reactivex.rxjava2:rxandroid:2.0.2",
+            "rxbinding"                 : "com.jakewharton.rxbinding2:rxbinding:2.1.1",
+            "retrofit"                  : "com.squareup.retrofit2:retrofit:${version.retrofit}",
+            "retrofit-converter-gson"   : "com.squareup.retrofit2:converter-gson:${version.retrofit}",
+            "retrofit-adapter-rxjava2"  : "com.squareup.retrofit2:adapter-rxjava2:${version.retrofit}",
+            "okhttp"                    : "com.squareup.okhttp3:okhttp:${version.okhttp}",
+            "okhttp-logging-interceptor": "com.squareup.okhttp3:logging-interceptor:${version.okhttp}"
+
+    ]
+}

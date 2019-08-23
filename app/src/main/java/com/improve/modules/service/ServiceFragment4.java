@@ -15,19 +15,16 @@ import com.improve.base.fragment.BaseSwipeFragment;
 import com.qmuiteam.qmui.widget.dialog.QMUITipDialog;
 import com.qmuiteam.qmui.widget.roundwidget.QMUIRoundButton;
 
-import butterknife.BindView;
-import butterknife.OnClick;
-
 /**
  * 兼容 4.0
  * <p>
- * 在{@link ServiceSwipeFragment4}上加入了线程演示
+ * 在{@link ServiceFragment4}上加入了线程演示
  * <p>
  * Created by javakam on 2018/6/17.
  */
-public class ServiceSwipeFragment4 extends BaseSwipeFragment {
-    @BindView(R.id.btnStart)
-    QMUIRoundButton button;
+public class ServiceFragment4 extends BaseSwipeFragment {
+
+    private QMUIRoundButton button;
 
     private Intent intent;
     int first = 1;
@@ -35,7 +32,7 @@ public class ServiceSwipeFragment4 extends BaseSwipeFragment {
     private ServiceConnection conn = new ServiceConnection() {
         @Override
         public void onServiceConnected(ComponentName name, IBinder service) {
-            System.out.println("ServiceSwipeFragment4.onServiceConnected");
+            System.out.println("ServiceFragment4.onServiceConnected");
             myService4Binder = (MyService4.MyService4Binder) service;
             if (first == 1) {
                 first++;
@@ -56,12 +53,12 @@ public class ServiceSwipeFragment4 extends BaseSwipeFragment {
 
         @Override
         public void onServiceDisconnected(ComponentName name) {
-            System.out.println("ServiceSwipeFragment4.onServiceDisconnected");
+            System.out.println("ServiceFragment4.onServiceDisconnected");
         }
 
         @Override
         public void onBindingDied(ComponentName name) {
-            System.out.println("ServiceSwipeFragment4.onBindingDied");
+            System.out.println("ServiceFragment4.onBindingDied");
         }
     };
 
@@ -79,17 +76,22 @@ public class ServiceSwipeFragment4 extends BaseSwipeFragment {
     @Override
     protected void initViews(View v) {
         initTopBar(UIRouter.FRAG_SERVICE4, true);
-
+        button = v.findViewById(R.id.btnStart);
         button.postDelayed(new Runnable() {
             @Override
             public void run() {
                 mTipDialogUtil.dismiss();
             }
         }, 1500);
+
+        v.findViewById(R.id.btnStart).setOnClickListener(this);
+        v.findViewById(R.id.btnBind).setOnClickListener(this);
+        v.findViewById(R.id.btnUnbind).setOnClickListener(this);
+        v.findViewById(R.id.btnStop).setOnClickListener(this);
     }
 
-    @OnClick({R.id.btnStart, R.id.btnBind, R.id.btnUnbind, R.id.btnStop})
-    public void onViewClicked(View v) {
+    @Override
+    public void onClick(View v) {
         switch (v.getId()) {
             case R.id.btnStart:
                 mActivity.startService(intent);
@@ -111,6 +113,7 @@ public class ServiceSwipeFragment4 extends BaseSwipeFragment {
                 mActivity.stopService(intent);
                 break;
             default:
+                break;
         }
     }
 }

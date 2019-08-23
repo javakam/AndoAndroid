@@ -23,6 +23,7 @@ import java.util.ArrayList;
  * Created by machangbao on 2018/10/1.
  */
 public class BannerFragment extends BaseSwipeFragment {
+
     private static final String TAG = BannerFragment.class.getSimpleName();
     protected ViewPager viewpager;
     protected TextView tv_title;

@@ -15,18 +15,14 @@ import com.improve.R;
 import com.improve.UIRouter;
 import com.improve.base.fragment.BaseSwipeFragment;
 
-import butterknife.BindView;
-import butterknife.ButterKnife;
-
 /**
  * RecyclerView + FlexboxLayoutManager
  * <p>
  * {@link FlexboxLayoutFragment}
  */
 public class CatFlexboxLayoutFragment extends BaseSwipeFragment {
-    @BindView(R.id.toolbar)
+
     Toolbar toolbar;
-    @BindView(R.id.recyclerview)
     RecyclerView mRecyclerView;
 
     @Override
@@ -47,6 +43,9 @@ public class CatFlexboxLayoutFragment extends BaseSwipeFragment {
                 popBackStack();
             }
         });
+
+        toolbar=v.findViewById(R.id.toolbar);
+        mRecyclerView=v.findViewById(R.id.recyclerview);
 
         // 1
         FlexboxLayoutManager manager
@@ -100,12 +99,11 @@ public class CatFlexboxLayoutFragment extends BaseSwipeFragment {
         }
 
         class CatViewHolder extends RecyclerView.ViewHolder {
-            @BindView(R.id.imageview)
             ImageView imageView;
 
             CatViewHolder(View view) {
                 super(view);
-                ButterKnife.bind(this, view);
+                imageView=view.findViewById(R.id.imageview);
             }
         }
     }

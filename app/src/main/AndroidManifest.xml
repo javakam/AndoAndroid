@@ -58,7 +58,6 @@
         <activity android:name=".modules.ui_process.dragview.DragViewActivity" />
         <activity android:name=".modules.ui_process.dragview.my.MyDragViewMainActivity" />
         <activity android:name=".modules.ui_process.dragview.my.DragActivity" />
-        <activity android:name=".modules.ui_process.dragview.my.MyPracticeActivity" />
         <activity android:name=".modules.ui_process.heros.activity.HerosMainActivity" />
         <activity android:name=".modules.ui_process.heros.activity.MyViewTest" />
         <activity android:name=".modules.ui_process.heros.activity.TopBarTest" />

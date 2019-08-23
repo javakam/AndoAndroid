@@ -1,6 +1,6 @@
 package com.improve.modules.kotlin.clazz
 
-import practice.kotlin.basic.line
+import com.improve.modules.kotlin.basic.line
 
 /**
  *

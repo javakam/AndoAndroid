@@ -9,22 +9,14 @@ import com.improve.UIRouter;
 import com.improve.base.fragment.BaseSwipeFragment;
 import com.improve.utils.UiUtil;
 
-import butterknife.BindView;
-import butterknife.OnClick;
-
 /**
  * 01优酷菜单 {@link com.improve.library.utils.UiUtil hideView() }
  * Created by machangbao on 2018/10/1.
  */
 public class YouKuMenuFragment extends BaseSwipeFragment {
-    @BindView(R.id.icon_home)
     ImageView icon_home;
-    @BindView(R.id.icon_menu)
     ImageView icon_menu;
-
-    @BindView(R.id.level2)
     RelativeLayout level2;
-    @BindView(R.id.level3)
     RelativeLayout level3;
 
     private boolean isLevel2Show = true;
@@ -38,10 +30,17 @@ public class YouKuMenuFragment extends BaseSwipeFragment {
     @Override
     protected void initViews(View v) {
         initTopBar(UIRouter.FRAG_YOUKUMENU, true);
+        icon_home = v.findViewById(R.id.icon_home);
+        icon_menu = v.findViewById(R.id.icon_menu);
+        level2 = v.findViewById(R.id.level2);
+        level3 = v.findViewById(R.id.level3);
+
+        v.findViewById(R.id.icon_home).setOnClickListener(this);
+        v.findViewById(R.id.icon_menu).setOnClickListener(this);
     }
 
-    @OnClick({R.id.icon_home, R.id.icon_menu})
-    protected void click(View v) {
+    @Override
+    public void onClick(View v) {
         switch (v.getId()) {
             case R.id.icon_home://home
                 if (isLevel2Show) {
@@ -66,6 +65,8 @@ public class YouKuMenuFragment extends BaseSwipeFragment {
                     isLevel3Show = true;
                     UiUtil.showView(level3);
                 }
+                break;
+            default:
                 break;
         }
     }
