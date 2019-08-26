@@ -38,11 +38,9 @@ public class KotlinFragment extends BaseSwipeFragment {
         final int vid = v.getId();
         switch (vid) {
             case R.id.tvKotlin:
-
                 break;
             default:
                 break;
         }
     }
-
 }

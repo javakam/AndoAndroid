@@ -16,6 +16,9 @@ Please use 'annotationProcessor' configuration instead.
 同时：apt dependencies["butterknife-compiler"]，apt改为 annotationProcessor */
 //apply plugin: 'android-apt'
 
+def config = rootProject.ext.android
+def deps = rootProject.ext.dependencies
+
 //获取产品的名字
 def getProductName() {
     return "improve"
@@ -26,14 +29,14 @@ def releaseTime() {
 }
 
 android {
-    compileSdkVersion build_versions.compile_sdk
-    buildToolsVersion build_versions.build_tools
+    compileSdkVersion config.compileSdkVersion
+    buildToolsVersion config.buildToolsVersion
     defaultConfig {
-        applicationId build_versions.applicationId
-        minSdkVersion build_versions.min_sdk
-        targetSdkVersion build_versions.target_sdk
-        versionCode build_versions.versionCode
-        versionName build_versions.versionName
+        applicationId config.applicationId
+        minSdkVersion config.minSdkVersion
+        targetSdkVersion config.targetSdkVersion
+        versionCode config.versionCode
+        versionName config.versionName
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
         //选择要添加的对应cpu类型的.so库
         /*ndk {
@@ -219,6 +222,92 @@ android {
     }
 }
 
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation files('libs/nineoldandroids-2.4.0.jar')
+
+    //Kotlin Anko
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+    implementation "org.jetbrains.anko:anko-sdk25:$anko_version"
+    implementation "org.jetbrains.anko:anko-sdk25-coroutines:$anko_version"
+    implementation "org.jetbrains.anko:anko-appcompat-v7:$anko_version"
+
+    // Test
+    testImplementation deps.junit
+    androidTestImplementation deps.test_runner
+    androidTestImplementation deps.test_espresso_core
+
+    // Support libraries
+    implementation deps["support_v4"]
+    implementation deps["appcompat_v7"]
+    implementation deps["cardview_v7"]
+    implementation deps["recyclerview_v7"]
+    implementation deps["design"]
+    implementation deps["constraint"]
+    // 配置应用进行 Dalvik 可执行文件分包  https://developer.android.google.cn/studio/build/multidex#mdex-gradle
+    implementation deps["multidex"]
+
+    // RxJava & Retrofit & Glide4
+    implementation deps["gson"]
+    implementation deps["rxjava2"]
+    implementation deps["rxandroid"]
+    implementation deps["rxbinding2"]
+    implementation deps["okhttp"]
+    implementation deps["okhttp_logging_interceptor"]
+    implementation deps["retrofit"]
+    implementation deps["retrofit_converter_gson"]
+    implementation deps["retrofit_adapter_rxjava2"]
+
+    // 重：annotationProcessor 不能从 library 继承！交给子模块实现！
+    // annotationProcessor deps.arouter.compiler
+
+    implementation deps["glide"]
+    annotationProcessor deps["glide_compiler"]
+    implementation deps["arouter"]
+    annotationProcessor deps["arouter_compiler"]
+    implementation deps["eventbus"]
+    annotationProcessor deps["eventbus_annotation_processor"]
+
+    implementation deps["greendao"]
+    implementation deps["qmui"]
+    implementation deps["recycler_helper"]
+    implementation deps["flexbox"]
+    implementation deps["smarttable"]
+
+    //----------------------------------Support XML WebService-------------------------------------//
+
+    implementation('com.squareup.retrofit2:converter-simplexml:2.4.0') {
+        exclude module: 'stax'
+        exclude module: 'stax-api'
+        exclude module: 'xpp3'
+    }
+
+    //leakcanary
+    debugImplementation 'com.squareup.leakcanary:leakcanary-android:1.6.3'
+    releaseImplementation 'com.squareup.leakcanary:leakcanary-android-no-op:1.6.3'
+    testImplementation 'com.squareup.leakcanary:leakcanary-android-no-op:1.6.3'
+
+    // 引入子模块后，ARouter才会找到该模块！》》》There's no router matched!
+    /*if (isModule.toBoolean()) {
+        api project(':sqretrofit')
+    }*/
+
+    // Android 无法使用 javax.* 问题 -- 或是拷贝一个rt.jar放到libs里面
+    // provided files ('C:\fastwork\Java\jdk1.8.0_162\jre\lib')
+
+
+    //Jetpack
+//    implementation deps["x_app_compat"]
+//    implementation deps["x_annotations"]
+//    implementation deps["x_recyclerview"]
+//    implementation deps["x_cardview"]
+//    implementation deps["x_design"]
+//    implementation deps["x_core_utils"]
+//    implementation deps["x_fragment_runtime"]
+//    implementation deps["x_lifecycle_extensions"]
+
+}
+
 greendao {
     schemaVersion 1 // 数据库版本号
     // 设置DaoMaster、DaoSession、Dao 包名, 一般为app包名+生成文件的文件夹名
@@ -233,72 +322,3 @@ kotlin {
     }
 }
 
-dependencies {
-    implementation fileTree(include: ['*.jar'], dir: 'libs')
-    implementation files('libs/nineoldandroids-2.4.0.jar')
-    // Test
-    testImplementation deps.junit
-    androidTestImplementation deps.test_runner
-    androidTestImplementation deps.test_espresso
-
-    // Support libraries
-    implementation deps.support.support_v4
-    implementation deps.support.appcompat_v7
-    implementation deps.support.cardview_v7
-    implementation deps.support.recyclerview_v7
-    implementation deps.support.design
-    implementation deps.support.annotations
-    implementation deps.support.constraint
-
-    // RxJava & Retrofit & Glide4
-    implementation deps.gson
-    implementation deps.rxjava2
-    implementation deps.rxandroid
-    implementation deps.rxbinding2
-    implementation deps.okhttp
-    implementation deps.okhttp_logging_interceptor
-    implementation deps.retrofit.runtime
-    implementation deps.retrofit.retrofit_converter_gson
-    implementation deps.retrofit.retrofit_adapter_rxjava2
-
-    // 重：annotationProcessor 不能从 library 继承！交给子模块实现！
-    // annotationProcessor deps.arouter.compiler
-    implementation deps.glide.runtime
-    annotationProcessor deps.glide.compiler
-    implementation deps.arouter.runtime
-    annotationProcessor deps.arouter.compiler
-    implementation deps.eventbus.runtime
-    annotationProcessor deps.eventbus.processor
-
-    implementation deps.greendao
-    implementation deps.qmui
-    implementation deps.recycler_helper
-    implementation deps.flexbox
-    implementation deps.smarttable
-    // 配置应用进行 Dalvik 可执行文件分包  https://developer.android.google.cn/studio/build/multidex#mdex-gradle
-    implementation 'com.android.support:multidex:1.0.3'
-
-    //----------------------------------Support XML WebService-------------------------------------//
-    implementation('com.squareup.retrofit2:converter-simplexml:2.4.0') {
-        exclude module: 'stax'
-        exclude module: 'stax-api'
-        exclude module: 'xpp3'
-    }
-    //leak
-    debugImplementation 'com.squareup.leakcanary:leakcanary-android:1.5.4'
-    releaseImplementation 'com.squareup.leakcanary:leakcanary-android-no-op:1.5.4'
-    testImplementation 'com.squareup.leakcanary:leakcanary-android-no-op:1.5.4'
-
-    // 引入子模块后，ARouter才会找到该模块！》》》There's no router matched!
-    /*if (isModule.toBoolean()) {
-        api project(':sqretrofit')
-    }*/
-
-    // Android 无法使用 javax.* 问题 -- 或是拷贝一个rt.jar放到libs里面
-    // provided files ('C:\fastwork\Java\jdk1.8.0_162\jre\lib')
-
-    //------------------------------------------------------------------------------//
-
-    implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
-
-}
