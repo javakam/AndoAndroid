@@ -31,6 +31,7 @@ public class KotlinFragment extends BaseSwipeFragment {
         tvKotlin = v.findViewById(R.id.tvKotlin);
 
         v.findViewById(R.id.tvKotlin).setOnClickListener(this);
+
     }
 
     @Override
