@@ -297,14 +297,14 @@ dependencies {
 
 
     //Jetpack
-    implementation deps["x_app_compat"]
-    implementation deps["x_annotations"]
-    implementation deps["x_recyclerview"]
-    implementation deps["x_cardview"]
-    implementation deps["x_design"]
-    implementation deps["x_core_utils"]
-    implementation deps["x_fragment_runtime"]
-    implementation deps["x_lifecycle_extensions"]
+//    implementation deps["x_app_compat"]
+//    implementation deps["x_annotations"]
+//    implementation deps["x_recyclerview"]
+//    implementation deps["x_cardview"]
+//    implementation deps["x_design"]
+//    implementation deps["x_core_utils"]
+//    implementation deps["x_fragment_runtime"]
+//    implementation deps["x_lifecycle_extensions"]
 
 }
 
