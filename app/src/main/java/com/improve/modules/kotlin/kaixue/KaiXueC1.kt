@@ -8,7 +8,7 @@ import com.improve.R
 import com.improve.base.fragment.BaseSwipeFragment
 
 /**
- * Title: 第一课$
+ * Title: 第一课
  * <p>
  * Description:
  * </p>
