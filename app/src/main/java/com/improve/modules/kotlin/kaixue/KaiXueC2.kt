@@ -1,7 +1,7 @@
 package com.improve.modules.kotlin.kaixue
 
 /**
- * Title: KaiXue2
+ * Title: KaiXueC2
  * <p>
  * Description:
  * </p>
@@ -10,11 +10,11 @@ package com.improve.modules.kotlin.kaixue
  */
 import android.util.Log
 
-class KaiXue2 private constructor() {
+class KaiXueC2 private constructor() {
 
     companion object {
-        const val TAG = "KaiXue2"
-        fun getInstance() = KaiXue2()
+        const val TAG = "KaiXueC2"
+        fun getInstance() = KaiXueC2()
     }
 
     fun calculateWithArray() {
