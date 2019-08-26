@@ -5,6 +5,7 @@ package com.improve.modules.kotlin
  *
  * Kotlin object : https://blog.csdn.net/love667767/article/details/79426543
  */
+// 👇 class 替换成了 object
 object Singleton {
     val name = "Name"
 

@@ -39,7 +39,7 @@ com.improve I/System.out: MyService2.onDestroy
 #### 混合调用(Service生命周期)
 > com.improve.modules.service.ServiceFragment3
 
-  1. 一次绑定只能解绑一次，多次解绑（unbindService）会有问题 [stopService没事儿]：
+  1. 一次绑定只能解绑一次，多次解绑（unbindService）会有问题 [stopService没问题]：
   java.lang.IllegalArgumentException: Service not registered: com.improve.modules.service.ServiceFragment2$1@db7c143
   解决办法：为unbindService加上一个try catch代码块
   2. 既需要服务长期在后台运行（即使Activity销毁了也在运行），
@@ -49,7 +49,7 @@ com.improve I/System.out: MyService2.onDestroy
   4. 混合调用时，如果不解绑服务，是没有办法停止服务的，为了防止直接退出activity时忘记解绑而导致服务停止不了，
   通常的做法是在每一个调用服务的Activity的onDestroy方法中去解绑服务。
 
-##### 混合模式生命周期以及出现的一些问题（友情提示：千万不要意淫，坑很多，强烈建议躬行）
+##### 混合模式生命周期以及出现的一些问题
 
 > 执行顺序 ：start → bind → unbind → stop
 
@@ -75,9 +75,9 @@ start → bind → stop（没有监听到onDestroy和其他Service周期方法�
 > 执行顺序：
 
     start → bind → unbind → bind
-    → n * unbind（不会执行onUnbind和其他Service周期方法）——（虽然,原因看后面stop）
+    → n * unbind（不会执行onUnbind和其他Service周期方法）——（原因在后面stop）
     → bind①
-    → stop（神奇的地方来了！！！此时并不能停止服务！因为①之后没有unbind所以不执行该方法，也不能bindService。
+    → stop（注意！！！此时并不能停止服务！因为①之后没有unbind所以不执行该方法，也不能bindService。
     从而验证了一点：在执行n * unbind时，虽然没有监听到onUnbind和其他Service周期方法，但是还是成功解绑了。）
     【注：下面这俩方法执行谁都可以销毁服务。。。】
     → unbind/stop （onDestroy） → unbind/stop （onDestroy）
@@ -125,13 +125,12 @@ com.improve I/System.out: MyService3.onDestroy<br>
     并在需要的时候通过bindService（即回调onServiceConnected方法进行通讯）绑定服务，
     在不需要的时候通过unbindService（神TM不回调onServiceDisconnected方法。。。卵子）
     去解除服务，【要注意的是onUnbind只会执行一次（Tip 4），想再次通过unbindService去解绑
-    服务是可以的，只不过不会再触发onUnbind了，相当于劫的影分身】，
-    最后在适当的时候或是APP退出异或崩溃异常（百度 CrashHandler）时去关闭服务。
+    服务是可以的，只不过不会再触发onUnbind了】，
+    最后在适当的时候或是APP退出异或崩溃异常（CrashHandler）时去关闭服务。
     7. 举个例子：
     {@link com.improve.modules.MyService4 } & {@link com.improve.modules.ServiceFragment4}
 
- > 踩了一天坑，MMP，混合开发时，混合开发时，
- 把 {@link #onUnbind} 的返回值设置成true时，bind/unbind才能正常使用（可以多次绑定/解绑了）！
+ > MMP 混合开发时，把 {@link #onUnbind} 的返回值设置成true时，bind/unbind才能正常使用（可以多次绑定/解绑了）！
 
     @Override
      public boolean onUnbind(Intent intent) {
