@@ -1,4 +1,4 @@
-package com.improve.modules.kotlin
+package com.improve.modules.kotlin.kaixue.chapter2
 
 /**
  * Title: HenCoder Kotilin$
@@ -10,7 +10,7 @@ package com.improve.modules.kotlin
  */
 const val PATH = ""
 
-class HCKotlinDemo {
+class TopLevelDemo {
 
     val user = User()
 
