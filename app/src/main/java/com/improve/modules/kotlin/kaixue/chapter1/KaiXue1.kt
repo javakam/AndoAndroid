@@ -1,4 +1,4 @@
-package com.improve.modules.kotlin.kaixue
+package com.improve.modules.kotlin.kaixue.chapter1
 
 import android.graphics.Color
 import android.util.Log
@@ -15,10 +15,10 @@ import com.improve.base.fragment.BaseSwipeFragment
  * @author Changbao
  * @date 2019/8/26  16:36
  */
-class KaiXueC1 : BaseSwipeFragment() {
+class KaiXue1 : BaseSwipeFragment() {
 
     companion object {
-        const val TAG = "KaiXueC1"
+        const val TAG = "KaiXue1"
     }
 
     private lateinit var mTvHomework: View
