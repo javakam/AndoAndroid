@@ -1,11 +1,16 @@
 package com.improve.modules.kotlin;
 
 import android.view.View;
+import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.improve.R;
 import com.improve.UIRouter;
 import com.improve.base.fragment.BaseSwipeFragment;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Title:KotlinFragment
