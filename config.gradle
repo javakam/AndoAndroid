@@ -85,5 +85,13 @@ ext {
             //Lifecycle -> All Dep https://developer.android.google.cn/jetpack/androidx/releases/lifecycle
             //ViewModel and LiveData
             "x_lifecycle_extensions"       : "androidx.lifecycle:lifecycle-extensions:${version.x_lifecycle_version}"
+            
+            
+            //移除Zzoa , Misdk
+            //如何让别人在gradle中直接compile你的开源库   http://www.jianshu.com/p/9db20aaf932c
+            //方式一 https://jitpack.io/
+            //compile 'com.github.javakam:misdk:1.0'
+            //方式二 https://bintray.com/javakam/maven     jcenter : https://jcenter.bintray.com/com/javakam/
+            //compile 'com.javakam:milier:1.0.0'
     ]
 }
