@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/btn_add_tag"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="添加标签" />
+
+            <EditText
+                android:id="@+id/edt_text_tag"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:singleLine="true" />
+        </LinearLayout>
+
+        <co.lujun.androidtagview.TagContainerLayout
+            android:id="@+id/tag_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:padding="10dp"
+            app:container_background_color="#00000000"
+            app:container_border_color="#aaaaaa"
+            app:container_border_radius="5dp"
+            app:container_border_width="3dp"
+            app:container_enable_drag="false"
+            app:horizontal_interval="5dp"
+            app:tag_clickable="true"
+            app:tag_enable_cross="true"
+            app:tag_theme="random"
+            app:vertical_interval="10dp" />
+    </LinearLayout>
+
+</ScrollView>

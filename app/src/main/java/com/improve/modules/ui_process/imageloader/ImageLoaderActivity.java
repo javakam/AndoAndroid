@@ -151,7 +151,7 @@ public class ImageLoaderActivity extends BaseActivity implements AbsListView.OnS
         public View getView(int position, View convertView, ViewGroup parent) {
             ViewHolder holder = null;
             if (convertView == null) {
-                convertView = mInflater.inflate(R.layout.art_image_list_item, parent, false);
+                convertView = mInflater.inflate(R.layout.item_art_imageloader, parent, false);
                 holder = new ViewHolder();
                 holder.imageView = (ImageView) convertView.findViewById(R.id.image);
                 convertView.setTag(holder);

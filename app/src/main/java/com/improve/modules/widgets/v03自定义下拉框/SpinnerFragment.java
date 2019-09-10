@@ -109,7 +109,7 @@ public class SpinnerFragment extends BaseSwipeFragment {
         public View getView(int position, View convertView, ViewGroup parent) {
             ViewHolder viewHolder;
             if (convertView == null) {
-                convertView = View.inflate(mActivity, R.layout.item_v03_sp, null);
+                convertView = View.inflate(mActivity, R.layout.item_spinner_youku, null);
                 viewHolder = new ViewHolder();
                 viewHolder.tv_msg = (TextView) convertView.findViewById(R.id.tv_msg);
                 viewHolder.iv_delete = (ImageView) convertView.findViewById(R.id.iv_delete);

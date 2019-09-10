@@ -10,6 +10,7 @@ import com.improve.R;
 import com.improve.modules.annotation.base.ContentView;
 import com.improve.modules.annotation.base.ViewInjectUtils;
 import com.qmuiteam.qmui.alpha.QMUIAlphaButton;
+import com.qmuiteam.qmui.widget.QMUITopBar;
 
 /**
  * Android注解开发
@@ -19,6 +20,7 @@ import com.qmuiteam.qmui.alpha.QMUIAlphaButton;
 @ContentView(R.layout.fragment_annotation)
 public class AnnotationActivity extends AppCompatActivity {
 
+    private QMUITopBar topbar;
     private QMUIAlphaButton mBtAnnotation;
 
     @Override
@@ -28,7 +30,9 @@ public class AnnotationActivity extends AppCompatActivity {
         //【核心方法】
         ViewInjectUtils.inject(this);
 
+        topbar = findViewById(R.id.topbar);
         mBtAnnotation = findViewById(R.id.btAnnotation);
+
         //测试  @ViewInject 是否生效
         mBtAnnotation.setOnClickListener(v -> Toast.makeText(AnnotationActivity.this,
                 "测试  @ViewInject 是否生效", Toast.LENGTH_SHORT).show());
@@ -43,6 +47,5 @@ public class AnnotationActivity extends AppCompatActivity {
 
     private void 初始化标题栏() {
         setTitle("Android注解处理机");
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
     }
 }

@@ -27,8 +27,7 @@ public class UIRouter {
     public static final String FRAG_THREAD_NAV = "线程和消息机制";
     public static final String FRAG_NETWORK = "网络编程";
     public static final String FRAG_KOTLIN = "Kotlin";
-    public static final String FRAG_ZLGX = "增量更新";
-    public static final String FRAG_RXJAVA2 = "RxJava2";
+    public static final String FRAG_ZLGX = "IncrementalUpdateFragment";
     public static final String FRAG_GREENDAO = "GreenDao Basic";
     public static final String FRAG_GREENDAO_M2M = "GreenDao 多对多";
     public static final String FRAG_RX_GREENDAO = "GreenDao Rx";

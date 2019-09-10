@@ -11,6 +11,6 @@ public class DragViewGroupActivity extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.drag_viewgroup);
+        setContentView(R.layout.activity_drag_viewgroup);
     }
 }

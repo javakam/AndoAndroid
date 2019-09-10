@@ -15,7 +15,7 @@ public class TopBarTest extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.topbar_test);
+        setContentView(R.layout.activity_hero_topbar_test);
         // 获得我们创建的topbar
         mTopbar = (TopBar) findViewById(R.id.topBar);
         // 为topbar注册监听事件，传入定义的接口

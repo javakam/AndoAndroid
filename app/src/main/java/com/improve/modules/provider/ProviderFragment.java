@@ -66,7 +66,7 @@ int match(Uri uri)：
 
     @Override
     protected int getLayoutResId() {
-        return R.layout.button_layout;
+        return R.layout.fragment_provider;
     }
 
     @Override

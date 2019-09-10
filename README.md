@@ -12,7 +12,9 @@
     </tr>
 </table>
 
-- 常用控件、视图总结 [AndroidViews](https://github.com/javakam/AndroidViews)
+- 控件视图 [AndroidViews](https://github.com/javakam/AndroidViews)
+- RxJava2 [RxJavaMaster](https://github.com/javakam/RxJavaMaster)
+
 - 项目结构 : [app](art) 主工程基于 [QMUI Android](https://github.com/Tencent/QMUI_Android) ; [support](art) 用于测试进程间通信、内容提供者的辅助工程
 - TODO 待整理 有道&博客园笔记 [https://www.cnblogs.com/jooy](https://www.cnblogs.com/jooy)
 

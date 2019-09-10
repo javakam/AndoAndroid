@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Feel</string>
+    <string name="app_name">AndoImp</string>
 
     <!--EmptyView 显示内容-->
     <string name="emptyView_mode_desc_fail_title">加载失败</string>

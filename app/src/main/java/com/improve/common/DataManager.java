@@ -5,16 +5,15 @@ import com.improve.base.QDItemDescription;
 import com.improve.modules.activity.ActivityEntranceFragment;
 import com.improve.modules.annotation.AnnotationActivity;
 import com.improve.modules.eventbus3.EventBusMainActivity;
-import com.improve.modules.greendao.GreenDaoManyToManyFragment;
 import com.improve.modules.greendao.GreenDaoFragment;
+import com.improve.modules.greendao.GreenDaoManyToManyFragment;
 import com.improve.modules.greendao.RxGreenDaoSwipeFragment;
 import com.improve.modules.ipc.aidl.AIDIServiceFragment;
 import com.improve.modules.ipc.socket.TCPClientActivity;
 import com.improve.modules.kotlin.KotlinFragment;
 import com.improve.modules.network.HttpUrlConnectionFragment;
-import com.improve.modules.network.增量更新;
+import com.improve.modules.network.IncrementalUpdateFragment;
 import com.improve.modules.provider.ProviderFragment;
-import com.improve.modules.rxjava.RxJavaFragment;
 import com.improve.modules.service.ServiceFragment1;
 import com.improve.modules.service.ServiceFragment2;
 import com.improve.modules.service.ServiceFragment3;
@@ -45,7 +44,7 @@ import java.util.List;
 /**
  * Created by javakam on 2018/6/16.
  */
-public class SQDataManager {
+public class DataManager {
     private static final String IMAGE_PRE_FIX = "ic_style_";
     private static final int IMAGE_COUNT = 12;
 
@@ -78,8 +77,7 @@ public class SQDataManager {
     public static List<QDItemDescription> getPopularDescriptions() {
         List<QDItemDescription> list = new ArrayList<>();
 //        list.add(new QDItemDescription(WanSwipeFragment.class, UIRouter.FRAG_WAN_ANDROID, getImage()));
-        list.add(new QDItemDescription(增量更新.class, UIRouter.FRAG_ZLGX, getImage()));
-        list.add(new QDItemDescription(RxJavaFragment.class, UIRouter.FRAG_RXJAVA2, getImage()));
+        list.add(new QDItemDescription(IncrementalUpdateFragment.class, UIRouter.FRAG_ZLGX, getImage()));
         list.add(new QDItemDescription(GreenDaoFragment.class, UIRouter.FRAG_GREENDAO, getImage()));
         list.add(new QDItemDescription(GreenDaoManyToManyFragment.class, UIRouter.FRAG_GREENDAO_M2M, getImage()));
         list.add(new QDItemDescription(RxGreenDaoSwipeFragment.class, UIRouter.FRAG_RX_GREENDAO, getImage()));

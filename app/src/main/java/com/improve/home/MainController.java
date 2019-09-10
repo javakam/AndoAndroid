@@ -35,7 +35,7 @@ public abstract class MainController extends FrameLayout {
 
     public MainController(Context context) {
         super(context);
-        LayoutInflater.from(context).inflate(R.layout.main_layout, this);
+        LayoutInflater.from(context).inflate(R.layout.layout_main_controller, this);
         mTopBar = findViewById(R.id.topbar);
         mRecyclerView = findViewById(R.id.recyclerView);
         initTopBar();
@@ -130,7 +130,7 @@ public abstract class MainController extends FrameLayout {
 
         @Override
         public int getItemLayoutId(int viewType) {
-            return R.layout.main_item_layout;
+            return R.layout.item_main_controller;
         }
 
         @Override
