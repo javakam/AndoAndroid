@@ -3,15 +3,15 @@ package com.improve.common;
 /**
  * Created by javakam on 2018/6/16.
  */
-public class SQUpdateManager {
-    private SQUpdateManager() {
+public class UpdateManager {
+    private UpdateManager() {
     }
 
     private static final class SQUpdateManagerHolder {
-        private static final SQUpdateManager INSTANCE = new SQUpdateManager();
+        private static final UpdateManager INSTANCE = new UpdateManager();
     }
 
-    public static SQUpdateManager getInstance() {
+    public static UpdateManager getInstance() {
         return SQUpdateManagerHolder.INSTANCE;
     }
 }

@@ -33,6 +33,10 @@ public class CatFlexboxLayoutFragment extends BaseSwipeFragment {
     @Override
     protected void initViews(View v) {
 //        initTopBar(UIRouter.FRAG_WIDGET_FLEXBOX, true);
+
+        toolbar=v.findViewById(R.id.toolbar);
+        mRecyclerView=v.findViewById(R.id.recyclerview);
+
         mActivity.setSupportActionBar(toolbar);
         toolbar.setTitle(UIRouter.FRAG_WIDGET_FLEXBOX_CAT);
         //关键下面两句话，设置了回退按钮，及点击事件的效果
@@ -43,9 +47,6 @@ public class CatFlexboxLayoutFragment extends BaseSwipeFragment {
                 popBackStack();
             }
         });
-
-        toolbar=v.findViewById(R.id.toolbar);
-        mRecyclerView=v.findViewById(R.id.recyclerview);
 
         // 1
         FlexboxLayoutManager manager
@@ -77,7 +78,7 @@ public class CatFlexboxLayoutFragment extends BaseSwipeFragment {
         @NonNull
         @Override
         public CatViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-            View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.viewholder_cat, parent, false);
+            View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_cat, parent, false);
             return new CatViewHolder(view);
         }
 

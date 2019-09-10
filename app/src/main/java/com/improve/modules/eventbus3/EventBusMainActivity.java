@@ -23,7 +23,7 @@ public class EventBusMainActivity extends BaseActivity {
 
     @Override
     protected int getLayoutId() {
-        return R.layout.activity_main_eb3;
+        return R.layout.activity_main_eventbus2;
     }
 
     @Override

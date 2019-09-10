@@ -10,6 +10,6 @@ public class DragViewActivity extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.drag_view);
+        setContentView(R.layout.activity_drag_view);
     }
 }

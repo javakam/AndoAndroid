@@ -287,6 +287,10 @@ dependencies {
     releaseImplementation 'com.squareup.leakcanary:leakcanary-android-no-op:1.6.3'
     testImplementation 'com.squareup.leakcanary:leakcanary-android-no-op:1.6.3'
 
+
+
+    implementation 'co.lujun:androidtagview:1.1.7'
+
     // 引入子模块后，ARouter才会找到该模块！》》》There's no router matched!
     /*if (isModule.toBoolean()) {
         api project(':sqretrofit')

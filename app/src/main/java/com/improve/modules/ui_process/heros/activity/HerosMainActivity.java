@@ -7,6 +7,9 @@ import android.view.View;
 
 import com.improve.R;
 
+/**
+ * 安卓群英传
+ */
 public class HerosMainActivity extends Activity {
 
     private Intent mIntent;
@@ -15,7 +18,7 @@ public class HerosMainActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_heros);
-        mIntent = new Intent(this, MyViewTest.class);
+        mIntent = new Intent(this, HeroViewActivity.class);
     }
 
     public void btnTeaching(View view) {

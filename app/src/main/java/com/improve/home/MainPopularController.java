@@ -3,7 +3,7 @@ package com.improve.home;
 import android.content.Context;
 
 import com.improve.R;
-import com.improve.common.SQDataManager;
+import com.improve.common.DataManager;
 
 /**
  * Created by javakam on 2018/7/17.
@@ -20,6 +20,6 @@ public class MainPopularController extends MainController {
 
     @Override
     protected MainItemAdapter getItemAdapter() {
-        return new MainItemAdapter(getContext(), SQDataManager.getPopularDescriptions());
+        return new MainItemAdapter(getContext(), DataManager.getPopularDescriptions());
     }
 }

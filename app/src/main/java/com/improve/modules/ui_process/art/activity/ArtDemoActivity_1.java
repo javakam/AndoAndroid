@@ -28,7 +28,7 @@ public class ArtDemoActivity_1 extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.art_demo_1);
+        setContentView(R.layout.activity_art_demo_1);
         Log.d(TAG, "onCreate");
         initView();
     }
@@ -40,7 +40,7 @@ public class ArtDemoActivity_1 extends Activity {
         final int screenHeight = MyUtils.getScreenMetrics(this).heightPixels;
         for (int i = 0; i < 3; i++) {
             ViewGroup layout = (ViewGroup) inflater.inflate(
-                    R.layout.content_layout, mListContainer, false);
+                    R.layout.layout_art_content, mListContainer, false);
             layout.getLayoutParams().width = screenWidth;
             TextView textView = (TextView) layout.findViewById(R.id.title);
             textView.setText("page " + (i + 1));
@@ -58,7 +58,7 @@ public class ArtDemoActivity_1 extends Activity {
         }
 
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
-                R.layout.content_list_item, R.id.name, datas);
+                R.layout.layout_art_content_list_item, R.id.name, datas);
         listView.setAdapter(adapter);
         listView.setOnItemClickListener(new OnItemClickListener() {
             @Override
