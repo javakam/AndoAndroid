@@ -226,26 +226,8 @@ dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
     implementation files('libs/nineoldandroids-2.4.0.jar')
 
-    //Kotlin Anko
-    implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
-    implementation "org.jetbrains.anko:anko-sdk25:$anko_version"
-    implementation "org.jetbrains.anko:anko-sdk25-coroutines:$anko_version"
-    implementation "org.jetbrains.anko:anko-appcompat-v7:$anko_version"
-
-    // Test
-    testImplementation deps.junit
-    androidTestImplementation deps.test_runner
-    androidTestImplementation deps.test_espresso_core
-
-    // Support libraries
-    implementation deps["support_v4"]
-    implementation deps["appcompat_v7"]
-    implementation deps["cardview_v7"]
-    implementation deps["recyclerview_v7"]
-    implementation deps["design"]
-    implementation deps["constraint"]
-    // 配置应用进行 Dalvik 可执行文件分包  https://developer.android.google.cn/studio/build/multidex#mdex-gradle
-    implementation deps["multidex"]
+    //
+    implementation 'com.ando:ando-base:1.0.1'
 
     // RxJava & Retrofit & Glide4
     implementation deps["gson"]
