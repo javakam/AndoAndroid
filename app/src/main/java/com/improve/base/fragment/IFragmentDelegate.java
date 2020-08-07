@@ -3,7 +3,7 @@ package com.improve.base.fragment;
 import android.content.Context;
 import android.content.Intent;
 import android.content.ServiceConnection;
-import android.support.annotation.Nullable;
+import androidx.annotation.Nullable;
 import android.view.View;
 
 import com.improve.base.BaseQMUIFragmentActivity;

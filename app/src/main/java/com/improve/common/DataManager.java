@@ -10,7 +10,6 @@ import com.improve.modules.greendao.GreenDaoManyToManyFragment;
 import com.improve.modules.greendao.RxGreenDaoSwipeFragment;
 import com.improve.modules.ipc.aidl.AIDIServiceFragment;
 import com.improve.modules.ipc.socket.TCPClientActivity;
-import com.improve.modules.kotlin.KotlinFragment;
 import com.improve.modules.network.HttpUrlConnectionFragment;
 import com.improve.modules.network.IncrementalUpdateFragment;
 import com.improve.modules.provider.ProviderFragment;
@@ -70,7 +69,6 @@ public class DataManager {
         list.add(new QDItemDescription(AnnotationActivity.class, UIRouter.FRAG_ANNOTATION, getImage()));
         list.add(new QDItemDescription(ThreadNavFragment.class, UIRouter.FRAG_THREAD_NAV, getImage()));
         list.add(new QDItemDescription(HttpUrlConnectionFragment.class, UIRouter.FRAG_NETWORK, getImage()));
-        list.add(new QDItemDescription(KotlinFragment.class, UIRouter.FRAG_KOTLIN, getImage()));
         return list;
     }
 

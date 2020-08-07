@@ -37,7 +37,7 @@ android {
         targetSdkVersion config.targetSdkVersion
         versionCode config.versionCode
         versionName config.versionName
-        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        testInstrumentationRunner 'androidx.test.runner.AndroidJUnitRunner'
         //选择要添加的对应cpu类型的.so库
         /*ndk {
             biFilters 'armeabi', 'arm64-v8a', 'armeabi-v7a', 'x86'
@@ -224,16 +224,16 @@ android {
 
 dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
-    implementation files('libs/nineoldandroids-2.4.0.jar')
+    //implementation files('libs/nineoldandroids-2.4.0.jar')
 
     //
-    implementation 'com.ando:ando-base:1.0.1'
+    implementation 'com.ando:ando-base:0.0.9'
 
     // RxJava & Retrofit & Glide4
-    implementation deps["gson"]
+    implementation 'com.google.code.gson:gson:2.8.6'
     implementation deps["rxjava2"]
     implementation deps["rxandroid"]
-    implementation deps["rxbinding2"]
+    implementation 'com.jakewharton.rxbinding2:rxbinding:2.2.0'
     implementation deps["okhttp"]
     implementation deps["okhttp_logging_interceptor"]
     implementation deps["retrofit"]
@@ -258,7 +258,7 @@ dependencies {
 
     //----------------------------------Support XML WebService-------------------------------------//
 
-    implementation('com.squareup.retrofit2:converter-simplexml:2.4.0') {
+    implementation('com.squareup.retrofit2:converter-simplexml:2.9.0') {
         exclude module: 'stax'
         exclude module: 'stax-api'
         exclude module: 'xpp3'
@@ -283,7 +283,7 @@ dependencies {
 
 
     //Jetpack
-//    implementation deps["x_app_compat"]
+    implementation deps["x_app_compat"]
 //    implementation deps["x_annotations"]
 //    implementation deps["x_recyclerview"]
 //    implementation deps["x_cardview"]

@@ -2,7 +2,8 @@ package com.improve.base;
 
 import android.content.res.Configuration;
 import android.content.res.Resources;
-import android.support.multidex.MultiDexApplication;
+import androidx.multidex.MultiDexApplication;
+
 
 /**
  * Created by javakam on 2018/7/3.

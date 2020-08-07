@@ -2,25 +2,25 @@ ext {
 
     android = [
             applicationId    : "com.improve",
-            compileSdkVersion: 28,
-            buildToolsVersion: '28.0.3',
+            compileSdkVersion: 29,
+            buildToolsVersion: '29.0.3',
             minSdkVersion    : 21,
-            targetSdkVersion : 28,
+            targetSdkVersion : 29,
             versionCode      : 1,
             versionName      : "1.0"
     ]
 
     version = [
             support          : "28.0.0",
-            retrofit         : "2.4.0",
-            okhttp           : "3.10.0",
-            glide            : "4.7.1",
+            retrofit         : '2.9.0',
+            okhttp           : '4.8.0',
+            glide            : '4.11.0',
             qmui             : "1.4.0",
             greendao         : "3.2.2",
-            eventbus         : "3.1.1",
+            eventbus         : '3.2.0',
             //jetpack
             x_support          : "1.0.0",
-            x_appcompat        : "1.1.0-rc01",
+            x_appcompat        : "1.1.0",
             x_core_ktx         : "1.0.0",
             x_fragment         : "1.2.0-alpha02",
             x_lifecycle_version: "2.2.0-alpha03"
@@ -29,18 +29,9 @@ ext {
     dependencies = [
 
             //base test
-            "junit"                        : "junit:junit:4.12",
+            "junit"                        : "junit:junit:4.13",
             "test_runner"                  : "com.android.support.test:runner:1.0.2",
             "test_espresso_core"           : "com.android.support.test.espresso:espresso-core:3.0.2",
-
-            //base
-            "support_v4"                   : "com.android.support:support-v4:${version.support}",
-            "appcompat_v7"                 : "com.android.support:appcompat-v7:${version.support}",
-            "cardview_v7"                  : "com.android.support:cardview-v7:${version.support}",
-            "recyclerview_v7"              : "com.android.support:recyclerview-v7:${version.support}",
-            "design"                       : "com.android.support:design:${version.support}",
-            "constraint"                   : "com.android.support.constraint:constraint-layout:1.1.3",
-            "multidex"                     : "com.android.support:multidex:1.0.3",
 
             //network
             "gson"                         : "com.google.code.gson:gson:2.8.4",

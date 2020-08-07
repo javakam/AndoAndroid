@@ -1,6 +1,6 @@
 package com.improve.modules.widgets;
 
-import android.support.design.widget.TextInputLayout;
+import com.google.android.material.textfield.TextInputLayout;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.AdapterView;

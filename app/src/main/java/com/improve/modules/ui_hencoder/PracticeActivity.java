@@ -1,21 +1,21 @@
 package com.improve.modules.ui_hencoder;
 
 import android.os.Bundle;
-import android.support.annotation.LayoutRes;
-import android.support.annotation.Nullable;
-import android.support.annotation.StringRes;
-import android.support.design.widget.TabLayout;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentPagerAdapter;
-import android.support.v4.view.ViewPager;
-import android.support.v7.app.AppCompatActivity;
+import androidx.annotation.LayoutRes;
+import androidx.annotation.Nullable;
+import androidx.annotation.StringRes;
+import com.google.android.material.tabs.TabLayout;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentPagerAdapter;
+import androidx.viewpager.widget.ViewPager;
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.improve.R;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import static android.support.design.widget.TabLayout.MODE_SCROLLABLE;
+import static com.google.android.material.tabs.TabLayout.MODE_SCROLLABLE;
 
 /**
  * https://github.com/javakam/Aimprove/tree/master/sqdraw

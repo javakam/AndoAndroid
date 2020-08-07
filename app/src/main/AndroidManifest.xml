@@ -3,6 +3,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.improve">
 
+    <!--
+    tools:replace="android:appComponentFactory"
+
+    Manifest merger failed : Attribute application@appComponentFactory value=(android.support.v4.app.CoreComponentFactory) from [com.android.support:support-compat:28.0.0] AndroidManifest.xml:22:18-91
+	is also present at [androidx.core:core:1.1.0] AndroidManifest.xml:24:18-86 value=(androidx.core.app.CoreComponentFactory).
+	Suggestion: add 'tools:replace="android:appComponentFactory"' to <application> element at AndroidManifest.xml:6:5-74:19 to override.
+    -->
     <application
         android:name=".SQApplication"
         android:allowBackup="true"
@@ -58,6 +65,7 @@
                     tools:ignore="BatteryLife" />
             </intent-filter>
         </receiver>
+
         <service android:name=".modules.service.intentservice.MyIntentService">
             <intent-filter>
                 <action android:name="suibianqimingdouxing" />

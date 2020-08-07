@@ -1,9 +1,9 @@
 package com.improve.modules.widgets.smarttable;
 
 import android.graphics.Color;
-import android.support.annotation.NonNull;
-import android.support.design.widget.FloatingActionButton;
-import android.support.v4.content.ContextCompat;
+import androidx.annotation.NonNull;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import androidx.core.content.ContextCompat;
 import android.view.View;
 
 import com.bin.david.form.core.SmartTable;

@@ -1,9 +1,9 @@
 package com.improve.modules.activity;
 
 import android.content.Context;
-import android.support.annotation.NonNull;
-import android.support.v4.content.ContextCompat;
-import android.support.v4.view.PagerAdapter;
+import androidx.annotation.NonNull;
+import androidx.core.content.ContextCompat;
+import androidx.viewpager.widget.PagerAdapter;
 import android.util.TypedValue;
 import android.view.Gravity;
 import android.view.View;

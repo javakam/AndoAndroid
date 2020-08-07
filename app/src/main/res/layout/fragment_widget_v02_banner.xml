@@ -16,7 +16,7 @@
         android:layout_marginTop="@dimen/topbar_height"
         android:background="@color/qmui_config_color_white">
 
-        <android.support.v4.view.ViewPager
+        <androidx.viewpager.widget.ViewPager
             android:id="@+id/viewpager"
             android:layout_width="match_parent"
             android:layout_height="180dp" />

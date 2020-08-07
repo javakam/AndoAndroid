@@ -2,7 +2,7 @@ package com.improve.modules.ui_process;
 
 import android.content.Context;
 import android.graphics.Bitmap;
-import android.support.v4.util.LruCache;
+import androidx.collection.LruCache;
 import android.view.View;
 
 import com.improve.base.fragment.BaseSwipeFragment;

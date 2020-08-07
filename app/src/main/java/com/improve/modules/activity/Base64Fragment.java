@@ -1,7 +1,7 @@
 package com.improve.modules.activity;
 
 import android.graphics.Bitmap;
-import android.support.annotation.NonNull;
+import androidx.annotation.NonNull;
 import android.util.Base64;
 import android.view.View;
 import android.widget.ImageView;

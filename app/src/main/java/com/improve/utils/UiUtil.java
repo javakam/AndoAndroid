@@ -11,7 +11,7 @@ import android.content.res.TypedArray;
 import android.graphics.Color;
 import android.graphics.Outline;
 import android.os.Build;
-import android.support.v4.view.ViewCompat;
+import androidx.core.view.ViewCompat;
 import android.text.TextUtils;
 import android.transition.Fade;
 import android.util.DisplayMetrics;

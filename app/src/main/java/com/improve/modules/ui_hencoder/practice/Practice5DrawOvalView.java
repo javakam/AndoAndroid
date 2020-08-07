@@ -3,7 +3,7 @@ package com.improve.modules.ui_hencoder.practice;
 import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.RectF;
-import android.support.annotation.Nullable;
+import androidx.annotation.Nullable;
 import android.util.AttributeSet;
 
 /**

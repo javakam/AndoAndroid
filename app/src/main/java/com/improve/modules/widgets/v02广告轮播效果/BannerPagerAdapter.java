@@ -2,7 +2,7 @@ package com.improve.modules.widgets.v02广告轮播效果;
 
 import android.content.Context;
 import android.os.Handler;
-import android.support.v4.view.PagerAdapter;
+import androidx.viewpager.widget.PagerAdapter;
 import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;

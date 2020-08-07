@@ -8,8 +8,6 @@ import android.view.MotionEvent;
 import android.view.ViewConfiguration;
 import android.widget.TextView;
 
-import com.nineoldandroids.view.ViewHelper;
-
 @SuppressLint("AppCompatCustomView")
 public class TestButton extends TextView {
     private static final String TAG = "TestButton";
@@ -51,10 +49,10 @@ public class TestButton extends TextView {
                 int deltaX = x - mLastX;
                 int deltaY = y - mLastY;
                 Log.d(TAG, "move, deltaX:" + deltaX + " deltaY:" + deltaY);
-                int translationX = (int) ViewHelper.getTranslationX(this) + deltaX;
-                int translationY = (int) ViewHelper.getTranslationY(this) + deltaY;
-                ViewHelper.setTranslationX(this, translationX);
-                ViewHelper.setTranslationY(this, translationY);
+                int translationX = (int) getX()+ deltaX;
+                int translationY = (int) getX() + deltaY;
+//                ViewHelper.setTranslationX(this, translationX);
+//                ViewHelper.setTranslationY(this, translationY);
                 break;
             }
             case MotionEvent.ACTION_UP: {

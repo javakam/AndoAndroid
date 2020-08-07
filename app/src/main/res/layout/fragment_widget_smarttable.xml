@@ -17,7 +17,7 @@
         android:layout_marginTop="@dimen/topbar_height"
         android:background="@color/qmui_config_color_white" />
 
-    <android.support.design.widget.FloatingActionButton
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/floatButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

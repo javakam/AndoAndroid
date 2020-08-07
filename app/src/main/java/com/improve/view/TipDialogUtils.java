@@ -1,9 +1,9 @@
 package com.improve.view;
 
 import android.content.Context;
-import android.support.annotation.LayoutRes;
-import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
+import androidx.annotation.LayoutRes;
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 
 import com.improve.common.Constant;
 import com.improve.utils.StringUtils;
